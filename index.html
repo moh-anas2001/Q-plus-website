@@ -9,6 +9,9 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Recaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -50,7 +53,7 @@
           <li><a href="index.html#hero" class="active">Home</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="portfolio-details.html">Portfolio</a></li>
           <li><a href="index.html#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="careers.html">Join us</a></li>
@@ -726,6 +729,10 @@
 
         <!-- ************************************************************** -->
     
+
+
+        
+
     <!-- Careers Page -->
     <section id="careers" class="careers">
     
@@ -744,7 +751,7 @@
               <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p>
               <a href="#" class="btn btn-primary">Apply Now</a>
             </div>
-          </div>
+          </div><!-- End of Career item -->
     
           <div class="col-lg-4">
             <div class="career-item">
@@ -752,7 +759,7 @@
               <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have experience with Sketch, Figma, and Adobe XD.</p>
               <a href="#" class="btn btn-primary">Apply Now</a>
             </div>
-          </div>
+          </div><!-- End of Career item -->
     
           <div class="col-lg-4">
             <div class="career-item">
@@ -760,11 +767,7 @@
               <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will have experience with SEO, SEM, and social media marketing.</p>
               <a href="#" class="btn btn-primary">Apply Now</a>
             </div>
-          </div>
-
-
-
-    
+          </div>  <!-- End of Career item -->
         </div><br><br>
     
         <div class="see-all-jobs" >
@@ -773,7 +776,7 @@
     
       </div>
     
-    </section>
+    </section> <!-- End of Career Section -->
 
 
 
@@ -1286,8 +1289,10 @@
 
           </div>
 
+          <!-- Contact Section -->
+
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="contact_form" data-aos="fade-up" data-aos-delay="200">
+            <form action="contact.php" method="post" class="contact_form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -1305,14 +1310,21 @@
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
                 </div>
+                
+                <div class="col-md-12 text-center">
+                    <div class="g-recaptcha" data-sitekey="6LfZHrwnAAAAAFTiF2rhtSeinYRE_8APTUQgQ5VG" data-callback="recaptchaCallback" style="text-align: center; margin-left: auto;" ></div>
+                    <div class="g-recaptcha-error" style="color: red; display: none; font-family: sans-serif ;font-size: small; text-align: start;margin-left: 4em;">Please complete the reCAPTCHA.</div>
+                </div>
+                
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
+                  <!-- <div class="loading">Loading</div> -->
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit" name = "button">Send Message</button>
+                  <!-- <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div> -->
+                
+                  <button type="submit" name="button">Send Message</button>
                 </div>
+
 
               </div>
             </form>
@@ -1402,6 +1414,89 @@
     <div></div>
   </div>
 
+
+
+
+  <!-- Add this script at the end of your HTML body -->
+  <script>
+  function recaptchaCallback() {
+    // Hide the reCAPTCHA error message when reCAPTCHA is successfully completed
+    document.querySelector('.g-recaptcha-error').style.display = 'none';
+  }
+
+  // Form submission handling
+  document.querySelector('.contact_form').addEventListener('submit', function(event) {
+    var response = grecaptcha.getResponse();
+    if (response.length === 0) {
+      // Show the reCAPTCHA error message and prevent form submission
+      document.querySelector('.g-recaptcha-error').style.display = 'block';
+      event.preventDefault();
+    }
+  });
+  </script>
+
+
+    <!-- Captcha Validation script -->
+
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      const form = document.querySelector('.contact_form');
+      const submitButton = form.querySelector('button[type="submit"]');
+      const successMessage = form.querySelector('.sent-message');
+      const recaptchaContainer = form.querySelector('.g-recaptcha');
+    
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+    
+        submitButton.disabled = true; // Disable the submit button
+        submitButton.innerText = 'Sending...'; // Change button text
+    
+        const recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response
+    
+        if (!recaptchaResponse) {
+          recaptchaContainer.classList.add('invalid-captcha'); // Add the CSS class
+          submitButton.disabled = false; // Enable the submit button
+          submitButton.innerText = 'Send Message'; // Restore button text
+          return;
+        }
+    
+        // Remove the CSS class if reCAPTCHA is completed
+        recaptchaContainer.classList.remove('invalid-captcha');
+    
+        const formData = new FormData(form);
+        formData.append('recaptcha_response', recaptchaResponse); // Append to form data
+    
+        try {
+          const response = await fetch('contact.php', {
+            method: 'POST',
+            body: formData,
+          });
+    
+          if (response.ok) {
+           // successMessage.style.display = 'block';
+            alert('Message sent successfully!');
+            form.reset();
+            grecaptcha.reset(); // Reset reCAPTCHA
+            submitButton.innerText = 'Send Message'; // Restore button text
+            submitButton.disabled = false; // Enable the submit button
+          } else {
+            console.error('Error submitting form');
+            submitButton.innerText = 'Send Message'; // Restore button text
+            submitButton.disabled = false; // Enable the submit button
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          submitButton.innerText = 'Send Message'; // Restore button text
+          submitButton.disabled = false; // Enable the submit button
+        }
+      });
+    </script>
+    
+    
+    
+    
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -1413,6 +1508,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
 
 </body>
 
