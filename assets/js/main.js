@@ -232,9 +232,6 @@ document.querySelector('.contact_form').addEventListener('submit', function(even
 
 
   // <!-- Captcha Validation script -->
-
-
- 
   
     const form = document.querySelector('.contact_form');
     const submitButton = form.querySelector('button[type="submit"]');

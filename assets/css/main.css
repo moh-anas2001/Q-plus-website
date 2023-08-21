@@ -2039,6 +2039,23 @@ section {
 .contact {
   --color-box-background: #f7f7f7;
 }
+/* Start */
+.contact .contact_form .g-recaptcha {
+  /* Your custom styles */
+  margin-left: auto;
+  text-align: center;
+}
+
+.contact .contact_form .g-recaptcha-error {
+  /* Your custom styles */
+  color: var(--color-primary);
+  display: none;
+  font-family: var(--font-primary);
+  font-size: small;
+  text-align: start;
+  margin-left: 4em;
+}
+/* End */
 
 .contact .info-item {
   background: var(--color-box-background);
@@ -2070,6 +2087,8 @@ section {
   padding: 30px;
   height: 100%;
 }
+
+
 
 .contact .contact_form .error-message {
   display: none;
