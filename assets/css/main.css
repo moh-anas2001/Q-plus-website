@@ -16,6 +16,7 @@
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Lato", sans-serif;
 }
+/* Change in 1098 service section  */
 
 /* Global Colors */
 :root {
@@ -23,8 +24,8 @@
   --color-default-rgb: 33, 37, 41;
   --color-background: #ffffff;
   --color-background-rgb: 255, 255, 255;
-  --color-primary: #e84545;
-  --color-primary-rgb: 232, 69, 69;
+  --color-primary: #e0e845; /* 274,243 */
+  --color-primary-rgb: 6, 6, 0 ;
   --color-secondary: #32353a;
   --color-secondary-rgb: 50, 53, 58;
   --color-box-background: #ffffff;
@@ -39,10 +40,10 @@
 
 /* Nav Menu Colors */
 :root {
-  --color-nav: #3a3939;
-  --color-nav-hover: #e84545;
+  --color-nav: #221e1e;
+  --color-nav-hover: #e0e845;
   --color-nav-dropdown: #3a3939;
-  --color-nav-dropdown-hover: #e84545;
+  --color-nav-dropdown-hover: #060602;
   --color-nav-dropdown-background: #ffffff;
   --color-nav-mobile-background: #ffffff;
 }
@@ -79,6 +80,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-primary);
+  margin-top: 0.25em;
 }
 
 section {
@@ -240,7 +242,7 @@ section {
   --color-background: #ffffff;
   --color-secondary: #444444;
   --color-nav: #444444;
-  --color-nav-hover: #e84545;
+  --color-nav-hover: #e0e845;
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -271,7 +273,7 @@ section {
   --color-background: #ffffff;
   --color-secondary: #444444;
   --color-nav: #444444;
-  --color-nav-hover: #d83535;
+  --color-nav-hover: #e0e845;
 }
 
 /*--------------------------------------------------------------
@@ -912,8 +914,8 @@ section {
   padding: 40px;
   max-width: 80%;
   transition: 0.3s;
-  opacity: 0.5;
-  filter: grayscale(100);
+  opacity: 0.65;
+  /* filter: grayscale(100); */
 }
 
 .clients .client-logo img:hover {
@@ -1025,7 +1027,7 @@ section {
 
 .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
 .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
-  margin-top: -40px;
+  margin-top: -15px;
 }
 
 @media (max-width: 768px) {
@@ -1045,6 +1047,9 @@ section {
   --color-background-rgb: 0, 0, 0;
   position: relative;
   padding: 120px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stats img {
@@ -1069,11 +1074,15 @@ section {
 .stats .container {
   position: relative;
   z-index: 3;
+  
+  justify-content: center;
+  align-items: center;
 }
 
 .stats .stats-item {
   padding: 30px;
   width: 100%;
+  flex: 0 0 calc(33.33% - 60px);
 }
 
 .stats .stats-item span {
@@ -1090,6 +1099,12 @@ section {
   font-size: 16px;
   font-weight: 700;
   color: rgba(var(--color-default-rgb), 0.6);
+}
+
+.stats .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Services Section - Home Page
@@ -3029,3 +3044,8 @@ section {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
+/* 
+.bigger-image {
+  width: 200%;
+  height: 200%;
+} */

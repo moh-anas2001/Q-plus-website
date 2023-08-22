@@ -283,3 +283,5 @@ document.querySelector('.contact_form').addEventListener('submit', function(even
         submitButton.disabled = false; // Enable the submit button
       }
     });
+    
+
