@@ -185,12 +185,13 @@ section {
 }
 
 .header .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+  max-height: 70px;
+  margin-left: 15px;
+  margin-right: -2em;
 }
 
 .header .logo h1 {
-  font-size: 24px;
+  font-size: 54px;
   margin: 0;
   font-weight: 600;
   color: var(--color-secondary);
@@ -233,6 +234,7 @@ section {
 
   .header .navmenu {
     order: 3;
+    
   }
 }
 
@@ -287,6 +289,7 @@ section {
 
   .navmenu ul {
     margin: 0;
+    margin-left: -15%;
     padding: 0;
     display: flex;
     list-style: none;
@@ -902,20 +905,41 @@ section {
 .clients {
   padding: 10px 0;
 }
+.client-images {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+.client-logo {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
 
-.clients .client-logo {
+/* .clients .client-logo {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
+} */
 
-.clients .client-logo img {
+/* .clients .client-logo img {
   padding: 40px;
   max-width: 80%;
   transition: 0.3s;
   opacity: 0.65;
-  /* filter: grayscale(100); */
+  /* filter: grayscale(100); 
+} */
+.client-logo img {
+  padding: 40px;
+  max-width: 100%;
+  opacity: 0.5; /* Initial opacity */
+  transition: opacity 0.3s ease-in-out;
 }
 
 .clients .client-logo img:hover {
@@ -3044,8 +3068,8 @@ section {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
-/* 
 .bigger-image {
-  width: 200%;
-  height: 200%;
-} */
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Maintain aspect ratio */
+}
+
