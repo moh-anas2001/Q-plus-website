@@ -911,6 +911,7 @@ section {
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 10px 0;
+  margin-right: -18%;
   scroll-snap-type: x mandatory;
 }
 .client-logo {
@@ -938,7 +939,7 @@ section {
 .client-logo img {
   padding: 40px;
   max-width: 100%;
-  opacity: 0.5; /* Initial opacity */
+  opacity: 0.95; /* Initial opacity */
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -949,9 +950,18 @@ section {
 
 @media (max-width: 640px) {
   .clients .client-logo img {
-    padding: 20px;
+    padding: 70px;
   }
 }
+@keyframes scroll{
+  0%{
+      transform: translateX(0)
+  }
+  100%{
+      transform: translateX(calc(-250px * 7));
+  }
+}
+
 
 /* About Section - Home Page
 ------------------------------*/
