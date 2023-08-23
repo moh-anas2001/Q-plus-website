@@ -144,6 +144,7 @@ section {
   font-size: 38px;
   font-weight: 700;
   color: var(--color-secondary);
+  margin-top: 20px;
 }
 
 .page-title nav {
