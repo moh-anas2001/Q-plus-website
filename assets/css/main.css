@@ -136,7 +136,7 @@ section {
 }
 
 .page-title .heading {
-  padding: 80px 0;
+  padding: 100px 0 20px 0;
   border-top: 1px solid rgba(var(--color-default-rgb), 0.1);
 }
 
@@ -700,6 +700,7 @@ section {
   color: white;
 }
 
+
 .footer .footer-about .logo {
   line-height: 0;
   margin-bottom: 75px;
@@ -803,8 +804,9 @@ section {
 }
 
 .footer .copyright p {
-  margin-bottom: -10%;
-  margin-left: -65em;
+  margin-top: 0%;
+  margin-bottom: -3em;
+  margin-right: 65em;
   color: #babab9;
 }
 
