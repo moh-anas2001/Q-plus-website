@@ -735,8 +735,7 @@ section {
   border: 1px solid rgba(var(--color-default-rgb), 0.5);
   font-size: 16px;
   color: #ffc107;
-  margin-right: 30px;
-  /* margin-left: 4em; */
+  margin-right: 20px;
   transition: 0.3s;
 }
 
@@ -754,7 +753,7 @@ section {
 }
 
 .footer .footer-links {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   
 }
 
