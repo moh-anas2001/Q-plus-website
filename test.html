@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <h1>Our Services</h1>
+</header>
+
+<!-- Services Section 1 -->
+<section class="services-section">
+    <div class="container">
+        <h2>Service Type 1</h2>
+        <div id="serviceCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Sub Services items -->
+                <div class="carousel-item active">
+                    <h3>Sub Service 1.1</h3>
+                    <img src="image1.jpg" alt="Sub Service 1.1 Image">
+                    <p>Details about Sub Service 1.1</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Sub Service 1.2</h3>
+                    <img src="image2.jpg" alt="Sub Service 1.2 Image">
+                    <p>Details about Sub Service 1.2</p>
+                </div>
+                <!-- Add more sub services here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section 2 -->
+<section class="services-section">
+    <div class="container">
+        <h2>Service Type 2</h2>
+        <div id="serviceCarousel2" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Sub Services items -->
+                <div class="carousel-item active">
+                    <h3>Sub Service 2.1</h3>
+                    <img src="image3.jpg" alt="Sub Service 2.1 Image">
+                    <p>Details about Sub Service 2.1</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Sub Service 2.2</h3>
+                    <img src="image4.jpg" alt="Sub Service 2.2 Image">
+                    <p>Details about Sub Service 2.2</p>
+                </div>
+                <!-- Add more sub services here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2023 Your Company</p>
+</footer>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- Custom JavaScript -->
+<script>
+    // Adjust the carousel interval (in milliseconds)
+    $('#serviceCarousel1').carousel({
+        interval: 2000  // 5 seconds interval
+    });
+
+    $('#serviceCarousel2').carousel({
+        interval: 3000  // 7 seconds interval
+    });
+</script>
+
+</body>
+</html>

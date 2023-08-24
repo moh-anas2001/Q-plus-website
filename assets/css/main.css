@@ -798,15 +798,17 @@ section {
 }
 
 .footer .copyright {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  /* padding-top: 25px; */
+  /* padding-bottom: 25px; */
   background-color: var(--color-box-background);
 }
 
 .footer .copyright p {
-  margin-top: 0%;
-  margin-bottom: -3em;
-  margin-right: 65em;
+  /* margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  margin-right: 0px; */
+  /* padding: 1000 0 0 0; */
   color: #babab9;
 }
 
@@ -2104,7 +2106,7 @@ section {
 
 .contact .contact_form .g-recaptcha-error {
   /* Your custom styles */
-  color: var(--color-primary);
+  color: red;
   display: none;
   font-family: var(--font-primary);
   font-size: small;
@@ -3085,3 +3087,40 @@ section {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
+
+/* career section balance */
+
+.car-hd{
+  margin-bottom: -8%;
+}
+
+.career-item{
+  margin-top: 100px;
+}
+
+ .car-buts button[type=submit]{
+  background: var(--color-primary);
+  color: var(--color-inverse);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+ .car-buts button[type=submit]:hover{
+  background: rgba(var(--color-primary-rgb), 0.8);
+}
+
+/* Add this to your existing CSS styles */
+.small-button {
+  font-size: 12px;
+  padding: 4px 8px;
+  text-align: justify;
+}
+.all-job{
+  margin-left: 40%;/*83.5%;*/
+  margin-bottom: 0%;
+  margin-top: 2%;
+}
+
+
+
