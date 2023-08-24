@@ -189,6 +189,19 @@ section {
   margin-left: 15px;
   margin-right: -2em;
 }
+.header .logo-2 .iso-1{
+  max-height: 40px;
+  margin-left: 70px;
+  
+  margin-right: 0px;
+  margin-bottom: 10px; 
+}
+.header .logo-2 .iso-2{
+  max-height: 40px;
+  margin-left: -3%;
+  margin-bottom: 10px;
+  
+}
 
 .header .logo h1 {
   font-size: 54px;
@@ -197,11 +210,15 @@ section {
   color: var(--color-secondary);
 }
 
-.header .logo span {
-  color: var(--color-primary);
-  font-size: 24px;
-  font-weight: 600;
+.header .logo-2 p {
+/*   
   padding-left: 3px;
+  font-weight: bold;font-size: medium;color: black; */
+  padding-left: 5px;
+  font-weight: bold;
+  font-size: small;
+  color: black;
+  display: block;
 }
 
 .header .btn-getstarted,
@@ -289,7 +306,7 @@ section {
 
   .navmenu ul {
     margin: 0;
-    margin-left: -15%;
+    margin-left: 5%;
     padding: 0;
     display: flex;
     list-style: none;
@@ -912,15 +929,16 @@ section {
 /* Clients Section - Home Page
 ------------------------------*/
 .clients {
-  padding: 10px 0;
+  padding: 0px 0px 4px 0px;
+  align-items: center;
 }
 .client-images {
-  display: flex;
+  display: inline-flexbox;
   flex-wrap: nowrap;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 10px 0;
-  margin-right: -18%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin: center;
   scroll-snap-type: x mandatory;
 }
 .client-logo {
@@ -928,6 +946,7 @@ section {
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
+  margin: 15px 10px;
   scroll-snap-align: start;
 }
 
@@ -946,8 +965,9 @@ section {
   /* filter: grayscale(100); 
 } */
 .client-logo img {
-  padding: 40px;
-  max-width: 100%;
+  padding-top: 20px;
+  max-width: 40%;
+  align-items: center;
   opacity: 0.95; /* Initial opacity */
   transition: opacity 0.3s ease-in-out;
 }
@@ -959,7 +979,7 @@ section {
 
 @media (max-width: 640px) {
   .clients .client-logo img {
-    padding: 70px;
+    padding: 90px;
   }
 }
 @keyframes scroll{
@@ -2015,8 +2035,8 @@ section {
   margin: 15px auto 15px auto;
 }
 
-.testimonials .swiper-wrapper {
-  height: auto;
+ .swiper-wrapper {
+  height: 120px;
 }
 
 .testimonials .swiper-pagination {
@@ -2130,7 +2150,7 @@ section {
 
 .contact .info-item {
   background: var(--color-box-background);
-  padding: 30px;
+  padding: 50px;
 }
 
 .contact .info-item i {
@@ -2152,6 +2172,60 @@ section {
   font-size: 14px;
   margin-bottom: 0;
 }
+
+.contact .tel-item {
+  background: var(--color-box-background);
+  padding: 70px;
+}
+
+
+
+.contact .tel-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--color-primary);
+}
+
+.contact .tel-item h3 {
+  color: var(--color-secondary);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .tel-item p {
+  padding: -50px;
+  line-height: 40px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+
+.contact .hour-item {
+  background: var(--color-box-background);
+  padding: 50px;
+}
+
+.contact .hour-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--color-primary);
+}
+
+.contact .hour-item h3 {
+  color: var(--color-secondary);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .hour-item p {
+  padding: 0;
+  line-height: 46px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
 
 .contact .contact_form {
   background: var(--color-box-background);
