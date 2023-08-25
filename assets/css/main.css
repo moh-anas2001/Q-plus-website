@@ -930,13 +930,12 @@ section {
 ------------------------------*/
 .clients {
   padding: 0px 0px 4px 0px;
-  align-items: center;
 }
 .client-images {
   display: inline-flexbox;
   flex-wrap: nowrap;
   overflow: hidden;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin: center;
   scroll-snap-type: x mandatory;
@@ -946,7 +945,7 @@ section {
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
-  margin: 15px 10px;
+  margin: 15px 0px;
   scroll-snap-align: start;
 }
 
@@ -987,7 +986,7 @@ section {
       transform: translateX(0)
   }
   100%{
-      transform: translateX(calc(-250px * 7));
+      transform: translateX(calc(-250px * 9));
   }
 }
 
@@ -999,19 +998,24 @@ section {
 }
 
 .about .content h3 {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 550;
   line-height: 19px;
   padding: 10px 20px;
-  background: rgba(var(--color-primary-rgb), 0.05);
-  color: var(--color-primary);
-  border-radius: 7px;
+  background: var(--color-secondary);
+  color: white;
+  border-radius: 5px;
   display: inline-block;
+  margin-bottom: 20px;
+
+ 
 }
 
 .about .content h2 {
+
   color: var(--color-secondary);
   font-weight: 700;
+
 }
 
 .about .content p:last-child {
@@ -1049,22 +1053,38 @@ section {
   margin-left: 10px;
 }
 
+.about .abt{  display: flex;
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px; */
+
+}
+
 .about .icon-box {
+  
+  /* padding: 50px 40px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease-out 0s;
+  background-color: var(--color-box-background); */
+
+  flex: 1;
   padding: 50px 40px;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   transition: all 0.3s ease-out 0s;
   background-color: var(--color-box-background);
+  margin: 10px;
 }
 
 .about .icon-box i {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
+  margin-top: 0;
   font-size: 32px;
   line-height: 0;
   transition: all 0.4s ease-out 0s;
@@ -1079,9 +1099,19 @@ section {
   font-weight: 700;
 }
 
-.about .icon-box p {
+/* .about .icon-box .p0 {
+  margin-bottom: -0.9em;
+}
+.about .icon-box .p1 {
+  margin-bottom: -1em;
+}
+.about .icon-box .p2 {
   margin-bottom: 0;
 }
+.about .icon-box .p3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+} */
 
 .about .icon-box:hover i {
   background-color: var(--color-primary);
@@ -1093,7 +1123,7 @@ section {
   margin-top: -15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
 
   .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
   .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
@@ -2035,8 +2065,8 @@ section {
   margin: 15px auto 15px auto;
 }
 
- .swiper-wrapper {
-  height: 120px;
+.testimonials .swiper-wrapper {
+  height: auto;
 }
 
 .testimonials .swiper-pagination {
@@ -2068,7 +2098,6 @@ section {
     margin: 15px;
   }
 }
-
 /* Recent-posts Section - Home Page
 ------------------------------*/
 .recent-posts article {
