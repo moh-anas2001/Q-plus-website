@@ -189,19 +189,17 @@ section {
   margin-left: 15px;
   margin-right: 0;
 }
-.header .logo-2 .iso-1{
+.logo-2 .iso-1{
   max-height: 40px;
-  margin-left: 70px;
-  
   margin-right: 0px;
   margin-bottom: 10px; 
 }
-.header .logo-2 .iso-2{
+.logo-2 .iso-2{
   max-height: 40px;
-  margin-left: -3%;
+  margin-left: -8px;
   margin-bottom: 10px;
-  
 }
+
 
 .header .logo h1 {
   font-size: 54px;
@@ -210,7 +208,7 @@ section {
   color: var(--color-secondary);
 }
 
-.header .logo-2 p {
+.logo-2 p {
 /*   
   padding-left: 3px;
   font-weight: bold;font-size: medium;color: black; */
@@ -1165,6 +1163,8 @@ section {
 
 .hero h2 {
   margin: 0;
+  font-family: stevie-sans, sans-serif;
+  font-style: normal;
   font-size: 44px;
   font-weight: 700;
 }
@@ -1303,13 +1303,16 @@ section {
 
 .about .content h2 {
 
+  
   color: var(--color-secondary);
   font-weight: 700;
+  
 
 }
 
 .about .content p:last-child {
   margin-bottom: 0;
+  text-align: justify;
 }
 
 .about .content .read-more {
@@ -1388,12 +1391,13 @@ section {
   font-size: 24px;
   font-weight: 700;
 }
-
+.about .icon-box p {
+  text-align: justify
+  ;}
 /* .about .icon-box .p0 {
   margin-bottom: -0.9em;
 }
-.about .icon-box .p1 {
-  margin-bottom: -1em;
+.
 }
 .about .icon-box .p2 {
   margin-bottom: 0;
