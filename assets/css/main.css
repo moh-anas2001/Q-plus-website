@@ -306,7 +306,7 @@ section {
 
   .navmenu ul {
     margin: 0;
-    margin-left: 5%;
+    margin-left: -61em;
     padding: 0;
     display: flex;
     list-style: none;
