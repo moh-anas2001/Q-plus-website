@@ -1254,7 +1254,7 @@ section {
   /* filter: grayscale(100); 
 } */
 .client-logo img {
-  padding-top: 20px;
+  padding-top: 40px;
   max-width: 40%;
   align-items: center;
   opacity: 0.95; /* Initial opacity */
@@ -1276,7 +1276,7 @@ section {
       transform: translateX(0)
   }
   100%{
-      transform: translateX(calc(-250px * 9));
+      transform: translateX(calc(250px * 4));
   }
 }
 
@@ -1630,6 +1630,10 @@ section {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+}
+
+.service-item p{
+  text-align: justify;
 }
 
 .services .service-item:hover .details h3 {
