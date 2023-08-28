@@ -1417,13 +1417,23 @@ section {
   
   color: var(--color-secondary);
   font-weight: 700;
+  padding-bottom: 20px;
   
 
 }
 
+.about .content p{
+  text-align: justify;
+}
+
+.car-buts .btn-more{
+  margin-left: 320px;
+  
+}
+
 .about .content p:last-child {
   margin-bottom: 0;
-  text-align: justify;
+  
 }
 
 .about .content .read-more {
@@ -2471,7 +2481,7 @@ section {
 
 .testimonials .testimonial-item p {
   font-style: italic;
-  margin: 15px auto 15px auto;
+  margin: 50px auto 50px auto;
 }
 
 .testimonials .swiper-wrapper {
