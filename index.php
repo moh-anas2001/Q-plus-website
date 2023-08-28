@@ -346,12 +346,10 @@
           <div class="col-xl-5 content">
             <h3>About Us</h3>
             <h2>Quality is the best business plan</h2>
-            <p>Q Plus Technical Service LLC is a company raised by a team of experienced
-               professionals to provide a single window solution for all Building Services, 
-               Interior Decoration, Electrical, HVAC, Plumbing, IT & ELV requirements. Q Plus 
-               means, Quality plus and we believe quality will be always a plus which will
-              lead a hassle free solutions. 
-            </p>
+            <p >Q Plus Technical Service LLC is a company raised by a team of experienced professionals to provide a single window solution for all Building Services, Interior Decoration, Electrical, HVAC, Plumbing, IT & ELV requirements. Q Plus means, Quality plus and we believe quality will be always a plus which will lead a hassle free solutions. We study your requirements and understand your needs, we design, propose and construct as per requirements. We get to know your business in depth to provide a solution which meets your goals. We ensure prompt responds to your queries and attend to resolve your issues as a leader.
+               Along with bringing the best brands on the table, we undertake all the incidental and ancillary services including installation, maintenance, up gradation and repairs, thus giving our clients complete peace of mind and hassle free business experience. 
+               We continued to progress and earn respect of our clients as being one of the honest, transparent and trustworthy service providers across the UAE 
+            </p><br><br>
             
             <a href="index.php" class="logo-2 me-xl-0">
         <p> WE ARE ISO 9001 2015 Certified</p>
@@ -362,7 +360,7 @@
             
             <!-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
             <!-- <div class = "car-buts">
-              <a href="" ><button type="submit" class="all-port" style="margin-left: 320px;"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all Projects</button></a>
+              <a href="" ><button type="submit" class="all-port btn-more"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;Read More</button></a>
             </div> -->
           </div>
 
@@ -1062,8 +1060,9 @@
     
           <div class="col-lg-4">
             <div class="career-item">
-              <h3>Project Manager</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p><br>
+              <h3>Sales Engineer</h3>
+              <p>We are in search of a capable sales engineer to join our team. The ideal candidate should have 1-3 years of experience, proficiency with MS Office, and preferably hold a UAE license. A strong work ethic and dedication to the role are highly valued.</p>
+              <p><strong>Experience:</strong> 1-3 years</p>
               <div class = "car-buts">
               <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
             </div>
@@ -1073,7 +1072,8 @@
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Automation Engineer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p><br>
+              <p>We are seeking a proficient automation engineer to become a valued member of our team. The perfect candidate should possess 0-2 years of experience and have a solid foundation in KNX, electrical wiring, AutoCAD, and MS Office.<p>
+              <p><strong>Experience:</strong> 0 to 2 years</p>
               <div class = "car-buts">
               <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
             </div>
@@ -1083,7 +1083,8 @@
           <div class="col-lg-4">
             <div class="career-item">
               <h3>ELV Engineer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p><br>
+              <p>We are in search of an ELV engineer with over 1 years of experience, who is well-versed in KNX, MS Office, and MS Excel. The candidate should also demonstrate the capability to perform effectively under pressure.<p>
+              <p><strong>Experience:</strong>1+ years</p>
               <div class = "car-buts">
               <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
             </div>
@@ -1093,7 +1094,8 @@
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Web Developer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p><br>
+              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p>
+              <p><strong>Experience:</strong> 1-3 years</p>
               <div class = "car-buts">
               <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
             </div>
@@ -1103,7 +1105,8 @@
           <div class="col-lg-4">
             <div class="career-item">
               <h3>UI/UX Designer</h3>
-              <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have experience with Sketch, Figma, and Adobe XD.</p><br>
+              <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have experience with Sketch, Figma, and Adobe XD.</p>
+              <p><strong>Experience:</strong> 0-3 years</p>
               <div class = "car-buts">
               <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
             </div>
@@ -1113,8 +1116,9 @@
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Marketing Manager</h3>
-              <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will have experience with SEO, SEM, and social media marketing.</p><br>
-          <div class = "car-buts">
+              <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will have experience with SEO, SEM, and social media marketing.</p>
+              <p><strong>Experience:</strong> 2+ years</p>
+              <div class = "car-buts">
               <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
             </div>
             </div>
@@ -1384,9 +1388,9 @@
                   <div>
                     <h3>Saul Goodman</h3>
                     <h4>Ceo & Founder</h4>
-                    <div class="stars">
+                    <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <p>
@@ -1404,9 +1408,9 @@
                   <div>
                     <h3>Sara Wilsson</h3>
                     <h4>Designer</h4>
-                    <div class="stars">
+                    <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <p>
@@ -1424,9 +1428,9 @@
                   <div>
                     <h3>Jena Karlis</h3>
                     <h4>Store Owner</h4>
-                    <div class="stars">
+                    <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <p>
@@ -1444,9 +1448,9 @@
                   <div>
                     <h3>Matt Brandon</h3>
                     <h4>Freelancer</h4>
-                    <div class="stars">
+                    <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <p>
@@ -1464,9 +1468,9 @@
                   <div>
                     <h3>John Larson</h3>
                     <h4>Entrepreneur</h4>
-                    <div class="stars">
+                    <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <p>
@@ -1813,7 +1817,7 @@
           </div>
   
         </div>
-      </div><hr>
+      </div>
   
       <div class="container copyright text-center mt-4">
         <p>&copy; <span>Copyright</span> <strong class="px-1">DaCentric Technologies</strong> <span>All Rights Reserved</span></p>

@@ -107,8 +107,8 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="career-item">
-              <h3>Project Manager</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p>
+              <h3>Automation Engineer</h3>
+              <p>We are seeking a proficient automation engineer to become a valued member of our team. The perfect candidate should possess 0-2 years of experience and have a solid foundation in KNX, electrical wiring, AutoCAD, and MS Office.<p>
               <p><strong>Experience:</strong> 2+ years</p>
               <div class="car-buts">
                 <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
@@ -120,8 +120,8 @@
     
           <div class="col-lg-4">
             <div class="career-item">
-              <h3>Automation Engineer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p>
+              <h3>Sales Engineer</h3>
+              <p>We are in search of a capable sales engineer to join our team. The ideal candidate should have 1-3 years of experience, proficiency with MS Office, and preferably hold a UAE license. A strong work ethic and dedication to the role are highly valued.</p>
               <p><strong>Experience:</strong> 2+ years</p>
               <div class="car-buts">
                 <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
@@ -134,7 +134,7 @@
           <div class="col-lg-4">
             <div class="career-item">
               <h3>ELV Engineer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p>
+              <p>We are in search of an ELV engineer with over 1 years of experience, who is well-versed in KNX, MS Office, and MS Excel. The candidate should also demonstrate the capability to perform effectively under pressure.<p><br>
               <p><strong>Experience:</strong> 2+ years</p>
               <div class="car-buts">
                 <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
