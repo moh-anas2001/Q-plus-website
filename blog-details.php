@@ -45,7 +45,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="container-fluid d-flex align-items-center justify-content-between">
   
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <img src="assets/img/logo.png" alt="">
           <!-- <h1>Q PLUS</h1>
@@ -55,17 +55,17 @@
         <!-- Nav Menu -->
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html#hero" >Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>   
-            <li><a href="index.html#careers">Join us</a></li>
-            <!-- <li><a href="blog-details.html" class="active">Blog</a></li> -->
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.php#hero" >Home</a></li>
+            <li><a href="index.php#about">About</a></li>
+            <li><a href="index.php#services">Services</a></li>
+            <li><a href="index.php#portfolio">Portfolio</a></li>   
+            <li><a href="index.php#careers">Join us</a></li>
+            <!-- <li><a href="blog-details.php" class="active">Blog</a></li> -->
+            <li><a href="index.php#contact">Contact</a></li>
             
             <!-- <li class="dropdown has-dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
               <ul class="dd-box-shadow">
-                <li><a href="index.html#careers">Join us</a></li> -->
+                <li><a href="index.php#careers">Join us</a></li> -->
                 <!-- <li class="dropdown has-dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down"></i></a>
                   <ul class="dd-box-shadow">
                     <li><a href="#">Deep Dropdown 1</a></li>
@@ -80,19 +80,19 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul> -->
             </li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.php#contact">Contact</a></li>
           </ul>
   
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
-        <!-- <a href="index.html" class="logo-2 me-xl-0">
+        <!-- <a href="index.php" class="logo-2 me-xl-0">
           <p> WE ARE ISO 9001 2015 Certified</p>
           
           <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
           <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
         </a> -->
   
-        <a class="btn-getstarted" href="index.html#contact">Contact us</a>
+        <a class="btn-getstarted" href="index.php#contact">Contact us</a>
       </div>
       
     </header><!-- End Header -->
@@ -114,7 +114,7 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">Blog Details</li>
           </ol>
         </div>
@@ -140,9 +140,9 @@
 
               <div class="meta-top">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.php">John Doe</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.php"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.php">12 Comments</a></li>
                 </ul>
               </div><!-- End meta top -->
 
@@ -377,7 +377,7 @@
                 <div class="post-item">
                   <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
                   <div>
-                    <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
+                    <h4><a href="blog-details.php">Nihil blanditiis at in nihil autem</a></h4>
                     <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
                 </div><!-- End recent post item-->
@@ -385,7 +385,7 @@
                 <div class="post-item">
                   <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
                   <div>
-                    <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
+                    <h4><a href="blog-details.php">Quidem autem et impedit</a></h4>
                     <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
                 </div><!-- End recent post item-->
@@ -393,7 +393,7 @@
                 <div class="post-item">
                   <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
                   <div>
-                    <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                    <h4><a href="blog-details.php">Id quia et et ut maxime similique occaecati ut</a></h4>
                     <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
                 </div><!-- End recent post item-->
@@ -401,7 +401,7 @@
                 <div class="post-item">
                   <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
                   <div>
-                    <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
+                    <h4><a href="blog-details.php">Laborum corporis quo dara net para</a></h4>
                     <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
                 </div><!-- End recent post item-->
@@ -409,7 +409,7 @@
                 <div class="post-item">
                   <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
                   <div>
-                    <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                    <h4><a href="blog-details.php">Et dolores corrupti quae illo quod dolor</a></h4>
                     <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
                 </div><!-- End recent post item-->
@@ -470,21 +470,21 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.html#hero">Home</a></li>
-              <li><a href="index.html#about">About us</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#portfolio">Portfolio</a></li>
-              <li><a href="index.html#careers">Join us</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="index.php#hero">Home</a></li>
+              <li><a href="index.php#about">About us</a></li>
+              <li><a href="index.php#services">Services</a></li>
+              <li><a href="index.php#portfolio">Portfolio</a></li>
+              <li><a href="index.php#careers">Join us</a></li>
+              <li><a href="index.php#contact">Contact</a></li>
             </ul>
           </div>
   
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="service-details.html">ELV services</a></li>
-              <li><a href="service-details.html">IT and Networking Services</a></li>
-              <li><a href="service-details.html">MEP Services</a></li>
+              <li><a href="service-details.php">ELV services</a></li>
+              <li><a href="service-details.php">IT and Networking Services</a></li>
+              <li><a href="service-details.php">MEP Services</a></li>
             </ul>
           </div>
   

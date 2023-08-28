@@ -67,7 +67,7 @@ try {
 
     //Display success message using JavaScript
     echo '<script>alert("Message sent successfully!");</script>';
-    // header("Location: index.html");
+    // header("Location: index.php");
 } catch (Exception $e) {
     // Catch and handle any exceptions that occur
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

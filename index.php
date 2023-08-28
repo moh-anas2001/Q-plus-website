@@ -39,7 +39,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/logo.png" alt="QPLUS" Class="">
         <!-- <h1>Q PLUS</h1> -->
@@ -49,27 +49,27 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#careers">Join us</a></li>
-          <!-- <li><a href="index.html#recent-posts">Blog</a></li> -->
+          <li><a href="index.php#hero" class="active">Home</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a href="index.php#services">Services</a></li>
+          <li><a href="index.php#portfolio">Portfolio</a></li>
+          <li><a href="index.php#careers">Join us</a></li>
+          <!-- <li><a href="index.php#recent-posts">Blog</a></li> -->
           
           </li>
-          <!-- <li><a href="index.html#contact">Contact</a></li> -->
+          <!-- <li><a href="index.php#contact">Contact</a></li> -->
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav><!-- End Nav Menu -->
-      <!-- <a href="index.html" class="logo-2 me-xl-0">
+      <!-- <a href="index.php" class="logo-2 me-xl-0">
         <p> WE ARE ISO 9001 2015 Certified</p>
         
         <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
         <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
       </a> -->
 
-      <a class="btn-getstarted" href="index.html#contact">Contact us</a>
+      <a class="btn-getstarted" href="index.php#contact">Contact us</a>
     </div>
   </header><!-- End Header -->
 
@@ -78,15 +78,15 @@
     <!-- Hero Section - Home Page -->
     <section id="hero" class="hero">
 
-      <img src="assets/img/bg.jpg" alt="Background" data-aos="fade-in">
+      <img src="assets/img/Home-2.jpg" alt="Background" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
-          <div class="col-lg-10">
+          <!-- <div class="col-lg-10"> -->
              <h2 data-aos="fade-up" data-aos-delay="100" >Q PLUS TECHNICAL SERVICE LLC</h2><br>
              <p data-aos="fade-up" data-aos-delay="200">"Building Trust With Quality"</p>
             
-          </div>
+          <!-- </div> -->
           <div class="col-lg-5">
             <!-- <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
               <input type="text" class="form-control" placeholder="Enter email address">
@@ -99,10 +99,115 @@
     </section><!-- End Hero Section -->
 
 <!-- Clients Section - Home Page -->
-<section id="clients" class="clients">
+
+
+<section id="clients" class="slide-show">
+
+  <div class = "slider">
+
+    <div class="slide-track">
+
+      <!--  slide images -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-1.gif"style="max-height: 120%;" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-2.png" style="max-height: 120%;"class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-3.jpg"style="max-height: 100%;" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-7.jpg"class="img-fluid"  alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-9.jpg" style="max-height: 120%;" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+
+            <!-- Set of 9 -->
+
+         <div class="cli-log">
+              <img src="assets/img/clients/client-10.jpg"style="max-height: 130%;" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-13.jpg" style="max-height: 120%;"class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-14.jpeg" style="max-height: 120%;"class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-15.jpeg" style="max-height: 120%;"class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-17.svg" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+        <div class="cli-log">
+              <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
+        </div><!-- End Client Item -->
+
+
+        
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="clients" class="clients">
   <div class="container-fluid" data-aos="fade-up">
     <div class="swiper">
-      <!-- Swiper Configuration Template -->
+      <!-- Swiper Configuration Template --
       <template class="swiper-config">
         {
           "loop": true,
@@ -118,117 +223,118 @@
           }
         }
       </template>
-      <!-- Swiper Wrapper (Container for client logos) -->
+      <!-- Swiper Wrapper (Container for client logos) --
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <!-- Container for client images -->
+          <!-- Container for client images --
           <div class="row gy-4 client-images">
          
             <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-1.gif" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+              <img src="assets/img/Brands/" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-2.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-9.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-17.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+              <img src="assets/img/clients  /client-17.svg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             
     
-          </div><!-- End Client Images Container -->
-        </div><!-- End Swiper Slide -->
+          </div><!-- End Client Images Container --
+        </div><!-- End Swiper Slide --
+
 
         <div class="swiper-slide">
-          <!-- Container for client images -->
+          <!-- Container for client images --
           <div class="row gy-4 client-images">
          
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-10.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --       
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --   
 
     
-          </div><!-- End Client Images Container -->
-        </div><!-- End Swiper Slide -->
+          </div><!-- End Client Images Container --               
+        </div><!-- End Swiper Slide --        
 
         <div class="swiper-slide">
-          <!-- Container for client images -->
+          <!-- Container for client images --     
           <div class="row gy-4 client-images">
          
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-13.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-14.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-15.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo"> 
               <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
-             </div><!-- End Client Item -->
+             </div><!-- End Client Item --  
             
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item -- 
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
 
             <div class="col-xl-2 col-md-3 col-6 client-logo">
               <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
+            </div><!-- End Client Item --
     
-          </div><!-- End Client Images Container -->
+          </div><!-- End Client Images Container --
         </div><!-- End Swiper Slide -->
 
   
-        <!-- Add more swiper-slide elements for more sets of images -->
+        <!-- Add more swiper-slide elements for more sets of images --
 
 
 
 
-      </div><!-- End Swiper Wrapper -->
-    </div><!-- End Swiper Container -->
-  </div><!-- End Container Fluid -->
-</section><!-- End Clients Section -->
+      </div><!-- End Swiper Wrapper --
+    </div><!-- End Swiper Container --
+  </div><!-- End Container Fluid --
+</section>End Clients Section -->
 
 
     <!-- About Section - Home Page -->
@@ -247,7 +353,7 @@
               lead a hassle free solutions. 
             </p>
             
-            <a href="index.html" class="logo-2 me-xl-0">
+            <a href="index.php" class="logo-2 me-xl-0">
         <p> WE ARE ISO 9001 2015 Certified</p>
         
         <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
@@ -357,138 +463,97 @@
 
 
      <!-- Brands we Handle Section - Home Page -->
-<section id="Brands" class="clients">
-  <div class="container-fluid" data-aos="fade-up">
-    <div class="swiper">
-      <!-- Swiper Configuration Template -->
-      <template class="swiper-config">
-        {
-          "loop": true,
-          "speed": 3000,
-          "autoplay": {
-            "delay": 1000
-          },
-          "slidesPerView": "auto",
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          }
-        }
-      </template>
-      <!-- Swiper Wrapper (Container for client logos) -->
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <!-- Container for Brand images -->
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-1.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
+     <section id="brands" class="slide-show">
 
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-2.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-3.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-4.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-5.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-6.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
+      <div class = "slider">
+    
+        <div class="slide-track-2">
+    
+          <!--  slide images -->
+    
+            <div class=" brand-log">
+                  <img src="assets/img/Brands/Brand-1.png" style="max-height: 40%;" class="img-fluid"  alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-2.png"  style="max-height: 20%;" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-3.png"  style="max-height: 20%;"class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-4.png"  style="max-height: 30%;"class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-5.jpg"  style="max-height: 20%;"class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-6.svg"  style="max-height: 20%;" class="img-fluid"alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-7.jpg" style="max-height: 100%;"class="img-fluid"  alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-8.svg"  class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-9.svg"  class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+    
+                <!-- Set of 9 -->
+    
+             <div class="brand-log">
+                  <img src="assets/img/Brands/Brand-10.png" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-11.svg"  class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-12.svg"  class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-13.jpg"  class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-14.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-15.jpeg" style="max-height: 80%;" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-16.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-17.png" style="max-height: 100%;" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -->
+    
+            <div class="brand-log">
+                  <img src="assets/img/Brands/brand-18.png" style="max-height: 80%;" class="img-fluid"  alt="New Client">
+            </div><!-- End Client Item -->
+    
+    
             
     
-          </div><!-- End Brands Images Container -->
-        </div><!-- End Swiper Slide -->
-
-        <div class="swiper-slide">
-          <!-- Container for Brands images -->
-          <div class="row gy-4 Brands-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-7.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-8.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-9.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/Brand-10.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-11.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-13.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-
+        </div>
     
-          </div><!-- End Brands Images Container -->
-        </div><!-- End Swiper Slide -->
-
-        <div class="swiper-slide">
-          <!-- Container for Brands images -->
-
-          <div class="row gy-4 client-images">
-
-         <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-12.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-            
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-14.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-15.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo"> 
-              <img src="assets/img/Brands/brand-16.jpg" class="img-fluid" alt="New Client">
-            </div>
-            <!-- End Brands Item -->
-
-            
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-17.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/brand-18.png" class="img-fluid" alt="New Client">
-            </div><!-- End Brands Item -->
+      </div>
+    </section>
     
-          </div><!-- End Brands Images Container -->
-        </div><!-- End Swiper Slide -->
-
-  
-        <!-- Add more swiper-slide elements for more sets of images -->
-
-
-
-
-      </div><!-- End Swiper Wrapper -->
-    </div><!-- End Swiper Container -->
-  </div><!-- End Container Fluid -->
-</section><!-- End Brands Section -->
-
-
   
 
     <!-- ======= Services Section ======= -->
@@ -509,11 +574,11 @@
                 <img src="assets/img/elv services.jpg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <a href="service-details.html#ELV-services">
+                <a href="service-details.php#ELV-services">
                 <div class="icon">
                   <i class="bi bi-lightning-charge"></i>
                 </div></a>
-                <a href="service-details.html#ELV-services" class="stretched-link">
+                <a href="service-details.php#ELV-services" class="stretched-link">
                   <h3>ELV Services</h3>
                 </a>
                 <p>ELV's are nothing but systems that work on low voltages (50V AC or 120V DC). They do not define a particular system, but refer to a wide range of seemingly unconnected systems that work within these voltage levels.</p>
@@ -527,11 +592,11 @@
                 <img src="assets/img/IT Services.png" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <a href="service-details.html#ELV-services">
+                <a href="service-details.php#ELV-services">
                 <div class="icon">
                   <i class="bi bi-router"></i>
                 </div></a>
-                <a href="service-details.html#IT-services" class="stretched-link">
+                <a href="service-details.php#IT-services" class="stretched-link">
                   <h3>IT and Networking Services </h3>
                 </a>
                 <p>Network Services/Managed Network Services are the services of management of networks by IT service providers for their clients. The scope of network services extends from LAN/WLAN management.</p>
@@ -545,11 +610,11 @@
                 <img src="assets/img/Mep.jpg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <a href="service-details.html#MEP-services">
+                <a href="service-details.php#MEP-services">
                 <div class="icon">
                   <i class="bi bi-tools"></i>
                 </div></a>
-                <a href="service-details.html#MEP-services" class="stretched-link">
+                <a href="service-details.php#MEP-services" class="stretched-link">
                   <h3>MEP Services</h3>
                 </a>
                 <p>Our engineers with diverse skills and extensive domain expertise create MEPF BIM models and validate these models for constructability, performance, and maintenance of the building.</p>
@@ -566,11 +631,11 @@
                 <div class="icon">
                   <i class="bi bi-bounding-box-circles"></i>
                 </div>
-                <a href="service-details.html" class="stretched-link">
+                <a href="service-details.php" class="stretched-link">
                   <h3>Asperiores Commodit</h3>
                 </a>
                 <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-                <a href="service-details.html" class="stretched-link"></a>
+                <a href="service-details.php" class="stretched-link"></a>
               </div>
             </div>
           </div><!-- End Service Item --
@@ -889,7 +954,7 @@
           </div><!-- End Portfolio Container -->
 
           <div class = "port-buts">
-            <a href="portfolio-details.html">
+            <a href="portfolio-details.php">
              <button type="submit" class="all-port"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all Projects</button>
              </a>
           </div>
@@ -1060,7 +1125,7 @@
     
         
           <div class = "car-buts">
-           <a href="careers.html">
+           <a href="careers.php">
             <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all open jobs</button>
             </a>
          </div>
@@ -1315,7 +1380,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="d-flex">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                  <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
                   <div>
                     <h3>Saul Goodman</h3>
                     <h4>Ceo & Founder</h4>
@@ -1335,7 +1400,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="d-flex">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt="">
+                  <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
                   <div>
                     <h3>Sara Wilsson</h3>
                     <h4>Designer</h4>
@@ -1355,7 +1420,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="d-flex">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt="">
+                  <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
                   <div>
                     <h3>Jena Karlis</h3>
                     <h4>Store Owner</h4>
@@ -1375,7 +1440,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="d-flex">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt="">
+                  <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
                   <div>
                     <h3>Matt Brandon</h3>
                     <h4>Freelancer</h4>
@@ -1395,7 +1460,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="d-flex">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt="">
+                  <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
                   <div>
                     <h3>John Larson</h3>
                     <h4>Entrepreneur</h4>
@@ -1450,7 +1515,7 @@
               <p class="post-category">Politics</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                <a href="blog-details.php">Dolorum optio tempore voluptas dignissimos</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -1476,7 +1541,7 @@
               <p class="post-category">Sports</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                <a href="blog-details.php">Nisi magni odit consequatur autem nulla dolorem</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -1502,7 +1567,7 @@
               <p class="post-category">Entertainment</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
+                <a href="blog-details.php">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -1649,25 +1714,25 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="index.html#about">About us</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#portfolio">Portfolio</a></li>
-                    <li><a href="index.html#careers">Join us</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.php#hero">Home</a></li>
+                    <li><a href="index.php#about">About us</a></li>
+                    <li><a href="index.php#services">Services</a></li>
+                    <li><a href="index.php#portfolio">Portfolio</a></li>
+                    <li><a href="index.php#careers">Join us</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="service-details.html">ELV services</a></li>
-                    <li><a href="service-details.html">IT and Networking Services</a></li>
-                    <li><a href="service-details.html">MEP Services</a></li>
+                    <li><a href="service-details.php">ELV services</a></li>
+                    <li><a href="service-details.php">IT and Networking Services</a></li>
+                    <li><a href="service-details.php">MEP Services</a></li>
                 </ul>
             </div>
             <div class="col-lg-5 col-md-12 footer-about" >
-              <a href="index.html" class="logo d-flex align-items-center">
+              <a href="index.php" class="logo d-flex align-items-center">
               </a>
               <h4 style="margin-left: 4em;" >&nbsp;&nbsp;Our Social Network</p>
               <div class="social-links d-flex mt-4">
@@ -1720,21 +1785,21 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.html#hero">Home</a></li>
-              <li><a href="index.html#about">About us</a></li>
-              <li><a href="service-details.html">Services</a></li>
-              <li><a href="index.html#portfolio">Portfolio</a></li>
-              <li><a href="index.html#careers">Join us</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="index.php#hero">Home</a></li>
+              <li><a href="index.php#about">About us</a></li>
+              <li><a href="service-details.php">Services</a></li>
+              <li><a href="index.php#portfolio">Portfolio</a></li>
+              <li><a href="index.php#careers">Join us</a></li>
+              <li><a href="index.php#contact">Contact</a></li>
             </ul>
           </div>
   
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="service-details.html">ELV services</a></li>
-              <li><a href="service-details.html">IT and Networking Services</a></li>
-              <li><a href="service-details.html">MEP Services</a></li>
+              <li><a href="service-details.php">ELV services</a></li>
+              <li><a href="service-details.php">IT and Networking Services</a></li>
+              <li><a href="service-details.php">MEP Services</a></li>
             </ul>
           </div>
   
