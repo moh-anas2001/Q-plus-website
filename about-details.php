@@ -97,7 +97,112 @@
     </div><!-- End Page Title -->
 
     <!-- Service-details Section - Services Details Page -->
-    <section id="service-details" class="service-details">
+    <section id="about" class="about background-image">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row position-relative">
+
+          <div class="col-lg-7 about-img" style="background-image: url('assets/img/aboutus.jpeg');">
+
+          </div>
+
+          <div class="col-lg-7">
+            <!-- <h2>Consequatur eius et magnam</h2> -->
+            <div class="our-story">
+              <!-- <h4>Est 1988</h4> -->
+              <h3>About Us</h3>
+              <p> Q Plus Technical Service LLC is a company raised by a team of
+                experienced professionals to provide a single window solution
+                for all Building Services, Interior Decoration, Electrical, HVAC,
+                Plumbing, IT & ELV requirements. Q Plus means, Quality plus
+                and we believe quality will be always a plus which will lead a
+                hassle free solutions. We study your requirements and
+                understand your needs, we design, propose and construct as per
+                requirements. We get to know your business in depth to provide
+                a solution which meets your goals. We ensure prompt responds
+                to your queries and attend to resolve your issues as a leader.
+                Along with bringing the best brands on the table, we undertake
+                all the incidental and ancillary services including installation,
+                maintenance, up gradation and repairs, thus giving our clients
+                complete peace of mind and hassle free business experience.
+                We continued to progress and earn respect of our clients as
+                being one of the honest, transparent and trustworthy service
+                providers across the UAE
+
+
+
+
+
+                <br>
+                <br>
+                <span class="fw-bold">We are ISO 9001:2015 Certified Company.</span> 
+                <br>
+                 <img src="assets/img/ISO 9001 2015.jpg" alt="responsive webite" height="100px"/> 
+               <img src="assets/img/ASCB.png" alt="responsive webite" height="100px"/>
+              </p>
+              
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    
+
+    <!-- ======= Alt Services Section ======= -->
+    <section id="alt-services" class="alt-services background-image">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-4">
+          <div class="col-lg-6 img-bg" style="background-image: url( 'assets/img/vision.jpeg');" data-aos="zoom-in" data-aos-delay="120"></div>
+
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Our Vision</h3>
+            <p>Our Vision is to provide a quality work from start to end
+              by adopting modern construction technologies which
+              will remind the Q Plus as a leader in the Market.
+              Fortunately, we have a team of professionals having
+              expertise in all the services and provides you with
+              optimal solutions.</p>           
+           
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Alt Services Section -->
+
+    <!-- ======= Alt Services Section 2 ======= -->
+    <section id="alt-services-2" class="alt-services section-bg background-image">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-4">
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Our Mission</h3>
+            <p>Our mission is to enhance business
+              growth of our customers with high
+              quality technologies and services that
+              create valuable and reliable outcomes
+            </p>
+
+            
+          </div>
+
+          <div class="col-lg-6 img-bg" style="background-image: url('assets/img/mission.jpeg');" data-aos="zoom-in" data-aos-delay="120"></div>
+        </div>
+
+      </div>
+    </section><!-- End Alt Services Section 2 -->
+
+
+
+
+
+
+    <!-- <section id="service-details" class="service-details">
 
       <div class="container">
 
@@ -114,17 +219,17 @@
                 <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Graphic Design</span></a>
                 <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Marketing</span></a>
               </div>
-            </div><!-- End Services List -->
+            </div>End Services List -->
 
-            <div class="service-box">
+            <!-- <div class="service-box">
               <h4>Download Catalog</h4>
               <div class="download-catalog">
                 <a href="#"><i class="bi bi-filetype-pdf"></i><span>Catalog PDF</span></a>
                 <a href="#"><i class="bi bi-file-earmark-word"></i><span>Catalog DOC</span></a>
               </div>
-            </div><!-- End Services List -->
+            </div>End Services List -->
 
-            <div class="help-box d-flex flex-column justify-content-center align-items-center">
+            <!-- <div class="help-box d-flex flex-column justify-content-center align-items-center">
               <i class="bi bi-headset help-icon"></i>
               <h4>Have a Question?</h4>
               <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1 5589 55488 55</span></p>
@@ -156,7 +261,7 @@
 
       </div>
 
-    </section><!-- End Service-details Section -->
+    </section>End Service-details Section -->
 
   </main>
 
