@@ -278,10 +278,10 @@ section {
 /* Home Page Custom Header
 ------------------------------*/
 .index-page .header {
-  --color-background: rgba(255, 255, 255, 0);
+  /* --color-background: rgba(255, 255, 255, 0); */
   --color-secondary: #ffffff;
-  --color-nav: rgba(255, 255, 255, 0.515);
-  --color-nav-hover: #ffffff;
+  /* --color-nav: rgba(255, 255, 255, 0.515); */
+  /* --color-nav-hover: #ffffff; */
 }
 
 /* Home Page Custom Header on page scroll
@@ -608,8 +608,8 @@ section {
   .navmenu a,
   .navmenu a:focus {
     color: var(--color-nav);
-    padding: 18px 15px;
-    font-size: 16px;
+    padding: 15px 15px;
+    font-size: 20px;
     font-family: var(--font-secondary);
     font-weight: 400;
     display: flex;
@@ -1129,7 +1129,8 @@ section {
   --color-background: #000000;
   --color-background-rgb: 0, 0, 0;
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: 80vh;
   position: relative;
   padding: 160px 0 80px 0;
   display: flex;
@@ -1157,11 +1158,15 @@ section {
 }
 
 .hero .container {
-  position: relative;
+   position: relative;
   z-index: 3;
+
 }
 
 .hero h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   margin: 0;
   font-family: stevie-sans, sans-serif;
   font-style: normal;
@@ -1171,8 +1176,12 @@ section {
 
 .hero p {
   color: rgba(var(--color-default-rgb), 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   margin: 5px 0 0 0;
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 30px;
 }
 
 .hero .sign-up-form {
@@ -1218,15 +1227,116 @@ section {
 
 /* Clients Section - Home Page
 ------------------------------*/
-.clients {
+ .slide-show{
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  margin-top: -40px;
+  margin-bottom: -40px;
+  }
+ .slider{
+    height: 100px;
+    margin:auto;
+    position:relative;
+    width: 90%;
+    display:grid;
+    place-items: center;
+    overflow: hidden;
+  
+  }
+  .slide-track{
+    display: flex;
+    width: calc(250px * 16);
+    animation: scroll 20s linear infinite;
+    
+  
+  }
+
+  @keyframes scroll {
+      0%{
+          transform: translateX(0);
+      }
+      100%{
+          transform: translateX(calc(-250px*11));
+          /* transform: translateX(calc(250px*9));  to right side*/
+      }
+      
+  }
+  
+  .cli-log {
+    height: 90px; /* Adjust the height as needed */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0; /* Remove padding */
+    /* perspective: 100px; */
+    overflow: hidden; /* Hide overflow, in case images are larger */
+  }
+  
+  .cli-log img {
+    max-height: 70%;
+    width: auto;
+    margin: auto; /* Center the image horizontally */
+    /* display: block; Remove any residual spacing from inline-block behavior */
+  }
+  .cli-log img:hover{
+      transform: translateZ(20px);
+  }
+
+
+
+  .slide-track-2{
+    display: flex;
+    width: calc(250px * 16);
+    animation: scroll 20s linear infinite;
+    
+  
+  }
+
+  @keyframes scroll {
+      0%{
+          transform: translateX(0);
+      }
+      100%{
+          transform: translateX(calc(-250px*11));
+          /* transform: translateX(calc(250px*9));  to right side*/
+      }
+      
+  }
+
+
+  .brand-log {
+    height: 90px; /* Adjust the height as needed */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0; /* Remove padding */
+    /* perspective: 100px; */
+    overflow: hidden; /* Hide overflow, in case images are larger */
+  }
+  
+  .brand-log img {
+    max-height: 40%;
+    width: auto;
+    margin: auto; /* Center the image horizontally */
+    /* display: block; Remove any residual spacing from inline-block behavior */
+  }
+  .brand-log img:hover{
+      transform: translateZ(20px);
+  }
+
+
+
+
+/* .clients {
   padding: 0px 0px 4px 0px;
 }
 .client-images {
-  display: inline-flexbox;
+  display: flexbox;
   flex-wrap: nowrap;
   overflow: hidden;
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center;
   margin: center;
   scroll-snap-type: x mandatory;
 }
@@ -1237,7 +1347,8 @@ section {
   align-items: center;
   margin: 15px 0px;
   scroll-snap-align: start;
-}
+  
+}  */
 
 /* .clients .client-logo {
   display: flex;
@@ -1253,15 +1364,15 @@ section {
   opacity: 0.65;
   /* filter: grayscale(100); 
 } */
-.client-logo img {
+/* .client-logo img {
   padding-top: 40px;
   max-width: 40%;
   align-items: center;
-  opacity: 0.95; /* Initial opacity */
+  opacity: 0.95; 
   transition: opacity 0.3s ease-in-out;
-}
+} */
 
-.clients .client-logo img:hover {
+/* .clients .client-logo img:hover {
   filter: none;
   opacity: 1;
 }
@@ -1278,7 +1389,7 @@ section {
   100%{
       transform: translateX(calc(250px * 4));
   }
-}
+} */
 
 
 /* About Section - Home Page

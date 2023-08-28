@@ -44,7 +44,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="container-fluid d-flex align-items-center justify-content-between">
   
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <img src="assets/img/logo.png" alt="">
           <!-- <h1>Q PLUS</h1>
@@ -54,26 +54,26 @@
         <!-- Nav Menu -->
         <nav id="navmenu" class="navmenu">
           <ul>
-          <li><a href="index.html#hero" >Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#careers">Join us</a></li>
-          <!-- <li><a href="blog.html" class="active">Blog</a></li> -->
+          <li><a href="index.php#hero" >Home</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a href="index.php#services">Services</a></li>
+          <li><a href="index.php#portfolio">Portfolio</a></li>
+          <li><a href="index.php#careers">Join us</a></li>
+          <!-- <li><a href="blog.php" class="active">Blog</a></li> -->
             </li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.php#contact">Contact</a></li>
           </ul>
   
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
-        <!-- <a href="index.html" class="logo-2 me-xl-0">
+        <!-- <a href="index.php" class="logo-2 me-xl-0">
           <p> WE ARE ISO 9001 2015 Certified</p>
           
           <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
           <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
         </a> -->
   
-        <a class="btn-getstarted" href="index.html#contact">Contact us</a>
+        <a class="btn-getstarted" href="index.php#contact">Contact us</a>
       </div>
     </header><!-- End Header -->
 
@@ -94,7 +94,7 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">Blog</li>
           </ol>
         </div>
@@ -118,7 +118,7 @@
               <p class="post-category">Politics</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                <a href="blog-details.php">Dolorum optio tempore voluptas dignissimos</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -144,7 +144,7 @@
               <p class="post-category">Sports</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                <a href="blog-details.php">Nisi magni odit consequatur autem nulla dolorem</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -170,7 +170,7 @@
               <p class="post-category">Entertainment</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
+                <a href="blog-details.php">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -196,7 +196,7 @@
               <p class="post-category">Sports</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
+                <a href="blog-details.php">Non rem rerum nam cum quo minus olor distincti</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -222,7 +222,7 @@
               <p class="post-category">Politics</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
+                <a href="blog-details.php">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -248,7 +248,7 @@
               <p class="post-category">Entertainment</p>
 
               <h2 class="title">
-                <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
+                <a href="blog-details.php">Distinctio provident quibusdam numquam aperiam aut</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -306,21 +306,21 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.html#hero">Home</a></li>
-              <li><a href="index.html#about">About us</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#portfolio">Portfolio</a></li>
-              <li><a href="index.html#careers">Join us</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="index.php#hero">Home</a></li>
+              <li><a href="index.php#about">About us</a></li>
+              <li><a href="index.php#services">Services</a></li>
+              <li><a href="index.php#portfolio">Portfolio</a></li>
+              <li><a href="index.php#careers">Join us</a></li>
+              <li><a href="index.php#contact">Contact</a></li>
             </ul>
           </div>
   
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="service-details.html">ELV services</a></li>
-              <li><a href="service-details.html">IT and Networking Services</a></li>
-              <li><a href="service-details.html">MEP Services</a></li>
+              <li><a href="service-details.php">ELV services</a></li>
+              <li><a href="service-details.php">IT and Networking Services</a></li>
+              <li><a href="service-details.php">MEP Services</a></li>
             </ul>
           </div>
   
