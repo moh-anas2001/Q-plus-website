@@ -54,7 +54,7 @@
         <!-- Nav Menu -->
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.php#hero" >Home</a></li>
+            <li><a href="index.php#home" >Home</a></li>
             <li><a href="index.php#about">About</a></li>
             <li><a href="index.php#services">Services</a></li>
             <li><a href="portfolio-details.php" class="active">Portfolio</a></li>
@@ -464,7 +464,7 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.php#hero" >Home</a></li>
+              <li><a href="index.php#home" >Home</a></li>
               <li><a href="index.php#about">About</a></li>
               <li><a href="index.php#service">Services</a></li>
               <li><a href="portfolio-details.php"class="active">Portfolio</a></li>
