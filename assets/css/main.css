@@ -186,7 +186,7 @@ section {
 
 .header .logo img {
   max-height: 70px;
-  margin-left: 15px;
+  /* margin-left: 15px; */
   margin-right: 0;
 }
 .logo-2 .iso-1{
@@ -239,6 +239,9 @@ section {
 @media (max-width: 1200px) {
   .header .logo {
     order: 1;
+  }
+  .header .logo img{
+    max-height: 50px;
   }
 
   .header .btn-getstarted {
@@ -1174,6 +1177,7 @@ section {
   font-weight: 700;
 }
 
+
 .hero p {
   color: rgba(var(--color-default-rgb), 0.8);
   display: flex;
@@ -1218,6 +1222,8 @@ section {
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 32px;
+    /* justify-content: center; */
+    text-align: center;
   }
 
   .hero p {
