@@ -350,7 +350,9 @@
         <div class="row align-items-xl-center gy-5">
 
           <div class="col-xl-5 content">
-            <h3>About Us</h3>
+          <div class="sec-title" data-aos="fade-up">
+          <h2> About us</h2><br>
+          </div>
             <h2>Quality is the best business plan</h2>
             <p >Q Plus Technical Service LLC is a company raised by a team of experienced professionals to provide a single window solution for all Building Services, Interior Decoration, Electrical, HVAC, Plumbing, IT & ELV requirements. Q Plus means, Quality plus and we believe quality will be always a plus which will lead a hassle free solutions. We study your requirements and understand your needs, we design, propose and construct as per requirements. We get to know your business in depth to provide a solution which meets your goals. We ensure prompt responds to your queries and attend to resolve your issues as a leader.
                Along with bringing the best brands on the table, we undertake all the incidental and ancillary services including installation, maintenance, up gradation and repairs, thus giving our clients complete peace of mind and hassle free business experience. 
@@ -589,7 +591,7 @@
                 <a href="service-details.php#ELV-services" class="stretched-link">
                   <h3>ELV Services</h3>
                 </a>
-                <p>Elevate your projects with our ELV Systems expertise. From cutting-edge security and seamless communication networks to smart automation designs, we offer a comprehensive approach that guarantees integration and superior performance.
+                <p class="remove-space">Elevate your projects with our ELV Systems expertise. From cutting-edge security and seamless communication networks to smart automation designs, we offer a comprehensive approach that guarantees integration and superior performance.
                    With a commitment to quality, sustainability, and technical proficiency, we stand by you as your reliable partner in creating spaces that define the future.</p>
               </div>
             </div>

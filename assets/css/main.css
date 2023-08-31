@@ -252,13 +252,14 @@ section {
     order: 1;
   }
   .header .logo img{
-    max-height: 30px;
+    max-height: 50px;
   }
 
   .header .btn-getstarted {
-    order: 2;
+    /* order: 2;
     margin: 0 15px 0 0;
-    padding: 6px 20px;
+    padding: 6px 20px; */
+    display: none;
   }
 
   .header .navmenu {
@@ -1482,6 +1483,41 @@ section {
 
 /* About Section - Home Page
 ------------------------------*/
+
+.sec-title{
+  text-align: center;
+  padding-bottom: -10px;
+}
+
+.sec-title h2 {
+  color: var(--color-secondary);
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+@media (max-width:475px){
+  .sec-title h2{
+  font-size: 20px;
+  }
+}
+
+.sec-title h2:before,
+.sec-title h2:after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+.sec-title h2:before {
+  margin: 0 15px 10px 0;
+}
+
+.sec-title h2:after {
+  margin: 0 0 10px 15px;
+}
+
 .about {
   --color-background: #f4f4f4;
 }
@@ -1870,6 +1906,7 @@ section {
 
 .service-item p{
   text-align: justify;
+
 }
 
 .services .service-item:hover .details h3 {
@@ -1888,6 +1925,7 @@ section {
 .services .service-item:hover .img img {
   transform: scale(1.2);
 }
+
 
 /* Features Section - Home Page
 ------------------------------*/
