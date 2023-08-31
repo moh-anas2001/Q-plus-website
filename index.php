@@ -102,7 +102,13 @@
 
 
 <section id="clients" class="slide-show">
+    <!-- <div class = sli-head> -->
+      <!-- <h4>Our Clients</h4>
+    </div> -->
 
+    <div class=" sec-tit" data-aos="fade-up">
+          <h2> Our Clients</h2><br>
+    </div>
   <div class = "slider">
 
     <div class="slide-track">
@@ -367,17 +373,17 @@
           <div class="col-xl-7 abt">
             <div class="row gy-4 icon-boxes">
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-6 ic-0" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
                   <i class="bi bi-buildings"></i>
                   <h3>Our Clients</h3>
-                  <p >Our company strive the best to abide the client expectations and we 
-                    believe that nothing but potential clients help to expand the business.
+                  <p >Our company constantly strives its best to abide by the client expectations,
+                     and we firmly believe that nothing but potential clients help greatly to expand the business.
                   </p>
                 </div>
               </div> <!-- End Icon Box -->
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-md-6 ic-1" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
                   <i class="bi bi-clipboard-pulse"></i>
                   <h3>CEO Message</h3>
@@ -387,7 +393,7 @@
                 </div>
               </div> <!-- End Icon Box -->
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="col-md-6 ic-2" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
                   <i class="bi bi-command"></i>
                   <h3>Our Vision</h3>
@@ -397,7 +403,7 @@
                 </div>
               </div> <!-- End Icon Box -->
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="col-md-6 ic-3" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
                   <i class="bi bi-graph-up-arrow"></i>
                   <h3>Our Mission</h3>
@@ -462,6 +468,10 @@
 
      <!-- Brands we Handle Section - Home Page -->
      <section id="brands" class="slide-show">
+
+     <div class=" sec-tit" data-aos="fade-up">
+          <h2> Brands we Handle</h2><br>
+    </div>
 
       <div class = "slider">
     
@@ -579,7 +589,8 @@
                 <a href="service-details.php#ELV-services" class="stretched-link">
                   <h3>ELV Services</h3>
                 </a>
-                <p>ELV's are nothing but systems that work on low voltages (50V AC or 120V DC). They do not define a particular system, but refer to a wide range of seemingly unconnected systems that work within these voltage levels.</p>
+                <p>Elevate your projects with our ELV Systems expertise. From cutting-edge security and seamless communication networks to smart automation designs, we offer a comprehensive approach that guarantees integration and superior performance.
+                   With a commitment to quality, sustainability, and technical proficiency, we stand by you as your reliable partner in creating spaces that define the future.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -597,7 +608,7 @@
                 <a href="service-details.php#IT-services" class="stretched-link">
                   <h3>IT and Networking Services </h3>
                 </a>
-                <p>Network Services/Managed Network Services are the services of management of networks by IT service providers for their clients. The scope of network services extends from LAN/WLAN management.</p>
+                <p>Empower your business with tailored IT and Networking solutions, meticulously designed to match your requirements. Our adept team architects high-performance networks, guaranteeing flawless connectivity and streamlined data management. Whether optimizing infrastructure or fortifying security, our solutions seamlessly pave the path to your digital triumph.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -615,7 +626,9 @@
                 <a href="service-details.php#MEP-services" class="stretched-link">
                   <h3>MEP Services</h3>
                 </a>
-                <p>Our engineers with diverse skills and extensive domain expertise create MEPF BIM models and validate these models for constructability, performance, and maintenance of the building.</p>
+                <p> Our MEP services provide a foundation of excellence for your projects. 
+                  From innovative electrical systems and efficient mechanical designs to meticulously planned plumbing solutions, we offer a holistic approach that ensures seamless integration and optimal performance. 
+                  With a focus on quality, sustainability, and technical expertise, we are your trusted partner in shaping spaces that stand the test of time.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -764,7 +777,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/projects/fairmont.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>FAIRMONT HOTEL, ABU DHABI</h4>
+                <h4>FAIRMONT MARINA, ABU DHABI</h4>
                 
                 
               </div>
@@ -801,13 +814,13 @@
             </div>
             <!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>KAIKROO OFFICE, AL QUOZ, DUBAI</h4>
+                <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4> -->
                 
-              </div>
-            </div><!-- End Portfolio Item -->
+              <!-- </div>
+            </div>End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/projects/rotana hotel.jpg" class="img-fluid" alt="">
@@ -825,17 +838,17 @@
                 
               </div>
             </div>
-            <!-- End Portfolio Item --
+            <!-- End Portfolio Item -->
 
             
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/projects/g+1 commercial building.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>G+1 COMMERCIAL BUILDING, DUBAI</h4>
                 
               </div>
-            </div><!-- End Portfolio Item --
+            </div>End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/projects/jewel of creek.jpg" class="img-fluid" alt="">
@@ -1618,7 +1631,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                   <i class="bi bi-geo-alt"></i>
                   <h3>Address</h3>
-                  <p>Q Plus Technical Service LLC</p>
+                  <p><strong>Q Plus Technical Service LLC</strong></p>
                   <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
                   <p>Al Qusais, Dubai UAE</p>
                 </div>
@@ -1628,8 +1641,8 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
-                  <p>Mob: +971 581174967</p>
-                  <p>Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110</p>
+                  <p><strong>Mob:</strong> +971 581174967</p>
+                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp; 04 - 393 1110</p>
                 </div><br>
               </div><!-- End Info Item -->
 
@@ -1637,7 +1650,9 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>info@qplus-ts.com</p>
+                  <p>info@qplus-ts.com</p><br>
+                  <p> <strong>For Tecnical Support</strong></p>
+                  <p>example@ex.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1645,8 +1660,10 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="500">
                   <i class="bi bi-clock"></i>
                   <h3>Open Hours</h3>
-                  <p>Monday - Friday</p>
-                  <p>9:00AM - 06:00PM</p>
+                  <p><strong> Monday - Friday</strong></p>
+                  <p>8:30AM - 05:30PM</p>
+                  <p><strong>Saturday</strong></p>
+                  <p>8:30AM - 2:00PM</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1844,8 +1861,6 @@
   </div>
 
   <!-- Scripts Reference -->
-
-
 
   <!-- Google Recaptcha JS File -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
