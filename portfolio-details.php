@@ -245,7 +245,7 @@
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                 <img src="assets/img/projects/fairmont.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>FAIRMONT HOTEL, ABU DHABI</h4>
+                  <h4>FAIRMONT Marina HOTEL, ABU DHABI</h4>
                   
                   
                 </div>
@@ -280,13 +280,7 @@
                 </div>
               </div><!-- End Portfolio Item -->
   
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>KAIKROO OFFICE, AL QUOZ, DUBAI</h4>
-                  
-                </div>
-              </div><!-- End Portfolio Item -->
+             
   
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                 <img src="assets/img/projects/rotana hotel.jpg" class="img-fluid" alt="">
@@ -413,7 +407,7 @@
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                 <img src="assets/img/projects/barrari natural resources.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>BARRARI NATURAL RESOURCES, AL AIN</h4>
+                  <h4>BARRARI NATURAL RESOURCES,AL AIN</h4>
   
                 </div>
               </div><!-- End Portfolio Item -->
@@ -425,6 +419,14 @@
                   
                 </div>
               </div><!-- End Portfolio Item -->
+
+
+           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4>
+              </div>
+            </div><!-- End Portfolio Item -->
   
             </div><!-- End Portfolio Container -->
   
