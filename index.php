@@ -49,7 +49,7 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.php#hero" class="active">Home</a></li>
+          <li><a href="index.php#home" class="active">Home</a></li>
           <li><a href="index.php#about">About</a></li>
           <li><a href="index.php#services">Services</a></li>
           <li><a href="index.php#portfolio">Portfolio</a></li>
@@ -75,8 +75,8 @@
 
   <main id="main">
 
-    <!-- Hero Section - Home Page -->
-    <section id="hero" class="hero">
+    <!-- home Section - Home Page -->
+    <section id="home" class="home">
 
       <img src="assets/img/Home-2.jpg" alt="Background" data-aos="fade-in">
 
@@ -96,7 +96,7 @@
         </div>
       </div>
 
-    </section><!-- End Hero Section -->
+    </section><!-- End home Section -->
 
 <!-- Clients Section - Home Page -->
 
@@ -350,7 +350,9 @@
         <div class="row align-items-xl-center gy-5">
 
           <div class="col-xl-5 content">
-            <h3>About Us</h3>
+          <div class="sec-title" data-aos="fade-up">
+          <h2> About us</h2><br>
+          </div>
             <h2>Quality is the best business plan</h2>
             <p >Q Plus Technical Service LLC is a company raised by a team of experienced professionals to provide a single window solution for all Building Services, Interior Decoration, Electrical, HVAC, Plumbing, IT & ELV requirements. Q Plus means, Quality plus and we believe quality will be always a plus which will lead a hassle free solutions. We study your requirements and understand your needs, we design, propose and construct as per requirements. We get to know your business in depth to provide a solution which meets your goals. We ensure prompt responds to your queries and attend to resolve your issues as a leader.
                Along with bringing the best brands on the table, we undertake all the incidental and ancillary services including installation, maintenance, up gradation and repairs, thus giving our clients complete peace of mind and hassle free business experience. 
@@ -432,7 +434,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects Done</p>
             </div>
           </div><!-- End Stats Item -->
@@ -589,7 +591,7 @@
                 <a href="service-details.php#ELV-services" class="stretched-link">
                   <h3>ELV Services</h3>
                 </a>
-                <p>Elevate your projects with our ELV Systems expertise. From cutting-edge security and seamless communication networks to smart automation designs, we offer a comprehensive approach that guarantees integration and superior performance.
+                <p class="remove-space">Elevate your projects with our ELV Systems expertise. From cutting-edge security and seamless communication networks to smart automation designs, we offer a comprehensive approach that guarantees integration and superior performance.
                    With a commitment to quality, sustainability, and technical proficiency, we stand by you as your reliable partner in creating spaces that define the future.</p>
               </div>
             </div>
@@ -1370,7 +1372,10 @@
       <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
         <h3>Testimonials</h3><br>
         <p>
-          "Discover what our valued clients have to say about their experience partnering with us. From exceeding expectations to transforming visions into reality, our testimonials showcase the impact we've had on businesses just like yours. Dive into their stories and learn how our expertise, dedication, and innovative solutions have made a difference. These are more than just words – they're a testament to our commitment to your success."
+          Discover what our valued clients have to say about their experience partnering with us. 
+          From exceeding expectations to transforming visions into reality, our testimonials showcase the impact we've had on businesses just like yours.
+           Dive into their stories and learn how our expertise, dedication, and innovative solutions have made a difference. 
+           These are more than just words – they're a testament to our commitment to your success.
         </p>
       </div>
 
@@ -1735,7 +1740,7 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="index.php#hero">Home</a></li>
+                    <li><a href="index.php#home">Home</a></li>
                     <li><a href="index.php#about">About us</a></li>
                     <li><a href="index.php#services">Services</a></li>
                     <li><a href="index.php#portfolio">Portfolio</a></li>
@@ -1806,7 +1811,7 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.php#hero">Home</a></li>
+              <li><a href="index.php#home">Home</a></li>
               <li><a href="index.php#about">About us</a></li>
               <li><a href="service-details.php">Services</a></li>
               <li><a href="index.php#portfolio">Portfolio</a></li>
