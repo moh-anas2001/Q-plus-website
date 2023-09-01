@@ -40,7 +40,7 @@ try {
 
     // Your Gmail credentials
     $mail->Username = "mohamedanasfrkz@gmail.com";
-    $mail->Password = "ordvyahnectpptfg"; // Use the app password you generated
+    $mail->Password = "hbwzjlxvghifpxph"; // Use the app password you generated
 
     // Set sender and recipient for receiving form details
     $mail->setFrom($email, $name);
