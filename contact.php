@@ -54,7 +54,7 @@ try {
     $mail->send();
 
     // Set sender and recipient for user confirmation
-    $mail->ClearAllRecipients(); // Clear previous recipients
+    $mail->clearAllRecipients(); // Clear previous recipients
     $mail->setFrom("mohamedanasfrkz@gmail.com", "Mohamed Anas"); // Change to your email and name
     $mail->addAddress($email, $name);
 
@@ -65,14 +65,11 @@ try {
     // Send the confirmation email to the user
     $mail->send();
 
-    //Display success message using JavaScript
+    // Display success message using JavaScript
     echo '<script>alert("Message sent successfully!");</script>';
     // header("Location: index.php");
 } catch (Exception $e) {
     // Catch and handle any exceptions that occur
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Message could not be sent. Mailer Error: " . $mail->ErrorInfo;
 }
-
-
- ?>
-
+?>
