@@ -29,7 +29,7 @@ try {
     $mail = new PHPMailer(true);
 
     // Enable SMTP debugging
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
     // Set SMTP configuration
     $mail->isSMTP();
