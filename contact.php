@@ -40,7 +40,7 @@ try {
 
     // Your Gmail credentials
     $mail->Username = "mohamedanasfrkz@gmail.com";
-    $mail->Password = "fbydydnmcbtqqipk"; // Use the app password you generated
+    $mail->Password = "ordvyahnectpptfg"; // Use the app password you generated
 
     // Set sender and recipient for receiving form details
     $mail->setFrom($email, $name);
@@ -72,6 +72,7 @@ try {
     // Catch and handle any exceptions that occur
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
 
  ?>
 
