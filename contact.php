@@ -29,22 +29,22 @@ try {
     $mail = new PHPMailer(true);
 
     // Enable SMTP debugging
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-    // Set SMTP configuration
+    // Set SMTP configuration for GoDaddy
     $mail->isSMTP();
     $mail->SMTPAuth = true;
-    $mail->Host = "smtp.gmail.com";
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+    $mail->Host = "smtpout.secureserver.net"; // Outgoing SMTP server for GoDaddy
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use SSL for secure connection
+    $mail->Port = 465; // Port for SSL
 
-    // Your Gmail credentials
-    $mail->Username = "mohamedanasfrkz@gmail.com";
-    $mail->Password = "hbwzjlxvghifpxph"; // Use the app password you generated
+    // Your GoDaddy email credentials
+    $mail->Username = "navas@qplus-ts.com";
+    $mail->Password = "Navas@Qplus"; // Replace with your GoDaddy email password
 
     // Set sender and recipient for receiving form details
     $mail->setFrom($email, $name);
-    $mail->addAddress("mohamedanasfrkz@gmail.com", "Mohamed Anas"); // Change to your email and name
+    $mail->addAddress("navas@qplus-ts.com", "Haja Navas"); // Change to your email and name
 
     // Email subject and body for receiving form details
     $mail->Subject = "Form Submission: $subject";
@@ -55,7 +55,7 @@ try {
 
     // Set sender and recipient for user confirmation
     $mail->clearAllRecipients(); // Clear previous recipients
-    $mail->setFrom("mohamedanasfrkz@gmail.com", "Mohamed Anas"); // Change to your email and name
+    $mail->setFrom("navas@qplus-ts.com", "Haja Navas"); // Change to your email and name
     $mail->addAddress($email, $name);
 
     // Email subject and body for user confirmation

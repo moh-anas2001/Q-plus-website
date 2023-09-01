@@ -548,18 +548,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-<!-- Custom JavaScript -->
-<script>
-    // Adjust the carousel interval (in milliseconds)
-    $('#serviceCarousel1').carousel({
-        interval: 2000  // 5 seconds interval
-    });
-
-    $('#serviceCarousel2').carousel({
-        interval: 3000  // 7 seconds interval
-    });
-</script>
-
 </body>
 
 </html>
