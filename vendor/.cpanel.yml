@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    -export DEPLOYPATH=/HOME/lj2k0lg1i5sx/PUBLIC_HTML
+    -/bin/cp * $DEPLOYPATH
