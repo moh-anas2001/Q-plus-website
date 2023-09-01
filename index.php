@@ -1656,8 +1656,8 @@
                   <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
                   <p>info@qplus-ts.com</p><br>
-                  <p> <strong>For Tecnical Support</strong></p>
-                  <p>example@ex.com</p>
+                  <p> <strong>For Technical Support</strong></p>
+                  <p>tse@qplus-ts.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1858,12 +1858,12 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader">
+  <!-- <div id="preloader">
     <div></div>
     <div></div>
     <div></div>
     <div></div>
-  </div>
+  </div> -->
 
   <!-- Scripts Reference -->
 
