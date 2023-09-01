@@ -1489,20 +1489,21 @@ section {
   padding-bottom: -10px;
 }
 
-.sec-title h2 {
+.sec-title h3 {
   color: var(--color-secondary);
   font-size: 32px;
   font-weight: 700;
   position: relative;
 }
 @media (max-width:475px){
-  .sec-title h2{
+  .sec-title h3{
   font-size: 20px;
   }
+  
 }
 
-.sec-title h2:before,
-.sec-title h2:after {
+.sec-title h3:before,
+.sec-title h3:after {
   content: "";
   width: 50px;
   height: 2px;
@@ -1510,11 +1511,11 @@ section {
   display: inline-block;
 }
 
-.sec-title h2:before {
+.sec-title h3:before {
   margin: 0 15px 10px 0;
 }
 
-.sec-title h2:after {
+.sec-title h3:after {
   margin: 0 0 10px 15px;
 }
 
@@ -1522,7 +1523,7 @@ section {
   --color-background: #f4f4f4;
 }
 
-.about .content h3 {
+/* .about .content h3 {
   font-size: 25px;
   font-weight: 550;
   line-height: 19px;
@@ -1533,13 +1534,13 @@ section {
   display: inline-block;
   margin-bottom: 20px;
   transition: 0.3s;
-}
+} */
 
-.about .content h3:hover,
+/* .about .content h3:hover,
 .about .content h3:focus:hover {
   color: var(--color-inverse);
   background: rgba(var(--color-primary-rgb), 0.85);
-}
+} */
 
 .about .content h2 {
 
@@ -1547,8 +1548,13 @@ section {
   color: var(--color-secondary);
   font-weight: 700;
   padding-bottom: 20px;
-  
-
+  text-align:center;
+  font-size:25px
+}
+@media(max-width:475px){
+  .about .content h2{
+    font-size:15px;
+  }
 }
 
 .about .content p{

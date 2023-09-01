@@ -351,7 +351,7 @@
 
           <div class="col-xl-5 content">
           <div class="sec-title" data-aos="fade-up">
-          <h2> About us</h2><br>
+          <h3> About us</h3><br>
           </div>
             <h2>Quality is the best business plan</h2>
             <p >Q Plus Technical Service LLC is a company raised by a team of experienced professionals to provide a single window solution for all Building Services, Interior Decoration, Electrical, HVAC, Plumbing, IT & ELV requirements. Q Plus means, Quality plus and we believe quality will be always a plus which will lead a hassle free solutions. We study your requirements and understand your needs, we design, propose and construct as per requirements. We get to know your business in depth to provide a solution which meets your goals. We ensure prompt responds to your queries and attend to resolve your issues as a leader.
@@ -434,14 +434,14 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects Done</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1" class="purecounter"></span>
               <p>Happy Clients</p>
             </div>
           </div><!-- End Stats Item -->
