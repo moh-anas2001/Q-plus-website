@@ -9,7 +9,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <meta property="og:image" content="assets/img/qplus_logo.png">
+  <meta property="og:image" content="https://www.qplus-ts.com/assets/img/qplus_logo.png">
 
 
   <!-- Favicons -->
