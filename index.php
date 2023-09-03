@@ -9,8 +9,11 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <meta property="og:image" content="assets/img/qplus_logo.png">
+
+
   <!-- Recaptcha -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 
   <!-- Favicons -->
   <link href="assets/img/qplus_logo.png" rel="icon">

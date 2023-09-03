@@ -8,7 +8,7 @@
   <title>Services Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <meta property="og:image" content="assets/img/qplus_logo.png">
   <!-- Favicons -->
   <link href="assets/img/qplus_logo.png" rel="icon">
   <link href="assets/img/qplus_logo.png" rel="apple-touch-icon">

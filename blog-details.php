@@ -8,6 +8,7 @@
   <title>Blog Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta property="og:image" content="assets/img/qplus_logo.png">
 
   <!-- Favicons -->
   
