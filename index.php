@@ -202,17 +202,6 @@
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!-- <section id="clients" class="clients">
   <div class="container-fluid" data-aos="fade-up">
     <div class="swiper">
