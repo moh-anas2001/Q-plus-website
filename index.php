@@ -1637,8 +1637,9 @@
                   <i class="bi bi-geo-alt"></i>
                   <h3>Address</h3>
                   <p><strong>Q Plus Technical Service LLC</strong></p>
+                  <a href= "https://goo.gl/maps/baR7adV2LxGMmDGF8">
                   <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-                  <p>Al Qusais, Dubai UAE</p>
+                  <p>Al Qusais, Dubai UAE</p></a>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1646,8 +1647,8 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
-                  <p><a href= "tel:+971581174967"><strong>Mob:</strong> +971 581174967</a></p>
-                  <p><a href= "tel:043931110"><strong>Tel:</strong>&nbsp;&nbsp;&nbsp; 04 - 393 1110</a></p>
+                  <p><strong>Mob:</strong><a href= "tel:+971581174967"> +971 581174967</a></p>
+                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href= "tel:043931110"> 04 - 393 1110</a></p>
                 </div><br>
               </div><!-- End Info Item -->
 
@@ -1780,12 +1781,6 @@
 
     <div class="container copyright text-center mt-4">
       <p>&copy; <span>Copyright</span> <strong class="px-1">DaCentric Technologies</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        <!-- <a href="https://bootstrapmade.com/"></a>--
       </div> 
     </div>
 
@@ -1835,18 +1830,19 @@
   
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>
+            <a href= "https://goo.gl/maps/baR7adV2LxGMmDGF8">
             <p>Q Plus Technical Service LLC</p>
             <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-            <p>Al Qusais, Dubai United Arab Emirates</p>
-            <p class="mt-4"><strong>Phone:</strong> <span><a href="tel:+971581174967"><p>Mob: +971 581174967</a></p><p><a href = "tel:043931110">Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></a></p></span></p>
-            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></p>
+            <p>Al Qusais, Dubai United Arab Emirates</p></a>
+            <p class="mt-4"><strong>Phone:</strong> <span><p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p><p>Tel:&nbsp;&nbsp;&nbsp;<a href = "tel:043931110"> 04 - 393 1110<br></a></p></span></p>
+            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
           </div>
   
         </div>
       </div>
   
       <div class="container copyright text-center mt-4">
-        <p>&copy; <span>Copyright</span> <strong class="px-1">DaCentric Technologies</strong> <span>All Rights Reserved</span></p>
+        <p>&copy; <span>Copyright</span><strong class="px-1">DaCentric Technologies</b></strong><span>All Rights Reserved</span></p>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you've purchased the pro version. -->
