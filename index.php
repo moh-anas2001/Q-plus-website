@@ -1679,7 +1679,7 @@
           <!-- Contact Section -->
 
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/navas@qplus-ts.com" method="post" class="contact_form" data-aos="fade-up*" data-aos-delay="200">
+            <form action="https://formsubmit.co/3733129ae02d835773f68b8f9f87aa71" method="post" class="contact_form" data-aos="fade-up*" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -1696,9 +1696,10 @@
 
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message*" required></textarea>
-                  <input type="hidden" name="_cc" value="mohamedanascse@gmail.com,sales@qplus-ts.com">
+                  <input type="hidden" name="_cc" value="sales@qplus-ts.com">
                   <input type="hidden" name="_autoresponse" value="We will get back to you as soon as possible">
                   <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_next" value="https://www.qplus-ts.com/index.php#contact">
                 </div>
                 
                 <!-- <div class="col-md-12 text-center">
