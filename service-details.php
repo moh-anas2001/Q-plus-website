@@ -501,8 +501,8 @@
             <p>Q Plus Technical Service LLC</p>
             <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
             <p>Al Qusais, Dubai United Arab Emirates</p>
-            <p class="mt-4"><strong>Phone:</strong> <span><p>Mob: +971 581174967</p><p>Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></p></span></p>
-            <p><strong><br>Email:</strong> <span>info@qplus-ts.com</span></p>
+            <p class="mt-4"><strong>Phone:</strong> <span><a href="tel:+971581174967"><p>Mob: +971 581174967</a></p><p><a href = "tel:043931110">Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></a></p></span></p>
+            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></p>
           </div>
   
         </div>
@@ -511,23 +511,22 @@
       <div class="container copyright text-center mt-4">
         <p>&copy; <span>Copyright</span> <strong class="px-1">DaCentric Technologies</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
-
            <a href=""></a>
         </div>
       </div>
   
-    </footer><!-- End Footer -->
+    </footer>
 
   <!-- Scroll Top Button -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader">
+  <!-- <div id="preloader">
     <div></div>
     <div></div>
     <div></div>
     <div></div>
-  </div>
+  </div> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

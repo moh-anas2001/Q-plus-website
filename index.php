@@ -1646,8 +1646,8 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
-                  <p><strong>Mob:</strong> +971 581174967</p>
-                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp; 04 - 393 1110</p>
+                  <p><a href= "tel:+971581174967"><strong>Mob:</strong> +971 581174967</a></p>
+                  <p><a href= "tel:043931110"><strong>Tel:</strong>&nbsp;&nbsp;&nbsp; 04 - 393 1110</a></p>
                 </div><br>
               </div><!-- End Info Item -->
 
@@ -1655,9 +1655,9 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>info@qplus-ts.com</p><br>
+                  <p><a href="mailto:tse@qplus-ts.com">info@qplus-ts.com</a></p><br>
                   <p> <strong>For Technical Support</strong></p>
-                  <p>tse@qplus-ts.com</p>
+                  <p><a href="mailto:tse@qplus-ts.com">tse@qplus-ts.com</a></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1679,7 +1679,7 @@
           <!-- Contact Section -->
 
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/info@qplus-ts.com" method="post" class="contact_form" data-aos="fade-up*" data-aos-delay="200">
+            <form action="https://formsubmit.co/97912b3e6b2cb7f4275ebe40a96035a8 " method="post" class="contact_form" data-aos="fade-up*" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -1817,7 +1817,7 @@
             <ul>
               <li><a href="index.php#home">Home</a></li>
               <li><a href="index.php#about">About us</a></li>
-              <li><a href="service-details.php">Services</a></li>
+              <li><a href="index.php#services">Services</a></li>
               <li><a href="index.php#portfolio">Portfolio</a></li>
               <li><a href="index.php#careers">Join us</a></li>
               <li><a href="index.php#contact">Contact</a></li>
@@ -1838,8 +1838,8 @@
             <p>Q Plus Technical Service LLC</p>
             <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
             <p>Al Qusais, Dubai United Arab Emirates</p>
-            <p class="mt-4"><strong>Phone:</strong> <span><p>Mob: +971 581174967</p><p>Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></p></span></p>
-            <p><strong><br>Email:</strong> <span>info@qplus-ts.com</span></p>
+            <p class="mt-4"><strong>Phone:</strong> <span><a href="tel:+971581174967"><p>Mob: +971 581174967</a></p><p><a href = "tel:043931110">Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></a></p></span></p>
+            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></p>
           </div>
   
         </div>

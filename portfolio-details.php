@@ -473,13 +473,12 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.php#home" >Home</a></li>
-              <li><a href="index.php#about">About</a></li>
-              <li><a href="index.php#service">Services</a></li>
-              <li><a href="portfolio-details.php"class="active">Portfolio</a></li>
+              <li><a href="index.php#home">Home</a></li>
+              <li><a href="index.php#about">About us</a></li>
+              <li><a href="index.php#services">Services</a></li>
+              <li><a href="index.php#portfolio">Portfolio</a></li>
               <li><a href="index.php#careers">Join us</a></li>
-              <!-- <li><a href="index.php#recent-posts">Blog</a></li> -->
-             
+              <li><a href="index.php#contact">Contact</a></li>
             </ul>
           </div>
   
@@ -497,8 +496,8 @@
             <p>Q Plus Technical Service LLC</p>
             <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
             <p>Al Qusais, Dubai United Arab Emirates</p>
-            <p class="mt-4"><strong>Phone:</strong> <span><p>Mob: +971 581174967</p><p>Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></p></span></p>
-            <p><strong><br>Email:</strong> <span>info@qplus-ts.com</span></p>
+            <p class="mt-4"><strong>Phone:</strong> <span><a href="tel:+971581174967"><p>Mob: +971 581174967</a></p><p><a href = "tel:043931110">Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110<br></a></p></span></p>
+            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></p>
           </div>
   
         </div>
@@ -515,7 +514,7 @@
         </div>
       </div>
   
-    </footer><!-- End Footer -->
+    </footer>
 
 
   <!-- Scroll Top Button -->
