@@ -1698,10 +1698,10 @@
                   <textarea class="form-control" name="message" rows="6" placeholder="Message*" required></textarea>
                 </div>
                 
-                <div class="col-md-12 text-center">
+                <!-- <div class="col-md-12 text-center">
                     <div class="g-recaptcha" data-sitekey="6LfZHrwnAAAAAFTiF2rhtSeinYRE_8APTUQgQ5VG" data-callback="recaptchaCallback" ></div>
                     <div class="g-recaptcha-error" >Please complete the reCAPTCHA.</div>
-                </div>
+                </div> -->
                 
 
                 <div class="col-md-12 text-center">
@@ -1766,7 +1766,7 @@
                   <a href="https://www.facebook.com/Qplusts"><i class="bi bi-facebook"></i></a>
                   <a href="https://www.instagram.com/qplustechnicalservice/"><i class="bi bi-instagram"></i></a>
                   <a href="https://www.linkedin.com/company/qplus-technical-service-llc/"><i class="bi bi-linkedin"></i></a>
-                  <a href="https://wa.me/8281814124"><i class="bi bi-whatsapp"></i></a>
+                  <a href="https://wa.me/+971581174967"><i class="bi bi-whatsapp"></i></a>
                   <a href="https://www.youtube.com/@Qplus201"><i class="bi bi-youtube"></i></a>
               </div>
           </div>
@@ -1803,7 +1803,7 @@
               <a href="https://www.facebook.com/Qplusts"><i class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/qplustechnicalservice/"><i class="bi bi-instagram"></i></a>
               <a href="https://www.linkedin.com/company/qplus-technical-service-llc/"><i class="bi bi-linkedin"></i></a>
-              <a href="https://wa.me/8281814124"><i class="bi bi-whatsapp"></i></a>
+              <a href="https://wa.me/+971581174967"><i class="bi bi-whatsapp"></i></a>
               <a href="https://www.youtube.com/@Qplus201"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
