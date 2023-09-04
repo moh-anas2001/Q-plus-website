@@ -423,9 +423,10 @@
 
 
            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
+              <img src="assets/img/projects/Amphitheatre.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4>
+                <h4>Al majaz Amphitheatre,sharjah</h4>
+                
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -434,7 +435,7 @@
            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Al majaz Amphitheatre,sharjah</h4>
+               <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4> 
               </div>
             </div><!-- End Portfolio Item -->
   
