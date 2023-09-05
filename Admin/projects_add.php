@@ -1,3 +1,32 @@
+<?php
+// Include the database configuration
+require_once('includes/database.php');
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Handle the image upload
+    $uploadDirectory = "admin/assets\img\projects"; // Specify the directory where you want to store images
+    $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
+
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
+        // Image uploaded successfully, now insert into the database
+        $projectName = $_POST["project_name"];
+        $imagePath = $uploadedImagePath;
+
+        // Prepare and execute the SQL query to insert data
+        $sql = "INSERT INTO projects (image_path, project_name) VALUES (?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("ss", $imagePath, $projectName);
+        $stmt->execute();
+
+        $stmt->close();
+    } else {
+        echo "Image upload failed.";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -17,12 +46,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    
 </head>
 
 <body>
@@ -238,23 +262,22 @@
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal form-material">
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Project Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" placeholder="Enter Project Name" required
-                                            class="form-control p-0 border-0">
+                                        <input type="text" name="project_name" placeholder="Enter Project Name" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Upload Image</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" class="form-control p-0 border-0">
+                                        <input type="file" name="image" accept="image/*" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success">Create New Project</button>
+                                        <button type ="submit" class="btn btn-success">Upload and Save </button>
                                     </div>
                                 </div>
                             </form>
