@@ -5,7 +5,7 @@ include('includes/database.php');
 include('includes/functions.php');
 
 
-if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
     header('Location: dashboard.php');
     die();
 }
@@ -29,7 +29,7 @@ if(isset($_SESSION['id'])){
 </head>
 <?php
 if (isset($_POST['email'])) {
-    if ($stm = $connect->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND active = 1')){
+    if ($stm = $connect->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND active = 1')) {
         $hashed = SHA1($_POST['password']);
         $stm->bind_param('ss', $_POST['email'], $hashed);
         $stm->execute();
@@ -37,7 +37,7 @@ if (isset($_POST['email'])) {
         $result = $stm->get_result();
         $user = $result->fetch_assoc();
 
-        if ($user){
+        if ($user) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['username'] = $user['username'];
@@ -63,8 +63,8 @@ if (isset($_POST['email'])) {
             <div class="col-md-5 offset-md-3 mx-auto log">
                 <div class="card my-5">
 
-                    <form  method="post" class="card-body cardbody-color p-lg-5">
-                        <h3><strong> ADMIN LOGIN</strong></h3>
+                    <form method="post" class="card-body cardbody-color p-lg-5">
+                        <h3><strong>ADMIN LOGIN</strong></h3>
 
                         <div class="text-center">
                             <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
@@ -73,15 +73,18 @@ if (isset($_POST['email'])) {
                         </div>
 
                         <div class="mb-3">
-                        <label class="form-label" for="email"></label>
-                        <input type="email" id="email" name="email" class="form-control" required placeholder="Enter Email"/>
-                               
+                            <label class="form-label" for="email"></label>
+                            <input type="email" id="email" name="email" class="form-control" required
+                                placeholder="Enter Email" />
+
                         </div>
                         <div class="mb-3">
-                        <label class="form-label" for="password"></label>
-                        <input type="password" id="password"  name="password" class="form-control" required placeholder="Enter Password"/>
+                            <label class="form-label" for="password"></label>
+                            <input type="password" id="password" name="password" class="form-control" required
+                                placeholder="Enter Password" />
                         </div>
-                        <div class="text-center"><button type="submit" class="btn btn-color px-5 mt-5 mb-5 w-30">Login</button></div>
+                        <div class="text-center"><button type="submit"
+                                class="btn btn-color px-5 mt-5 mb-5 w-30">Login</button></div>
                     </form>
                 </div>
 
