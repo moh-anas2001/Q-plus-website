@@ -11,18 +11,15 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Qplus Admin Page</title>
+    <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <link href="css/style.css" rel="stylesheet">
+
+
+
 </head>
 
 <body>
@@ -49,7 +46,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -57,10 +54,10 @@
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <!-- <span class="logo-text">
+                        <span class="logo-text">
                             <!-- dark Logo text -->
-                            <!-- <img src="plugins/images/logo-text.png" alt="homepage" />
-                        </span> --> 
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -106,11 +103,11 @@
                                 <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
-                                <a href="index.html">Dashboard</a>
-                                <a href="careers_add.html">Add Jobs</a>
+                                <a href="index.php">Dashboard</a>
+                                <a href="projects_add.php">Add projects</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
-                            </li>
+                        </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -132,26 +129,26 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <!-- <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li> -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="projects_add.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="projects_add.php"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Projects</span>
                             </a>
-                        <!-- </li>
+                            <!-- </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
                                 aria-expanded="false">
@@ -159,7 +156,7 @@
                                 <span class="hide-menu">Icon</span>
                             </a>
                         </li> -->
-                        <!-- <li class="sidebar-item">
+                            <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
@@ -167,7 +164,7 @@
                             </a>
                         </li> -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="careers_add.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="careers_add.php"
                                 aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Jobs</span>
@@ -180,7 +177,7 @@
                                 <span class="hide-menu">Error 404</span>
                             </a>
                         </li> -->
-                     
+
                     </ul>
 
                 </nav>
@@ -201,14 +198,14 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Add Projects</h4>
+                        <h4 class="page-title">Add Jobs</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
-                          
+
                         </div>
                     </div>
                 </div>
@@ -227,46 +224,61 @@
                 <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">Blank Page</h3>
+                            <h3 class="box-title">Add Jobs</h3>
                         </div>
                     </div>
                 </div> -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
-                <!-- ============================================================== -->
 
                 <div class="">
                     <div class="card">
                         <div class="card-body">
                             <form class="form-horizontal form-material">
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Project Name</label>
+                                    <label class="col-md-12 p-0">Job Title</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" placeholder="Enter Project Name" required class="form-control p-0 border-0">
+                                        <input type="text" placeholder="Enter the Job Title" required
+                                            class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Upload Image</label>
+                                    <label class="col-md-12 p-0">Experience</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" class="form-control p-0 border-0">
+                                        <input type="text" placeholder="Enter the Experience" required
+                                            class="form-control p-0 border-0">
                                     </div>
                                 </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Location</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" placeholder="Enter the Job Location" required
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Job Description</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <textarea rows="5" class="form-control p-0 border-0"
+                                            placeholder="Enter the Job Description"></textarea>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Application Deadline</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="date" required class="form-control p-0 border-0">
+                                    </div>
+                                </div> -->
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success">Create New Project</button>
+                                        <button class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Column -->
-            </div>
 
-
-
-                <!-- ============================================================== -->
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
                 <!-- .right-sidebar -->
@@ -276,13 +288,11 @@
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
+
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> Qplus technical <a
-                    href="index.html">LLC</a>
-            </footer>
+            <!-- <footer class="footer text-center"> Qplus technical <a href="index.php">LLC</a>
+            </footer> -->
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
