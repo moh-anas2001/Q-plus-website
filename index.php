@@ -22,7 +22,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +60,7 @@
           <li><a href="index.php#portfolio">Portfolio</a></li>
           <li><a href="index.php#careers">Join us</a></li>
           <!-- <li><a href="index.php#recent-posts">Blog</a></li> -->
-          
+
           </li>
           <!-- <li><a href="index.php#contact">Contact</a></li> -->
         </ul>
@@ -86,9 +88,9 @@
       <div class="container">
         <div class="row">
           <!-- <div class="col-lg-10"> -->
-             <h2 data-aos="fade-up" data-aos-delay="100" >Q PLUS TECHNICAL SERVICE LLC</h2><br>
-             <p data-aos="fade-up" data-aos-delay="200">"Building Trust With Quality"</p>
-            
+          <h2 data-aos="fade-up" data-aos-delay="100">Q PLUS TECHNICAL SERVICE LLC</h2><br>
+          <p data-aos="fade-up" data-aos-delay="200">"Building Trust With Quality"</p>
+
           <!-- </div> -->
           <div class="col-lg-5">
             <!-- <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
@@ -101,108 +103,108 @@
 
     </section><!-- End home Section -->
 
-<!-- Clients Section - Home Page -->
+    <!-- Clients Section - Home Page -->
 
 
-<section id="clients" class="slide-show">
-    <!-- <div class = sli-head> -->
+    <section id="clients" class="slide-show">
+      <!-- <div class = sli-head> -->
       <!-- <h4>Our Clients</h4>
     </div> -->
 
-    <div class=" sec-tit" data-aos="fade-up">
-          <h2> Our Clients</h2><br>
-    </div>
-  <div class = "slider">
+      <div class=" sec-tit" data-aos="fade-up">
+        <h2> Our Clients</h2><br>
+      </div>
+      <div class="slider">
 
-    <div class="slide-track">
+        <div class="slide-track">
 
-      <!--  slide images -->
+          <!--  slide images -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-1.gif"style="max-height: 120%;" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-1.gif" style="max-height: 120%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-2.png" style="max-height: 120%;"class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-2.png" style="max-height: 120%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-3.jpg"style="max-height: 100%;" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-3.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-7.jpg"class="img-fluid"  alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-        <div class="cli-log">
-              <img src="assets/img/clients/client-9.jpg" style="max-height: 120%;" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-
-            <!-- Set of 9 -->
-
-         <div class="cli-log">
-              <img src="assets/img/clients/client-10.jpg"style="max-height: 130%;" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-13.jpg" style="max-height: 120%;"class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-14.jpeg" style="max-height: 120%;"class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-15.jpeg" style="max-height: 120%;"class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-17.svg" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
-
-        <div class="cli-log">
-              <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
-        </div><!-- End Client Item -->
+          <div class="cli-log">
+            <img src="assets/img/clients/client-9.jpg" style="max-height: 120%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
 
-        
+          <!-- Set of 9 -->
 
-    </div>
+          <div class="cli-log">
+            <img src="assets/img/clients/client-10.jpg" style="max-height: 130%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
-  </div>
-</section>
+          <div class="cli-log">
+            <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-13.jpg" style="max-height: 120%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-14.jpeg" style="max-height: 120%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-15.jpeg" style="max-height: 120%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-17.svg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="cli-log">
+            <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
 
 
-<!-- <section id="clients" class="clients">
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- <section id="clients" class="clients">
   <div class="container-fluid" data-aos="fade-up">
     <div class="swiper">
       <!-- Swiper Configuration Template --
@@ -323,8 +325,8 @@
           </div><!-- End Client Images Container --
         </div><!-- End Swiper Slide -->
 
-  
-        <!-- Add more swiper-slide elements for more sets of images --
+
+    <!-- Add more swiper-slide elements for more sets of images --
 
 
 
@@ -342,22 +344,30 @@
         <div class="row align-items-xl-center gy-5">
 
           <div class="col-xl-5 content">
-          <div class="sec-title" data-aos="fade-up">
-          <h3> About us</h3><br>
-          </div>
+            <div class="sec-title" data-aos="fade-up">
+              <h3> About us</h3><br>
+            </div>
             <h2>Quality is the best business plan</h2>
-            <p >Q Plus Technical Service LLC is a company raised by a team of experienced professionals to provide a single window solution for all Building Services, Interior Decoration, Electrical, HVAC, Plumbing, IT & ELV requirements. Q Plus means, Quality plus and we believe quality will be always a plus which will lead a hassle free solutions. We study your requirements and understand your needs, we design, propose and construct as per requirements. We get to know your business in depth to provide a solution which meets your goals. We ensure prompt responds to your queries and attend to resolve your issues as a leader.
-               Along with bringing the best brands on the table, we undertake all the incidental and ancillary services including installation, maintenance, up gradation and repairs, thus giving our clients complete peace of mind and hassle free business experience. 
-               We continued to progress and earn respect of our clients as being one of the honest, transparent and trustworthy service providers across the UAE 
+            <p>Q Plus Technical Service LLC is a company raised by a team of experienced professionals to provide a
+              single window solution for all Building Services, Interior Decoration, Electrical, HVAC, Plumbing, IT &
+              ELV requirements. Q Plus means, Quality plus and we believe quality will be always a plus which will lead
+              a hassle free solutions. We study your requirements and understand your needs, we design, propose and
+              construct as per requirements. We get to know your business in depth to provide a solution which meets
+              your goals. We ensure prompt responds to your queries and attend to resolve your issues as a leader.
+              Along with bringing the best brands on the table, we undertake all the incidental and ancillary services
+              including installation, maintenance, up gradation and repairs, thus giving our clients complete peace of
+              mind and hassle free business experience.
+              We continued to progress and earn respect of our clients as being one of the honest, transparent and
+              trustworthy service providers across the UAE
             </p><br><br>
-            
+
             <a href="index.php" class="logo-2 me-xl-0">
-        <p> WE ARE ISO 9001 2015 Certified</p>
-        
-        <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
-        <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
-      </a> 
-            
+              <p> WE ARE ISO 9001 2015 Certified</p>
+
+              <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
+              <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
+            </a>
+
             <!-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
             <!-- <div class = "car-buts">
               <a href="" ><button type="submit" class="all-port btn-more"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;Read More</button></a>
@@ -371,8 +381,8 @@
                 <div class="icon-box">
                   <i class="bi bi-buildings"></i>
                   <h3>Our Clients</h3>
-                  <p >Our company constantly strives its best to abide by the client expectations,
-                     and we firmly believe that nothing but potential clients help greatly to expand the business.
+                  <p>Our company constantly strives its best to abide by the client expectations,
+                    and we firmly believe that nothing but potential clients help greatly to expand the business.
                   </p>
                 </div>
               </div> <!-- End Icon Box -->
@@ -382,7 +392,7 @@
                   <i class="bi bi-clipboard-pulse"></i>
                   <h3>CEO Message</h3>
                   <p>Q Plus is excited to promote the benefits of latest technologies to the customers.
-                     Our aim is to automate your daily requirements to run an easy life.
+                    Our aim is to automate your daily requirements to run an easy life.
                   </p>
                 </div>
               </div> <!-- End Icon Box -->
@@ -392,7 +402,7 @@
                   <i class="bi bi-command"></i>
                   <h3>Our Vision</h3>
                   <p>Our Vision is to provide a quality work from start to end by adopting modern
-                     construction technologies which will remind the Q Plus as a leader in the Market.
+                    construction technologies which will remind the Q Plus as a leader in the Market.
                   </p>
                 </div>
               </div> <!-- End Icon Box -->
@@ -402,7 +412,7 @@
                   <i class="bi bi-graph-up-arrow"></i>
                   <h3>Our Mission</h3>
                   <p>Our mission is to enhance business growth of our customers with high quality
-                     technologies and services that create valuable and reliable outcomes.
+                    technologies and services that create valuable and reliable outcomes.
                   </p>
                 </div>
               </div> <!-- End Icon Box -->
@@ -426,21 +436,24 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Projects Done</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Happy Clients</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Brands we Handle</p>
             </div>
           </div><!-- End Stats Item -->
@@ -460,103 +473,103 @@
 
 
 
-     <!-- Brands we Handle Section - Home Page -->
-     <section id="brands" class="slide-show">
+    <!-- Brands we Handle Section - Home Page -->
+    <section id="brands" class="slide-show">
 
-     <div class=" sec-tit" data-aos="fade-up">
-          <h2> Brands we Handle</h2><br>
-    </div>
+      <div class=" sec-tit" data-aos="fade-up">
+        <h2> Brands we Handle</h2><br>
+      </div>
 
-      <div class = "slider">
-    
+      <div class="slider">
+
         <div class="slide-track-2">
-    
+
           <!--  slide images -->
-    
-            <div class=" brand-log">
-                  <img src="assets/img/Brands/Brand-1.png" style="max-height: 40%;" class="img-fluid"  alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-2.png"  style="max-height: 20%;" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-3.png"  style="max-height: 20%;"class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-4.png"  style="max-height: 30%;"class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-5.jpg"  style="max-height: 20%;"class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-6.svg"  style="max-height: 20%;" class="img-fluid"alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-7.jpg" style="max-height: 100%;"class="img-fluid"  alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-8.svg"  class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-9.svg"  class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-    
-                <!-- Set of 9 -->
-    
-             <div class="brand-log">
-                  <img src="assets/img/Brands/Brand-10.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-11.svg"  class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-12.svg"  class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-13.jpg"  class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-14.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-15.jpeg" style="max-height: 80%;" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-16.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-17.png" style="max-height: 100%;" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -->
-    
-            <div class="brand-log">
-                  <img src="assets/img/Brands/brand-18.png" style="max-height: 80%;" class="img-fluid"  alt="New Client">
-            </div><!-- End Client Item -->
-    
-    
-            
-    
+
+          <div class=" brand-log">
+            <img src="assets/img/Brands/Brand-1.png" style="max-height: 40%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-2.png" style="max-height: 20%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-3.png" style="max-height: 20%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-4.png" style="max-height: 30%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-5.jpg" style="max-height: 20%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-6.svg" style="max-height: 20%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-7.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-8.svg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-9.svg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+
+          <!-- Set of 9 -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/Brand-10.png" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-11.svg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-12.svg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-13.jpg" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-14.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-15.jpeg" style="max-height: 80%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-16.jpg" style="max-height: 100%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-17.png" style="max-height: 100%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <img src="assets/img/Brands/brand-18.png" style="max-height: 80%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+
+
+
         </div>
-    
+
       </div>
     </section>
-    
-  
+
+
 
     <!-- ======= Services Section ======= -->
 
@@ -577,14 +590,18 @@
               </div>
               <div class="details position-relative">
                 <a href="service-details.php#ELV-services">
-                <div class="icon">
-                  <i class="bi bi-lightning-charge"></i>
-                </div></a>
+                  <div class="icon">
+                    <i class="bi bi-lightning-charge"></i>
+                  </div>
+                </a>
                 <a href="service-details.php#ELV-services" class="stretched-link">
                   <h3>ELV Services</h3>
                 </a>
-                <p class="remove-space">Elevate your projects with our ELV Systems expertise. From cutting-edge security and seamless communication networks to smart automation designs, we offer a comprehensive approach that guarantees integration and superior performance.
-                   With a commitment to quality, sustainability, and technical proficiency, we stand by you as your reliable partner in creating spaces that define the future.</p>
+                <p class="remove-space">Elevate your projects with our ELV Systems expertise. From cutting-edge security
+                  and seamless communication networks to smart automation designs, we offer a comprehensive approach
+                  that guarantees integration and superior performance.
+                  With a commitment to quality, sustainability, and technical proficiency, we stand by you as your
+                  reliable partner in creating spaces that define the future.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -596,13 +613,17 @@
               </div>
               <div class="details position-relative">
                 <a href="service-details.php#ELV-services">
-                <div class="icon">
-                  <i class="bi bi-router"></i>
-                </div></a>
+                  <div class="icon">
+                    <i class="bi bi-router"></i>
+                  </div>
+                </a>
                 <a href="service-details.php#IT-services" class="stretched-link">
                   <h3>IT and Networking Services </h3>
                 </a>
-                <p>Empower your business with tailored IT and Networking solutions, meticulously designed to match your requirements. Our adept team architects high-performance networks, guaranteeing flawless connectivity and streamlined data management. Whether optimizing infrastructure or fortifying security, our solutions seamlessly pave the path to your digital triumph.</p>
+                <p>Empower your business with tailored IT and Networking solutions, meticulously designed to match your
+                  requirements. Our adept team architects high-performance networks, guaranteeing flawless connectivity
+                  and streamlined data management. Whether optimizing infrastructure or fortifying security, our
+                  solutions seamlessly pave the path to your digital triumph.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -614,15 +635,18 @@
               </div>
               <div class="details position-relative">
                 <a href="service-details.php#MEP-services">
-                <div class="icon">
-                  <i class="bi bi-tools"></i>
-                </div></a>
+                  <div class="icon">
+                    <i class="bi bi-tools"></i>
+                  </div>
+                </a>
                 <a href="service-details.php#MEP-services" class="stretched-link">
                   <h3>MEP Services</h3>
                 </a>
-                <p> Our MEP services provide a foundation of excellence for your projects. 
-                  From innovative electrical systems and efficient mechanical designs to meticulously planned plumbing solutions, we offer a holistic approach that ensures seamless integration and optimal performance. 
-                  With a focus on quality, sustainability, and technical expertise, we are your trusted partner in shaping spaces that stand the test of time.</p>
+                <p> Our MEP services provide a foundation of excellence for your projects.
+                  From innovative electrical systems and efficient mechanical designs to meticulously planned plumbing
+                  solutions, we offer a holistic approach that ensures seamless integration and optimal performance.
+                  With a focus on quality, sustainability, and technical expertise, we are your trusted partner in
+                  shaping spaces that stand the test of time.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -688,9 +712,9 @@
 
     <!-- End Services Section -->
 
-   
 
-     <!-- Features Section - Home Page --> 
+
+    <!-- Features Section - Home Page -->
     <!-- <section id="features" class="features">
 
       <!--  Section Title --
@@ -736,14 +760,14 @@
 
       </div>
 
-    </section><!--End Features Section --> 
+    </section><!--End Features Section -->
 
 
 
-   
+
 
     <!-- Portfolio Section - Home Page -->
-    <section id="portfolio" class="portfolio" >
+    <section id="portfolio" class="portfolio">
 
       <!--  Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -755,7 +779,7 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          
+
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -772,8 +796,8 @@
               <img src="assets/img/projects/fairmont.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>FAIRMONT MARINA, ABU DHABI</h4>
-                
-                
+
+
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -789,7 +813,7 @@
               <div class="portfolio-info">
                 <h4>NALANDA RESTAURANT, AL QUOZ</h4>
               </div>
-            </div> 
+            </div>
             <!-- End Portfolio Item-->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
@@ -803,7 +827,7 @@
               <img src="assets/img/projects/Hamriya port phase 1, sharjah.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>HAMRIYA PORT PHASE 1 OFFICE, SHARJAH</h4>
-               
+
               </div>
             </div>
             <!-- End Portfolio Item -->
@@ -812,8 +836,8 @@
               <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4> -->
-                
-              <!-- </div>
+
+            <!-- </div>
             </div>End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
@@ -825,16 +849,16 @@
             <!-- End Portfolio Item . -->
 
 
-             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"> 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/projects/style gym, abu dhabi.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>STYLE GYM, ABU DHABI</h4>
-                
+
               </div>
             </div>
             <!-- End Portfolio Item -->
 
-            
+
 
             <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/projects/g+1 commercial building.jpg" class="img-fluid" alt="">
@@ -848,7 +872,7 @@
               <img src="assets/img/projects/jewel of creek.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>JEWEL OF CREEK, DUBAI</h4>
-               
+
               </div>
             </div><!-- End Portfolio Item --
 
@@ -936,10 +960,10 @@
               <img src="assets/img/projects/museum of the future,dubai.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>MUSUEM OF THE FUTURE, DUBAI</h4>
-                
+
               </div>
             </div><!-- End Portfolio Item -->
-<!-- 
+            <!-- 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/projects/barrari natural resources.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -958,10 +982,11 @@
 
           </div><!-- End Portfolio Container -->
 
-          <div class = "port-buts">
+          <div class="port-buts">
             <a href="portfolio-details.php">
-             <button type="submit" class="all-port"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all Projects</button>
-             </a>
+              <button type="submit" class="all-port"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all
+                Projects</button>
+            </a>
           </div>
 
         </div>
@@ -972,7 +997,7 @@
 
 
     <!-- Pricing Section - Home Page -->
- <!--   <section id="pricing" class="pricing">
+    <!--   <section id="pricing" class="pricing">
 
       <!--  Section Title 
       <div class="container section-title" data-aos="fade-up">
@@ -1047,101 +1072,119 @@
     <!-- End Pricing Section -->
 
 
-        <!-- ************************************************************** -->
-    
+    <!-- ************************************************************** -->
 
 
-        
+
+
 
     <!-- Careers Page -->
     <section id="careers" class="careers">
-    
+
       <div class="container">
-    
+
         <div class="section-title car-hd">
           <h2>Careers</h2>
           <p>Join our team of talented and passionate individuals</p>
         </div>
-    
+
         <div class="row">
-    
+
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Sales Engineer</h3>
-              <p>We are in search of a capable sales engineer to join our team. The ideal candidate should have 1-3 years of experience, proficiency with MS Office, and preferably hold a UAE license. A strong work ethic and dedication to the role are highly valued.</p>
+              <p>We are in search of a capable sales engineer to join our team. The ideal candidate should have 1-3
+                years of experience, proficiency with MS Office, and preferably hold a UAE license. A strong work ethic
+                and dedication to the role are highly valued.</p>
               <p><strong>Experience:</strong> 1-3 years</p>
-              <div class = "car-buts">
-              <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
-            </div>
+              <div class="car-buts">
+                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
+                    class="small-button" type="submit">Apply Now</button></a>
+              </div>
             </div>
           </div><!-- End of Career item -->
 
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Automation Engineer</h3>
-              <p>We are seeking a proficient automation engineer to become a valued member of our team. The perfect candidate should possess 0-2 years of experience and have a solid foundation in KNX, electrical wiring, AutoCAD, and MS Office.<p>
+              <p>We are seeking a proficient automation engineer to become a valued member of our team. The perfect
+                candidate should possess 0-2 years of experience and have a solid foundation in KNX, electrical wiring,
+                AutoCAD, and MS Office.
+              <p>
               <p><strong>Experience:</strong> 0 to 2 years</p>
-              <div class = "car-buts">
-              <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
-            </div>
+              <div class="car-buts">
+                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
+                    class="small-button" type="submit">Apply Now</button></a>
+              </div>
             </div>
           </div><!-- End of Career item -->
 
           <div class="col-lg-4">
             <div class="career-item">
               <h3>ELV Engineer</h3>
-              <p>We are in search of an ELV engineer with over 1 years of experience, who is well-versed in KNX, MS Office, and MS Excel. The candidate should also demonstrate the capability to perform effectively under pressure.<p>
+              <p>We are in search of an ELV engineer with over 1 years of experience, who is well-versed in KNX, MS
+                Office, and MS Excel. The candidate should also demonstrate the capability to perform effectively under
+                pressure.
+              <p>
               <p><strong>Experience:</strong>1+ years</p>
-              <div class = "car-buts">
-              <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
-            </div>
+              <div class="car-buts">
+                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
+                    class="small-button" type="submit">Apply Now</button></a>
+              </div>
             </div>
           </div><!-- End of Career item -->
 
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Web Developer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience with PHP, MySQL, and JavaScript.</p>
+              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience
+                with PHP, MySQL, and JavaScript.</p>
               <p><strong>Experience:</strong> 1-3 years</p>
-              <div class = "car-buts">
-              <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
-            </div>
+              <div class="car-buts">
+                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
+                    class="small-button" type="submit">Apply Now</button></a>
+              </div>
             </div>
           </div><!-- End of Career item -->
-    
+
           <div class="col-lg-4">
             <div class="career-item">
               <h3>UI/UX Designer</h3>
-              <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have experience with Sketch, Figma, and Adobe XD.</p>
+              <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have experience
+                with Sketch, Figma, and Adobe XD.</p>
               <p><strong>Experience:</strong> 0-3 years</p>
-              <div class = "car-buts">
-              <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
-            </div>
+              <div class="car-buts">
+                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
+                    class="small-button" type="submit">Apply Now</button></a>
+              </div>
             </div>
           </div><!-- End of Career item -->
-    
+
           <div class="col-lg-4">
             <div class="career-item">
               <h3>Marketing Manager</h3>
-              <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will have experience with SEO, SEM, and social media marketing.</p>
+              <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will have
+                experience with SEO, SEM, and social media marketing.</p>
               <p><strong>Experience:</strong> 2+ years</p>
-              <div class = "car-buts">
-              <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]" ><button class="small-button" type ="submit">Apply Now</button></a>
+              <div class="car-buts">
+                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
+                    class="small-button" type="submit">Apply Now</button></a>
+              </div>
             </div>
-            </div>
-          </div>  <!-- End of Career item -->
+          </div> <!-- End of Career item -->
         </div><br><br><br>
 
-        
-    
-        
-          <div class = "car-buts">
-           <a href="careers.php">
-            <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all open jobs</button>
-            </a>
-         </div>
+
+
+
+        <div class="car-buts">
+          <a href="careers.php">
+            <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all open
+              jobs</button>
+          </a>
+        </div>
       </div>
-    
+
     </section> <!-- End of Career Section -->
 
 
@@ -1354,154 +1397,161 @@
       </div>
 
     </section><!-- End Call-to-action Section -->
-<!-- Testimonials Section - Home Page -->
-<section id="testimonials" class="testimonials">
+    <!-- Testimonials Section - Home Page -->
+    <section id="testimonials" class="testimonials">
 
-  <div class="container">
+      <div class="container">
 
-    <div class="row align-items-center">
+        <div class="row align-items-center">
 
-      <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
-        <h3>Testimonials</h3><br>
-        <p>
-          Discover what our valued clients have to say about their experience partnering with us. 
-          From exceeding expectations to transforming visions into reality, our testimonials showcase the impact we've had on businesses just like yours.
-           Dive into their stories and learn how our expertise, dedication, and innovative solutions have made a difference. 
-           These are more than just words – they're a testament to our commitment to your success.
-        </p>
-      </div>
+          <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+            <h3>Testimonials</h3><br>
+            <p>
+              Discover what our valued clients have to say about their experience partnering with us.
+              From exceeding expectations to transforming visions into reality, our testimonials showcase the impact
+              we've had on businesses just like yours.
+              Dive into their stories and learn how our expertise, dedication, and innovative solutions have made a
+              difference.
+              These are more than just words – they're a testament to our commitment to your success.
+            </p>
+          </div>
 
-      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
 
-        <div class="swiper">
-          <template class="swiper-config">
-            {
-            "loop": true,
-            "speed" : 600,
-            "autoplay": {
-            "delay": 5000
-            },
-            "slidesPerView": "auto",
-            "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-            }
-            }
-          </template>
-          <div class="swiper-wrapper">
+            <div class="swiper">
+              <template class="swiper-config">
+                {
+                "loop": true,
+                "speed" : 600,
+                "autoplay": {
+                "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+                }
+                }
+              </template>
+              <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="d-flex">
-                  <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                  <div>
-                    <h3>Saul Goodman</h3>
-                    <h4>Ceo & Founder</h4>
-                    <!-- <div class="stars">
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
+                      <div>
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo & Founder</h4>
+                        <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
                     </div> -->
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Q Plus Technical Service LLC has been a game-changer for our business. Their innovative
+                        solutions and unwavering support have propelled us toward success.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
                   </div>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Q Plus Technical Service LLC has been a game-changer for our business. Their innovative solutions and unwavering support have propelled us toward success.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="d-flex">
-                  <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                  <div>
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                    <!-- <div class="stars">
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
+                      <div>
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                        <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
                     </div> -->
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Q Plus Technical Service LLC turned our ideas into visual masterpieces! Their design
+                        expertise added a new dimension to our brand. Truly exceptional work!</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
                   </div>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Q Plus Technical Service LLC turned our ideas into visual masterpieces! Their design expertise added a new dimension to our brand. Truly exceptional work!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="d-flex">
-                  <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                  <div>
-                    <h3>Jena Karlis</h3>
-                    <h4>Store Owner</h4>
-                    <!-- <div class="stars">
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
+                      <div>
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                        <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
                     </div> -->
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Q Plus Technical Service LLC revolutionized my store's online presence. Sales have soared
+                        since their expert solutions took over!</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
                   </div>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Q Plus Technical Service LLC revolutionized my store's online presence. Sales have soared since their expert solutions took over!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="d-flex">
-                  <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                  <div>
-                    <h3>Matt Brandon</h3>
-                    <h4>Freelancer</h4>
-                    <!-- <div class="stars">
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
+                      <div>
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                        <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
                     </div> -->
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Q Plus Technical Service LLC has been my go-to partner for all technical solutions. Their
+                        expertise and swift service always exceed my expectations.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
                   </div>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Q Plus Technical Service LLC has been my go-to partner for all technical solutions. Their expertise and swift service always exceed my expectations.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="d-flex">
-                  <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                  <div>
-                    <h3>John Larson</h3>
-                    <h4>Entrepreneur</h4>
-                    <!-- <div class="stars">
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
+                      <div>
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                        <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div> -->
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Q Plus Technical Service LLC has been a game-changer for my business. Their expertise and
+                        swift solutions have saved us both time and money. A reliable partner indeed!.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
                   </div>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Q Plus Technical Service LLC has been a game-changer for my business. Their expertise and swift solutions have saved us both time and money. A reliable partner indeed!.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+                </div><!-- End testimonial item -->
+
               </div>
-            </div><!-- End testimonial item -->
+              <div class="swiper-pagination"></div>
+            </div>
 
           </div>
-          <div class="swiper-pagination"></div>
+
         </div>
 
       </div>
 
-    </div>
-
-  </div>
-
-</section><!-- End Testimonials Section -->
+    </section><!-- End Testimonials Section -->
 
 
     <!-- **********************************************************BLOG********************************************************************************************** -->
@@ -1602,7 +1652,7 @@
       </div>
 
     </section> -->
-    
+
     <!-- End Recent-posts Section -->
 
     <!-- ************************************************************************************************************************************************************** -->
@@ -1624,14 +1674,15 @@
           <div class="col-lg-6">
 
             <div class="row gy-4">
-              <div class="col-md-6" class ="con-det">
+              <div class="col-md-6" class="con-det">
                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                   <i class="bi bi-geo-alt"></i>
                   <h3>Address</h3>
                   <p><strong>Q Plus Technical Service LLC</strong></p>
-                  <a href= "https://goo.gl/maps/baR7adV2LxGMmDGF8">
-                  <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-                  <p>Al Qusais, Dubai UAE</p></a>
+                  <a href="https://goo.gl/maps/baR7adV2LxGMmDGF8">
+                    <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
+                    <p>Al Qusais, Dubai UAE</p>
+                  </a>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1639,8 +1690,8 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
-                  <p><strong>Mob:</strong><a href= "tel:+971581174967"> +971 581174967</a></p>
-                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href= "tel:043931110"> 04 - 393 1110</a></p>
+                  <p><strong>Mob:</strong><a href="tel:+971581174967"> +971 581174967</a></p>
+                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> 04 - 393 1110</a></p>
                 </div><br>
               </div><!-- End Info Item -->
 
@@ -1672,7 +1723,8 @@
           <!-- Contact Section -->
 
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/97912b3e6b2cb7f4275ebe40a96035a8 " method="post" class="contact_form" data-aos="fade-up*" data-aos-delay="200">
+            <form action="https://formsubmit.co/97912b3e6b2cb7f4275ebe40a96035a8 " method="post" class="contact_form"
+              data-aos="fade-up*" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -1694,18 +1746,18 @@
                   <input type="hidden" name="_template" value="table">
                   <input type="hidden" name="_next" value="https://www.qplus-ts.com/index.php#contact">
                 </div>
-                
+
                 <!-- <div class="col-md-12 text-center">
                     <div class="g-recaptcha" data-sitekey="6LfZHrwnAAAAAFTiF2rhtSeinYRE_8APTUQgQ5VG" data-callback="recaptchaCallback" ></div>
                     <div class="g-recaptcha-error" >Please complete the reCAPTCHA.</div>
                 </div> -->
-                
+
 
                 <div class="col-md-12 text-center">
                   <div class="error-message"></div>
                   <button type="submit" name="button">Send Message</button>
                 </div>
-                
+
               </div>
             </form>
           </div><!-- End Contact Form -->
@@ -1779,75 +1831,81 @@
   </footer><!-- End Footer -->
 
 
-    <!-- =======Default  Footer ======= -->
-    <footer id="footer" class="footer">
+  <!-- =======Default  Footer ======= -->
+  <footer id="footer" class="footer">
 
-      <div class="container footer-top">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-about">
-            <a class="logo d-flex align-items-center">
-              <span style="color: white;font-size: large;margin-top: 10px">Our Social Networks<span>
-            </a>
-            
-            <div class="social-links d-flex mt-4">
-              <a href="https://twitter.com/qplus_q"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.facebook.com/Qplusts"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/qplustechnicalservice/"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/qplus-technical-service-llc/"><i class="bi bi-linkedin"></i></a>
-              <a href="https://wa.me/+971581174967"><i class="bi bi-whatsapp"></i></a>
-              <a href="https://www.youtube.com/@Qplus201"><i class="bi bi-youtube"></i></a>
-            </div>
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a class="logo d-flex align-items-center">
+            <span style="color: white;font-size: large;margin-top: 10px">Our Social Networks<span>
+          </a>
+
+          <div class="social-links d-flex mt-4">
+            <a href="https://twitter.com/qplus_q"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/Qplusts"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/qplustechnicalservice/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/qplus-technical-service-llc/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/+971581174967"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@Qplus201"><i class="bi bi-youtube"></i></a>
           </div>
-  
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="index.php#home">Home</a></li>
-              <li><a href="index.php#about">About us</a></li>
-              <li><a href="index.php#services">Services</a></li>
-              <li><a href="index.php#portfolio">Portfolio</a></li>
-              <li><a href="index.php#careers">Join us</a></li>
-              <li><a href="index.php#contact">Contact</a></li>
-            </ul>
-          </div>
-  
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="service-details.php">ELV services</a></li>
-              <li><a href="service-details.php">IT and Networking Services</a></li>
-              <li><a href="service-details.php">MEP Services</a></li>
-            </ul>
-          </div>
-  
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <a href= "https://goo.gl/maps/baR7adV2LxGMmDGF8">
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.php#home">Home</a></li>
+            <li><a href="index.php#about">About us</a></li>
+            <li><a href="index.php#services">Services</a></li>
+            <li><a href="index.php#portfolio">Portfolio</a></li>
+            <li><a href="index.php#careers">Join us</a></li>
+            <li><a href="index.php#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="service-details.php">ELV services</a></li>
+            <li><a href="service-details.php">IT and Networking Services</a></li>
+            <li><a href="service-details.php">MEP Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <a href="https://goo.gl/maps/baR7adV2LxGMmDGF8">
             <p>Q Plus Technical Service LLC</p>
             <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-            <p>Al Qusais, Dubai United Arab Emirates</p></a>
-            <p class="mt-4"><strong>Phone:</strong> <span><p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p><p>Tel:&nbsp;&nbsp;&nbsp;<a href = "tel:043931110"> 04 - 393 1110<br></a></p></span></p>
-            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
-          </div>
-  
+            <p>Al Qusais, Dubai United Arab Emirates</p>
+          </a>
+          <p class="mt-4"><strong>Phone:</strong> <span>
+              <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+              <p>Tel:&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> 04 - 393 1110<br></a></p>
+            </span></p>
+          <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
         </div>
+
       </div>
-  
-      <div class="container copyright text-center mt-4">
-        <p>&copy; <span>Copyright</span><strong class="px-1">DaCentric Technologies</b></strong><span>All Rights Reserved</span></p>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-           <a href=""></a>
-        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span><strong class="px-1">DaCentric Technologies</b></strong><span>All Rights
+          Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <a href=""></a>
       </div>
-  
-    </footer><!-- End Footer -->
+    </div>
+
+  </footer><!-- End Footer -->
 
   <!-- Scroll Top Button -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <!-- <div id="preloader">
