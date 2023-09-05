@@ -46,7 +46,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" href="dashboard.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -103,7 +103,7 @@
                                 <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
-                                <a href="index.php">Dashboard</a>
+                                <a href="dashboard.php">Dashboard</a>
                                 <a href="projects_add.php">Add projects</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
@@ -129,14 +129,14 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <!-- <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li> -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
@@ -291,7 +291,7 @@
 
             <!-- footer -->
             <!-- ============================================================== -->
-            <!-- <footer class="footer text-center"> Qplus technical <a href="index.php">LLC</a>
+            <!-- <footer class="footer text-center"> Qplus technical <a href="dashboard.php">LLC</a>
             </footer> -->
             <!-- ============================================================== -->
             <!-- End footer -->
