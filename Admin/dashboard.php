@@ -11,18 +11,13 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Qplus Admin Page</title>
+    <title>Admin Qplus</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body>
@@ -57,10 +52,10 @@
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <!-- <span class="logo-text">
+                        <span class="logo-text">
                             <!-- dark Logo text -->
-                        <!-- <img src="plugins/images/logo-text.png" alt="homepage" />
-                        </span> -->
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -90,7 +85,7 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <!-- <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
+                        A    <form role="search" class="app-search d-none d-md-block me-3">
                                 <input type="text" placeholder="Search..." class="form-control mt-0">
                                 <a href="" class="active">
                                     <i class="fa fa-search"></i>
@@ -106,7 +101,7 @@
                                 <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
-                                <a href="dashboard.php">Dashboard</a>
+                                <a href="projects_add.php">Add projects</a>
                                 <a href="careers_add.php">Add Jobs</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
@@ -114,7 +109,7 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                    </ul>
+                        <!-- </ul> -->
                 </div>
             </nav>
         </header>
@@ -151,15 +146,15 @@
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Projects</span>
                             </a>
-                            <!-- </li>
-                        <li class="sidebar-item">
+                        </li>
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
                                 aria-expanded="false">
                                 <i class="fa fa-font" aria-hidden="true"></i>
                                 <span class="hide-menu">Icon</span>
                             </a>
                         </li> -->
-                            <!-- <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
@@ -173,7 +168,7 @@
                                 <span class="hide-menu">Add Jobs</span>
                             </a>
                         </li>
-                        <!-- <li class="sidebar-item">
+                        <!-- <li class="sidebar-item"> 
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
                                 aria-expanded="false">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -194,14 +189,14 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper" style="min-height: 250px;">
+        <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Add Projects</h4>
+                        <h4 class="page-title">Profile page</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -224,72 +219,128 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- <div class="row">
-                    <div class="col-md-12">
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <!-- <div class="col-lg-4 col-xlg-3 col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">Blank Page</h3>
+                            <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white mt-2">User Name</h4>
+                                        <h5 class="text-white mt-2">info@myadmin.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-btm-box mt-5 d-md-flex">
+                                <div class="col-md-4 col-sm-4 text-center">
+                                    <h1>258</h1>
+                                </div>
+                                <div class="col-md-4 col-sm-4 text-center">
+                                    <h1>125</h1>
+                                </div>
+                                <div class="col-md-4 col-sm-4 text-center">
+                                    <h1>556</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">User Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="Enter Your name" required
+                                                class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="email" placeholder="Enter Your Email" required
+                                                class="form-control p-0 border-0" name="example-email"
+                                                id="example-email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Password</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="password" value="" class="form-control p-0 border-0"
+                                                placeholder="enter your password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="number" required placeholder="Phone Number"
+                                                class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Message</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <textarea rows="5" class="form-control p-0 border-0"></textarea>
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group mb-4">
+                                        <label class="col-sm-12">Select Country</label>
+
+                                        <div class="col-sm-12 border-bottom">
+                                            <select class="form-select shadow-none p-0 border-0 form-control-line">
+                                                <option>United Arab Emirates</option>
+                                                <option>India</option>
+                                                <option>London</option>
+                                                <option>United States of America</option>
+                                                <option>Others</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Create New Profile</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div> -->
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
-
-                <div class="">
-                    <div class="card">
-                        <div class="card-body">
-                            <form class="form-horizontal form-material">
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Project Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" placeholder="Enter Project Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Upload Image</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-success">Create New Project</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
             </div>
-
-
-
             <!-- ============================================================== -->
-            <!-- Right sidebar -->
+            <!-- End Container fluid  -->
             <!-- ============================================================== -->
-            <!-- .right-sidebar -->
             <!-- ============================================================== -->
-            <!-- End Right sidebar -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
+                    href="https://www.wrappixel.com/"></a> -->
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Container fluid  -->
+        <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer text-center"> Qplus technical <a href="dashboard.php">LLC</a>
-        </footer>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
