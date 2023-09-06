@@ -7,6 +7,7 @@ include('includes/functions.php');
 
 if (isset($_SESSION['id'])) {
     header('Location: dashboard.php');
+    set_message("Hello User");
     die();
 }
 
@@ -60,7 +61,7 @@ if (isset($_POST['email'])) {
 
     <section class="container login">
         <div class="row">
-            <div class="col-md-5 offset-md-3 mx-auto log">
+            <div class="col-md-12 offset-md-5 mx-auto log">
                 <div class="card my-5">
 
                     <form method="post" class="card-body cardbody-color p-lg-5">
