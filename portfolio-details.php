@@ -354,7 +354,7 @@
                   echo '<!-- End Portfolio Item -->';
                 }
               } else {
-                echo "No projects found.";
+                echo "";
               }
 
               $conn->close();

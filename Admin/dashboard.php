@@ -4,10 +4,13 @@ session_start();
 // Check if the user is not authenticated (not logged in)
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
+    set_message("Please login first to view this page.");
     exit();
 }
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -18,17 +21,19 @@ if (!isset($_SESSION['id'])) {
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+        content="">
     <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+        content="">
     <meta name="robots" content="noindex,nofollow">
-    <title>Admin Qplus</title>
+    <title>Qplus Admin</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -81,12 +86,7 @@ if (!isset($_SESSION['id'])) {
                 <!-- End Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <ul class="navbar-nav d-none d-md-block d-lg-none">
-                        <li class="nav-item">
-                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
-                                href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                        </li>
-                    </ul>
+                   
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
@@ -95,14 +95,14 @@ if (!isset($_SESSION['id'])) {
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <!-- <li class=" in">
-                        A    <form role="search" class="app-search d-none d-md-block me-3">
+                        <li class=" in">
+                            <form role="search" class="app-search d-none d-md-block me-3">
                                 <input type="text" placeholder="Search..." class="form-control mt-0">
                                 <a href="" class="active">
                                     <i class="fa fa-search"></i>
                                 </a>
                             </form>
-                        </li> -->
+                        </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -112,15 +112,15 @@ if (!isset($_SESSION['id'])) {
                                 <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
-                                <a href="projects_add.php">Add projects</a>
-                                <a href="careers_add.php">Add Jobs</a>
+                                <a href="dashboard.php">Dashboard</a>
+                                <a href="add_jobs.php">Add Jobs</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <!-- </ul> -->
+                    </ul>
                 </div>
             </nav>
         </header>
@@ -137,56 +137,57 @@ if (!isset($_SESSION['id'])) {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-                        <!-- <li class="sidebar-item pt-2">
+                        <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="projects_add.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Projects</span>
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">New Projects</span>
+                            </a>
+                        </li>
+                        
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
+                                aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span class="hide-menu">New Jobs</span>
                             </a>
                         </li>
                         <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Basic Table</span>
+                            </a>
+                        </li> -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
                                 aria-expanded="false">
                                 <i class="fa fa-font" aria-hidden="true"></i>
                                 <span class="hide-menu">Icon</span>
                             </a>
-                        </li> -->
+                        </li>
                         <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
-                                aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Google Map</span>
-                            </a>
-                        </li> -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="careers_add.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
                                 aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Jobs</span>
-                            </a>
-                        </li>
-                        <!-- <li class="sidebar-item"> 
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
-                                aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="hide-menu">Error 404</span>
+                                <span class="hide-menu">Blank Page</span>
                             </a>
                         </li> -->
-
+                        
                     </ul>
 
                 </nav>
@@ -207,14 +208,13 @@ if (!isset($_SESSION['id'])) {
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Profile page</h4>
+                        <h4 class="page-title">Dashboard</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
-
                         </div>
                     </div>
                 </div>
@@ -228,122 +228,340 @@ if (!isset($_SESSION['id'])) {
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- ============================================================== -->
-                <!-- Start Page Content -->
+                <!-- Three charts -->
                 <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <!-- <div class="col-lg-4 col-xlg-3 col-md-12">
-                        <div class="white-box">
-                            <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
-                                <div class="overlay-box">
-                                    <div class="user-content">
-                                        <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
-                                                class="thumb-lg img-circle" alt="img"></a>
-                                        <h4 class="text-white mt-2">User Name</h4>
-                                        <h5 class="text-white mt-2">info@myadmin.com</h5>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Visit</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="user-btm-box mt-5 d-md-flex">
-                                <div class="col-md-4 col-sm-4 text-center">
-                                    <h1>258</h1>
-                                </div>
-                                <div class="col-md-4 col-sm-4 text-center">
-                                    <h1>125</h1>
-                                </div>
-                                <div class="col-md-4 col-sm-4 text-center">
-                                    <h1>556</h1>
-                                </div>
-                            </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-success">659</span></li>
+                            </ul>
                         </div>
-                    </div> -->
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="">
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">User Name</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="Enter Your name" required
-                                                class="form-control p-0 border-0">
-                                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Page Views</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash2"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
-                                    <div class="form-group mb-4">
-                                        <label for="example-email" class="col-md-12 p-0">Email</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" placeholder="Enter Your Email" required
-                                                class="form-control p-0 border-0" name="example-email"
-                                                id="example-email">
-                                        </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-purple">869</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Unique Visitor</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash3"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Password</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="password" value="" class="form-control p-0 border-0"
-                                                placeholder="enter your password" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Phone No</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="number" required placeholder="Phone Number"
-                                                class="form-control p-0 border-0">
-                                        </div>
-                                    </div>
-                                    <!-- <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Message</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <textarea rows="5" class="form-control p-0 border-0"></textarea>
-                                        </div>
-                                    </div> -->
-                                    <div class="form-group mb-4">
-                                        <label class="col-sm-12">Select Country</label>
-
-                                        <div class="col-sm-12 border-bottom">
-                                            <select class="form-select shadow-none p-0 border-0 form-control-line">
-                                                <option>United Arab Emirates</option>
-                                                <option>India</option>
-                                                <option>London</option>
-                                                <option>United States of America</option>
-                                                <option>Others</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success">Create New Profile</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-info">911</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- PRODUCTS YEARLY SALES -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Products Yearly Sales</h3>
+                            <div class="d-md-flex">
+                                <ul class="list-inline d-flex ms-auto">
+                                    <li class="ps-3">
+                                        <h5><i class="fa fa-circle me-1 text-info"></i>Mac</h5>
+                                    </li>
+                                    <li class="ps-3">
+                                        <h5><i class="fa fa-circle me-1 text-inverse"></i>Windows</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="ct-visits" style="height: 405px;">
+                                <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
+                                        class="chartist-tooltip-value">6</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
                 </div>
-                <!-- Row -->
                 <!-- ============================================================== -->
-                <!-- End PAge Content -->
+                <!-- RECENT SALES -->
                 <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Recent sales</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                    <select class="form-select shadow-none row border-top">
+                                        <option>March 2021</option>
+                                        <option>April 2021</option>
+                                        <option>May 2021</option>
+                                        <option>June 2021</option>
+                                        <option>July 2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#</th>
+                                            <th class="border-top-0">Name</th>
+                                            <th class="border-top-0">Status</th>
+                                            <th class="border-top-0">Date</th>
+                                            <th class="border-top-0">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="txt-oflo">Elite admin</td>
+                                            <td>SALE</td>
+                                            <td class="txt-oflo">April 18, 2021</td>
+                                            <td><span class="text-success">$24</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="txt-oflo">Real Homes WP Theme</td>
+                                            <td>EXTENDED</td>
+                                            <td class="txt-oflo">April 19, 2021</td>
+                                            <td><span class="text-info">$1250</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td class="txt-oflo">Ample Admin</td>
+                                            <td>EXTENDED</td>
+                                            <td class="txt-oflo">April 19, 2021</td>
+                                            <td><span class="text-info">$1250</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td class="txt-oflo">Medical Pro WP Theme</td>
+                                            <td>TAX</td>
+                                            <td class="txt-oflo">April 20, 2021</td>
+                                            <td><span class="text-danger">-$24</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td class="txt-oflo">Hosting press html</td>
+                                            <td>SALE</td>
+                                            <td class="txt-oflo">April 21, 2021</td>
+                                            <td><span class="text-success">$24</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td class="txt-oflo">Digital Agency PSD</td>
+                                            <td>SALE</td>
+                                            <td class="txt-oflo">April 23, 2021</td>
+                                            <td><span class="text-danger">-$14</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td class="txt-oflo">Helping Hands WP Theme</td>
+                                            <td>MEMBER</td>
+                                            <td class="txt-oflo">April 22, 2021</td>
+                                            <td><span class="text-success">$64</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- ============================================================== -->
-                <!-- Right sidebar -->
+                <!-- Recent Comments -->
                 <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- .col -->
+                    <div class="col-md-12 col-lg-8 col-sm-12">
+                        <div class="card white-box p-0">
+                            <div class="card-body">
+                                <h3 class="box-title mb-0">Recent Comments</h3>
+                            </div>
+                            <div class="comment-widgets">
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row p-3 mt-0">
+                                    <div class="p-2"><img src="plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="comment-text ps-2 ps-md-3 w-100">
+                                        <h5 class="font-medium">James Anderson</h5>
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
+                                        <div class="comment-footer d-md-flex align-items-center">
+                                             <span class="badge bg-primary rounded">Pending</span>
+                                             
+                                            <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row p-3">
+                                    <div class="p-2"><img src="plugins/images/users/genu.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="comment-text ps-2 ps-md-3 active w-100">
+                                        <h5 class="font-medium">Michael Jorden</h5>
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
+                                        <div class="comment-footer d-md-flex align-items-center">
+
+                                            <span class="badge bg-success rounded">Approved</span>
+                                            
+                                            <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row p-3">
+                                    <div class="p-2"><img src="plugins/images/users/ritesh.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="comment-text ps-2 ps-md-3 w-100">
+                                        <h5 class="font-medium">Johnathan Doeting</h5>
+                                        <span class="mb-3 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries. </span>
+                                        <div class="comment-footer d-md-flex align-items-center">
+
+                                            <span class="badge rounded bg-danger">Rejected</span>
+                                            
+                                            <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">April 14, 2021</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="card white-box p-0">
+                            <div class="card-heading">
+                                <h3 class="box-title mb-0">Chat Listing</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="chatonline">
+                                    <li>
+                                        <div class="call-chat">
+                                            <button class="btn btn-success text-white btn-circle btn" type="button">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-circle btn" type="button">
+                                                <i class="far fa-comments text-white"></i>
+                                            </button>
+                                        </div>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                                src="plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
+                                            <div class="ms-2">
+                                                <span class="text-dark">Varun Dhavan <small
+                                                        class="d-block text-success d-block">online</small></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="call-chat">
+                                            <button class="btn btn-success text-white btn-circle btn" type="button">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-circle btn" type="button">
+                                                <i class="far fa-comments text-white"></i>
+                                            </button>
+                                        </div>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                                src="plugins/images/users/genu.jpg" alt="user-img" class="img-circle">
+                                            <div class="ms-2">
+                                                <span class="text-dark">Genelia
+                                                    Deshmukh <small class="d-block text-warning">Away</small></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="call-chat">
+                                            <button class="btn btn-success text-white btn-circle btn" type="button">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-circle btn" type="button">
+                                                <i class="far fa-comments text-white"></i>
+                                            </button>
+                                        </div>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                                src="plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle">
+                                            <div class="ms-2">
+                                                <span class="text-dark">Ritesh
+                                                    Deshmukh <small class="d-block text-danger">Busy</small></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="call-chat">
+                                            <button class="btn btn-success text-white btn-circle btn" type="button">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-circle btn" type="button">
+                                                <i class="far fa-comments text-white"></i>
+                                            </button>
+                                        </div>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                                src="plugins/images/users/arijit.jpg" alt="user-img" class="img-circle">
+                                            <div class="ms-2">
+                                                <span class="text-dark">Arijit
+                                                    Sinh <small class="d-block text-muted">Offline</small></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="call-chat">
+                                            <button class="btn btn-success text-white btn-circle btn" type="button">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-circle btn" type="button">
+                                                <i class="far fa-comments text-white"></i>
+                                            </button>
+                                        </div>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                                src="plugins/images/users/govinda.jpg" alt="user-img"
+                                                class="img-circle">
+                                            <div class="ms-2">
+                                                <span class="text-dark">Govinda
+                                                    Star <small class="d-block text-success">online</small></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="call-chat">
+                                            <button class="btn btn-success text-white btn-circle btn" type="button">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                            <button class="btn btn-info btn-circle btn" type="button">
+                                                <i class="far fa-comments text-white"></i>
+                                            </button>
+                                        </div>
+                                        <a href="javascript:void(0)" class="d-flex align-items-center"><img
+                                                src="plugins/images/users/hritik.jpg" alt="user-img" class="img-circle">
+                                            <div class="ms-2">
+                                                <span class="text-dark">John
+                                                    Abraham<small class="d-block text-success">online</small></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
             </div>
-            <!-- ============================================================== -->
+            ==============================================================
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <!-- <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-                    href="https://www.wrappixel.com/"></a> -->
+             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
+                    href="www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -363,14 +581,18 @@ if (!isset($_SESSION['id'])) {
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app-style-switcher.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
-    <!--  -->
-    <script src="js\pages\dashboards\dashboard1.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
 </body>
 
 </html>

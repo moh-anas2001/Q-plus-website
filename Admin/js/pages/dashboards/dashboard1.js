@@ -43,7 +43,7 @@ $(function () {
             barWidth: '4',
             resize: true,
             barSpacing: '5',
-            barColor: '#ffc107'
+            barColor: '#7ace4c'
         });
         $('#sparklinedash2').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
             type: 'bar',

@@ -250,7 +250,7 @@
 }
 
 .border-warning {
-  border-color: black !important;
+  border-color: #ffc107 !important;
 }
 
 .border-danger {
@@ -1036,7 +1036,7 @@
 }
 
 .text-warning {
-  color: black !important;
+  color: #ffc107 !important;
 }
 
 .text-danger {
@@ -1108,7 +1108,7 @@
 }
 
 .bg-warning {
-  background-color: black !important;
+  background-color: #ffc107 !important;
 }
 
 .bg-danger {
