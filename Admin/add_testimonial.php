@@ -1,33 +1,33 @@
 <?php
-session_start();
-
-// Check if the user is not authenticated (not logged in)
-if (!isset($_SESSION['id'])) {
-    header('Location: index.php');
-    exit();
-}
-
 // Include the database configuration
 require_once('includes/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $job_title = $_POST["job_title"];
-    $job_code = $_POST["job_code"];
-    $job_description = $_POST["job_description"];
-    $experience = $_POST["experience"];
+    // Handle the image upload
+    $uploadDirectory = "../assets/img/testimonials/"; // Specify the directory where you want to store images
+    $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
+
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
+        // Image uploaded successfully, now insert into the database
+        $name = $_POST["name"];
+        $role = $_POST["role"];
+        $testimonial = $_POST["testimonial"];
+        $com_name = $_POST["com_name"];
+        $imagePath = $uploadedImagePath;
 
 
-    // Prepare and execute the SQL query to insert data
-    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience) VALUES (?, ?, ?, ?)";
-    $stmt = $connect->prepare($sql);
-    $stmt->bind_param("ssss", $job_title, $job_code, $job_description, $experience);
-    $stmt->execute();
-    $stmt->close();
+        // Prepare and execute the SQL query to insert data
+        $sql = "INSERT INTO testimonials (name, role, testimonial, com_name, image_path ) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("sssss", $name, $role, $testimonial, $com_name, $imagePath);
+        $stmt->execute();
 
-    // Redirect back to the add_jobs.php page after adding the job
-    header("Location: add_jobs.php");
-    exit();
+        $stmt->close();
+        $connect->close();
+    } else {
+        echo "Image upload failed.";
+    }
 }
 ?>
 
@@ -50,7 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
    <link href="css/style.min.css" rel="stylesheet">
-    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
@@ -128,16 +133,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                       <li class="dropdown">
-                            <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                                <span class="text-white font-medium">Admin</span>
+                        <li class="dropdown">
+                            <a class="profile-pic" href="Logout.php">
+                                <!-- <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"> -->
+                                <span class="text-white font-medium">Login</span>
                             </a>
-                            <div class="dropdown-content">
+                            <!-- <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
                                 <a href="add_jobs.php">Add Jobs</a>
-                                <a href="Logout.php">Logout</a>
-                            </div>
+                                <a href="index.php">Login</a>
+                            </div> -->
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -159,60 +164,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
-                                aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="hide-menu">New Projects</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
-                                aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">New Jobs</span>
-                            </a>
-                        </li>
-
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Basic Table</span>
-                            </a>
-                        </li> -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
-                                aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Icon</span>
-                            </a>
-                        </li>
                        
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_testimonial.php"
                                 aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Blank Page</span>
+                                <span class="hide-menu">Testimonial</span>
                             </a>
-                        </li> -->
-                    
-                       
+                        </li>
+                        
                     </ul>
 
                 </nav>
@@ -226,19 +186,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="min-height: 250px;">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Add Jobs</h4>
+                        <h4 class="page-title">Add Testimonial</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="#" class="fw-normal">Dashboard</a></li>
+                                <li><a href="dashboard.php" class="fw-normal">Dashboard</a></li>
                             </ol>
                         </div>
                     </div>
@@ -258,45 +218,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-horizontal form-material">
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Job Title</label>
+                                    <label class="col-md-12 p-0">Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name= "job_title"placeholder="Enter the Job Title" required
+                                        <input type="text" name= "name" placeholder="Enter your Name" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Experience</label>
+                                    <label class="col-md-12 p-0">Company Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name= "experience"placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)" required
+                                        <input type="text" name="com_name" placeholder="Enter the Company name" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Job Code</label>
+                                    <label class="col-md-12 p-0">Role or Department</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text"name= "job_code" placeholder="Enter the Job code without spacing" required
+                                        <input type="text"name="role" placeholder="Enter the role or Department" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Job Description</label>
+                                    <label class="col-md-12 p-0">Testimonial</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea rows="5" class="form-control p-0 border-0" name= "job_description"
-                                            placeholder="Enter the Job Description" required></textarea>
+                                        <textarea rows="5" class="form-control p-0 border-0" name= "testimonial"
+                                            placeholder="Enter the Tesstimonial" required></textarea>
                                     </div>
                                 </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Profile Image</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="file" name="image" accept="image/*" required class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type = "submit" class="btn btn-success">Submit</button>
+                                        <button type = "submit" class="btn btn-success">Upload and Save</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

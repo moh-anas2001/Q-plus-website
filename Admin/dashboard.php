@@ -4,7 +4,6 @@ session_start();
 // Check if the user is not authenticated (not logged in)
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
-    set_message("Please login first to view this page.");
     exit();
 }
 

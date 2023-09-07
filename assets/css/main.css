@@ -2630,6 +2630,7 @@ section {
 
 .testimonials .testimonial-item p {
   font-style: italic;
+  line-height: 30px;
   margin: 50px auto 50px auto;
 }
 

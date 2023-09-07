@@ -7,7 +7,6 @@ include('includes/functions.php');
 
 if (isset($_SESSION['id'])) {
     header('Location: dashboard.php');
-    set_message("Hello User");
     die();
 }
 
