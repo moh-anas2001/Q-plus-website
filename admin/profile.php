@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check if the user is not authenticated (not logged in)
+if (!isset($_SESSION['id'])) {
+    header('Location: index.php');
+    exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 

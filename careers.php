@@ -110,6 +110,39 @@
           </div>
 
           <div class="row">
+          <?php
+          // Establish a database connection (you may need to adjust the database credentials)
+          $conn = new mysqli("localhost", "cms", "secret", "cms");
+
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+
+          // Retrieve job listings from the database
+          $sql = "SELECT job_title, job_code, job_description, experience, created_at FROM jobs ORDER BY created_at DESC";
+          $result = $conn->query($sql);
+
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo '<div class="col-lg-4">';
+              echo '<div class="career-item">';
+              echo '<h3>' . $row["job_title"] . '</h3>';
+              echo '<p>' . $row["job_description"] . '</p>';
+              echo '<p><strong>Experience:</strong> ' . $row["experience"] . '</p>';
+              echo '<P><strong>Posted on:&nbsp;</strong>' .$row["created_at"].'</p>';
+              echo '<div class="car-buts">';
+              echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
+              echo '<button class="small-button" type="submit">Apply Now</button>';
+              echo '</a></div></div></div>';
+            }
+          } else {
+            echo "No job listings found.";
+          }
+
+          $conn->close();
+          ?>
+
+         
             <div class="col-lg-4">
               <div class="career-item">
                 <h3>Automation Engineer</h3>
@@ -118,6 +151,7 @@
                   wiring, AutoCAD, and MS Office.
                 <p>
                 <p><strong>Experience:</strong> 2+ years</p>
+                <p></p>
                 <div class="car-buts">
                   <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
                     <button class="small-button" type="submit">Apply Now</button>

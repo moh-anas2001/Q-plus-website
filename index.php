@@ -1436,12 +1436,52 @@
               </template>
               <div class="swiper-wrapper">
 
+
+                <?php
+                
+
+                // Establish a database connection (you may need to adjust the database credentials)
+                $conn = new mysqli("localhost", "cms", "secret", "cms");
+
+                if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                }
+
+                // Retrieve testimonials from the database
+                $sql = "SELECT name,com_name, role, testimonial, image_path FROM testimonials ORDER BY created_at DESC";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                    echo '<div class="swiper-slide">';
+                    echo '<div class="testimonial-item">';
+                    echo '<div class="d-flex">';
+                    echo '<img src="' . $row["image_path"] . '" class="testimonial-img flex-shrink-0" alt="">';
+                    echo '<div>';
+                    echo '<h3>' . $row["name"] . '</h3>';
+                    echo '<h4><strong>'. $row["com_name"] . '</strong></h4>';
+                    echo '<h4>' . $row["role"] . '</h4>';
+                    echo '</div></div>';
+                    echo '<p>';
+                    echo '<i class="bi bi-quote quote-icon-left"></i>';
+                    echo '<span>' . $row["testimonial"] . '</span>';
+                    echo '<i class="bi bi-quote quote-icon-right"></i>';
+                    echo '</p></div></div>';
+                  }
+                } else {
+                  echo "";
+                }
+
+                $conn->close();
+                ?>
+
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
                       <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
                       <div>
                         <h3>Saul Goodman</h3>
+                        <h4><strong></strong></h4>
                         <h4>Ceo & Founder</h4>
                         <!-- <div class="stars">
                       <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
