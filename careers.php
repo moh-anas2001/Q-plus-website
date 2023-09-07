@@ -119,7 +119,7 @@
           }
 
           // Retrieve job listings from the database
-          $sql = "SELECT job_title, job_code, job_description, experience, created_at FROM jobs ORDER BY created_at DESC";
+          $sql = "SELECT job_title, job_code, job_description, experience, posted FROM jobs ORDER BY created_at DESC";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -129,7 +129,7 @@
               echo '<h3>' . $row["job_title"] . '</h3>';
               echo '<p>' . $row["job_description"] . '</p>';
               echo '<p><strong>Experience:</strong> ' . $row["experience"] . '</p>';
-              echo '<P><strong>Posted on:&nbsp;</strong>' .$row["created_at"].'</p>';
+              echo '<P><strong>Posted on:&nbsp;</strong>' .$row["posted"].'</p>';
               echo '<div class="car-buts">';
               echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
               echo '<button class="small-button" type="submit">Apply Now</button>';

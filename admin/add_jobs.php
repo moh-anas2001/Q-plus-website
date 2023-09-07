@@ -16,12 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_code = $_POST["job_code"];
     $job_description = $_POST["job_description"];
     $experience = $_POST["experience"];
+    $posted = $_POST["posted"];
 
 
     // Prepare and execute the SQL query to insert data
-    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted) VALUES (?, ?, ?, ?, ?)";
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("ssss", $job_title, $job_code, $job_description, $experience);
+    $stmt->bind_param("sssss", $job_title, $job_code, $job_description, $experience, $posted);
     $stmt->execute();
     $stmt->close();
 
@@ -39,11 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="keywords" content="">
     <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
     <title>Qplus Admin</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
@@ -269,8 +267,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Experience</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name= "experience"placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)" required
-                                            class="form-control p-0 border-0">
+                                        <input type="text" name= "experience"placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)" required  class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+                                 <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Date</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="date" name= "posted" required  class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
