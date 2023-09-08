@@ -8,30 +8,55 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
+
 // Include the database configuration
 require_once('includes/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Handle the image upload
-    $uploadDirectory = "../assets/img/projects"; // Specify the directory where you want to store images
-    $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
-
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
-        // Image uploaded successfully, now insert into the database
+    // Check if the submitted token matches the stored token
+    if ($_POST['token'] === $_SESSION['token']) {
+        // Token is valid, now check for duplicates
         $projectName = $_POST["project_name"];
-        $imagePath = $uploadedImagePath;
 
-        // Prepare and execute the SQL query to insert data
-        $sql = "INSERT INTO projects (image_path, project_name) VALUES (?, ?)";
-        $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ss", $imagePath, $projectName);
-        $stmt->execute();
+        // SQL query to check for duplicates based on project name
+        $sqlCheckDuplicate = "SELECT COUNT(*) FROM projects WHERE project_name = ?";
+        $stmtCheckDuplicate = $connect->prepare($sqlCheckDuplicate);
+        $stmtCheckDuplicate->bind_param("s", $projectName);
+        $stmtCheckDuplicate->execute();
+        $stmtCheckDuplicate->bind_result($duplicateCount);
+        $stmtCheckDuplicate->fetch();
+        $stmtCheckDuplicate->close();
 
-        $stmt->close();
+        if ($duplicateCount > 0) {
+            echo "";
+        } else {
+            // Handle the image upload
+            $uploadDirectory = "../assets/img/projects/"; // Specify the directory where you want to store images
+            $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
+
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
+                // Image uploaded successfully, now insert into the database
+                $imagePath = $uploadedImagePath;
+
+                // Prepare and execute the SQL query to insert data
+                $sql = "INSERT INTO projects (image_path, project_name) VALUES (?, ?)";
+                $stmt = $connect->prepare($sql);
+                $stmt->bind_param("ss", $imagePath, $projectName);
+                $stmt->execute();
+                $stmt->close();
+            } else {
+                echo "";
+            }
+        }
     } else {
-        echo "Image upload failed.";
+        // Token mismatch, do not process the form again.
+        // You can display an error message or take appropriate action.
+        echo "";
     }
+} else {
+    // Generate a new token when the form is initially loaded.
+    $_SESSION['token'] = md5(uniqid(rand(), true));
 }
 ?>
 
@@ -43,17 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Ample Admin Lite Template by WrapPixel</title>
+    <meta name="keywords">
+    <title>Manage Projects Section</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -210,7 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Icon</span>
                             </a>
                         </li>
-                      
+
                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
                                 aria-expanded="false">
@@ -218,8 +239,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Blank Page</span>
                             </a>
                         </li> -->
-                      
-                       
+
+
                     </ul>
 
                 </nav>
@@ -265,22 +286,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
+
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"
+                                enctype="multipart/form-data" class="form-horizontal form-material">
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Project Name</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="project_name" placeholder="Enter Project Name" required class="form-control p-0 border-0">
+                                        <input type="text" name="project_name" placeholder="Enter Project Name" required
+                                            class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Upload Image</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="image" accept="image/*" required class="form-control p-0 border-0">
+                                        <input type="file" name="image" accept="image/*" required
+                                            class="form-control p-0 border-0">
                                     </div>
+                                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type ="submit" class="btn btn-success">Upload and Save </button>
+                                        <button type="submit" class="btn btn-success" >Upload and Save</button>
                                     </div>
                                 </div>
                             </form>
@@ -288,44 +315,99 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
+                <!-- MANAGE PROJECTS TABLE -->
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Manage Projects</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">id</th>
+                                            <th class="border-top-0">Project Name</th>
+                                            <th class="border-top-0">Image Path</th>
+                                            <th class="border-top-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <?php
+                                    // Include the database configuration
+                                    require_once('includes/database.php');
+
+                                    // Fetch projects from the database
+                                    $sql = "SELECT * FROM projects";
+                                    $result = $connect->query($sql);
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row["id"] . "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["project_name"] . "</td>";
+                                        echo "<td class ='txt-oflo'>" . $row["image_path"] . "</td>";
+                                        echo "<td><a href='edit_project.php?id=" . $row["id"] . "'>Edit</a>";
+                                        echo "&nbsp;/";
+                                        echo " <a href='delete_project.php?id=" . $row["id"] . "'>Delete</a>";
+                                        echo "</td>";
+                                        echo "</tr>";
+                                    }
+
+                                    $connect->close();
+                                    ?>
+
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Column -->
             </div>
 
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
+
+
+
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
+            <!-- End PAge Content -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
-            <!-- footer -->
+            <!-- Right sidebar -->
             <!-- ============================================================== -->
-             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="www.qplus-ts.com">www.qplus-ts.com</a>
-            </footer>
-            </footer>
+            <!-- .right-sidebar -->
             <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- End Right sidebar -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Container fluid  -->
         <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
+                href="www.qplus-ts.com">www.qplus-ts.com</a>
+        </footer>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -336,6 +418,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+
+
 </body>
 
 </html>
