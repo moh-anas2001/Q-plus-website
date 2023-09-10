@@ -30,7 +30,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: add_jobs.php");
     exit();
 }
+
+// After successfully processing the form, set the flag to true
+$_SESSION['form_submitted'] = true;
+
+// Fetch existing testimonials from the database
+$sql = "SELECT * FROM jobs";
+$result = $connect->query($sql);
+$jobs = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $jobs[] = $row;
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -47,8 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
-    
+    <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -126,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                       <li class="dropdown">
+                        <li class="dropdown">
                             <a class="profile-pic" href="#">
                                 <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
                                 <span class="text-white font-medium">Admin</span>
@@ -178,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
-                        
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -193,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                         <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
                                 <i class="fa fa-comment" aria-hidden="true"></i>
@@ -207,7 +222,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Blank Page</span>
                             </a>
                         </li> -->
-                        
+
                     </ul>
 
                 </nav>
@@ -253,46 +268,115 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-horizontal form-material">
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+                                class="form-horizontal form-material">
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Title</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name= "job_title"placeholder="Enter the Job Title" required
+                                        <input type="text" name="job_title" placeholder="Enter the Job Title" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Experience</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name= "experience"placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)" required  class="form-control p-0 border-0">
+                                        <input type="text" name="experience"
+                                            placeholder="Enter the Experience (for ex: 0-2 years or 2+ years...)"
+                                            required class="form-control p-0 border-0">
                                     </div>
                                 </div>
-                                 <div class="form-group mb-4">
+                                <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Date</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="date" name= "posted" required  class="form-control p-0 border-0">
+                                        <input type="date" name="posted" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Code</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text"name= "job_code" placeholder="Enter the Job code without spacing" required
+                                        <input type="text" name="job_code"
+                                            placeholder="Enter the Job code without spacing" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea rows="5" class="form-control p-0 border-0" name= "job_description"
+                                        <textarea rows="5" class="form-control p-0 border-0" name="job_description"
                                             placeholder="Enter the Job Description" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type = "submit" class="btn btn-success">Submit</button>
+                                        <button type="submit" class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Manage Projects</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Id</th>
+                                            <th class="border-top-0">Job Title</th>
+                                            <th class="border-top-0">Experience</th>
+                                            <th class="border-top-0">Job code</th>
+                                            <th class="border-top-0">Job Description</th>
+                                            <th class="border-top-0">Posted On</th>
+                                            <th class="border-top-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($jobs as $job) { ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $job['id']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $job['job_title']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $job['experience']; ?>
+                                                </td>
+                                               
+                                                <td>
+                                                    <?php echo $job['job_code']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $job['job_description']; ?>
+                                                </td> 
+                                                <td>
+                                                    <?php echo $job['posted']; ?>
+                                                </td>
+                                                <td>
+                                                    <a
+                                                        href="operations/update_jobs.php?id=<?php echo $job['id']; ?>">Edit</a>
+                                                    /
+                                                    <a
+                                                        href="operations/delete_jobs.php?id=<?php echo $job['id']; ?>">Delete</a>
+
+
+                                                </td>
+
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -314,7 +398,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
+            <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
                     href="https://www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             </footer>
