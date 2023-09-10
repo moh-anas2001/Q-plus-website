@@ -408,7 +408,7 @@ if ($result->num_rows > 0) {
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-                    href="www.qplus-ts.com">www.qplus-ts.com</a>
+                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->
