@@ -75,12 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    
 </head>
 
 <body>
@@ -206,10 +201,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <i class="far fa-lightbulb" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
+                        
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -224,14 +220,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
+                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Icon</span>
+                                <i class="fa fa-comment" aria-hidden="true"></i>
+                                <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-
                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
                                 aria-expanded="false">
@@ -239,8 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Blank Page</span>
                             </a>
                         </li> -->
-
-
+                        
                     </ul>
 
                 </nav>
@@ -307,7 +301,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-success" >Upload and Save</button>
+                                        <button type="submit" class="btn btn-success">Upload and Save</button>
                                     </div>
                                 </div>
                             </form>
@@ -348,9 +342,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         echo "<td>" . $row["id"] . "</td>";
                                         echo "<td class='txt-oflo'>" . $row["project_name"] . "</td>";
                                         echo "<td class ='txt-oflo'>" . $row["image_path"] . "</td>";
-                                        echo "<td><a href='edit_project.php?id=" . $row["id"] . "'>Edit</a>";
+                                        echo "<td><a href='operations/edit_project.php?id=" . $row["id"] . "'>Edit</a>";
                                         echo "&nbsp;/";
-                                        echo " <a href='delete_project.php?id=" . $row["id"] . "'>Delete</a>";
+                                        echo " <a href='operations/delete_project.php?id=" . $row["id"] . "'>Delete</a>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
@@ -358,7 +352,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     $connect->close();
                                     ?>
 
-                                    <tbody>
+                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -391,7 +385,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
                 href="www.qplus-ts.com">www.qplus-ts.com</a>
         </footer>
-        </footer>
+        
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
@@ -406,8 +400,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- ============================================================== -->
     <!-- All Jquery -->
-    <!-- ============================================================== -->
-    
+
+
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>

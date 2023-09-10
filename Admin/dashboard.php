@@ -150,10 +150,10 @@ if (!isset($_SESSION['id'])) {
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                       <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <i class="far fa-lightbulb" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
@@ -172,11 +172,11 @@ if (!isset($_SESSION['id'])) {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.php"
+                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Icon</span>
+                                <i class="fa fa-comment" aria-hidden="true"></i>
+                                <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
                         <!-- <li class="sidebar-item">
