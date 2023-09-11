@@ -119,7 +119,7 @@
           }
 
           // Retrieve job listings from the database
-          $sql = "SELECT job_title, job_code, job_description, experience, posted FROM jobs ORDER BY created_at DESC";
+          $sql = "SELECT job_title, job_code, job_description, experience, posted, stat FROM jobs ORDER BY created_at DESC";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -129,109 +129,24 @@
               echo '<h3>' . $row["job_title"] . '</h3>';
               echo '<p>' . $row["job_description"] . '</p>';
               echo '<p><strong>Experience:</strong> ' . $row["experience"] . '</p>';
-              echo '<P><strong>Posted on:&nbsp;</strong>' .$row["posted"].'</p>';
+              $formattedDate = date('d-m-Y', strtotime($row["posted"]));
+              echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>';
+             
+              echo '<P><strong>Status:&nbsp;</strong>' .$row["stat"].'</p>';
               echo '<div class="car-buts">';
               echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
               echo '<button class="small-button" type="submit">Apply Now</button>';
               echo '</a></div></div></div>';
             }
           } else {
-            echo "No job listings found.";
+            echo "";
           }
 
           $conn->close();
           ?>
 
          
-            <div class="col-lg-4">
-              <div class="career-item">
-                <h3>Automation Engineer</h3>
-                <p>We are seeking a proficient automation engineer to become a valued member of our team. The perfect
-                  candidate should possess 0-2 years of experience and have a solid foundation in KNX, electrical
-                  wiring, AutoCAD, and MS Office.
-                <p>
-                <p><strong>Experience:</strong> 2+ years</p>
-                <p></p>
-                <div class="car-buts">
-                  <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
-                    <button class="small-button" type="submit">Apply Now</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="career-item">
-                <h3>Sales Engineer</h3>
-                <p>We are in search of a capable sales engineer to join our team. The ideal candidate should have 1-3
-                  years of experience, proficiency with MS Office, and preferably hold a UAE license. A strong work
-                  ethic and dedication to the role are highly valued.</p>
-                <p><strong>Experience:</strong> 2+ years</p>
-                <div class="car-buts">
-                  <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
-                    <button class="small-button" type="submit">Apply Now</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="career-item">
-                <h3>ELV Engineer</h3>
-                <p>We are in search of an ELV engineer with over 1 years of experience, who is well-versed in KNX, MS
-                  Office, and MS Excel. The candidate should also demonstrate the capability to perform effectively
-                  under pressure.
-                <p><br>
-                <p><strong>Experience:</strong> 2+ years</p>
-                <div class="car-buts">
-                  <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
-                    <button class="small-button" type="submit">Apply Now</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="career-item">
-                <h3>Web Developer</h3>
-                <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience
-                  with PHP, MySQL, and JavaScript.</p>
-                <p><strong>Experience:</strong> 2+ years</p>
-                <div class="car-buts">
-                  <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
-                    <button class="small-button" type="submit">Apply Now</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="career-item">
-                <h3>UI/UX Designer</h3>
-                <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have
-                  experience with Sketch, Figma, and Adobe XD.</p>
-                <p><strong>Experience:</strong> 2+ years</p>
-                <div class="car-buts">
-                  <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
-                    <button class="small-button" type="submit">Apply Now</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="career-item">
-                <h3>Marketing Manager</h3>
-                <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will
-                  have experience with SEO, SEM, and social media marketing.</p>
-                <p><strong>Experience:</strong> 2+ years</p>
-                <div class="car-buts">
-                  <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]">
-                    <button class="small-button" type="submit">Apply Now</button>
-                  </a>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -287,9 +202,10 @@
                 <p>Al Qusais, Dubai United Arab Emirates</p>
               </a>
               <p class="mt-4"><strong>Phone:</strong> <span>
-                  <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-                  <p>Tel:&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> 04 - 393 1110<br></a></p>
-                </span></p>
+              <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+             <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+            </span></p>
               <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
             </div>
 

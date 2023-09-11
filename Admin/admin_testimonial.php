@@ -1,6 +1,15 @@
 <?php
-require_once('includes/database.php');
 session_start();
+
+// Check if the user is not authenticated (not logged in)
+if (!isset($_SESSION['id'])) {
+    header('Location: index.php');
+    exit();
+}
+
+//Include the database Configuration
+require_once('includes/database.php');
+
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
