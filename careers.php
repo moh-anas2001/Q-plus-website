@@ -110,43 +110,47 @@
           </div>
 
           <div class="row">
-          <?php
-          // Establish a database connection (you may need to adjust the database credentials)
-          $conn = new mysqli("localhost", "cms", "secret", "cms");
+            <?php
+            require_once('admin/includes/database.php');
 
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
+            // Retrieve job listings from the database
+            $sql = "SELECT id, job_title, job_code, job_description, experience, posted, stat FROM jobs ORDER BY created_at DESC";
+            $result = $connect->query($sql);
 
-          // Retrieve job listings from the database
-          $sql = "SELECT job_title, job_code, job_description, experience, posted, stat FROM jobs ORDER BY created_at DESC";
-          $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-lg-4">';
+                echo '<div class="career-item">';
+                echo '<h3>' . $row["job_title"] . '</h3>';
+                $description = substr($row["job_description"], 0, 100);
 
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo '<div class="col-lg-4">';
-              echo '<div class="career-item">';
-              echo '<h3>' . $row["job_title"] . '</h3>';
-              echo '<p>' . $row["job_description"] . '</p>';
-              echo '<p><strong>Experience:</strong> ' . $row["experience"] . '</p>';
-              $formattedDate = date('d-m-Y', strtotime($row["posted"]));
-              echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>';
-             
-              echo '<P><strong>Status:&nbsp;</strong>' .$row["stat"].'</p>';
-              echo '<div class="car-buts">';
-              echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
-              echo '<button class="small-button" type="submit">Apply Now</button>';
-              echo '</a></div></div></div>';
+                // Check if the description was truncated
+                if (strlen($row["job_description"]) > 100) {
+                  $description .= '... <a href="job-details.php?job_id=' . $row["id"] . '">Read More</a>';
+                }
+
+                echo '<p>' . $description . '</p>';
+                echo '<p><strong>Experience:</strong> ' . $row["experience"] . '</p>';
+                $formattedDate = date('d-m-Y', strtotime($row["posted"]));
+                echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>';
+
+                // echo '<P><strong>Status:&nbsp;</strong>' . $row["stat"] . '</p>';
+                echo '<div class="car-buts">';
+                // echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
+                // echo '<button class="small-button" type="submit">Apply Now</button>';
+                echo '<a href="job-details.php?job_id=' . $row["id"] . '">';
+                echo '<button class="small-button" type="submit">Apply Now</button>';
+                echo '</a></div></div></div>';
+              }
+            } else {
+              echo "";
             }
-          } else {
-            echo "";
-          }
 
-          $conn->close();
-          ?>
+            $connect->close();
+            ?>
 
-         
-            
+
+
           </div>
         </div>
       </section>
@@ -202,10 +206,10 @@
                 <p>Al Qusais, Dubai United Arab Emirates</p>
               </a>
               <p class="mt-4"><strong>Phone:</strong> <span>
-              <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-             <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
-            </span></p>
+                  <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+                  <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                  <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+                </span></p>
               <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
             </div>
 
