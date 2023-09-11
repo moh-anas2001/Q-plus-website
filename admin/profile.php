@@ -7,6 +7,30 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
+// Include the database configuration
+require_once('includes/database.php');
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $hashedPassword = sha1($password); // Hash the password
+
+    $phone = $_POST["phone"];
+    $country = $_POST["country"];
+
+    if (empty($username) || empty($email) || empty($password) || empty($phone) || empty($country)) {
+        echo "All fields are required";
+    } else {
+        // Prepare and execute the SQL query to insert data
+        $sql = "INSERT INTO users (username, email, password, phone, country) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("sssss", $username, $email, $hashedPassword, $phone, $country);
+        $stmt->execute();
+        $stmt->close();
+    }
+}
 ?>
 
 
@@ -269,18 +293,18 @@ if (!isset($_SESSION['id'])) {
                     <div class="">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">User Name</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="Enter Your name" required
+                                            <input type="text" name="username" placeholder="Enter Your name" required
                                                 class="form-control p-0 border-0">
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
                                         <label for="example-email" class="col-md-12 p-0">Email</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" placeholder="Enter Your Email" required
+                                            <input type="email" name = "email" placeholder="Enter Your Email" required
                                                 class="form-control p-0 border-0" name="example-email"
                                                 id="example-email">
                                         </div>
@@ -288,14 +312,14 @@ if (!isset($_SESSION['id'])) {
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Password</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="password" value="" class="form-control p-0 border-0"
+                                            <input type="password" name="password" value="" class="form-control p-0 border-0"
                                                 placeholder="enter your password" required>
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Phone No</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="number" required placeholder="Phone Number"
+                                            <input type="number"name= phone required placeholder="Phone Number"
                                                 class="form-control p-0 border-0">
                                         </div>
                                     </div>
@@ -309,7 +333,7 @@ if (!isset($_SESSION['id'])) {
                                         <label class="col-sm-12">Select Country</label>
 
                                         <div class="col-sm-12 border-bottom">
-                                            <select class="form-select shadow-none p-0 border-0 form-control-line">
+                                            <select name = "country" class="form-select shadow-none p-0 border-0 form-control-line">
                                                 <option>United Arab Emirates</option>
                                                 <option>India</option>
                                                 <option>London</option>
