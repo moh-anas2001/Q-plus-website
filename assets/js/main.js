@@ -212,6 +212,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// Function to initialize the sharing functionality
+function initShareButton() {
+  const shareButton = document.getElementById("shareButton");
+
+  if (shareButton) {
+      shareButton.addEventListener("click", function () {
+          if (navigator.share) {
+              // Use the Web Share API if available
+              navigator.share({
+                  title: document.title,
+                  text: "Check out this job opportunity!",
+                  url: window.location.href,
+              })
+              .then(() => {
+                  console.log("Shared successfully");
+              })
+              .catch((error) => {
+                  console.error("Error sharing:", error);
+              });
+          } else {
+              // Fallback for browsers that don't support Web Share API
+              alert("Web Share API is not supported in your browser. You can manually copy the link.");
+          }
+      });
+  }
+}
+
+// Call the function when the document is ready
+document.addEventListener("DOMContentLoaded", function () {
+  initShareButton();
+});
+
+
 
 // // <!-- Add this script at the end of your HTML body -->
 
