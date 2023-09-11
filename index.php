@@ -1089,94 +1089,41 @@
         </div>
 
         <div class="row">
+          <?php
+          // Establish a database connection (you may need to adjust the database credentials)
+          $conn = new mysqli("localhost", "cms", "secret", "cms");
 
-          <div class="col-lg-4">
-            <div class="career-item">
-              <h3>Sales Engineer</h3>
-              <p>We are in search of a capable sales engineer to join our team. The ideal candidate should have 1-3
-                years of experience, proficiency with MS Office, and preferably hold a UAE license. A strong work ethic
-                and dedication to the role are highly valued.</p>
-              <p><strong>Experience:</strong> 1-3 years</p>
-              <div class="car-buts">
-                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
-                    class="small-button" type="submit">Apply Now</button></a>
-              </div>
-            </div>
-          </div><!-- End of Career item -->
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
 
-          <div class="col-lg-4">
-            <div class="career-item">
-              <h3>Automation Engineer</h3>
-              <p>We are seeking a proficient automation engineer to become a valued member of our team. The perfect
-                candidate should possess 0-2 years of experience and have a solid foundation in KNX, electrical wiring,
-                AutoCAD, and MS Office.
-              <p>
-              <p><strong>Experience:</strong> 0 to 2 years</p>
-              <div class="car-buts">
-                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
-                    class="small-button" type="submit">Apply Now</button></a>
-              </div>
-            </div>
-          </div><!-- End of Career item -->
+          // Retrieve job listings from the database
+          $sql = "SELECT job_title, job_code, job_description, experience, posted, stat FROM jobs ORDER BY created_at DESC LIMIT 6";
+          $result = $conn->query($sql);
 
-          <div class="col-lg-4">
-            <div class="career-item">
-              <h3>ELV Engineer</h3>
-              <p>We are in search of an ELV engineer with over 1 years of experience, who is well-versed in KNX, MS
-                Office, and MS Excel. The candidate should also demonstrate the capability to perform effectively under
-                pressure.
-              <p>
-              <p><strong>Experience:</strong>1+ years</p>
-              <div class="car-buts">
-                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
-                    class="small-button" type="submit">Apply Now</button></a>
-              </div>
-            </div>
-          </div><!-- End of Career item -->
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo '<div class="col-lg-4">';
+              echo '<div class="career-item">';
+              echo '<h3>' . $row["job_title"] . '</h3>';
+              echo '<p>' . $row["job_description"] . '</p>';
+              echo '<p><strong>Experience:</strong> ' . $row["experience"] . '</p>';
+              $formattedDate = date('d-m-Y', strtotime($row["posted"]));
+              echo '<p><strong>Posted on:</strong> ' . $formattedDate . '</p>';
+             
+              echo '<P><strong>Status:&nbsp;</strong>' .$row["stat"].'</p>';
+              echo '<div class="car-buts">';
+              // echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
+              // echo '<button class="small-button" type="submit">Apply Now</button>';
+              echo '</a></div></div></div>';
+            }
+          } else {
+            echo "";
+          }
 
-          <div class="col-lg-4">
-            <div class="career-item">
-              <h3>Web Developer</h3>
-              <p>We are looking for a skilled web developer to join our team. The ideal candidate will have experience
-                with PHP, MySQL, and JavaScript.</p>
-              <p><strong>Experience:</strong> 1-3 years</p>
-              <div class="car-buts">
-                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
-                    class="small-button" type="submit">Apply Now</button></a>
-              </div>
-            </div>
-          </div><!-- End of Career item -->
-
-          <div class="col-lg-4">
-            <div class="career-item">
-              <h3>UI/UX Designer</h3>
-              <p>We are looking for a talented UI/UX designer to join our team. The ideal candidate will have experience
-                with Sketch, Figma, and Adobe XD.</p>
-              <p><strong>Experience:</strong> 0-3 years</p>
-              <div class="car-buts">
-                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
-                    class="small-button" type="submit">Apply Now</button></a>
-              </div>
-            </div>
-          </div><!-- End of Career item -->
-
-          <div class="col-lg-4">
-            <div class="career-item">
-              <h3>Marketing Manager</h3>
-              <p>We are looking for a results-oriented marketing manager to join our team. The ideal candidate will have
-                experience with SEO, SEM, and social media marketing.</p>
-              <p><strong>Experience:</strong> 2+ years</p>
-              <div class="car-buts">
-                <a href="mailto:info@qplus-ts.com?subject=[Type%20the%20Job%20code%20or%20Job%20post%20here]"><button
-                    class="small-button" type="submit">Apply Now</button></a>
-              </div>
-            </div>
-          </div> <!-- End of Career item -->
+          $conn->close();
+          ?>
         </div><br><br><br>
-
-
-
-
         <div class="car-buts">
           <a href="careers.php">
             <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;See all open
@@ -1438,7 +1385,7 @@
 
 
                 <?php
-                
+
 
                 // Establish a database connection (you may need to adjust the database credentials)
                 $conn = new mysqli("localhost", "cms", "secret", "cms");
@@ -1459,7 +1406,7 @@
                     echo '<img src="' . $row["image_path"] . '" class="testimonial-img flex-shrink-0" alt="">';
                     echo '<div>';
                     echo '<h3>' . $row["name"] . '</h3>';
-                    echo '<h4><strong>'. $row["com_name"] . '</strong></h4>';
+                    echo '<h4><strong>' . $row["com_name"] . '</strong></h4>';
                     echo '<h4>' . $row["role"] . '</h4>';
                     echo '</div></div>';
                     echo '<p>';
@@ -1474,112 +1421,6 @@
 
                 $conn->close();
                 ?>
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                      <div>
-                        <h3>Saul Goodman</h3>
-                        <h4><strong></strong></h4>
-                        <h4>Ceo & Founder</h4>
-                        <!-- <div class="stars">
-                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
-                    </div> -->
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Q Plus Technical Service LLC has been a game-changer for our business. Their innovative
-                        solutions and unwavering support have propelled us toward success.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                      <div>
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
-                        <!-- <div class="stars">
-                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-                    </div> -->
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Q Plus Technical Service LLC turned our ideas into visual masterpieces! Their design
-                        expertise added a new dimension to our brand. Truly exceptional work!</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                      <div>
-                        <h3>Jena Karlis</h3>
-                        <h4>Store Owner</h4>
-                        <!-- <div class="stars">
-                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-                    </div> -->
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Q Plus Technical Service LLC revolutionized my store's online presence. Sales have soared
-                        since their expert solutions took over!</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                      <div>
-                        <h3>Matt Brandon</h3>
-                        <h4>Freelancer</h4>
-                        <!-- <div class="stars">
-                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
-                    </div> -->
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Q Plus Technical Service LLC has been my go-to partner for all technical solutions. Their
-                        expertise and swift service always exceed my expectations.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt=""> -->
-                      <div>
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                        <!-- <div class="stars">
-                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                    </div> -->
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Q Plus Technical Service LLC has been a game-changer for my business. Their expertise and
-                        swift solutions have saved us both time and money. A reliable partner indeed!.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
 
               </div>
               <div class="swiper-pagination"></div>
@@ -1731,7 +1572,8 @@
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
                   <p><strong>Mob:</strong><a href="tel:+971581174967"> +971 581174967</a></p>
-                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> 04 - 393 1110</a></p>
+                  <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                  <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
                 </div><br>
               </div><!-- End Info Item -->
 
@@ -1920,8 +1762,9 @@
             <p>Al Qusais, Dubai United Arab Emirates</p>
           </a>
           <p class="mt-4"><strong>Phone:</strong> <span>
-              <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-              <p>Tel:&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> 04 - 393 1110<br></a></p>
+             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
             </span></p>
           <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
         </div>

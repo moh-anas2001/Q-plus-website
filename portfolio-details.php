@@ -425,9 +425,10 @@
               <p>Al Qusais, Dubai United Arab Emirates</p>
             </a>
             <p class="mt-4"><strong>Phone:</strong> <span>
-                <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-                <p>Tel:&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> 04 - 393 1110<br></a></p>
-              </span></p>
+             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+            </span></p>
             <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
           </div>
 

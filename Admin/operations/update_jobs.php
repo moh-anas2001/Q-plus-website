@@ -18,11 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_description = $_POST["job_description"];
     $experience = $_POST["experience"];
     $posted = $_POST["posted"];
+    $stat = $_POST["stat"];
 
     // Prepare and execute the SQL query to update data
-    $sql = "UPDATE jobs SET job_title=?, job_code=?, job_description=?, experience=?, posted=? WHERE id=?";
+    $sql = "UPDATE jobs SET job_title=?, job_code=?, job_description=?, experience=?, posted=?, stat = ? WHERE id=?";
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("sssssi", $job_title, $job_code, $job_description, $experience, $posted, $job_id);
+    $stmt->bind_param("ssssssi", $job_title, $job_code, $job_description, $experience, $posted, $stat, $job_id);
     $stmt->execute();
     $stmt->close();
 
@@ -72,6 +73,7 @@ if (isset($_GET['id'])) {
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link href="../css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -164,6 +166,16 @@ if (isset($_GET['id'])) {
                                 </div>
                             </div>
                             <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Status</label>
+                                <div class="col-md-12 p-0">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="stat" value="open" required <?php if ($job['stat'] === 'opened')echo 'checked'; ?>>Open</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="stat" value="close" <?php if ($job['stat'] === 'closed')echo 'checked'; ?>>Close</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
                                 <div class="col-sm-12">
                                     <button type="submit" class="btn btn-success">Update</button>
                                 </div>
@@ -175,7 +187,7 @@ if (isset($_GET['id'])) {
         </div>
 
     </div>
-    
+
     <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../bootstrap/dist/js/bootstrap.bundle.min.js"></script>

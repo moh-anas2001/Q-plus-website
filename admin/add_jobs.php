@@ -17,12 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_description = $_POST["job_description"];
     $experience = $_POST["experience"];
     $posted = $_POST["posted"];
+    $stat = $_POST["stat"];
 
 
     // Prepare and execute the SQL query to insert data
-    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted, stat) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("sssss", $job_title, $job_code, $job_description, $experience, $posted);
+    $stmt->bind_param("ssssss", $job_title, $job_code, $job_description, $experience, $posted, $stat);
     $stmt->execute();
     $stmt->close();
 
@@ -306,6 +307,29 @@ if ($result->num_rows > 0) {
                                             placeholder="Enter the Job Description" required></textarea>
                                     </div>
                                 </div>
+                                <!-- <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Status</label>
+                                    <div class="col-md-12 p-0">
+                                        <select name="status" class="form-control">
+                                            <option value="opened">Opened</option>
+                                            <option value="closed">Closed</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Status</label>
+                                    <div class="col-md-12 p-0">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="stat" value="open" required>
+                                            &nbsp;Open</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="radio-inline">
+                                            <input type="radio" name="stat" value="close"> &nbsp;Close </label>
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
                                         <button type="submit" class="btn btn-success">Submit</button>
@@ -335,6 +359,7 @@ if ($result->num_rows > 0) {
                                             <th class="border-top-0">Job code</th>
                                             <th class="border-top-0">Job Description</th>
                                             <th class="border-top-0">Posted On</th>
+                                            <th class="border-top-0">Status</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
@@ -350,15 +375,25 @@ if ($result->num_rows > 0) {
                                                 <td>
                                                     <?php echo $job['experience']; ?>
                                                 </td>
-                                               
+
                                                 <td>
                                                     <?php echo $job['job_code']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $job['job_description']; ?>
-                                                </td> 
+                                                    <?php // echo $job['job_description']; ?>
+                                                    <span class="job-description-short">
+                                                        <?php echo substr($job['job_description'], 0, 10); ?>...<!-- Display the first 50 characters -->
+                                                    </span>
+                                                    <span class="job-description-full" style="display: none;">
+                                                        <?php echo $job['job_description']; ?> <!-- Hidden by default -->
+                                                    </span>
+                                                    <span class="expand-description-button" style="cursor: pointer; font-size: small;color: blue; text-decoration: underline;">Expand</span>
+                                                </td>
                                                 <td>
                                                     <?php echo $job['posted']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $job['stat'] ?>
                                                 </td>
                                                 <td>
                                                     <a
@@ -416,6 +451,29 @@ if ($result->num_rows > 0) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+
+    <script>
+    // Add an event listener for the expand button
+    document.querySelectorAll(".expand-description-button").forEach(function(button) {
+        button.addEventListener("click", function() {
+            // Find the related short and full description spans
+            const shortDescription = this.parentNode.querySelector(".job-description-short");
+            const fullDescription = this.parentNode.querySelector(".job-description-full");
+
+            // Toggle their visibility
+            if (shortDescription.style.display === "inline-block") {
+                shortDescription.style.display = "none";
+                fullDescription.style.display = "inline-block";
+                this.innerText = "Collapse";
+            } else {
+                shortDescription.style.display = "inline-block";
+                fullDescription.style.display = "none";
+                this.innerText = "Expand";
+            }
+        });
+    });
+</script>
+
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
