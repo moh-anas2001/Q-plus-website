@@ -69,11 +69,12 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Handle the form submission for editing the project
             $projectName = $_POST["project_name"];
+            $projectDescription =$_POST["description"];
             $projectId = $_POST["project_id"];
 
-            $sql = "UPDATE projects SET project_name = ? WHERE id = ?";
+            $sql = "UPDATE projects SET project_name = ?, description = ? WHERE id = ? ";
             $stmt = $connect->prepare($sql);
-            $stmt->bind_param("si", $projectName, $projectId);
+            $stmt->bind_param("ssi", $projectName, $projectDescription, $projectId);
             $stmt->execute();
             $stmt->close();
 
@@ -99,6 +100,12 @@
                 echo "<label class='col-md-12 p-0'>Project Name</label>";
                 echo "<div class='col-md-12 border-bottom p-0'>";
                 echo "<input type='text' name='project_name' placeholder='Enter Project Name' value='" . $row["project_name"] . "' required class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='form-group mb-4'>";
+                echo "<label class='col-md-12 p-0'>Project Description</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<textarea rows='5' name='description' placeholder='Enter Description' required class='form-control p-0 border-0'>" . $row["description"] . "</textarea>";
                 echo "</div>";
                 echo "</div>";
                 echo "<input type='hidden' name='project_id' value='" . $row["id"] . "'>";

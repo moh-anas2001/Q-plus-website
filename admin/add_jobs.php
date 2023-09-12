@@ -1,29 +1,69 @@
 <?php
 session_start();
 
-// Check if the user is not authenticated (not logged in)
+// Database connection
+$servername = "localhost";
+$username = "cms";
+$password = "secret";
+$dbname = "cms";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the user is authenticated (logged in)
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
     exit();
 }
 
+// Retrieve the lastJobCode value from the database and store it in the session
+$sql = "SELECT last_code FROM last_job_code WHERE id = 1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $_SESSION['lastJobCode'] = $row['last_code'];
+} else {
+    // If no record is found, initialize it to your desired starting value
+    $_SESSION['lastJobCode'] = 19; // Starting from 20
+}
+
 // Include the database configuration
 require_once('includes/database.php');
 
-// Check if the form is submitted
+// Initialize the last job code variable from the session or set it to 0 if not set
+$lastJobCode = isset($_SESSION['lastJobCode']) ? $_SESSION['lastJobCode'] : 19;
+$jobCode = ""; // Initialize the job code variable
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_title = $_POST["job_title"];
-    $job_code = $_POST["job_code"];
     $job_description = $_POST["job_description"];
     $experience = $_POST["experience"];
     $posted = $_POST["posted"];
     $stat = $_POST["stat"];
+    $deletion_date = $_POST["delete_date"]; // Retrieve the deletion date
 
+    // Increment the last job code
+    $lastJobCode++;
 
-    // Prepare and execute the SQL query to insert data
-    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted, stat) VALUES (?, ?, ?, ?, ?, ?)";
+    // Create the job code by concatenating the fixed part and the incremented number
+    $jobCode = "QPTS/JOB-" . str_pad($lastJobCode, 2, '0', STR_PAD_LEFT);
+
+    // Store the updated $lastJobCode in the session
+    $_SESSION['lastJobCode'] = $lastJobCode;
+
+    // Update the value in the database
+    $sql = "UPDATE last_job_code SET last_code = $lastJobCode WHERE id = 1";
+    $conn->query($sql);
+
+    // Prepare and execute the SQL query to insert data, including the deletion date
+    $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted, stat, delete_date)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("ssssss", $job_title, $job_code, $job_description, $experience, $posted, $stat);
+    $stmt->bind_param("sssssss", $job_title, $jobCode, $job_description, $experience, $posted, $stat, $deletion_date);
     $stmt->execute();
     $stmt->close();
 
@@ -31,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: add_jobs.php");
     exit();
 }
+
 
 // After successfully processing the form, set the flag to true
 $_SESSION['form_submitted'] = true;
@@ -265,12 +306,16 @@ if ($result->num_rows > 0) {
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
-                <!-- ============================================================== -->
+                <!-- ==============================================================-->
+
+
+
                 <div class="">
                     <div class="card">
                         <div class="card-body">
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
                                 class="form-horizontal form-material">
+
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Title</label>
                                     <div class="col-md-12 border-bottom p-0">
@@ -278,6 +323,7 @@ if ($result->num_rows > 0) {
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
+
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Experience</label>
                                     <div class="col-md-12 border-bottom p-0">
@@ -286,20 +332,23 @@ if ($result->num_rows > 0) {
                                             required class="form-control p-0 border-0">
                                     </div>
                                 </div>
+
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Date</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <input type="date" name="posted" required class="form-control p-0 border-0">
                                     </div>
                                 </div>
+
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Job Code</label>
+                                    <label class="col-md-12 p-0">Deletion Date</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="job_code"
-                                            placeholder="Enter the Job code without spacing" required
+                                        <input type="date" name="delete_date" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>
+
+
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Description</label>
                                     <div class="col-md-12 border-bottom p-0">
@@ -307,25 +356,17 @@ if ($result->num_rows > 0) {
                                             placeholder="Enter the Job Description" required></textarea>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Status</label>
-                                    <div class="col-md-12 p-0">
-                                        <select name="status" class="form-control">
-                                            <option value="opened">Opened</option>
-                                            <option value="closed">Closed</option>
-                                        </select>
-                                    </div>
-                                </div> -->
+
 
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Status</label>
                                     <div class="col-md-12 p-0">
                                         <label class="radio-inline">
-                                            <input type="radio" name="stat" value="open" required>
+                                            <input type="radio" name="stat" value="Open" required>
                                             &nbsp;Open</label>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <label class="radio-inline">
-                                            <input type="radio" name="stat" value="close"> &nbsp;Close </label>
+                                            <input type="radio" name="stat" value="Close"> &nbsp;Close </label>
                                     </div>
                                 </div>
 
@@ -387,10 +428,15 @@ if ($result->num_rows > 0) {
                                                     <span class="job-description-full" style="display: none;">
                                                         <?php echo $job['job_description']; ?> <!-- Hidden by default -->
                                                     </span>
-                                                    <span class="expand-description-button" style="cursor: pointer; font-size: small;color: blue; text-decoration: underline;">Expand</span>
+                                                    <span class="expand-description-button"
+                                                        style="cursor: pointer; font-size: small;color: blue; text-decoration: underline;">Expand</span>
                                                 </td>
                                                 <td>
-                                                    <?php echo $job['posted']; ?>
+                                                <?php 
+                                                    $postedDate = date('d M Y', strtotime($job['posted']));
+                                                    $deleteDate = date('d M Y', strtotime($job['delete_date']));
+                                                    echo $postedDate . ' to ' . $deleteDate;
+                                                ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $job['stat'] ?>
@@ -453,26 +499,27 @@ if ($result->num_rows > 0) {
     <!-- ============================================================== -->
 
     <script>
-    // Add an event listener for the expand button
-    document.querySelectorAll(".expand-description-button").forEach(function(button) {
-        button.addEventListener("click", function() {
-            // Find the related short and full description spans
-            const shortDescription = this.parentNode.querySelector(".job-description-short");
-            const fullDescription = this.parentNode.querySelector(".job-description-full");
+        // Add an event listener for the expand button
+        document.querySelectorAll(".expand-description-button").forEach(function (button) {
+            button.addEventListener("click", function () {
+                // Find the related short and full description spans
+                const shortDescription = this.parentNode.querySelector(".job-description-short");
+                const fullDescription = this.parentNode.querySelector(".job-description-full");
 
-            // Toggle their visibility
-            if (shortDescription.style.display === "inline-block") {
-                shortDescription.style.display = "none";
-                fullDescription.style.display = "inline-block";
-                this.innerText = "Collapse";
-            } else {
-                shortDescription.style.display = "inline-block";
-                fullDescription.style.display = "none";
-                this.innerText = "Expand";
-            }
+                // Toggle their visibility
+                if (shortDescription.style.display === "inline-block") {
+                    shortDescription.style.display = "none";
+                    fullDescription.style.display = "inline-block";
+                    this.innerText = "Collapse";
+                } else {
+                    shortDescription.style.display = "inline-block";
+                    fullDescription.style.display = "none";
+                    this.innerText = "Expand";
+                }
+            });
         });
-    });
-</script>
+    </script>
+
 
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->

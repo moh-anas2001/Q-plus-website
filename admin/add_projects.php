@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['token'] === $_SESSION['token']) {
         // Token is valid, now check for duplicates
         $projectName = $_POST["project_name"];
+        $projectDescription = $_POST["description"];
 
         // SQL query to check for duplicates based on project name
         $sqlCheckDuplicate = "SELECT COUNT(*) FROM projects WHERE project_name = ?";
@@ -40,9 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $imagePath = $uploadedImagePath;
 
                 // Prepare and execute the SQL query to insert data
-                $sql = "INSERT INTO projects (image_path, project_name) VALUES (?, ?)";
+                $sql = "INSERT INTO projects (image_path, project_name,description) VALUES (?,?, ?)";
                 $stmt = $connect->prepare($sql);
-                $stmt->bind_param("ss", $imagePath, $projectName);
+                $stmt->bind_param("sss", $imagePath, $projectName, $projectDescription);
                 $stmt->execute();
                 $stmt->close();
             } else {
@@ -75,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -205,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
-                        
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -220,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                         <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
                                 <i class="fa fa-comment" aria-hidden="true"></i>
@@ -234,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Blank Page</span>
                             </a>
                         </li> -->
-                        
+
                     </ul>
 
                 </nav>
@@ -291,13 +292,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Project Description</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <textarea rows="5" class="form-control p-0 border-0" name="description"
+                                            placeholder="Enter Project Description" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Upload Image</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <input type="file" name="image" accept="image/*" required
                                             class="form-control p-0 border-0">
                                     </div>
                                     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
-
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
@@ -325,6 +332,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <tr>
                                             <th class="border-top-0">id</th>
                                             <th class="border-top-0">Project Name</th>
+                                            <th class="border-top-0 txt-oflo">Project Description</th>
                                             <th class="border-top-0">Image Path</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
@@ -341,6 +349,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         echo "<tr>";
                                         echo "<td>" . $row["id"] . "</td>";
                                         echo "<td class='txt-oflo'>" . $row["project_name"] . "</td>";
+                                        // Display only the first 50 characters of the description
+                                        $shortDescription = substr($row["description"], 0, 50);
+                                        echo "<td class='txt-oflo'>" . $shortDescription;
+
+                                        // Check if the description length is greater than 50 characters
+                                        if (strlen($row["description"]) > 50) {
+                                            echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["description"]) . "'>Read More</a>";
+                                        }
+                                        echo "</td>";
                                         echo "<td class ='txt-oflo'>" . $row["image_path"] . "</td>";
                                         echo "<td><a href='operations/edit_project.php?id=" . $row["id"] . "'>Edit</a>";
                                         echo "&nbsp;/";
@@ -352,7 +369,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     $connect->close();
                                     ?>
 
-                                    
+
                                     </tbody>
                                 </table>
                             </div>
@@ -385,7 +402,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
                 href="https://www.qplus-ts.com">www.qplus-ts.com</a>
         </footer>
-        
+
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
@@ -400,6 +417,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- ============================================================== -->
     <!-- All Jquery -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const readMoreLinks = document.querySelectorAll(".read-more-link");
+
+            readMoreLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    const description = this.getAttribute("data-description");
+                    alert(description); // You can replace this with code to display the full description in a modal or expand the table row.
+                });
+            });
+        });
+    </script>
+
 
 
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
