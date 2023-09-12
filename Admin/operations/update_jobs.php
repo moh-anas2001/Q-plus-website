@@ -169,9 +169,9 @@ if (isset($_GET['id'])) {
                                 <label class="col-md-12 p-0">Status</label>
                                 <div class="col-md-12 p-0">
                                     <label class="radio-inline">
-                                        <input type="radio" name="stat" value="open" required <?php if ($job['stat'] === 'opened')echo 'checked'; ?>>Open</label>
+                                        <input type="radio" name="stat" value="Cpen" required <?php if ($job['stat'] === 'open')echo 'checked'; ?>>Open</label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="stat" value="close" <?php if ($job['stat'] === 'closed')echo 'checked'; ?>>Close</label>
+                                        <input type="radio" name="stat" value="Close" <?php if ($job['stat'] === 'clos')echo 'checked'; ?>>Close</label>
                                 </div>
                             </div>
 

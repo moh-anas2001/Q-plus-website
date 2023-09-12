@@ -321,11 +321,11 @@ if ($result->num_rows > 0) {
                                     <label class="col-md-12 p-0">Status</label>
                                     <div class="col-md-12 p-0">
                                         <label class="radio-inline">
-                                            <input type="radio" name="stat" value="open" required>
+                                            <input type="radio" name="stat" value="Open" required>
                                             &nbsp;Open</label>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <label class="radio-inline">
-                                            <input type="radio" name="stat" value="close"> &nbsp;Close </label>
+                                            <input type="radio" name="stat" value="Close"> &nbsp;Close </label>
                                     </div>
                                 </div>
 
