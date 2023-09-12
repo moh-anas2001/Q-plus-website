@@ -340,7 +340,7 @@
                 die("Connection failed: " . $conn->connect_error);
               }
 
-              $sql = "SELECT image_path, project_name FROM projects";
+              $sql = "SELECT id, image_path, project_name FROM projects"; // Include the 'id' column in the query
               $result = $conn->query($sql);
 
               if ($result->num_rows > 0) {
@@ -348,17 +348,19 @@
                   echo '<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">';
                   echo '<img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
                   echo '<div class="portfolio-info">';
-                  echo '<h4>' . $row["project_name"] . '</h4>';
+                  echo '<h4>' . $row["project_name"] . '</h4><br><br>';
+                  echo '<p><a href="project-details.php?id=' . $row["id"] . '">Learn More <i class="bi bi-plus-circle"></i></a></p>';
                   echo '</div></div>';
                   echo '<p>Image Path: ' . $row["image_path"] . '</p>'; // Debugging output
                   echo '<!-- End Portfolio Item -->';
                 }
               } else {
-                echo "";
+                echo "No projects found.";
               }
 
               $conn->close();
               ?>
+
 
             </div><!-- End Portfolio Container -->
 
@@ -425,10 +427,10 @@
               <p>Al Qusais, Dubai United Arab Emirates</p>
             </a>
             <p class="mt-4"><strong>Phone:</strong> <span>
-             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
-            </span></p>
+                <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+                <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+              </span></p>
             <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
           </div>
 

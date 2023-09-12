@@ -333,7 +333,7 @@ section {
 /* Global Header on page scroll
 ------------------------------*/
 .scrolled .header {
-  --color-background: #ffffff9c;
+  --color-background: #ffffff;
   --color-secondary: #444444;
   --color-nav: #444444;
   --color-nav-hover: #ffc107;;
@@ -2407,6 +2407,11 @@ section {
   border-radius: 10px; /* Adjust the aspect ratio to match your images */
 }
 
+.portfolio .portfolio-item .portfolio-info a {
+  display:flex;
+  /* align-items:center; */
+  justify-content:center;
+}
 
 .portfolio .portfolio-item .portfolio-info h4 {
   text-transform: uppercase;

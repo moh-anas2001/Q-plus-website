@@ -18,12 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_description = $_POST["job_description"];
     $experience = $_POST["experience"];
     $posted = $_POST["posted"];
+    $expire = $_POST["delete_date"];
     $stat = $_POST["stat"];
 
     // Prepare and execute the SQL query to update data
-    $sql = "UPDATE jobs SET job_title=?, job_code=?, job_description=?, experience=?, posted=?, stat = ? WHERE id=?";
+    $sql = "UPDATE jobs SET job_title=?, job_code=?, job_description=?, experience=?, posted=?, delete_date=?, stat = ? WHERE id=?";
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("ssssssi", $job_title, $job_code, $job_description, $experience, $posted, $stat, $job_id);
+    $stmt->bind_param("sssssssi", $job_title, $job_code, $job_description, $experience, $posted, $expire, $stat, $job_id);
     $stmt->execute();
     $stmt->close();
 
@@ -150,6 +151,14 @@ if (isset($_GET['id'])) {
                                 </div>
                             </div>
                             <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Expire Date</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="date" name="delete_date" required class="form-control p-0 border-0"
+                                        value="<?php echo $job['delete_date']; ?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Job Code</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <input type="text" name="job_code" placeholder="Enter the Job code without spacing"
@@ -169,7 +178,7 @@ if (isset($_GET['id'])) {
                                 <label class="col-md-12 p-0">Status</label>
                                 <div class="col-md-12 p-0">
                                     <label class="radio-inline">
-                                        <input type="radio" name="stat" value="Cpen" required <?php if ($job['stat'] === 'open')echo 'checked'; ?>>Open</label>
+                                        <input type="radio" name="stat" value="Open" required <?php if ($job['stat'] === 'open')echo 'checked'; ?>>Open</label>
                                     <label class="radio-inline">
                                         <input type="radio" name="stat" value="Close" <?php if ($job['stat'] === 'clos')echo 'checked'; ?>>Close</label>
                                 </div>
