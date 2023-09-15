@@ -112,63 +112,153 @@
 
 
             <!-- Portfolio Section - Home Page -->
-            <section id="portfolio" class="portfolio">
+            <!-- <section id="portfolio" class="portfolio"> -->
 
-                <!--  Section Title -->
-                <div class="container section-title" data-aos="fade-up">
+            <!--  Section Title -->
+            <!-- <div class="container section-title" data-aos="fade-up">
                     <h2>Portfolio</h2>
                     <p></p>
-                </div><!-- End Section Title -->
-
+                </div>End Section Title -->
+            <!-- 
                 <div class="container mt-5">
                     <div class="row">
-                        <div class="col-md-6 offset-md-3">
+                        <div class="col-md-6 offset-md-3"> -->
+            <?php
+            // // Establish a database connection (you may need to adjust the database credentials)
+            // $conn = new mysqli("localhost", "cms", "secret", "cms");
+            
+            // if ($conn->connect_error) {
+            //     die("Connection failed: " . $conn->connect_error);
+            // }
+            
+            // // Get the project ID from the URL parameter
+            // if (isset($_GET['id'])) {
+            //     $project_id = $_GET['id'];
+            
+            //     // Query to fetch project details based on project ID
+            //     $sql = "SELECT project_name, image_path, description FROM projects WHERE id = $project_id";
+            //     $result = $conn->query($sql);
+            
+            //     if ($result->num_rows > 0) {
+            //         $row = $result->fetch_assoc();
+            //         // Display project details within the card structure
+            //         echo '<div class="card">';
+            //         echo '<img src="' . $row['image_path'] . '" class="card-img-top" alt="Project Image">';
+            //         echo '<div class="card-body">';
+            //         echo '<h5 class="card-title">' . $row['project_name'] . '</h5>';
+            //         echo '<p class="card-text">' . $row['description'] . '</p>';
+            //         echo '</div></div>';
+            //     } else {
+            //         echo "Project not found.";
+            //     }
+            // } else {
+            //     echo "Invalid project ID.";
+            // }
+            
+            // // Close the database connection
+            // $conn->close();
+            ?>
+            <!-- </div>
+                    </div>
+                </div>
+            </section>End Portfolio Section -->
+
+
+            <!-- ======= Portfolio Details Section ======= -->
+            <section id="portfolio-details" class="portfolio-details">
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-8">
+                            <div class="portfolio-details-slider swiper">
+                                <div class="align-items-center">
+                                    <?php
+                                    // Establish a database connection (you may need to adjust the database credentials)
+                                    $conn = new mysqli("localhost", "cms", "secret", "cms");
+
+                                    if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                    }
+
+                                    // Get the project ID from the URL parameter
+                                    if (isset($_GET['id'])) {
+                                        $project_id = $_GET['id'];
+
+                                        // Query to fetch project details based on project ID
+                                        $sql = "SELECT project_name, image_path, description FROM projects WHERE id = $project_id";
+                                        $result = $conn->query($sql);
+
+                                        if ($result->num_rows > 0) {
+                                            $row = $result->fetch_assoc();
+
+                                            // Display project image
+                                            echo '<img src="' . $row['image_path'] . '" alt="Project Image">';
+                                        } else {
+                                            echo "Project not found.";
+                                        }
+                                    } else {
+                                        echo "Invalid project ID.";
+                                    }
+
+                                    // Close the database connection
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="portfolio-description">
+                                <?php
+                                if (isset($row['project_name'])) {
+                                    // Display project name and description
+                                    echo '<h2>' . $row['project_name'] . '</h2>';
+                                    echo '<p>' . $row['description'] . '</p>';
+                                }
+                                ?>
+                            </div>
                             <?php
-                            // Establish a database connection (you may need to adjust the database credentials)
-                            $conn = new mysqli("localhost", "cms", "secret", "cms");
-
-                            if ($conn->connect_error) {
-                                die("Connection failed: " . $conn->connect_error);
-                            }
-
-                            // Get the project ID from the URL parameter
+                            // Fetch client, contractor, and consultant details based on project ID
                             if (isset($_GET['id'])) {
                                 $project_id = $_GET['id'];
 
-                                // Query to fetch project details based on project ID
-                                $sql = "SELECT project_name, image_path, description FROM projects WHERE id = $project_id";
+                                // Query to fetch client, contractor, and consultant details based on project ID
+                                $sql = "SELECT client, contractor, consultant FROM projects WHERE id = $project_id";
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     $row = $result->fetch_assoc();
-                                    // Display project details within the card structure
-                                    echo '<div class="card">';
-                                    echo '<img src="' . $row['image_path'] . '" class="card-img-top" alt="Project Image">';
-                                    echo '<div class="card-body">';
-                                    echo '<h5 class="card-title">' . $row['project_name'] . '</h5>';
-                                    echo '<p class="card-text">' . $row['description'] . '</p>';
-                                    echo '</div></div>';
-                                } else {
-                                    echo "Project not found.";
-                                }
-                            } else {
-                                echo "Invalid project ID.";
-                            }
 
-                            // Close the database connection
+                                    // Check if all project information fields are empty
+                                    $allEmpty = empty($row['client']) && empty($row['contractor']) && empty($row['consultant']);
+
+                                    // Conditionally display the "Project information" section
+                                    if (!$allEmpty) {
+                                        echo '<div class="portfolio-info">';
+                                        echo '<h3>Project information</h3>';
+                                        echo '<ul>';
+                                        if (!empty($row['client'])) {
+                                            echo '<li><strong>Client</strong>: ' . $row['client'] . '</li>';
+                                        }
+                                        if (!empty($row['contractor'])) {
+                                            echo '<li><strong>Main Contractor</strong>: ' . $row['contractor'] . '</li>';
+                                        }
+                                        if (!empty($row['consultant'])) {
+                                            echo '<li><strong>Consultant</strong>: ' . $row['consultant'] . '</li>';
+                                        }
+                                        echo '</ul>';
+                                        echo '</div>';
+                                    }
+                                }
+                            }
                             $conn->close();
                             ?>
                         </div>
                     </div>
                 </div>
-            </section><!-- End Portfolio Section -->
+            </section>
+
+        </main><!-- End #main -->
 
 
-
-
-
-
-        </main>
 
 
         <!-- =======Default  Footer ======= -->

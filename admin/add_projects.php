@@ -19,6 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Token is valid, now check for duplicates
         $projectName = $_POST["project_name"];
         $projectDescription = $_POST["description"];
+        $client = $_POST["client"];
+        $contractor = $_POST["contractor"];
+        $consultant = $_POST["consultant"];
 
         // SQL query to check for duplicates based on project name
         $sqlCheckDuplicate = "SELECT COUNT(*) FROM projects WHERE project_name = ?";
@@ -41,9 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $imagePath = $uploadedImagePath;
 
                 // Prepare and execute the SQL query to insert data
-                $sql = "INSERT INTO projects (image_path, project_name,description) VALUES (?,?, ?)";
+                $sql = "INSERT INTO projects (image_path, project_name, description, client, contractor, consultant) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = $connect->prepare($sql);
-                $stmt->bind_param("sss", $imagePath, $projectName, $projectDescription);
+                $stmt->bind_param("ssssss", $imagePath, $projectName, $projectDescription, $client, $contractor, $consultant);
                 $stmt->execute();
                 $stmt->close();
             } else {
@@ -292,6 +295,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Client Name</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="client" placeholder="Enter client Name" required
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Main Contractor Name</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="contractor" placeholder="Enter Main Contractor Name"
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Consultant Name</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="consultant" placeholder="Enter Consultant Name" 
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Project Description</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <textarea rows="5" class="form-control p-0 border-0" name="description"
@@ -333,6 +357,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <th class="border-top-0">id</th>
                                             <th class="border-top-0">Project Name</th>
                                             <th class="border-top-0 txt-oflo">Project Description</th>
+                                            <th class="border-top-0 txt-oflo">Client Name</th>
+                                            <th class="border-top-0 txt-oflo">Contractor Name</th>
+                                            <th class="border-top-0 txt-oflo">Consultant</th>
                                             <th class="border-top-0">Image Path</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
@@ -358,6 +385,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["description"]) . "'>Read More</a>";
                                         }
                                         echo "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["client"] . "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["contractor"] . "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["consultant"] . "</td>";
                                         echo "<td class ='txt-oflo'>" . $row["image_path"] . "</td>";
                                         echo "<td><a href='operations/edit_project.php?id=" . $row["id"] . "'>Edit</a>";
                                         echo "&nbsp;/";

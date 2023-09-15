@@ -70,11 +70,14 @@
             // Handle the form submission for editing the project
             $projectName = $_POST["project_name"];
             $projectDescription =$_POST["description"];
+            $client = $_POST["client"];
+            $contractor = $_POST["contractor"];
+            $consultant = $_POST["consultant"];
             $projectId = $_POST["project_id"];
 
-            $sql = "UPDATE projects SET project_name = ?, description = ? WHERE id = ? ";
+            $sql = "UPDATE projects SET project_name = ?, description = ?, client = ?, contractor = ?, consultant = ?  WHERE id = ? ";
             $stmt = $connect->prepare($sql);
-            $stmt->bind_param("ssi", $projectName, $projectDescription, $projectId);
+            $stmt->bind_param("sssssi", $projectName, $projectDescription, $client, $contractor, $consultant, $projectId);
             $stmt->execute();
             $stmt->close();
 
@@ -100,6 +103,24 @@
                 echo "<label class='col-md-12 p-0'>Project Name</label>";
                 echo "<div class='col-md-12 border-bottom p-0'>";
                 echo "<input type='text' name='project_name' placeholder='Enter Project Name' value='" . $row["project_name"] . "' required class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='form-group mb-4'>";
+                echo "<label class='col-md-12 p-0'>Client Name</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='text' name='client' placeholder='Enter Client Name' value='" . $row["client"] . "' required class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='form-group mb-4'>";
+                echo "<label class='col-md-12 p-0'>Main Contractor Name</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='text' name='contractor' placeholder='Enter Main Contractor Name' value='" . $row["contractor"] . "'  class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
+                echo "<div class='form-group mb-4'>";
+                echo "<label class='col-md-12 p-0'>Consultant Name</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='text' name='consultant' placeholder='Enter Consultant Name' value='" . $row["consultant"] . "' class='form-control p-0 border-0'>";
                 echo "</div>";
                 echo "</div>";
                 echo "<div class='form-group mb-4'>";

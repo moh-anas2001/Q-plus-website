@@ -204,138 +204,6 @@
     </section>
 
 
-    <!-- <section id="clients" class="clients">
-  <div class="container-fluid" data-aos="fade-up">
-    <div class="swiper">
-      <!-- Swiper Configuration Template --
-      <template class="swiper-config">
-        {
-          "loop": true,
-          "speed": 3000,
-          "autoplay": {
-            "delay": 1000
-          },
-          "slidesPerView": "auto",
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          }
-        }
-      </template>
-      <!-- Swiper Wrapper (Container for client logos) --
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <!-- Container for client images --
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-9.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients  /client-17.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            
-    
-          </div><!-- End Client Images Container --
-        </div><!-- End Swiper Slide --
-
-
-        <div class="swiper-slide">
-          <!-- Container for client images --
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-10.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --       
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --   
-
-    
-          </div><!-- End Client Images Container --               
-        </div><!-- End Swiper Slide --        
-
-        <div class="swiper-slide">
-          <!-- Container for client images --     
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-13.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-14.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-15.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo"> 
-              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
-             </div><!-- End Client Item --  
-            
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -- 
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-    
-          </div><!-- End Client Images Container --
-        </div><!-- End Swiper Slide -->
-
-
-    <!-- Add more swiper-slide elements for more sets of images --
-
-
-
-
-      </div><!-- End Swiper Wrapper --
-    </div><!-- End Swiper Container --
-  </div><!-- End Container Fluid --
-</section>End Clients Section -->
-
 
     <!-- About Section - Home Page -->
     <section id="about" class="about">
@@ -651,59 +519,6 @@
             </div>
           </div><!-- End Service Item -->
 
-          <!-- <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-bounding-box-circles"></i>
-                </div>
-                <a href="service-details.php" class="stretched-link">
-                  <h3>Asperiores Commodit</h3>
-                </a>
-                <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-                <a href="service-details.php" class="stretched-link"></a>
-              </div>
-            </div>
-          </div><!-- End Service Item --
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/services-5.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-calendar4-week"></i>
-                </div>
-                <a href="#" class="stretched-link">
-                  <h3>Velit Doloremque</h3>
-                </a>
-                <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-                <a href="#" class="stretched-link"></a>
-              </div>
-            </div>
-          </div><!-- End Service Item --
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/services-6.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-chat-square-text"></i>
-                </div>
-                <a href="#" class="stretched-link">
-                  <h3>Dolori Architecto</h3>
-                </a>
-                <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-                <a href="#" class="stretched-link"></a>
-              </div>
-            </div>
-          </div>End Service Item -->
 
         </div>
 
@@ -711,57 +526,6 @@
     </section>
 
     <!-- End Services Section -->
-
-
-
-    <!-- Features Section - Home Page -->
-    <!-- <section id="features" class="features">
-
-      <!--  Section Title --
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title --
-
-      <div class="container">
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Corporis temporibus maiores provident</h3>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-            </p>
-            <a href="#" class="btn btn-get-started">Get Started</a>
-          </div>
-          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <div class="image-stack">
-              <img src="assets/img/features-light-1.jpg" alt="" class="stack-front">
-              <img src="assets/img/features-light-2.jpg" alt="" class="stack-back">
-            </div>
-          </div>
-        </div><!-- Features Item --
-
-        <div class="row gy-4 align-items-stretch justify-content-between features-item ">
-          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
-            <img src="assets/img/features-light-3.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
-            <h3>Sunt consequatur ad ut est nulla</h3>
-            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
-            </ul>
-            <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
-          </div>
-        </div><!-- Features Item --
-
-      </div>
-
-    </section><!--End Features Section -->
-
 
 
 
@@ -783,202 +547,43 @@
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/projects/al ain.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Jumeirah Hotel, Abu Dhabi</h4>
-                
-              </div>
-            </div> -->
-            <!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/projects/fairmont.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>FAIRMONT MARINA, ABU DHABI</h4>
+            <?php
+            // Establish a database connection (you may need to adjust the database credentials)
+            $conn = new mysqli("localhost", "cms", "secret", "cms");
 
+            if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+            }
 
-              </div>
-            </div><!-- End Portfolio Item -->
+            // Define an array of project IDs that you want to retrieve
+            $projectIdsToRetrieve = [1, 3, 5]; // Replace with the desired project IDs
+            
+            // Create a comma-separated string of project IDs
+            $projectIdsString = implode(",", $projectIdsToRetrieve);
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/royal m hotel, fujairah.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>ROYAL M HOTEL, FUJAIRAH</h4>
-              </div>
-            </div><!-- End Portfolio Item -->
+            // Query to fetch specific projects based on project IDs
+            $sql = "SELECT id, image_path, project_name FROM projects WHERE id IN ($projectIdsString)";
+            $result = $conn->query($sql);
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/projects/nalanda restaurant.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>NALANDA RESTAURANT, AL QUOZ</h4>
-              </div>
-            </div>
-            <!-- End Portfolio Item-->
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">';
+                echo '<img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
+                echo '<div class="portfolio-info">';
+                echo '<h4>' . $row["project_name"] . '</h4><br><br>';
+                echo '<p><a href="project-details.php?id=' . $row["id"] . '">Learn More <i class="bi bi-plus-circle"></i></a></p>';
+                echo '</div></div>';
+                echo '<!-- End Portfolio Item -->';
+              }
+            } else {
+              echo "No projects found.";
+            }
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/projects/lahbaab supermarket.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>LAHBAAB SUPERMARKET ABU SHAGARAH, SHARJAH</h4>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/Hamriya port phase 1, sharjah.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>HAMRIYA PORT PHASE 1 OFFICE, SHARJAH</h4>
-
-              </div>
-            </div>
-            <!-- End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4> -->
-
-            <!-- </div>
-            </div>End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/projects/rotana hotel.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>ROTANA HOTEL, ABU DHABI</h4>
-              </div>
-            </div>
-            <!-- End Portfolio Item . -->
+            $conn->close();
+            ?>
 
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/style gym, abu dhabi.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>STYLE GYM, ABU DHABI</h4>
-
-              </div>
-            </div>
-            <!-- End Portfolio Item -->
-
-
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/g+1 commercial building.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>G+1 COMMERCIAL BUILDING, DUBAI</h4>
-                
-              </div>
-            </div>End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/projects/jewel of creek.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>JEWEL OF CREEK, DUBAI</h4>
-
-              </div>
-            </div><!-- End Portfolio Item --
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/projects/mafraq hospital abudhabi.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MAFRAQ HOSPITAL, ABU DHABI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item --
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/troy gym, abu dhabi.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>TROY GYM, ABU DHABI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item --
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/projects/thomson reuters,dubai.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>THOMSON REUTERS OFFICE, TECOM, DUBAI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item --
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/projects/pi institute abu dhabi.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>PI INSTITUTE, ABU DHABI</h4>
-                
-              </div>
-            </div>End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/alaska restaurant.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>ALASKA RESTAURANT, PALM JUMERIAH, DUBAI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item --
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/leto cafe city.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>LETO CAFE CITY WALK MALL, DUBAI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item --
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/ramez hotel,dubai.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>RAMEZ HOTEL, DUBAI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item 
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/alaryam medical clinic.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>ALARYAM MEDICAL CLINIC, AL AIN</h4>
-               
-              </div>
-            </div><!-- End Portfolio Item 
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/sharjah waterfront villas.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SHARJAH WATERFRONT VILLAS, SHARJAH</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item 
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/iris lounge dubai.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>IRIS LOUNGE, MEYDAN, DUBAI</h4>
-                
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/museum of the future,dubai.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MUSUEM OF THE FUTURE, DUBAI</h4>
-
-              </div>
-            </div><!-- End Portfolio Item -->
-            <!-- 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/barrari natural resources.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>BARRARI NATURAL RESOURCES, AL AIN</h4>
-
-              </div>
-            </div><!-- End Portfolio Item -- -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/projects/magribi clinic, dubai.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MAGRIBI CLINIC, DUBAI</h4>
-                
-              </div>
-            </div>End Portfolio Item -->
 
           </div><!-- End Portfolio Container -->
 
@@ -1581,7 +1186,7 @@
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
                   <p><strong>Mob:</strong><a href="tel:+971581174967"> +971 581174967</a></p>
-                  <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                  <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
                   <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
                 </div><br>
               </div><!-- End Info Item -->
@@ -1771,9 +1376,9 @@
             <p>Al Qusais, Dubai United Arab Emirates</p>
           </a>
           <p class="mt-4"><strong>Phone:</strong> <span>
-             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+              <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+              <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+              <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
             </span></p>
           <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
         </div>

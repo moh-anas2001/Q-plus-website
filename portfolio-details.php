@@ -346,12 +346,11 @@
               if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                   echo '<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">';
-                  echo '<img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
+                  echo '<a href="project-details.php?id=' . $row["id"] . '"><img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
                   echo '<div class="portfolio-info">';
                   echo '<h4>' . $row["project_name"] . '</h4><br><br>';
-                  echo '<p><a href="project-details.php?id=' . $row["id"] . '">Learn More <i class="bi bi-plus-circle"></i></a></p>';
+                  echo '<p>Learn More <i class="bi bi-plus-circle"></i></a></p>';
                   echo '</div></div>';
-                  echo '<p>Image Path: ' . $row["image_path"] . '</p>'; // Debugging output
                   echo '<!-- End Portfolio Item -->';
                 }
               } else {
