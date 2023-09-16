@@ -1,9 +1,17 @@
 <?php
 session_start();
-
 // Check if the user is not authenticated (not logged in)
 if (!isset($_SESSION['id'])) {
+    echo'<script>alert("Welcome Back");</script>';
     header('Location: index.php');
+    exit();
+    
+}
+
+// Check the user's role
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
+    // Redirect to a restricted access page or display an error message
+    header('Location: restricted_access.php'); // You can create this page
     exit();
 }
 
@@ -36,6 +44,7 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
+    
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -185,6 +194,13 @@ if (!isset($_SESSION['id'])) {
                                 aria-expanded="false">
                                 <i class="fas fa-image" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Logo</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                                aria-expanded="false">
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
                             </a>
                         </li>
                         

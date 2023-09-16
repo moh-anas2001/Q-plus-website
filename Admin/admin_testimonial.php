@@ -7,6 +7,11 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
+    // Redirect to a restricted access page or display an error message
+    header('Location: restricted_access.php'); // You can create this page
+    exit();
+}
 //Include the database Configuration
 require_once('includes/database.php');
 
@@ -243,6 +248,13 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">Add Logo</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                                aria-expanded="false">
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
+                            </a>
+                        </li>
 
                     </ul>
 
@@ -316,7 +328,7 @@ if ($result->num_rows > 0) {
                                     <label class="col-md-12 p-0">Testimonial</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <textarea rows="5" class="form-control p-0 border-0" name="testimonial"
-                                            placeholder="Enter the Tesstimonial" required></textarea>
+                                            placeholder="Enter the Testimonial" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">

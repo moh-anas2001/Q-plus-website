@@ -59,7 +59,7 @@
           <li><a href="index.php#services">Services</a></li>
           <li><a href="index.php#portfolio">Portfolio</a></li>
           <li><a href="index.php#careers">Join us</a></li>
-          <!-- <li><a href="index.php#recent-posts">Blog</a></li> -->
+          <li><a href="index.php#recent-posts">Blog</a></li>
 
           </li>
           <!-- <li><a href="index.php#contact">Contact</a></li> -->
@@ -636,81 +636,6 @@
     </section><!-- End Portfolio Section -->
 
 
-    <!-- Pricing Section - Home Page -->
-    <!--   <section id="pricing" class="pricing">
-
-      <!--  Section Title 
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -
-
-      <div class="container" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="row g-4">
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <div class="icon">
-                <i class="bi bi-box"></i>
-              </div>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item --
-
-          <div class="col-lg-4">
-            <div class="pricing-item featured">
-              <h3>Business Plan</h3>
-              <div class="icon">
-                <i class="bi bi-rocket"></i>
-              </div>
-
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item --
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <div class="icon">
-                <i class="bi bi-send"></i>
-              </div>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item --
-
-        </div>
-
-      </div>
-
-    </section> -->
-    <!-- End Pricing Section -->
-
 
     <!-- ************************************************************** -->
 
@@ -1087,13 +1012,13 @@
     <!-- **********************************************************BLOG********************************************************************************************** -->
 
     <!-- Recent-posts Section - Home Page -->
-    <!-- <section id="recent-posts" class="recent-posts">
+    <section id="recent-posts" class="recent-posts">
 
-      <!--  Section Title --
+      <!--  Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Recent Posts</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title --
+      </div><!-- End Section Title -->
 
       <div class="container">
 
@@ -1123,7 +1048,7 @@
               </div>
 
             </article>
-          </div><!-- End post list item --
+          </div><!-- End post list item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <article>
@@ -1149,7 +1074,7 @@
               </div>
 
             </article>
-          </div><!-- End post list item --
+          </div><!-- End post list item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <article>
@@ -1175,13 +1100,21 @@
               </div>
 
             </article>
-          </div><!-- End post list item --
+          </div><!-- End post list item -->
 
-        </div><!-- End recent posts list --
+          <div class="car-buts" >
+          <a href="blog.php">
+            <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp; See all recent posts</button>
+          </a>
+        </div>
+
+         </div><!--End recent posts list -->
+        
 
       </div>
+     
 
-    </section> -->
+    </section>
 
     <!-- End Recent-posts Section -->
 

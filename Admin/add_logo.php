@@ -7,6 +7,12 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
+    // Redirect to a restricted access page or display an error message
+    header('Location: restricted_access.php'); // You can create this page
+    exit();
+}
+
 // Include the database configuration
 require_once('includes/database.php');
 
@@ -257,6 +263,13 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                                 aria-expanded="false">
                                 <i class="fas fa-image" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Logo</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                                aria-expanded="false">
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
                             </a>
                         </li>
 

@@ -63,8 +63,8 @@
             <li><a href="index.php#services">Services</a></li>
             <li><a href="index.php#portfolio">Portfolio</a></li>
             <li><a href="index.php#careers">Join us</a></li>
-            <!-- <li><a href="blog-details.php" class="active">Blog</a></li> -->
-            <li><a href="index.php#contact">Contact</a></li>
+            <li><a href="blog-details.php" class="active">Blog</a></li>
+            
 
             <!-- <li class="dropdown has-dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
               <ul class="dd-box-shadow">
@@ -83,17 +83,11 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul> -->
             </li>
-            <li><a href="index.php#contact">Contact</a></li>
           </ul>
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
-        <!-- <a href="index.php" class="logo-2 me-xl-0">
-          <p> WE ARE ISO 9001 2015 Certified</p>
-          
-          <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
-          <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
-        </a> -->
+        
 
         <a class="btn-getstarted" href="index.php#contact">Contact us</a>
       </div>
@@ -244,167 +238,19 @@
                 </div>
               </div><!-- End post author -->
 
-              <div class="comments">
-
-                <h4 class="comments-count">8 Comments</h4>
-
-                <div id="comment-1" class="comment">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
-                          Reply</a></h5>
-                      <time datetime="2020-01-01">01 Jan,2022</time>
-                      <p>
-                        Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
-                        molestiae est qui cum soluta.
-                        Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                      </p>
-                    </div>
-                  </div>
-                </div><!-- End comment #1 -->
-
-                <div id="comment-2" class="comment">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
-                          Reply</a></h5>
-                      <time datetime="2020-01-01">01 Jan,2022</time>
-                      <p>
-                        Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
-                        beatae.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div id="comment-reply-1" class="comment comment-reply">
-                    <div class="d-flex">
-                      <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
-                      <div>
-                        <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
-                            Reply</a></h5>
-                        <time datetime="2020-01-01">01 Jan,2022</time>
-                        <p>
-                          Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia
-                          mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est. Eum officiis sed
-                          repellat maxime vero nisi natus. Amet nesciunt nesciunt qui illum omnis est et dolor
-                          recusandae.
-
-                          Recusandae sit ad aut impedit et. Ipsa labore dolor impedit et natus in porro aut. Magnam qui
-                          cum. Illo similique occaecati nihil modi eligendi. Pariatur distinctio labore omnis incidunt
-                          et illum. Expedita et dignissimos distinctio laborum minima fugiat.
-
-                          Libero corporis qui. Nam illo odio beatae enim ducimus. Harum reiciendis error dolorum non
-                          autem quisquam vero rerum neque.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div id="comment-reply-2" class="comment comment-reply">
-                      <div class="d-flex">
-                        <div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
-                        <div>
-                          <h5><a href="">Sianna Ramsay</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
-                              Reply</a></h5>
-                          <time datetime="2020-01-01">01 Jan,2022</time>
-                          <p>
-                            Et dignissimos impedit nulla et quo distinctio ex nemo. Omnis quia dolores cupiditate et. Ut
-                            unde qui eligendi sapiente omnis ullam. Placeat porro est commodi est officiis voluptas
-                            repellat quisquam possimus. Perferendis id consectetur necessitatibus.
-                          </p>
-                        </div>
-                      </div>
-
-                    </div><!-- End comment reply #2-->
-
-                  </div><!-- End comment reply #1-->
-
-                </div><!-- End comment #2-->
-
-                <div id="comment-3" class="comment">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-5.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Nolan Davidson</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
-                          Reply</a></h5>
-                      <time datetime="2020-01-01">01 Jan,2022</time>
-                      <p>
-                        Distinctio nesciunt rerum reprehenderit sed. Iste omnis eius repellendus quia nihil ut
-                        accusantium tempore. Nesciunt expedita id dolor exercitationem aspernatur aut quam ut.
-                        Voluptatem est accusamus iste at.
-                        Non aut et et esse qui sit modi neque. Exercitationem et eos aspernatur. Ea est consequuntur
-                        officia beatae ea aut eos soluta. Non qui dolorum voluptatibus et optio veniam. Quam officia sit
-                        nostrum dolorem.
-                      </p>
-                    </div>
-                  </div>
-
-                </div><!-- End comment #3 -->
-
-                <div id="comment-4" class="comment">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-6.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Kay Duggan</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
-                      </h5>
-                      <time datetime="2020-01-01">01 Jan,2022</time>
-                      <p>
-                        Dolorem atque aut. Omnis doloremque blanditiis quia eum porro quis ut velit tempore. Cumque sed
-                        quia ut maxime. Est ad aut cum. Ut exercitationem non in fugiat.
-                      </p>
-                    </div>
-                  </div>
-
-                </div><!-- End comment #4 -->
-
-                <div class="reply-form">
-
-                  <h4>Leave a Reply</h4>
-                  <p>Your email address will not be published. Required fields are marked * </p>
-                  <form action="">
-                    <div class="row">
-                      <div class="col-md-6 form-group">
-                        <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                      </div>
-                      <div class="col-md-6 form-group">
-                        <input name="email" type="text" class="form-control" placeholder="Your Email*">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col form-group">
-                        <input name="website" type="text" class="form-control" placeholder="Your Website">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col form-group">
-                        <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Post Comment</button>
-                    </div>
-
-                  </form>
-
-                </div>
-
-              </div><!-- End blog comments -->
-
             </div>
 
             <div class="col-lg-4">
 
               <div class="sidebar">
 
-                <div class="sidebar-item search-form">
+                <!-- <div class="sidebar-item search-form">
                   <h3 class="sidebar-title">Search</h3>
                   <form action="" class="mt-3">
                     <input type="text">
                     <button type="submit"><i class="bi bi-search"></i></button>
                   </form>
-                </div><!-- End sidebar search formn-->
+                </div><!-- End sidebar search formn--
 
                 <div class="sidebar-item categories">
                   <h3 class="sidebar-title">Categories</h3>
@@ -416,7 +262,7 @@
                     <li><a href="#">Creative <span>(8)</span></a></li>
                     <li><a href="#">Educaion <span>(14)</span></a></li>
                   </ul>
-                </div><!-- End sidebar categories-->
+                </div>End sidebar categories -->
 
                 <div class="sidebar-item recent-posts">
                   <h3 class="sidebar-title">Recent Posts</h3>
@@ -462,7 +308,7 @@
                   </div><!-- End recent post item-->
 
                 </div><!-- End sidebar recent posts-->
-
+<!-- 
                 <div class="sidebar-item tags">
                   <h3 class="sidebar-title">Tags</h3>
                   <ul class="mt-3">
@@ -478,7 +324,7 @@
                     <li><a href="#">Tips</a></li>
                     <li><a href="#">Marketing</a></li>
                   </ul>
-                </div><!-- End sidebar tags-->
+                </div>End sidebar tags -->
 
               </div><!-- End Sidebar -->
 

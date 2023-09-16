@@ -7,6 +7,12 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
+    // Redirect to a restricted access page or display an error message
+    header('Location: restricted_access.php'); // You can create this page
+    exit();
+}
+
 // Include the database configuration
 require_once('includes/database.php');
 
@@ -19,14 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $phone = $_POST["phone"];
     $country = $_POST["country"];
+    $role = $_POST["role"];
 
-    if (empty($username) || empty($email) || empty($password) || empty($phone) || empty($country)) {
+    if (empty($username) || empty($email) || empty($password) || empty($phone) || empty($country) || empty($role)) {
         echo "All fields are required";
     } else {
         // Prepare and execute the SQL query to insert data
-        $sql = "INSERT INTO users (username, email, password, phone, country) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (username, email, password, phone, country) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssss", $username, $email, $hashedPassword, $phone, $country);
+        $stmt->bind_param("ssssss", $username, $email, $hashedPassword, $phone, $country, $role);
         $stmt->execute();
         $stmt->close();
     }
@@ -41,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
@@ -52,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -181,14 +188,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
-                       <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
                                 <i class="far fa-lightbulb" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
-                        
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -203,14 +210,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                         <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
                                 <i class="fa fa-comment" aria-hidden="true"></i>
                                 <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-                
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
                                 aria-expanded="false">
@@ -218,7 +225,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Add Logo</span>
                             </a>
                         </li>
-                        
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                                aria-expanded="false">
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
+                            </a>
+                        </li>
+
                     </ul>
 
                 </nav>
@@ -294,7 +309,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="">
                         <div class="card">
                             <div class="card-body">
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+                                    enctype="multipart/form-data" class="form-horizontal form-material">
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">User Name</label>
                                         <div class="col-md-12 border-bottom p-0">
@@ -305,7 +321,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="form-group mb-4">
                                         <label for="example-email" class="col-md-12 p-0">Email</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" name = "email" placeholder="Enter Your Email" required
+                                            <input type="email" name="email" placeholder="Enter Your Email" required
                                                 class="form-control p-0 border-0" name="example-email"
                                                 id="example-email">
                                         </div>
@@ -313,14 +329,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Password</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="password" name="password" value="" class="form-control p-0 border-0"
-                                                placeholder="enter your password" required>
+                                            <input type="password" name="password" value=""
+                                                class="form-control p-0 border-0" placeholder="enter your password"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
+                                        <label class="col-sm-12">Select role</label>
+
+                                        <div class="col-sm-12 border-bottom">
+                                            <select name="role"
+                                                class="form-select shadow-none p-0 border-0 form-control-line">
+                                                <option>Admin</option>
+                                                <option>Blogger</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Phone No</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="number"name= phone required placeholder="Phone Number"
+                                            <input type="number" name=phone required placeholder="Phone Number"
                                                 class="form-control p-0 border-0">
                                         </div>
                                     </div>
@@ -334,7 +363,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <label class="col-sm-12">Select Country</label>
 
                                         <div class="col-sm-12 border-bottom">
-                                            <select name = "country" class="form-select shadow-none p-0 border-0 form-control-line">
+                                            <select name="country"
+                                                class="form-select shadow-none p-0 border-0 form-control-line">
                                                 <option>United Arab Emirates</option>
                                                 <option>India</option>
                                                 <option>London</option>
@@ -354,6 +384,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <!-- Column -->
+
+
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="white-box">
+                                <div class="d-md-flex mb-3">
+                                    <h3 class="box-title mb-0">Manage Profiles</h3>
+                                    <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-top-0">User Name</th>
+                                                <th class="border-top-0 txt-oflo">Email</th>
+                                                <th class="border-top-0 txt-oflo">Password</th>
+                                                <th class="border-top-0 txt-oflo">Role</th>
+                                                <th class="border-top-0">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <?php
+                                        // Include the database configuration
+                                        require_once('includes/database.php');
+
+                                        // Fetch projects from the database
+                                        $sql = "SELECT * FROM users";
+                                        $result = $connect->query($sql);
+
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . $row["username"] . "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["email"] . "</td>";
+                                            echo "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["password"]. "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["role"] . "</td>";
+                                            echo "<td><a href='operations/edit_users.php?id=" . $row["id"] . "'>Edit</a>";
+                                            echo "&nbsp;/";
+                                            echo " <a href='operations/delete_users.php?id=" . $row["id"] . "'>Delete</a>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
+
+                                        $connect->close();
+                                        ?>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Row -->
                 <!-- ============================================================== -->
@@ -373,7 +456,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
+            <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
                     href="https://www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             <!-- ============================================================== -->

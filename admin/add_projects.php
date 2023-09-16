@@ -9,6 +9,12 @@ if (!isset($_SESSION['id'])) {
 }
 
 
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
+    // Redirect to a restricted access page or display an error message
+    header('Location: restricted_access.php'); // You can create this page
+    exit();
+}
+
 // Include the database configuration
 require_once('includes/database.php');
 
@@ -239,6 +245,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Add Logo</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                                aria-expanded="false">
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
+                            </a>
+                        </li>
 
                     </ul>
 
@@ -319,8 +332,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Project Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea rows="5" class="form-control p-0 border-0" name="description"
-                                            placeholder="Enter Project Description" required></textarea>
+                                        <textarea id ="description" rows="5" class="form-control p-0 border-0" name="description"
+                                            placeholder="Enter Project Description" ></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
@@ -474,6 +487,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+    <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'#description'
+        })
+    </script>
 
 
 </body>
