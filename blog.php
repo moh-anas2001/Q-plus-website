@@ -61,21 +61,12 @@
             <li><a href="index.php#about">About</a></li>
             <li><a href="index.php#services">Services</a></li>
             <li><a href="index.php#portfolio">Portfolio</a></li>
+             <li><a href="blog.php" class="active">Gallery</a></li>
             <li><a href="index.php#careers">Join us</a></li>
-            <!-- <li><a href="blog.php" class="active">Blog</a></li> -->
-            </li>
-            <li><a href="index.php#contact">Contact</a></li>
           </ul>
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
-        <!-- <a href="index.php" class="logo-2 me-xl-0">
-          <p> WE ARE ISO 9001 2015 Certified</p>
-          
-          <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
-          <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
-        </a> -->
-
         <a class="btn-getstarted" href="index.php#contact">Contact us</a>
       </div>
     </header><!-- End Header -->

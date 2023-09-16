@@ -135,6 +135,22 @@
           <div class="cli-log">
             <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
           </div><!-- End Client Item -->
+          <div class="cli-log">
+            <?php
+            // Include the database configuration
+            require_once('admin/includes/database.php');
+
+            // Fetch brand logos from the "logo" table
+            $sqlClientLogos = "SELECT client_path FROM logo WHERE client_path IS NOT NULL AND client_path != ''";
+            $resultClientLogos = $connect->query($sqlClientLogos);
+
+            while ($rowClientLogo = $resultClientLogos->fetch_assoc()) {
+              echo '<img src="' . $rowClientLogo["client_path"] . '" style="max-height: 40%;" class="img-fluid" alt="Brand Logo">';
+            }
+
+            
+            ?>
+          </div><!-- End Client Item -->
 
           <div class="cli-log">
             <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
@@ -354,6 +370,8 @@
 
           <!--  slide images -->
 
+
+
           <div class=" brand-log">
             <img src="assets/img/Brands/Brand-1.png" style="max-height: 40%;" class="img-fluid" alt="New Client">
           </div><!-- End Client Item -->
@@ -368,6 +386,23 @@
 
           <div class="brand-log">
             <img src="assets/img/Brands/Brand-4.png" style="max-height: 30%;" class="img-fluid" alt="New Client">
+          </div><!-- End Client Item -->
+
+          <div class="brand-log">
+            <?php
+            // Include the database configuration
+            require_once('admin/includes/database.php');
+
+            // Fetch brand logos from the "logo" table
+            $sqlBrandLogos = "SELECT brand_path FROM logo WHERE brand_path IS NOT NULL AND brand_path != ''";
+            $resultBrandLogos = $connect->query($sqlBrandLogos);
+
+            while ($rowBrandLogo = $resultBrandLogos->fetch_assoc()) {
+              echo '<img src="' . $rowBrandLogo["brand_path"] . '" style="max-height: 40%;" class="img-fluid" alt="Brand Logo">';
+            }
+
+            $connect->close();
+            ?>
           </div><!-- End Client Item -->
 
           <div class="brand-log">

@@ -12,26 +12,77 @@ require_once('includes/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $hashedPassword = sha1($password); // Hash the password
+    // Check if the submitted token matches the stored token
+    if (isset($_POST['token'])) {
+        if ($_POST['token'] === $_SESSION['token']) {
+            // Token is valid, now check for duplicates and handle form data
+            if (isset($_POST['client_name'])) {
+                $clientName = $_POST["client_name"];
+                $uploadDirectory = "../assets/img/clients/";
+                $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
+                $sqlCheckDuplicate = "SELECT COUNT(*) FROM logo WHERE client_name = ?";
+                $stmtCheckDuplicate = $connect->prepare($sqlCheckDuplicate);
+                $stmtCheckDuplicate->bind_param("s", $clientName);
+                $stmtCheckDuplicate->execute();
+                $stmtCheckDuplicate->bind_result($duplicateCount);
+                $stmtCheckDuplicate->fetch();
+                $stmtCheckDuplicate->close();
 
-    $phone = $_POST["phone"];
-    $country = $_POST["country"];
+                if ($duplicateCount > 0) {
+                    echo '<script>alert("Client already exists!");</script>';
+                } else {
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
+                        $clientPath = $uploadedImagePath;
+                        $sql = "INSERT INTO logo (client_path, client_name) VALUES (?, ?)";
+                        $stmt = $connect->prepare($sql);
+                        $stmt->bind_param("ss", $clientPath, $clientName);
+                        $stmt->execute();
+                        $stmt->close();
+                        echo '<script>alert("Client added successfully!");</script>';
+                    } else {
+                        echo '<script>alert("Error uploading image!");</script>';
+                    }
+                }
+            } elseif (isset($_POST['brand_name'])) {
+                $brandName = $_POST["brand_name"];
+                $uploadDirectory = "../assets/img/Brands/"; // Specify a different path for brand logos
+                $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
+                $sqlCheckDuplicate = "SELECT COUNT(*) FROM logo WHERE brand_name = ?";
+                $stmtCheckDuplicate = $connect->prepare($sqlCheckDuplicate);
+                $stmtCheckDuplicate->bind_param("s", $brandName);
+                $stmtCheckDuplicate->execute();
+                $stmtCheckDuplicate->bind_result($duplicateCount);
+                $stmtCheckDuplicate->fetch();
+                $stmtCheckDuplicate->close();
 
-    if (empty($username) || empty($email) || empty($password) || empty($phone) || empty($country)) {
-        echo "All fields are required";
-    } else {
-        // Prepare and execute the SQL query to insert data
-        $sql = "INSERT INTO users (username, email, password, phone, country) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssss", $username, $email, $hashedPassword, $phone, $country);
-        $stmt->execute();
-        $stmt->close();
+                if ($duplicateCount > 0) {
+                    echo '<script>alert("Brand already exists!");</script>';
+                } else {
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
+                        $brandPath = $uploadedImagePath;
+                        $sql = "INSERT INTO logo (brand_path, brand_name) VALUES (?, ?)";
+                        $stmt = $connect->prepare($sql);
+                        $stmt->bind_param("ss", $brandPath, $brandName);
+                        $stmt->execute();
+                        $stmt->close();
+                        echo '<script>alert("Brand added successfully!");</script>';
+                    } else {
+                        echo '<script>alert("Error uploading image!");</script>';
+                    }
+                }
+            }
+        } else {
+            // Token mismatch, do not process the form again.
+            // You can display an error message or take appropriate action.
+            echo '<script>alert("Token mismatch!");</script>';
+        }
     }
 }
+
+// Generate new tokens for both forms when the page is initially loaded
+$_SESSION['token'] = md5(uniqid(rand(), true));
 ?>
+
 
 
 <!DOCTYPE html>
@@ -41,24 +92,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
-    <title>QPlus Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords">
+    <title>Add Logo Section</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -181,14 +223,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
-                       <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
                                 <i class="far fa-lightbulb" aria-hidden="true"></i>
                                 <span class="hide-menu">New Projects</span>
                             </a>
                         </li>
-                        
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
                                 aria-expanded="false">
@@ -203,14 +245,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                         <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
                                 <i class="fa fa-comment" aria-hidden="true"></i>
                                 <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-                
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
                                 aria-expanded="false">
@@ -218,7 +259,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Add Logo</span>
                             </a>
                         </li>
-                        
+
                     </ul>
 
                 </nav>
@@ -239,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Profile page</h4>
+                        <h4 class="page-title">Add Logo</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -257,139 +298,218 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
+
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <!-- <div class="col-lg-4 col-xlg-3 col-md-12">
-                        <div class="white-box">
-                            <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
-                                <div class="overlay-box">
-                                    <div class="user-content">
-                                        <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
-                                                class="thumb-lg img-circle" alt="img"></a>
-                                        <h4 class="text-white mt-2">User Name</h4>
-                                        <h5 class="text-white mt-2">info@myadmin.com</h5>
+                <div class="">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                                <h4 class="page-title">Add Client Logo</h4><br>
+                            </div>
+
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"
+                                enctype="multipart/form-data" class="form-horizontal form-material">
+
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">client Name</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="client_name" placeholder="Enter Client Name" required
+                                            class="form-control p-0 border-0">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="user-btm-box mt-5 d-md-flex">
-                                <div class="col-md-4 col-sm-4 text-center">
-                                    <h1>258</h1>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Upload Image</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="file" name="image" accept="image/*" required
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+
                                 </div>
-                                <div class="col-md-4 col-sm-4 text-center">
-                                    <h1>125</h1>
+                                <div class="form-group mb-4">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-success">Upload and Save</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-4 col-sm-4 text-center">
-                                    <h1>556</h1>
-                                </div>
-                            </div>
+
+                            </form>
                         </div>
-                    </div> -->
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="">
-                        <div class="card">
-                            <div class="card-body">
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-material">
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">User Name</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" name="username" placeholder="Enter Your name" required
-                                                class="form-control p-0 border-0">
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label for="example-email" class="col-md-12 p-0">Email</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" name = "email" placeholder="Enter Your Email" required
-                                                class="form-control p-0 border-0" name="example-email"
-                                                id="example-email">
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Password</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="password" name="password" value="" class="form-control p-0 border-0"
-                                                placeholder="enter your password" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Phone No</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="number"name= phone required placeholder="Phone Number"
-                                                class="form-control p-0 border-0">
-                                        </div>
-                                    </div>
-                                    <!-- <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Message</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <textarea rows="5" class="form-control p-0 border-0"></textarea>
-                                        </div>
-                                    </div> -->
-                                    <div class="form-group mb-4">
-                                        <label class="col-sm-12">Select Country</label>
+                    </div>
+                </div>
 
-                                        <div class="col-sm-12 border-bottom">
-                                            <select name = "country" class="form-select shadow-none p-0 border-0 form-control-line">
-                                                <option>United Arab Emirates</option>
-                                                <option>India</option>
-                                                <option>London</option>
-                                                <option>United States of America</option>
-                                                <option>Others</option>
 
-                                            </select>
-                                        </div>
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                                <h4 class="page-title">Add Brand Logo</h4><br>
+                            </div>
+
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"
+                                enctype="multipart/form-data" class="form-horizontal form-material">
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Brand Name</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="brand_name" placeholder="Enter Brand Name" required
+                                            class="form-control p-0 border-0">
                                     </div>
-                                    <div class="form-group mb-4">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success">Create New Profile</button>
-                                        </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Upload Image</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="file" name="image" accept="image/*" required
+                                            class="form-control p-0 border-0">
                                     </div>
-                                </form>
+                                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+
+                                </div>
+                                <div class="form-group mb-4">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-success">Upload and Save</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <!-- Manage Clients -->
+                    <div class="col-md-6">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Manage Clients</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Client Name</th>
+                                            <th class="border-top-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Include the database configuration
+                                        require_once('includes/database.php');
+
+                                        // Fetch client data from the database
+                                        $sqlClient = "SELECT * FROM logo WHERE client_name IS NOT NULL AND client_name != ''";
+                                        $resultClient = $connect->query($sqlClient);
+
+                                        while ($rowClient = $resultClient->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td class='txt-oflo'>" . $rowClient["client_name"] . "</td>";
+                                            echo "<td><a href='operations/delete_logo.php?id=" . $rowClient["id"] . "'>Delete</a></td>";
+                                            echo "</tr>";
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
+
+                    <!-- Manage Brands -->
+                    <div class="col-md-6">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Manage Brands</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Brand Name</th>
+                                            <th class="border-top-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Fetch brand data from the database, excluding rows with empty brand_name
+                                        $sqlBrand = "SELECT * FROM logo WHERE brand_name IS NOT NULL AND brand_name != ''";
+                                        $resultBrand = $connect->query($sqlBrand);
+
+                                        while ($rowBrand = $resultBrand->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td class='txt-oflo'>" . $rowBrand["brand_name"] . "</td>";
+                                            echo "<td><a href='operations/delete_logo.php?id=" . $rowBrand["id"] . "'>Delete</a></td>";
+                                            echo "</tr>";
+                                        }
+
+                                        $connect->close();
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+
+
+
+
+
+
+
+
+
+
             </div>
+
+
+
+
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
+            <!-- End PAge Content -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
-            <!-- footer -->
+            <!-- Right sidebar -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
-            </footer>
+            <!-- .right-sidebar -->
             <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- End Right sidebar -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Container fluid  -->
         <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
+                href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+        </footer>
+
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
-    <!-- ============================================================== -->
+
+
+
+
+
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -400,6 +520,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+
+
 </body>
 
 </html>

@@ -207,7 +207,7 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
-                       <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
                                 aria-expanded="false">
                                 <i class="far fa-lightbulb" aria-hidden="true"></i>
@@ -236,13 +236,13 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
                                 aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Blank Page</span>
+                                <i class="fas fa-image" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Logo</span>
                             </a>
-                        </li> -->
+                        </li>
 
                     </ul>
 
@@ -338,7 +338,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </div>
                 </div>
-
+                <!--Manage Testimonials -->
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
@@ -382,11 +382,13 @@ if ($result->num_rows > 0) {
                                                     <?php echo $testimonial['image_path']; ?>
                                                 </td>
                                                 <td>
-                                                    <a href="operations/update_testimonial.php?id=<?php echo $testimonial['id']; ?>">Edit</a>
+                                                    <a
+                                                        href="operations/update_testimonial.php?id=<?php echo $testimonial['id']; ?>">Edit</a>
                                                     /
-                                                    <a href="operations/delete_testimonial.php?id=<?php echo $testimonial['id']; ?>">Delete</a>
-                                                    
-                                                    
+                                                    <a
+                                                        href="operations/delete_testimonial.php?id=<?php echo $testimonial['id']; ?>">Delete</a>
+
+
                                                 </td>
 
                                             </tr>
