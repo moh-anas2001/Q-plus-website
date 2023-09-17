@@ -11,7 +11,7 @@ if (!isset($_SESSION['id'])) {
 
 if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
     // Redirect to a restricted access page or display an error message
-    header('Location: restricted_access.php'); // You can create this page
+    header('Location: 404.php'); // You can create this page
     exit();
 }
 

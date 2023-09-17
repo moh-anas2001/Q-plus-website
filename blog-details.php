@@ -64,7 +64,7 @@
             <li><a href="index.php#portfolio">Portfolio</a></li>
             <li><a href="index.php#careers">Join us</a></li>
             <li><a href="blog-details.php" class="active">Blog</a></li>
-            
+
 
             <!-- <li class="dropdown has-dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
               <ul class="dd-box-shadow">
@@ -87,7 +87,7 @@
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
-        
+
 
         <a class="btn-getstarted" href="index.php#contact">Contact us</a>
       </div>
@@ -103,9 +103,7 @@
             <div class="row d-flex justify-content-center text-center">
               <div class="col-lg-8">
                 <h1>Blog Details</h1>
-                <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
-                  consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit
-                  quaerat ipsum dolorem.</p>
+                <p class="mb-0"></p>
               </div>
             </div>
           </div>
@@ -143,8 +141,8 @@
                         Doe</a></li>
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.php"><time
                           datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.php">12
-                        Comments</a></li>
+                    <!-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.php">12
+                        Comments</a></li> -->
                   </ul>
                 </div><!-- End meta top -->
 
@@ -157,18 +155,6 @@
                   </p>
 
                   <p>
-                    Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum
-                    vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
-                  </p>
-
-                  <blockquote>
-                    <p>
-                      Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut. Aut eos aliquam
-                      doloribus minus autem quos.
-                    </p>
-                  </blockquote>
-
-                  <p>
                     Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident
                     voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit
                     perspiciatis. Voluptate ex rerum assumenda dolores nihil quaerat.
@@ -178,17 +164,6 @@
                     magnam quod et tempora deleniti error rerum nihil tempora.
                   </p>
 
-                  <h3>Et quae iure vel ut odit alias.</h3>
-                  <p>
-                    Officiis animi maxime nulla quo et harum eum quis a. Sit hic in qui quos fugit ut rerum atque. Optio
-                    provident dolores atque voluptatem rem excepturi molestiae qui. Voluptatem laborum omnis ullam
-                    quibusdam perspiciatis nulla nostrum. Voluptatum est libero eum nesciunt aliquid qui.
-                    Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione
-                    aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores
-                    natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
-                    Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam
-                    voluptatem voluptatem accusamus mollitia aut atque aut.
-                  </p>
                   <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
 
                   <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
@@ -198,6 +173,9 @@
                     sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
                     Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse.
                     Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                    Mollit eiusmod tempor cupidatat sit. Id mollit veniam do laborum sint consequat veniam proident est. Irure eiusmod exercitation elit magna non. Occaecat nisi non proident reprehenderit aute pariatur ea cillum deserunt labore ipsum magna. Velit veniam reprehenderit fugiat eu deserunt enim magna sint dolor nulla aliqua. Deserunt dolore cillum anim sunt et non commodo mollit deserunt sunt consectetur quis. Non nisi do laboris amet cupidatat deserunt id irure excepteur ex.
+
+Adipisicing ad mollit sit sunt sit exercitation. Pariatur eiusmod Lorem deserunt sint pariatur fugiat ipsum aliquip reprehenderit. Ut pariatur commodo exercitation dolor duis aute eiusmod et incididunt ea. Duis voluptate eiusmod ipsum non nostrud irure esse labore sint. Ad incididunt irure deserunt ipsum occaecat nulla incididunt. Veniam id anim occaecat voluptate ad culpa anim cillum. Consectetur non consectetur eu ad sunt non nulla nulla reprehenderit do magna adipisicing.
                   </p>
                   <p>
                     Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla
@@ -206,7 +184,7 @@
 
                 </div><!-- End post content -->
 
-                <div class="meta-bottom">
+                <!-- <div class="meta-bottom">
                   <i class="bi bi-folder"></i>
                   <ul class="cats">
                     <li><a href="#">Business</a></li>
@@ -218,7 +196,7 @@
                     <li><a href="#">Tips</a></li>
                     <li><a href="#">Marketing</a></li>
                   </ul>
-                </div><!-- End meta bottom -->
+                </div>End meta bottom -->
 
               </article><!-- End post article -->
 
@@ -308,7 +286,7 @@
                   </div><!-- End recent post item-->
 
                 </div><!-- End sidebar recent posts-->
-<!-- 
+                <!-- 
                 <div class="sidebar-item tags">
                   <h3 class="sidebar-title">Tags</h3>
                   <ul class="mt-3">
@@ -389,10 +367,10 @@
               <p>Al Qusais, Dubai United Arab Emirates</p>
             </a>
             <p class="mt-4"><strong>Phone:</strong> <span>
-             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
-            </span></p>
+                <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+                <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+              </span></p>
             <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
           </div>
 

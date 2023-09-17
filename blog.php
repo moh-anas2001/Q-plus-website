@@ -115,10 +115,10 @@ $result = $connect->query($sql);
               <div class="col-xl-4 col-lg-6">
                 <article>
                   <div class="post-img">
-                    <img src="<?php echo $row['image_path']; ?>" alt="blog image" class="img-fluid">
+                    <img src="<?php echo $row['cover_image']; ?>" alt="blog image" class="img-fluid">
                   </div>
                   <h2 class="title">
-                    <a href="blog-details.php?id=<?php echo $row['id']; ?>">
+                    <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
                       <?php echo $row['title']; ?>
                     </a>
                   </h2>

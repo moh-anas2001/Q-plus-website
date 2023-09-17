@@ -30,54 +30,89 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtCheckDuplicate->close();
 
         if ($duplicateCount > 0) {
-            echo "Blog post with the same title already exists.";
+            echo '<script>alert("Blog post with the same title already exists.");</script>';
         } else {
-            // Upload and handle blog image
+            // Upload and handle blog images
             $blogImageDir = "../assets/img/blog/"; // Directory to store blog images
-            $blogImage = $_FILES["image"]["name"];
-            $blogImagePath = $blogImageDir . basename($blogImage);
+            $blogImagePaths = []; // Array to store image paths
 
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $blogImagePath)) {
-                // Image uploaded successfully, proceed to insert data
-                // Upload and handle author image
-                $authorImageDir = "../assets/img/blog/author/"; // Directory to store author images
-                $authorImage = $_FILES["author_image"]["name"];
-                $authorImagePath = $authorImageDir . basename($authorImage);
+            foreach ($_FILES["images"]["tmp_name"] as $key => $tmp_name) {
+                $blogImage = $_FILES["images"]["name"][$key];
+                $blogImagePath = $blogImageDir . basename($blogImage);
 
-                if (move_uploaded_file($_FILES["author_image"]["tmp_name"], $authorImagePath)) {
-                    // Author image uploaded successfully, proceed to insert data into the database
-                    $sql = "INSERT INTO blog (title, author_name, publish_date, content, image_path, author_image) VALUES (?, ?, ?, ?, ?, ?)";
-                    $stmt = $connect->prepare($sql);
-                    $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $blogImagePath, $authorImagePath);
-
-                    if ($stmt->execute()) {
-                        // Data inserted successfully
-                        echo "Blog post added successfully!";
-                    } else {
-                        // Error inserting data
-                        echo "Error adding blog post: " . $stmt->error;
-                    }
-
-                    $stmt->close();
+                if (move_uploaded_file($_FILES["images"]["tmp_name"][$key], $blogImagePath)) {
+                    // Image uploaded successfully, add its path to the array
+                    $blogImagePaths[] = $blogImagePath;
                 } else {
-                    echo "Error uploading author image!";
+                    echo '<script>alert("Error uploading blog image!");</script>';
+                    // Handle the error as needed
+                }
+            }
+
+            // Upload and handle author image
+            $authorImageDir = "../assets/img/blog/author/"; // Directory to store author images
+            $authorImage = $_FILES["author_image"]["name"];
+            $authorImagePath = $authorImageDir . basename($authorImage);
+
+            if (move_uploaded_file($_FILES["author_image"]["tmp_name"], $authorImagePath)) {
+                // Author image uploaded successfully
+            } else {
+                echo '<script>alert("Error uploading author image!");</script>';
+                // Handle the error as needed
+            }
+
+
+            // Upload and handle author image
+            $coverImageDir = "../assets/img/blog/"; // Directory to store author images
+            $coverImage = $_FILES["cover_image"]["name"];
+            $coverImagePath = $coverImageDir . basename($coverImage);
+
+            if (isset($_FILES["cover_image"]) && $_FILES["cover_image"]["error"] == 0) {
+                if (move_uploaded_file($_FILES["cover_image"]["tmp_name"], $coverImagePath)) {
+                    // Author image uploaded successfully
+                } else {
+                    echo '<script>alert("Error uploading author image!");</script>';
+                    // Handle the error as needed
                 }
             } else {
-                echo "Error uploading blog image!";
+                echo '<script>alert("No file uploaded or an error occurred.");</script>';
+            }
+
+            // Insert data into the blog table
+            $sql = "INSERT INTO blog (title, author_name, publish_date, content, author_image, cover_image) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $connect->prepare($sql);
+            $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $authorImagePath, $coverImagePath);
+
+            if ($stmt->execute()) {
+                // Data inserted successfully
+                $blog_id = $stmt->insert_id; // Get the ID of the inserted blog post
+                $stmt->close();
+
+                // Insert blog image paths into the blog_images table
+                foreach ($blogImagePaths as $imagePath) {
+                    $sql = "INSERT INTO blog_images (blog_id, image_path) VALUES (?, ?)";
+                    $stmt = $connect->prepare($sql);
+                    $stmt->bind_param("is", $blog_id, $imagePath);
+                    $stmt->execute();
+                    $stmt->close();
+                }
+
+                echo '<script>alert("Blog post added successfully!");</script>';
+            } else {
+                // Error inserting data
+                echo '<script>alert("Error adding blog post: ' . $stmt->error . '");</script>';
             }
         }
     } else {
         // Token mismatch
-        echo "Token mismatch!";
+        echo '<script>alert("Duplicate Upload Detected!");</script>';
     }
 }
 
 // Generate a new token when the form is initially loaded.
 $_SESSION['token'] = md5(uniqid(rand(), true));
-
-// Close the database connection
-$connect->close();
 ?>
+
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -121,7 +156,7 @@ $connect->close();
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="add_blogs.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -178,8 +213,8 @@ $connect->close();
                                 <span class="text-white font-medium">Admin</span>
                             </a>
                             <div class="dropdown-content">
-                                <a href="dashboard.php">Dashboard</a>
-                                <a href="add_jobs.php">Add Jobs</a>
+                                <a href="add_blogs.php">Add Blogs</a>
+                                <a href="404.php">Edit Blogs</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
                         </li>
@@ -210,20 +245,19 @@ $connect->close();
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_testimonial.php"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">New Testimonials</span>
-                            </a>
-                        </li>
-
 
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_blogs.php"
                                 aria-expanded="false">
                                 <i class="fas fa-upload" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Blogs</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.php"
+                                aria-expanded="false">
+                                <i class="fas fa-edit" aria-hidden="true"></i>
+                                <span class="hide-menu">Edit Blogs</span>
                             </a>
                         </li>
 
@@ -251,9 +285,9 @@ $connect->close();
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
-                            <ol class="breadcrumb ms-auto">
-                                <li><a href="#" class="fw-normal">Dashboard</a></li>
-                            </ol>
+                            <!-- <ol class="breadcrumb ms-auto">
+                                <li><a href="#" class="fw-normal"></a></li>
+                            </ol> -->
                         </div>
                     </div>
                 </div>
@@ -303,20 +337,34 @@ $connect->close();
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Blog Description</label>
+                                    <label class="col-md-12 p-0">Cover Image</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea id="content" rows="5" class="form-control p-0 border-0"
-                                            name="content" placeholder="Enter Blog Description"></textarea>
+                                        <input type="file" name="cover_image" accept="image/*" required
+                                            class="form-control p-0 border-0">
+
+                                        <small class="text-muted">**Image to appear on the cover of the blog</small>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Upload Image</label>
+                                    <label class="col-md-12 p-0">Blog Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="image" accept="image/*" required
+                                        <textarea id="content" rows="5" class="form-control p-0 border-0" name="content"
+                                            placeholder="Enter Blog Description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Additional Images (Optional)</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="file" name="images[]" accept="image/*" multiple
                                             class="form-control p-0 border-0">
                                     </div>
+                                    <small class="text-muted">**On PC You can select multiple images by holding down the
+                                        Ctrl key (Cmd key on Mac) while selecting.**</small><br>
+                                    <small class="text-muted">**On Mobile Phone you can select multiple images by long
+                                        press on the image and select the images you want**</small>
                                     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
                                 </div>
+
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
                                         <button type="submit" class="btn btn-success">Upload and Save</button>

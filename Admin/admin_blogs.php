@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])) {
 
 if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
     // Redirect to a restricted access page or display an error message
-    header('Location: restricted_access.php'); // You can create this page
+    header('Location: 404.php'); // You can create this page
     exit();
 }
 
@@ -36,54 +36,90 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtCheckDuplicate->close();
 
         if ($duplicateCount > 0) {
-            echo "Blog post with the same title already exists.";
+            echo '<script>alert("Blog post with the same title already exists.");</script>';
         } else {
-            // Upload and handle blog image
+            // Upload and handle blog images
             $blogImageDir = "../assets/img/blog/"; // Directory to store blog images
-            $blogImage = $_FILES["image"]["name"];
-            $blogImagePath = $blogImageDir . basename($blogImage);
+            $blogImagePaths = []; // Array to store image paths
 
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $blogImagePath)) {
-                // Image uploaded successfully, proceed to insert data
-                // Upload and handle author image
-                $authorImageDir = "../assets/img/blog/author/"; // Directory to store author images
-                $authorImage = $_FILES["author_image"]["name"];
-                $authorImagePath = $authorImageDir . basename($authorImage);
+            foreach ($_FILES["images"]["tmp_name"] as $key => $tmp_name) {
+                $blogImage = $_FILES["images"]["name"][$key];
+                $blogImagePath = $blogImageDir . basename($blogImage);
 
-                if (move_uploaded_file($_FILES["author_image"]["tmp_name"], $authorImagePath)) {
-                    // Author image uploaded successfully, proceed to insert data into the database
-                    $sql = "INSERT INTO blog (title, author_name, publish_date, content, image_path, author_image) VALUES (?, ?, ?, ?, ?, ?)";
-                    $stmt = $connect->prepare($sql);
-                    $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $blogImagePath, $authorImagePath);
-
-                    if ($stmt->execute()) {
-                        // Data inserted successfully
-                        echo "Blog post added successfully!";
-                    } else {
-                        // Error inserting data
-                        echo "Error adding blog post: " . $stmt->error;
-                    }
-
-                    $stmt->close();
+                if (move_uploaded_file($_FILES["images"]["tmp_name"][$key], $blogImagePath)) {
+                    // Image uploaded successfully, add its path to the array
+                    $blogImagePaths[] = $blogImagePath;
                 } else {
-                    echo "Error uploading author image!";
+                    echo '<script>alert("Error uploading blog image!");</script>';
+                    // Handle the error as needed
+                }
+            }
+
+            // Upload and handle author image
+            $authorImageDir = "../assets/img/blog/author/"; // Directory to store author images
+            $authorImage = $_FILES["author_image"]["name"];
+            $authorImagePath = $authorImageDir . basename($authorImage);
+
+            if (move_uploaded_file($_FILES["author_image"]["tmp_name"], $authorImagePath)) {
+                // Author image uploaded successfully
+            } else {
+                echo '<script>alert("Error uploading author image!");</script>';
+                // Handle the error as needed
+            }
+
+
+            // Upload and handle author image
+            $coverImageDir = "../assets/img/blog/"; // Directory to store author images
+            $coverImage = $_FILES["cover_image"]["name"];
+            $coverImagePath = $coverImageDir . basename($coverImage);
+
+            if (isset($_FILES["cover_image"]) && $_FILES["cover_image"]["error"] == 0) {
+                if (move_uploaded_file($_FILES["cover_image"]["tmp_name"], $coverImagePath)) {
+                } else {
+                    echo '<script>alert("Error uploading author image!");</script>';
+                    // Handle the error as needed
                 }
             } else {
-                echo "Error uploading blog image!";
+                echo '<script>alert("No file uploaded or an error occurred.");</script>';
+            }
+
+            // Insert data into the blog table
+            $sql = "INSERT INTO blog (title, author_name, publish_date, content, author_image, cover_image) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $connect->prepare($sql);
+            $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $authorImagePath, $coverImagePath);
+
+            if ($stmt->execute()) {
+                // Data inserted successfully
+                $blog_id = $stmt->insert_id; // Get the ID of the inserted blog post
+                $stmt->close();
+
+                // Insert blog image paths into the blog_images table
+                foreach ($blogImagePaths as $imagePath) {
+                    $sql = "INSERT INTO blog_images (blog_id, image_path) VALUES (?, ?)";
+                    $stmt = $connect->prepare($sql);
+                    $stmt->bind_param("is", $blog_id, $imagePath);
+                    $stmt->execute();
+                    $stmt->close();
+                }
+
+                echo '<script>alert("Blog post added successfully!");</script>';
+            } else {
+                // Error inserting data
+                echo '<script>alert("Error adding blog post: ' . $stmt->error . '");</script>';
             }
         }
     } else {
         // Token mismatch
-        echo "Token mismatch!";
+        echo '<script>alert("Duplicate Upload Detected!");</script>';
     }
 }
 
 // Generate a new token when the form is initially loaded.
 $_SESSION['token'] = md5(uniqid(rand(), true));
-
-// Close the database connection
-// $connect->close();
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -345,20 +381,34 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Blog Description</label>
+                                    <label class="col-md-12 p-0">Cover Image</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea id="content" rows="5" class="form-control p-0 border-0"
-                                            name="content" placeholder="Enter Blog Description"></textarea>
+                                        <input type="file" name="cover_image" accept="image/*" required
+                                            class="form-control p-0 border-0">
+
+                                        <small class="text-muted">**Image to appear on the cover of the blog</small>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Upload Image</label>
+                                    <label class="col-md-12 p-0">Blog Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="image" accept="image/*" required
+                                        <textarea id="content" rows="5" class="form-control p-0 border-0" name="content"
+                                            placeholder="Enter Blog Description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Additional Images (Optional)</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="file" name="images[]" accept="image/*" multiple
                                             class="form-control p-0 border-0">
                                     </div>
+                                    <small class="text-muted">**On PC You can select multiple images by holding down the
+                                        Ctrl key (Cmd key on Mac) while selecting.**</small><br>
+                                    <small class="text-muted">**On Mobile Phone you can select multiple images by long
+                                        press on the image and select the images you want**</small>
                                     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
                                 </div>
+
                                 <div class="form-group mb-4">
                                     <div class="col-sm-12">
                                         <button type="submit" class="btn btn-success">Upload and Save</button>
@@ -371,69 +421,69 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
 
 
                 <div class="row">
-    <div class="col-md-12 col-lg-12 col-sm-12">
-        <div class="white-box">
-            <div class="d-md-flex mb-3">
-                <h3 class="box-title mb-0">Manage Blogs</h3>
-                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Manage Blogs</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">id</th>
+                                            <th class="border-top-0">Blog Title</th>
+                                            <th class="border-top-0 txt-oflo">Blog Description</th>
+                                            <th class="border-top-0 txt-oflo">Author Name</th>
+                                            <th class="border-top-0 txt-oflo">Publish Date</th>
+                                            <th class="border-top-0">Author Image</th>
+                                            <th class="border-top-0">Cover Image</th>
+                                            <th class="border-top-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <?php
+                                    // Include the database configuration
+                                    // require_once('includes/database.php');
+                                    
+                                    // Fetch blogs from the database
+                                    $sql = "SELECT * FROM blog";
+                                    $result = $connect->query($sql);
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row["blog_id"] . "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["title"] . "</td>";
+                                        // Display only the first 50 characters of the description
+                                        $shortDescription = substr($row["content"], 0, 50);
+                                        echo "<td class='txt-oflo'>" . $shortDescription;
+
+                                        // Check if the description length is greater than 50 characters
+                                        if (strlen($row["content"]) > 50) {
+                                            echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["content"]) . "'>Read More</a>";
+                                        }
+                                        echo "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["author_name"] . "</td>";
+                                        echo "<td class='txt-oflo'>" . $row["publish_date"] . "</td>";
+                                        echo "<td>" . $row["author_image"] . "</td>";
+                                        echo "<td>" . $row["cover_image"] . "</td>";
+                                        echo "<td><a href='operations/edit_blog.php?blog_id=" . $row["blog_id"] . "'>Edit</a>";
+                                        echo "&nbsp;/";
+                                        echo " <a href='operations/delete_blog.php?blog_id=" . $row["blog_id"] . "'>Delete</a>";
+                                        echo "</td>";
+                                        echo "</tr>";
+                                    }
+
+                                    $connect->close();
+                                    ?>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="table-responsive">
-                <table class="table no-wrap">
-                    <thead>
-                        <tr>
-                            <th class="border-top-0">id</th>
-                            <th class="border-top-0">Blog Title</th>
-                            <th class="border-top-0 txt-oflo">Blog Description</th>
-                            <th class="border-top-0 txt-oflo">Author Name</th>
-                            <th class="border-top-0 txt-oflo">Publish Date</th>
-                            <th class="border-top-0">Author Image</th>
-                            <th class="border-top-0">Blog Image</th>
-                            <th class="border-top-0">Action</th>
-                        </tr>
-                    </thead>
-                    <?php
-                    // Include the database configuration
-                    // require_once('includes/database.php');
-
-                    // Fetch blogs from the database
-                    $sql = "SELECT * FROM blog";
-                    $result = $connect->query($sql);
-
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id"] . "</td>";
-                        echo "<td class='txt-oflo'>" . $row["title"] . "</td>";
-                        // Display only the first 50 characters of the description
-                        $shortDescription = substr($row["content"], 0, 50);
-                        echo "<td class='txt-oflo'>" . $shortDescription;
-
-                        // Check if the description length is greater than 50 characters
-                        if (strlen($row["content"]) > 50) {
-                            echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["content"]) . "'>Read More</a>";
-                        }
-                        echo "</td>";
-                        echo "<td class='txt-oflo'>" . $row["author_name"] . "</td>";
-                        echo "<td class='txt-oflo'>" . $row["publish_date"] . "</td>";
-                        echo "<td>" . $row["author_image"] . "</td>";
-                        echo "<td>" . $row["image_path"] ."</td>";
-                        echo "<td><a href='operations/edit_blog.php?id=" . $row["id"] . "'>Edit</a>";
-                        echo "&nbsp;/";
-                        echo " <a href='operations/delete_blog.php?id=" . $row["id"] . "'>Delete</a>";
-                        echo "</td>";
-                        echo "</tr>";
-                    }
-
-                    $connect->close();
-                    ?>
-
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
 
 
             </div>
