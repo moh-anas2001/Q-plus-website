@@ -148,7 +148,7 @@
               echo '<img src="' . $rowClientLogo["client_path"] . '" style="max-height: 40%;" class="img-fluid" alt="Brand Logo">';
             }
 
-            
+
             ?>
           </div><!-- End Client Item -->
 
@@ -1017,102 +1017,67 @@
       <!--  Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Recent Posts</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p> Check out our recent blogs</p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <article>
+          <?php
+          // Include the database configuration and establish a database connection
+          include('admin/includes/database.php');
 
-              <div class="post-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
+          // Fetch up to three most recent blog posts
+          $sql = "SELECT * FROM blog ORDER BY created_at DESC LIMIT 3";
+          $result = $connect->query($sql);
+          ?>
 
-              <p class="post-category">Politics</p>
+          <div class="row gy-4 posts-list">
+            <?php while ($row = $result->fetch_assoc()): ?>
+              <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <article>
+                  <div class="post-img">
+                    <img src="<?php echo $row['cover_image']; ?>" alt="" class="img-fluid">
+                  </div>
 
-              <h2 class="title">
-                <a href="blog-details.php">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
+                  <h2 class="title">
+                    <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
+                      <?php echo $row['title']; ?>
+                    </a>
+                  </h2>
 
-              <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Maria Doe</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                  </p>
-                </div>
-              </div>
+                  <div class="d-flex align-items-center">
+                    <img src="<?php echo $row['author_image']; ?>" alt="" class="img-fluid post-author-img flex-shrink-0">
+                    <div class="post-meta">
+                      <p class="post-author">
+                        <?php echo $row['author_name']; ?>
+                      </p>
+                      <p class="post-date">
+                        <time datetime="<?php echo $row['publish_date']; ?>">
+                          <?php echo date('M d, Y', strtotime($row['publish_date'])); ?>
+                        </time>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div><!-- End post list item -->
+            <?php endwhile; ?>
+          </div>
 
-            </article>
-          </div><!-- End post list item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <article>
+          <div class="car-buts">
+            <a href="blog.php">
+              <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp; See all
+                recent posts</button>
+            </a>
+          </div>
 
-              <div class="post-img">
-                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-              </div>
+        </div><!--End recent posts list -->
 
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="blog-details.php">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <article>
-
-              <div class="post-img">
-                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="blog-details.php">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="car-buts" >
-          <a href="blog.php">
-            <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp; See all recent posts</button>
-          </a>
-        </div>
-
-         </div><!--End recent posts list -->
-        
 
       </div>
-     
+
 
     </section>
 
