@@ -236,13 +236,13 @@
                                         echo '<h3>Project information</h3>';
                                         echo '<ul>';
                                         if (!empty($row['client'])) {
-                                            echo '<li><strong>Client</strong>: ' . $row['client'] . '</li>';
+                                            echo '<li><strong>Client</strong> ' . $row['client'] . '</li>';
                                         }
                                         if (!empty($row['contractor'])) {
-                                            echo '<li><strong>Main Contractor</strong>: ' . $row['contractor'] . '</li>';
+                                            echo '<li><strong>Main Contractor</strong> ' . $row['contractor'] . '</li>';
                                         }
                                         if (!empty($row['consultant'])) {
-                                            echo '<li><strong>Consultant</strong>: ' . $row['consultant'] . '</li>';
+                                            echo '<li><strong>Consultant</strong> ' . $row['consultant'] . '</li>';
                                         }
                                         echo '</ul>';
                                         echo '</div>';

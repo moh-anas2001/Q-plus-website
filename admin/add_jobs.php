@@ -17,6 +17,13 @@ if ($conn->connect_error) {
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
     exit();
+
+}
+
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
+    // Redirect to a restricted access page or display an error message
+    header('Location: 404.php'); // You can create this page
+    exit();
 }
 
 // Retrieve the lastJobCode value from the database and store it in the session
@@ -257,13 +264,21 @@ if ($result->num_rows > 0) {
                                 <span class="hide-menu">New Testimonials</span>
                             </a>
                         </li>
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.php"
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
                                 aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Blank Page</span>
+                                <i class="fas fa-image" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Logo</span>
                             </a>
-                        </li> -->
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                                aria-expanded="false">
+                                <i class="fas fa-upload" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Blogs</span>
+                            </a>
+                        </li>
 
                     </ul>
 
@@ -352,8 +367,8 @@ if ($result->num_rows > 0) {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea rows="5" class="form-control p-0 border-0" name="job_description"
-                                            placeholder="Enter the Job Description" required></textarea>
+                                        <textarea id = "job_description" class="form-control p-0 border-0" name="job_description"
+                                            placeholder="Enter the Job Description" ></textarea>
                                     </div>
                                 </div>
 
@@ -432,11 +447,11 @@ if ($result->num_rows > 0) {
                                                         style="cursor: pointer; font-size: small;color: blue; text-decoration: underline;">Expand</span>
                                                 </td>
                                                 <td>
-                                                <?php 
+                                                    <?php
                                                     $postedDate = date('d M Y', strtotime($job['posted']));
                                                     $deleteDate = date('d M Y', strtotime($job['delete_date']));
                                                     echo $postedDate . ' to ' . $deleteDate;
-                                                ?>
+                                                    ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $job['stat'] ?>
@@ -531,6 +546,12 @@ if ($result->num_rows > 0) {
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+    <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'#job_description'
+        })
+    </script>
 </body>
 
 </html>

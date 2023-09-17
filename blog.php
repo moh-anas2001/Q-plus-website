@@ -1,3 +1,12 @@
+<?php
+// Include the database configuration and establish a database connection
+include('admin/includes/database.php');
+
+// Fetch blog data from the database
+$sql = "SELECT * FROM blog";
+$result = $connect->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,21 +70,12 @@
             <li><a href="index.php#about">About</a></li>
             <li><a href="index.php#services">Services</a></li>
             <li><a href="index.php#portfolio">Portfolio</a></li>
+            <li><a href="blog.php" class="active">Gallery</a></li>
             <li><a href="index.php#careers">Join us</a></li>
-            <!-- <li><a href="blog.php" class="active">Blog</a></li> -->
-            </li>
-            <li><a href="index.php#contact">Contact</a></li>
           </ul>
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
-        <!-- <a href="index.php" class="logo-2 me-xl-0">
-          <p> WE ARE ISO 9001 2015 Certified</p>
-          
-          <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
-          <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
-        </a> -->
-
         <a class="btn-getstarted" href="index.php#contact">Contact us</a>
       </div>
     </header><!-- End Header -->
@@ -89,9 +89,7 @@
             <div class="row d-flex justify-content-center text-center">
               <div class="col-lg-8">
                 <h1>Blog</h1>
-                <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
-                  consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit
-                  quaerat ipsum dolorem.</p>
+                <p class="mb-0"></p>
               </div>
             </div>
           </div>
@@ -113,171 +111,42 @@
 
           <div class="row gy-4 posts-list">
 
-            <div class="col-xl-4 col-lg-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <p class="post-category">Politics</p>
-
-                <h2 class="title">
-                  <a href="blog-details.php">Dolorum optio tempore voluptas dignissimos</a>
-                </h2>
-
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                  <div class="post-meta">
-                    <p class="post-author">Maria Doe</p>
-                    <p class="post-date">
-                      <time datetime="2022-01-01">Jan 1, 2022</time>
-                    </p>
+            <?php while ($row = $result->fetch_assoc()): ?>
+              <div class="col-xl-4 col-lg-6">
+                <article>
+                  <div class="post-img">
+                    <img src="<?php echo $row['cover_image']; ?>" alt="blog image" class="img-fluid">
                   </div>
-                </div>
+                  <h2 class="title">
+                    <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
+                      <?php echo $row['title']; ?>
+                    </a>
+                  </h2>
 
-              </article>
-            </div><!-- End post list item -->
-
-            <div class="col-xl-4 col-lg-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-                </div>
-
-                <p class="post-category">Sports</p>
-
-                <h2 class="title">
-                  <a href="blog-details.php">Nisi magni odit consequatur autem nulla dolorem</a>
-                </h2>
-
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                  <div class="post-meta">
-                    <p class="post-author">Allisa Mayer</p>
-                    <p class="post-date">
-                      <time datetime="2022-01-01">Jun 5, 2022</time>
-                    </p>
+                  <div class="d-flex align-items-center">
+                    <img src="<?php echo $row['author_image']; ?>" alt="" class="img-fluid post-author-img flex-shrink-0">
+                    <div class="post-meta">
+                      <p class="post-author">
+                        <?php echo $row['author_name']; ?>
+                      </p>
+                      <p class="post-date">
+                        <time>
+                          <?php $formattedDate = date('d-m-Y', strtotime($row["publish_date"]));
+                          echo   $formattedDate;
+                          ?>
+                        </time>
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </article>
+              </div><!-- End post list item -->
+            <?php endwhile; ?>
 
-              </article>
-            </div><!-- End post list item -->
 
-            <div class="col-xl-4 col-lg-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                </div>
-
-                <p class="post-category">Entertainment</p>
-
-                <h2 class="title">
-                  <a href="blog-details.php">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-                </h2>
-
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                  <div class="post-meta">
-                    <p class="post-author">Mark Dower</p>
-                    <p class="post-date">
-                      <time datetime="2022-01-01">Jun 22, 2022</time>
-                    </p>
-                  </div>
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-
-            <div class="col-xl-4 col-lg-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-                </div>
-
-                <p class="post-category">Sports</p>
-
-                <h2 class="title">
-                  <a href="blog-details.php">Non rem rerum nam cum quo minus olor distincti</a>
-                </h2>
-
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                  <div class="post-meta">
-                    <p class="post-author">Lisa Neymar</p>
-                    <p class="post-date">
-                      <time datetime="2022-01-01">Jun 30, 2022</time>
-                    </p>
-                  </div>
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-
-            <div class="col-xl-4 col-lg-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
-                </div>
-
-                <p class="post-category">Politics</p>
-
-                <h2 class="title">
-                  <a href="blog-details.php">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-                </h2>
-
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                  <div class="post-meta">
-                    <p class="post-author">Denis Peterson</p>
-                    <p class="post-date">
-                      <time datetime="2022-01-01">Jan 30, 2022</time>
-                    </p>
-                  </div>
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-
-            <div class="col-xl-4 col-lg-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
-                </div>
-
-                <p class="post-category">Entertainment</p>
-
-                <h2 class="title">
-                  <a href="blog-details.php">Distinctio provident quibusdam numquam aperiam aut</a>
-                </h2>
-
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                  <div class="post-meta">
-                    <p class="post-author">Mika Lendon</p>
-                    <p class="post-date">
-                      <time datetime="2022-01-01">Feb 14, 2022</time>
-                    </p>
-                  </div>
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
 
           </div><!-- End blog posts list -->
 
-          <div class="pagination d-flex justify-content-center">
-            <ul>
-              <li><a href="#">1</a></li>
-              <li class="active"><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-            </ul>
-          </div><!-- End pagination -->
+
 
         </div>
 
@@ -285,7 +154,10 @@
 
     </main>
 
-
+    <?php
+    // Close the database connection
+    $connect->close();
+    ?>
 
 
     <!-- =======Default  Footer ======= -->
@@ -337,10 +209,10 @@
               <p>Al Qusais, Dubai United Arab Emirates</p>
             </a>
             <p class="mt-4"><strong>Phone:</strong> <span>
-             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
-            </span></p>
+                <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+                <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+              </span></p>
             <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
           </div>
 

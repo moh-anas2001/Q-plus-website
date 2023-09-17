@@ -1,15 +1,21 @@
-<?PHP
-//  session_start();
+<?php
+// Include necessary files and start the session
 include('includes/config.php');
 include('includes/database.php');
 include('includes/functions.php');
 
+// Check if the user is already logged in and has a role
+if (isset($_SESSION['id']) && isset($_SESSION['user_role'])) {
+    $userRole = $_SESSION['user_role'];
 
-if (isset($_SESSION['id'])) {
-    header('Location: dashboard.php');
-    die();
+    // Redirect to the appropriate dashboard based on the user's role
+    if ($userRole === 'Admin') {
+        header('Location: dashboard.php');
+    } elseif ($userRole === 'Blogger') {
+        header('Location: add_blog.php');
+    }
+    exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -37,15 +43,24 @@ if (isset($_POST['email'])) {
         $result = $stm->get_result();
         $user = $result->fetch_assoc();
 
+        // After successful login, set the user's role in the session
         if ($user) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role']; // Assuming the role column in your database is named 'role'
 
-            set_message("You have succesfully logged in " . $_SESSION['username']);
-            header('Location: dashboard.php');
+            set_message("You have successfully logged in " . $_SESSION['username']);
+
+            // Redirect based on the user's role
+            if ($_SESSION['role'] === 'Admin') {
+                header('Location: dashboard.php');
+            } elseif ($_SESSION['role'] === 'Blogger') {
+                header('Location: add_blogs.php');
+            }
             die();
         }
+
         $stm->close();
 
     } else {
