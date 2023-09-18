@@ -398,7 +398,7 @@
             $resultBrandLogos = $connect->query($sqlBrandLogos);
 
             while ($rowBrandLogo = $resultBrandLogos->fetch_assoc()) {
-              echo '<img src="' . $rowBrandLogo["brand_path"] . '" style="max-height: 40%;" class="img-fluid" alt="Brand Logo">';
+              echo '<img src="' . $rowBrandLogo["brand_path"] . '" class="img-fluid" alt="Brand Logo">';
             }
 
             $connect->close();
