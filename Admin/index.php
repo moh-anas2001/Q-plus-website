@@ -35,7 +35,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_role'])) {
 </head>
 <?php
 if (isset($_POST['email'])) {
-    if ($stm = $connect->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND active = 1')) {
+    if ($stm = $connect->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND status = 1')) {
         $hashed = SHA1($_POST['password']);
         $stm->bind_param('ss', $_POST['email'], $hashed);
         $stm->execute();

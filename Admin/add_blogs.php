@@ -10,98 +10,85 @@ if (!isset($_SESSION['id'])) {
 // Include the database configuration
 require_once('includes/database.php');
 
+// Fetch user data from the users table
+$userID = $_SESSION['id']; // Assuming you store the user ID in the session
+$sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+$stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+$stmtFetchUserData->bind_param("i", $userID);
+$stmtFetchUserData->execute();
+$stmtFetchUserData->bind_result($authorNameFromUserTable, $authorImageFromUserTable);
+$stmtFetchUserData->fetch();
+$stmtFetchUserData->close();
+
+// Create new variables for author name and image from the user table
+$authorName = $authorNameFromUserTable;
+$authorImage = $authorImageFromUserTable;
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the submitted token matches the stored token
     if ($_POST['token'] === $_SESSION['token']) {
         // Token is valid, now check for duplicates
         $blogTitle = $_POST["title"];
-        $authorName = $_POST["author_name"];
         $publishDate = $_POST["publish_date"];
         $content = $_POST["content"];
 
-        // SQL query to check for duplicates based on blog title
-        $sqlCheckDuplicate = "SELECT COUNT(*) FROM blog WHERE title = ?";
-        $stmtCheckDuplicate = $connect->prepare($sqlCheckDuplicate);
-        $stmtCheckDuplicate->bind_param("s", $blogTitle);
-        $stmtCheckDuplicate->execute();
-        $stmtCheckDuplicate->bind_result($duplicateCount);
-        $stmtCheckDuplicate->fetch();
-        $stmtCheckDuplicate->close();
+        // Upload and handle blog images
+        $blogImageDir = "../assets/img/blog/"; // Directory to store blog images
+        $blogImagePaths = []; // Array to store image paths
 
-        if ($duplicateCount > 0) {
-            echo '<script>alert("Blog post with the same title already exists.");</script>';
-        } else {
-            // Upload and handle blog images
-            $blogImageDir = "../assets/img/blog/"; // Directory to store blog images
-            $blogImagePaths = []; // Array to store image paths
+        foreach ($_FILES["images"]["tmp_name"] as $key => $tmp_name) {
+            $blogImage = $_FILES["images"]["name"][$key];
+            $blogImagePath = $blogImageDir . basename($blogImage);
 
-            foreach ($_FILES["images"]["tmp_name"] as $key => $tmp_name) {
-                $blogImage = $_FILES["images"]["name"][$key];
-                $blogImagePath = $blogImageDir . basename($blogImage);
-
-                if (move_uploaded_file($_FILES["images"]["tmp_name"][$key], $blogImagePath)) {
-                    // Image uploaded successfully, add its path to the array
-                    $blogImagePaths[] = $blogImagePath;
-                } else {
-                    echo '<script>alert("Error uploading blog image!");</script>';
-                    // Handle the error as needed
-                }
-            }
-
-            // Upload and handle author image
-            $authorImageDir = "../assets/img/blog/author/"; // Directory to store author images
-            $authorImage = $_FILES["author_image"]["name"];
-            $authorImagePath = $authorImageDir . basename($authorImage);
-
-            if (move_uploaded_file($_FILES["author_image"]["tmp_name"], $authorImagePath)) {
-                // Author image uploaded successfully
+            if (move_uploaded_file($_FILES["images"]["tmp_name"][$key], $blogImagePath)) {
+                // Image uploaded successfully, add its path to the array
+                $blogImagePaths[] = $blogImagePath;
             } else {
-                echo '<script>alert("Error uploading author image!");</script>';
+                echo "";
                 // Handle the error as needed
             }
+        }
 
+        // Upload and handle cover image
+        $coverImageDir = "../assets/img/blog/"; // Directory to store cover images
+        $coverImage = $_FILES["cover_image"]["name"];
+        $coverImagePath = $coverImageDir . basename($coverImage);
 
-            // Upload and handle author image
-            $coverImageDir = "../assets/img/blog/"; // Directory to store author images
-            $coverImage = $_FILES["cover_image"]["name"];
-            $coverImagePath = $coverImageDir . basename($coverImage);
-
-            if (isset($_FILES["cover_image"]) && $_FILES["cover_image"]["error"] == 0) {
-                if (move_uploaded_file($_FILES["cover_image"]["tmp_name"], $coverImagePath)) {
-                    // Author image uploaded successfully
-                } else {
-                    echo '<script>alert("Error uploading author image!");</script>';
-                    // Handle the error as needed
-                }
+        if (isset($_FILES["cover_image"]) && $_FILES["cover_image"]["error"] == 0) {
+            if (move_uploaded_file($_FILES["cover_image"]["tmp_name"], $coverImagePath)) {
+                // Cover image uploaded successfully
             } else {
-                echo '<script>alert("No file uploaded or an error occurred.");</script>';
+                echo '<script>alert("Error uploading cover image!");</script>';
+                // Handle the error as needed
             }
+        } else {
+            echo '<script>alert("No file uploaded or an error occurred.");</script>';
+        }
 
-            // Insert data into the blog table
-            $sql = "INSERT INTO blog (title, author_name, publish_date, content, author_image, cover_image) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $connect->prepare($sql);
-            $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $authorImagePath, $coverImagePath);
+        // Insert data into the blog table with author_id
+        $sql = "INSERT INTO blog (title, author_id, author_name, publish_date, content, author_image, cover_image) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("iisssss", $blogTitle, $userID, $authorName, $publishDate, $content, $authorImage, $coverImagePath);
 
-            if ($stmt->execute()) {
-                // Data inserted successfully
-                $blog_id = $stmt->insert_id; // Get the ID of the inserted blog post
+        if ($stmt->execute()) {
+            // Data inserted successfully
+            $blog_id = $stmt->insert_id; // Get the ID of the inserted blog post
+            $stmt->close();
+
+            // Insert blog image paths into the blog_images table
+            foreach ($blogImagePaths as $imagePath) {
+                $sql = "INSERT INTO blog_images (blog_id, image_path) VALUES (?, ?)";
+                $stmt = $connect->prepare($sql);
+                $stmt->bind_param("is", $blog_id, $imagePath);
+                $stmt->execute();
                 $stmt->close();
-
-                // Insert blog image paths into the blog_images table
-                foreach ($blogImagePaths as $imagePath) {
-                    $sql = "INSERT INTO blog_images (blog_id, image_path) VALUES (?, ?)";
-                    $stmt = $connect->prepare($sql);
-                    $stmt->bind_param("is", $blog_id, $imagePath);
-                    $stmt->execute();
-                    $stmt->close();
-                }
-
-                echo '<script>alert("Blog post added successfully!");</script>';
-            } else {
-                // Error inserting data
-                echo '<script>alert("Error adding blog post: ' . $stmt->error . '");</script>';
             }
+
+            echo '<script>alert("Blog post added successfully!");</script>';
+        } else {
+            // Error inserting data
+            echo '<script>alert("Error adding blog post: ' . $stmt->error . '");</script>';
         }
     } else {
         // Token mismatch
@@ -112,6 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Generate a new token when the form is initially loaded.
 $_SESSION['token'] = md5(uniqid(rand(), true));
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -209,9 +198,29 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                         <!-- ============================================================== -->
                         <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                                <span class="text-white font-medium">Admin</span>
+                                <?php
+                                // Include the database configuration
+                                require_once('includes/database.php');
+
+                                // Assuming you have a session variable for the logged-in user ID
+                                $userID = $_SESSION['id'];
+
+                                // Fetch user data from the users table based on the user ID
+                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+                                $stmtFetchUserData->bind_param("i", $userID);
+                                $stmtFetchUserData->execute();
+                                $stmtFetchUserData->bind_result($username, $profile_image);
+                                $stmtFetchUserData->fetch();
+                                $stmtFetchUserData->close();
+
+                                // Display the user's profile image and username
+                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
+                                echo '<span class="text-white font-medium">' . $username . '</span>';
+                                ?>
                             </a>
+
+
                             <div class="dropdown-content">
                                 <a href="add_blogs.php">Add Blogs</a>
                                 <a href="404.php">Edit Blogs</a>
@@ -254,7 +263,7 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blog_edit.php"
                                 aria-expanded="false">
                                 <i class="fas fa-edit" aria-hidden="true"></i>
                                 <span class="hide-menu">Edit Blogs</span>
@@ -312,20 +321,6 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                                     <label class="col-md-12 p-0">Blog Title</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <input type="text" name="title" placeholder="Enter Blog Title" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Author Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="author_name" placeholder="Enter Author Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Author Image</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="author_image" accept="image/*" required
                                             class="form-control p-0 border-0">
                                     </div>
                                 </div>

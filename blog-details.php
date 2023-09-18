@@ -158,7 +158,8 @@ if (isset($_GET['blog_id'])) {
                   <img src="<?php echo $row['cover_image']; ?>" alt="blog image" class="img-fluid">
                 </div>
 
-                <h2 class="title">
+
+                <h2 class="title" id="land">
                   <?php echo $row['title']; ?>
                 </h2>
 
@@ -171,6 +172,9 @@ if (isset($_GET['blog_id'])) {
                         datetime="<?php echo $row['publish_date']; ?>">
                         <?php echo date('M d, Y', strtotime($row['publish_date'])); ?>
                       </time></li>
+                    <li class="d-flex align-items-center"><button class="btn btn-share" id="shareBlogs"><i
+                          class="bi bi-share"></i>&nbsp;Share</button></li>
+
                   </ul>
                 </div><!-- End meta top -->
 
@@ -193,6 +197,7 @@ if (isset($_GET['blog_id'])) {
               </article><!-- End post article -->
             </div>
 
+
             <div class="col-lg-4">
               <!-- Sidebar content for recent posts -->
               <div class="sidebar">
@@ -200,7 +205,7 @@ if (isset($_GET['blog_id'])) {
                   <h3 class="sidebar-title">Recent Posts</h3>
                   <?php
                   // Query to fetch the most recent 6 blog posts
-                  $sqlRecentPosts = "SELECT * FROM blog ORDER BY publish_date DESC LIMIT 6";
+                  $sqlRecentPosts = "SELECT * FROM blog ORDER BY created_at DESC LIMIT 6";
                   $resultRecentPosts = $connect->query($sqlRecentPosts);
 
                   // Loop through the recent posts and display them
@@ -347,6 +352,38 @@ if (isset($_GET['blog_id'])) {
           'resizeDuration': 200,
           'wrapAround': true
         });
+      });
+
+
+      function initShareBlogs() {
+        const shareBlogs = document.getElementById("shareBlogs");
+
+        if (shareBlogs) {
+          shareBlogs.addEventListener("click", function () {
+            if (navigator.share) {
+              // Use the Web Share API if available
+              navigator.share({
+                title: document.title, // Use the blog title as the title
+                text: "Check out this blog post!", // Change the sharing text
+                url: window.location.href, // Use the current blog post URL
+              })
+                .then(() => {
+                  console.log("Shared successfully");
+                })
+                .catch((error) => {
+                  console.error("Error sharing:", error);
+                });
+            } else {
+              // Fallback for browsers that don't support Web Share API
+              alert("Web Share API is not supported in your browser. You can manually copy the link.");
+            }
+          });
+        }
+      }
+
+      // Call the function when the document is ready
+      document.addEventListener("DOMContentLoaded", function () {
+        initShareBlogs();
       });
     </script>
 

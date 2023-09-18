@@ -3760,7 +3760,23 @@ section {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
+.blog-details .content p {
+  text-align:justify;
 
+}
+
+@media (max-width: 325px) {
+  .blog-details .content p {
+    text-align:center;
+  
+  }
+}
+@media (max-width: 2200px) {
+  .blog-details img {
+    max-width: 100%;
+    height: auto;
+   }
+}
 /* career section  */
 
 .car-hd{

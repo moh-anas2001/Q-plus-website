@@ -18,27 +18,55 @@ require_once('includes/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $hashedPassword = sha1($password); // Hash the password
+    // Check if the submitted token matches the stored token
+    if ($_POST['token'] === $_SESSION['token']) {
+        // Token is valid, now insert user data into the database
+        $username = $_POST["username"];
+        $email = $_POST["email"];
+        $password = SHA1($_POST["password"]); // Hash the password
+        $phone = $_POST["phone"];
+        $country = $_POST["country"];
+        $role = $_POST["role"];
+        $status = $_POST["status"];
 
-    $phone = $_POST["phone"];
-    $country = $_POST["country"];
-    $role = $_POST["role"];
+        // Handle the image upload if needed
+        if ($_FILES["profile_image"]["size"] > 0) {
+            $uploadDirectory = "../assets/img/users"; // Specify the directory where you want to store profile images
+            $uploadedImagePath = $uploadDirectory . basename($_FILES["profile_image"]["name"]);
 
-    if (empty($username) || empty($email) || empty($password) || empty($phone) || empty($country) || empty($role)) {
-        echo "All fields are required";
-    } else {
-        // Prepare and execute the SQL query to insert data
-        $sql = "INSERT INTO users (username, email, password, phone, country) VALUES (?, ?, ?, ?, ?, ?)";
+            if (move_uploaded_file($_FILES["profile_image"]["tmp_name"], $uploadedImagePath)) {
+                // Image uploaded successfully, now insert into the database
+                $profileImage = $uploadedImagePath;
+            } else {
+                echo "Image upload failed.";
+                exit;
+            }
+        } else {
+            $profileImage = ""; // No image uploaded
+        }
+
+        // Prepare and execute the SQL query to insert user data
+        $sql = "INSERT INTO users (username, email, password, phone, country, role, profile_image, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("ssssss", $username, $email, $hashedPassword, $phone, $country, $role);
-        $stmt->execute();
+        $stmt->bind_param("ssssssss", $username, $email, $password, $phone, $country, $role, $profileImage, $status);
+        if ($stmt->execute()) {
+            echo "User profile added successfully.";
+        } else {
+            echo "Error adding user profile: " . $stmt->error;
+        }
         $stmt->close();
+    } else {
+        // Token mismatch, do not process the form again.
+        // You can display an error message or take appropriate action.
+        echo "Token mismatch.";
     }
+} else {
+    // Generate a new token when the form is initially loaded.
+    $_SESSION['token'] = md5(uniqid(rand(), true));
 }
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -60,12 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body>
@@ -143,10 +165,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="dropdown">
+                         <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                                <span class="text-white font-medium">Admin</span>
+                                <?php
+                                // Include the database configuration
+                                require_once('includes/database.php');
+
+                                // Assuming you have a session variable for the logged-in user ID
+                                $userID = $_SESSION['id'];
+
+                                // Fetch user data from the users table based on the user ID
+                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+                                $stmtFetchUserData->bind_param("i", $userID);
+                                $stmtFetchUserData->execute();
+                                $stmtFetchUserData->bind_result($username, $profile_image);
+                                $stmtFetchUserData->fetch();
+                                $stmtFetchUserData->close();
+
+                                // Display the user's profile image and username
+                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
+                                echo '<span class="text-white font-medium">' . $username . '</span>';
+                                ?>
                             </a>
                             <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
@@ -305,7 +345,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div> -->
                     <!-- Column -->
-                    <!-- Column -->
                     <div class="">
                         <div class="card">
                             <div class="card-body">
@@ -324,6 +363,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <input type="email" name="email" placeholder="Enter Your Email" required
                                                 class="form-control p-0 border-0" name="example-email"
                                                 id="example-email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Profile Image</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="file" name="profile_image" class="form-control p-0 border-0">
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
@@ -352,7 +397,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <input type="number" name=phone required placeholder="Phone Number"
                                                 class="form-control p-0 border-0">
                                         </div>
+                                        <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
                                     </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Status</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <label><input type="radio" name="status" value="1" checked> Active</label>&nbsp;&nbsp;
+                                            <label><input type="radio" name="status" value="0"> Inactive</label>
+                                        </div>
+                                    </div>
+
                                     <!-- <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Message</label>
                                         <div class="col-md-12 border-bottom p-0">
@@ -402,9 +456,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <th class="border-top-0 txt-oflo">Email</th>
                                                 <th class="border-top-0 txt-oflo">Password</th>
                                                 <th class="border-top-0 txt-oflo">Role</th>
+                                                <th class="border-top-0 txt-oflo">Status</th>
                                                 <th class="border-top-0">Action</th>
                                             </tr>
                                         </thead>
+                                        <tbody>
                                         <?php
                                         // Include the database configuration
                                         require_once('includes/database.php');
@@ -418,8 +474,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             echo "<td>" . $row["username"] . "</td>";
                                             echo "<td class='txt-oflo'>" . $row["email"] . "</td>";
                                             echo "</td>";
-                                            echo "<td class='txt-oflo'>" . $row["password"]. "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["password"] . "</td>";
                                             echo "<td class='txt-oflo'>" . $row["role"] . "</td>";
+                                            echo "<td class='txt-oflo'>" . ($row["status"] == 1 ? "Active" : "Inactive") . "</td>";
                                             echo "<td><a href='operations/edit_users.php?id=" . $row["id"] . "'>Edit</a>";
                                             echo "&nbsp;/";
                                             echo " <a href='operations/delete_users.php?id=" . $row["id"] . "'>Delete</a>";

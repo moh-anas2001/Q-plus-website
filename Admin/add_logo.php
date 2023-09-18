@@ -184,10 +184,28 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="dropdown">
+                         <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                                <span class="text-white font-medium">Admin</span>
+                                <?php
+                                // Include the database configuration
+                                require_once('includes/database.php');
+
+                                // Assuming you have a session variable for the logged-in user ID
+                                $userID = $_SESSION['id'];
+
+                                // Fetch user data from the users table based on the user ID
+                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+                                $stmtFetchUserData->bind_param("i", $userID);
+                                $stmtFetchUserData->execute();
+                                $stmtFetchUserData->bind_result($username, $profile_image);
+                                $stmtFetchUserData->fetch();
+                                $stmtFetchUserData->close();
+
+                                // Display the user's profile image and username
+                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
+                                echo '<span class="text-white font-medium">' . $username . '</span>';
+                                ?>
                             </a>
                             <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
