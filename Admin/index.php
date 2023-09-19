@@ -98,11 +98,15 @@ if (isset($_POST['email'])) {
                             <input type="password" id="password" name="password" class="form-control" required
                                 placeholder="Enter Password" />
                         </div>
-                        <div class="text-center"><button type="submit"
-                                class="btn btn-color px-5 mt-5 mb-5 w-30">Login</button></div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-color px-5 mt-3 mb-3">Login</button>
+                            
+                        </div>
+                        <div class="text-center">
+                        <a href="register.php" class="btn btn-link">New user Here</a> 
+                        </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>

@@ -78,9 +78,11 @@ if (isset($_GET['blog_id'])) {
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-
-
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -173,7 +175,10 @@ if (isset($_GET['blog_id'])) {
                         <?php echo date('M d, Y', strtotime($row['publish_date'])); ?>
                       </time></li>
                     <li class="d-flex align-items-center"><button class="btn btn-share" id="shareBlogs"><i
-                          class="bi bi-share"></i>&nbsp;Share</button></li>
+                          class="bi bi-share"></i>&nbsp;Share</button>
+                          
+
+                    </li>
 
                   </ul>
                 </div><!-- End meta top -->
@@ -191,11 +196,27 @@ if (isset($_GET['blog_id'])) {
                       <img src="<?php echo $imagePath; ?>" alt="Additional Image <?php echo $index; ?>" class="img-fluid">
                     </a>
                   <?php endforeach; ?>
-                </div>
-
-
+                </div><br>
               </article><!-- End post article -->
+
+
+              <!-- Add this code where you want the Disqus comment section to appear -->
+              <div id="disqus_thread"></div>
+              <script>
+                (function () {
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://qplus-ts-blog.disqus.com/embed.js';// Replace 'your-shortname' with your Disqus shortname
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                })();
+              </script>
+              <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments poweredby Disqus.</a></noscript> -->
+
+
+
             </div>
+
+
 
 
             <div class="col-lg-4">
@@ -332,6 +353,14 @@ if (isset($_GET['blog_id'])) {
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
+    <!-- Bootstrap JS and jQuery (include jQuery first) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Place the following code before your site's closing </body> tag -->
+    <script id="dsq-count-scr" src="//qplus-ts-blog.disqus.com/count.js" async></script>
+
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
@@ -386,6 +415,37 @@ if (isset($_GET['blog_id'])) {
         initShareBlogs();
       });
     </script>
+
+<script>
+    // Function to update the comment count
+    function updateCommentCount(count) {
+        const commentCountElement = document.getElementById("disqus-comment-count");
+        if (commentCountElement) {
+            commentCountElement.innerText = "Comments: " + count;
+        }
+    }
+
+    // Callback function to update the comment count
+    var disqus_config = function () {
+        this.page.url = window.location.href; // Set the page URL
+        this.callbacks.onNewComment = [function(comment) {
+            updateCommentCount(comment.count);
+        }];
+    };
+
+    // Load the Disqus comment count script
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://qplus-ts-blog.disqus.com/count.js';
+        s.async = true;
+        s.onload = function() {
+            // Disqus comment count script has loaded
+            DISQUSWIDGETS.getCount({ reset: true });
+        };
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
 
 
 
