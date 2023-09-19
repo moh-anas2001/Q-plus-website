@@ -2603,7 +2603,7 @@ section {
 
 /* Testimonials Section - Home Page
 ------------------------------*/
-.testimonials {
+/* .testimonials {
   --color-background: #f4f4f4;
 }
 
@@ -2614,10 +2614,24 @@ section {
 }
 .testimonials .info p {
   text-align: justify;
+} */
+
+.testimonials {
+  --color-background: #000000;
+}
+
+.testimonials .info h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+}
+.testimonials .info p {
+  text-align: justify;
+  color:white
 }
 .testimonials .swiper {
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.05);
-  background: var(--color-box-background);
+ background: linear-gradient(to bottom, #ffffff,#d8d8d8,#4b4b4b);
 }
 
 .testimonials .testimonials-carousel,
@@ -3760,7 +3774,23 @@ section {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
 }
+.blog-details .content p {
+  text-align:justify;
 
+}
+
+@media (max-width: 325px) {
+  .blog-details .content p {
+    text-align:center;
+  
+  }
+}
+@media (max-width: 2200px) {
+  .blog-details img {
+    max-width: 100%;
+    height: auto;
+   }
+}
 /* career section  */
 
 .car-hd{

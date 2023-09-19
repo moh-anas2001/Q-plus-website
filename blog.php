@@ -3,7 +3,8 @@
 include('admin/includes/database.php');
 
 // Fetch blog data from the database
-$sql = "SELECT * FROM blog";
+// Fetch up to three most recent blog posts
+$sql = "SELECT * FROM blog ORDER BY created_at DESC ";
 $result = $connect->query($sql);
 ?>
 
@@ -70,7 +71,7 @@ $result = $connect->query($sql);
             <li><a href="index.php#about">About</a></li>
             <li><a href="index.php#services">Services</a></li>
             <li><a href="index.php#portfolio">Portfolio</a></li>
-            <li><a href="blog.php" class="active">Gallery</a></li>
+            <li><a href="blog.php" class="active">Blog</a></li>
             <li><a href="index.php#careers">Join us</a></li>
           </ul>
 
@@ -115,6 +116,7 @@ $result = $connect->query($sql);
               <div class="col-xl-4 col-lg-6">
                 <article>
                   <div class="post-img">
+                  <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
                     <img src="<?php echo $row['cover_image']; ?>" alt="blog image" class="img-fluid">
                   </div>
                   <h2 class="title">
@@ -132,7 +134,7 @@ $result = $connect->query($sql);
                       <p class="post-date">
                         <time>
                           <?php $formattedDate = date('d-m-Y', strtotime($row["publish_date"]));
-                          echo   $formattedDate;
+                          echo $formattedDate;
                           ?>
                         </time>
                       </p>
@@ -223,10 +225,6 @@ $result = $connect->query($sql);
         <p>&copy; <span>Copyright</span><strong class="px-1">DaCentric Technologies</b></strong><span>All Rights
             Reserved</span></p>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
           <a href=""></a>
         </div>
       </div>

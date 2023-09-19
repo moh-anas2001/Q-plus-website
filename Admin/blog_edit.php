@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 // Check if the user is not authenticated (not logged in)
@@ -8,67 +7,9 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
-
-if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
-    // Redirect to a restricted access page or display an error message
-    header('Location: 404.php'); // You can create this page
-    exit();
-}
-
-// Include the database configuration
-require_once('includes/database.php');
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if the submitted token matches the stored token
-    if ($_POST['token'] === $_SESSION['token']) {
-        // Token is valid, now check for duplicates
-        $projectName = $_POST["project_name"];
-        $projectDescription = $_POST["description"];
-        $client = $_POST["client"];
-        $contractor = $_POST["contractor"];
-        $consultant = $_POST["consultant"];
-
-        // SQL query to check for duplicates based on project name
-        $sqlCheckDuplicate = "SELECT COUNT(*) FROM projects WHERE project_name = ?";
-        $stmtCheckDuplicate = $connect->prepare($sqlCheckDuplicate);
-        $stmtCheckDuplicate->bind_param("s", $projectName);
-        $stmtCheckDuplicate->execute();
-        $stmtCheckDuplicate->bind_result($duplicateCount);
-        $stmtCheckDuplicate->fetch();
-        $stmtCheckDuplicate->close();
-
-        if ($duplicateCount > 0) {
-            echo "";
-        } else {
-            // Handle the image upload
-            $uploadDirectory = "../assets/img/projects/"; // Specify the directory where you want to store images
-            $uploadedImagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
-
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadedImagePath)) {
-                // Image uploaded successfully, now insert into the database
-                $imagePath = $uploadedImagePath;
-
-                // Prepare and execute the SQL query to insert data
-                $sql = "INSERT INTO projects (image_path, project_name, description, client, contractor, consultant) VALUES (?, ?, ?, ?, ?, ?)";
-                $stmt = $connect->prepare($sql);
-                $stmt->bind_param("ssssss", $imagePath, $projectName, $projectDescription, $client, $contractor, $consultant);
-                $stmt->execute();
-                $stmt->close();
-            } else {
-                echo "";
-            }
-        }
-    } else {
-        // Token mismatch, do not process the form again.
-        // You can display an error message or take appropriate action.
-        echo "";
-    }
-} else {
-    // Generate a new token when the form is initially loaded.
-    $_SESSION['token'] = md5(uniqid(rand(), true));
-}
 ?>
+
+
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -112,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="add_blogs.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -187,8 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 ?>
                             </a>
                             <div class="dropdown-content">
-                                <a href="dashboard.php">Dashboard</a>
-                                <a href="add_jobs.php">Add Jobs</a>
+                                <a href="add_blogs.php">Add Blogs</a>
+                                <a href="404.php">Edit Blogs</a>
                                 <a href="Logout.php">Logout</a>
                             </div>
                         </li>
@@ -212,35 +153,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_projects.php"
-                                aria-expanded="false">
-                                <i class="far fa-lightbulb" aria-hidden="true"></i>
-                                <span class="hide-menu">New Projects</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_jobs.php"
-                                aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">New Jobs</span>
-                            </a>
-                        </li>
                         <!-- <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
                                 aria-expanded="false">
@@ -248,26 +160,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">Basic Table</span>
                             </a>
                         </li> -->
+
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
-                                aria-expanded="false">
-                                <i class="fa fa-comment" aria-hidden="true"></i>
-                                <span class="hide-menu">New Testimonials</span>
-                            </a>
-                        </li>
-                         
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_logo.php"
-                                aria-expanded="false">
-                                <i class="fas fa-image" aria-hidden="true"></i>
-                                <span class="hide-menu">Add Logo</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_blogs.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_blogs.php"
                                 aria-expanded="false">
                                 <i class="fas fa-upload" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Blogs</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blog_edit.php"
+                                aria-expanded="false">
+                                <i class="fas fa-edit" aria-hidden="true"></i>
+                                <span class="hide-menu">Edit Blogs</span>
                             </a>
                         </li>
 
@@ -291,13 +196,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Add Projects</h4>
+                        <h4 class="page-title">Edit Blogs</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
-                            <ol class="breadcrumb ms-auto">
-                                <li><a href="#" class="fw-normal">Dashboard</a></li>
-                            </ol>
+                            <!-- <ol class="breadcrumb ms-auto">
+                                <li><a href="#" class="fw-normal"></a></li>
+                            </ol> -->
                         </div>
                     </div>
                 </div>
@@ -310,75 +215,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <div class="">
-                    <div class="card">
-                        <div class="card-body">
 
-                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"
-                                enctype="multipart/form-data" class="form-horizontal form-material">
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Project Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="project_name" placeholder="Enter Project Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Client Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="client" placeholder="Enter client Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Main Contractor Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="contractor" placeholder="Enter Main Contractor Name"
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Consultant Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="consultant" placeholder="Enter Consultant Name" 
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Project Description</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <textarea id ="description" rows="5" class="form-control p-0 border-0" name="description"
-                                            placeholder="Enter Project Description" ></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Upload Image</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="image" accept="image/*" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                    <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
-                                </div>
-                                <div class="form-group mb-4">
-                                    <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-success">Upload and Save</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- MANAGE PROJECTS TABLE -->
 
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
                             <div class="d-md-flex mb-3">
-                                <h3 class="box-title mb-0">Manage Projects</h3>
+                                <h3 class="box-title mb-0">Manage Blogs</h3>
                                 <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
                                 </div>
                             </div>
@@ -387,63 +231,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">id</th>
-                                            <th class="border-top-0">Project Name</th>
-                                            <th class="border-top-0 txt-oflo">Project Description</th>
-                                            <th class="border-top-0 txt-oflo">Client Name</th>
-                                            <th class="border-top-0 txt-oflo">Contractor Name</th>
-                                            <th class="border-top-0 txt-oflo">Consultant</th>
-                                            <th class="border-top-0">Image Path</th>
+                                            <th class="border-top-0">Blog Title</th>
+                                            <th class="border-top-0 txt-oflo">Blog Description</th>
+                                            <th class="border-top-0 txt-oflo">Author Name</th>
+                                            <th class="border-top-0 txt-oflo">Publish Date</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
-                                    <?php
-                                    // Include the database configuration
-                                    require_once('includes/database.php');
+                                    <tbody>
+                                        <?php
+                                        // Include the database configuration
+                                        require_once('includes/database.php');
 
-                                    // Fetch projects from the database
-                                    $sql = "SELECT * FROM projects";
-                                    $result = $connect->query($sql);
+                                        // Assuming you have the user's ID in the session variable
+                                        $userID = $_SESSION['id'];
 
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<tr>";
-                                        echo "<td>" . $row["id"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["project_name"] . "</td>";
-                                        // Display only the first 50 characters of the description
-                                        $shortDescription = substr($row["description"], 0, 50);
-                                        echo "<td class='txt-oflo'>" . $shortDescription;
+                                        // Fetch blogs from the database for the logged-in user
+                                        $sql = "SELECT * FROM blog WHERE author_id = ?";
+                                        $stmt = $connect->prepare($sql);
+                                        $stmt->bind_param("i", $userID);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
 
-                                        // Check if the description length is greater than 50 characters
-                                        if (strlen($row["description"]) > 50) {
-                                            echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["description"]) . "'>Read More</a>";
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . $row["blog_id"] . "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["title"] . "</td>";
+                                            // Display only the first 50 characters of the description
+                                            $shortDescription = substr($row["content"], 0, 50);
+                                            echo "<td class='txt-oflo'>" . $shortDescription;
+
+                                            // Check if the description length is greater than 50 characters
+                                            if (strlen($row["content"]) > 50) {
+                                                echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["content"]) . "'>Read More</a>";
+                                            }
+                                            echo "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["author_name"] . "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["publish_date"] . "</td>";
+
+                                            echo "<td><a href='operations/edit_blog.php?blog_id=" . $row["blog_id"] . "'>Edit</a>";
+                                            echo "&nbsp;/&nbsp;";
+                                            echo "<form action='operations/delete_blog.php' method='post' style='display:inline;'>";
+                                            echo "<input type='hidden' name='blog_id' value='" . $row["blog_id"] . "'>";
+                                            echo "<button style='background: none; border: none; padding: 0; color: #2cabe3; cursor: pointer;'type='submit' name='delete_blog'>Delete</button>";
+                                            echo "</form>";
+                                            echo "</td>";
+                                            echo "</tr>";
                                         }
-                                        echo "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["client"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["contractor"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["consultant"] . "</td>";
-                                        echo "<td class ='txt-oflo'>" . $row["image_path"] . "</td>";
-                                        echo "<td><a href='operations/edit_project.php?id=" . $row["id"] . "'>Edit</a>";
-                                        echo "&nbsp;/";
-                                        echo " <a href='operations/delete_project.php?id=" . $row["id"] . "'>Delete</a>";
-                                        echo "</td>";
-                                        echo "</tr>";
-                                    }
 
-                                    $connect->close();
-                                    ?>
-
-
+                                        $stmt->close();
+                                        $connect->close();
+                                        ?>
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Column -->
             </div>
-
-
-
-
             <!-- ============================================================== -->
             <!-- End PAge Content -->
             <!-- ============================================================== -->
@@ -461,10 +307,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-                href="https://www.qplus-ts.com">www.qplus-ts.com</a>
-        </footer>
-
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
@@ -508,7 +350,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
-            selector:'#description'
+            selector: '#content'
         })
     </script>
 

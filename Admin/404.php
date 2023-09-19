@@ -42,7 +42,7 @@
                 <h1 class="error-title text-danger">404</h1>
                 <h3 class="text-uppercase error-subtitle">PAGE NOT FOUND !</h3>
                 <p class="text-muted mt-4 mb-4">YOU ARE NOT ALLOWED TO ENTER THIS PAGE</p>
-                <a href="Logout.php" class="btn btn-danger btn-rounded waves-effect waves-light mb-5 text-white">Back to home</a>
+                <a href="javascript:history.back();" class="btn btn-danger btn-rounded waves-effect waves-light mb-5 text-white">Back to home</a>
             </div>
         </div>
         <!-- ============================================================== -->

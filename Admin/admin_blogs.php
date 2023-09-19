@@ -16,13 +16,26 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
 // Include the database configuration
 require_once('includes/database.php');
 
+// Fetch user data from the users table
+$userID = $_SESSION['id']; // Assuming you store the user ID in the session
+$sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+$stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+$stmtFetchUserData->bind_param("i", $userID);
+$stmtFetchUserData->execute();
+$stmtFetchUserData->bind_result($authorNameFromUserTable, $authorImageFromUserTable);
+$stmtFetchUserData->fetch();
+$stmtFetchUserData->close();
+
+// Create new variables for author name and image from the user table
+$authorName = $authorNameFromUserTable;
+$authorImage = $authorImageFromUserTable;
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the submitted token matches the stored token
     if ($_POST['token'] === $_SESSION['token']) {
         // Token is valid, now check for duplicates
         $blogTitle = $_POST["title"];
-        $authorName = $_POST["author_name"];
         $publishDate = $_POST["publish_date"];
         $content = $_POST["content"];
 
@@ -50,33 +63,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Image uploaded successfully, add its path to the array
                     $blogImagePaths[] = $blogImagePath;
                 } else {
-                    echo '<script>alert("Error uploading blog image!");</script>';
+                    echo "";
                     // Handle the error as needed
                 }
             }
 
-            // Upload and handle author image
-            $authorImageDir = "../assets/img/blog/author/"; // Directory to store author images
-            $authorImage = $_FILES["author_image"]["name"];
-            $authorImagePath = $authorImageDir . basename($authorImage);
-
-            if (move_uploaded_file($_FILES["author_image"]["tmp_name"], $authorImagePath)) {
-                // Author image uploaded successfully
-            } else {
-                echo '<script>alert("Error uploading author image!");</script>';
-                // Handle the error as needed
-            }
-
-
-            // Upload and handle author image
-            $coverImageDir = "../assets/img/blog/"; // Directory to store author images
+            // Upload and handle cover image
+            $coverImageDir = "../assets/img/blog/"; // Directory to store cover images
             $coverImage = $_FILES["cover_image"]["name"];
             $coverImagePath = $coverImageDir . basename($coverImage);
 
             if (isset($_FILES["cover_image"]) && $_FILES["cover_image"]["error"] == 0) {
                 if (move_uploaded_file($_FILES["cover_image"]["tmp_name"], $coverImagePath)) {
+                    // Cover image uploaded successfully
                 } else {
-                    echo '<script>alert("Error uploading author image!");</script>';
+                    echo '<script>alert("Error uploading cover image!");</script>';
                     // Handle the error as needed
                 }
             } else {
@@ -86,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Insert data into the blog table
             $sql = "INSERT INTO blog (title, author_name, publish_date, content, author_image, cover_image) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $connect->prepare($sql);
-            $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $authorImagePath, $coverImagePath);
+            $stmt->bind_param("ssssss", $blogTitle, $authorName, $publishDate, $content, $authorImage, $coverImagePath);
 
             if ($stmt->execute()) {
                 // Data inserted successfully
@@ -117,9 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Generate a new token when the form is initially loaded.
 $_SESSION['token'] = md5(uniqid(rand(), true));
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -214,10 +212,28 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="dropdown">
+                         <li class="dropdown">
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
-                                <span class="text-white font-medium">Admin</span>
+                                <?php
+                                // Include the database configuration
+                                require_once('includes/database.php');
+
+                                // Assuming you have a session variable for the logged-in user ID
+                                $userID = $_SESSION['id'];
+
+                                // Fetch user data from the users table based on the user ID
+                                $sqlFetchUserData = "SELECT username, profile_image FROM users WHERE id = ?";
+                                $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
+                                $stmtFetchUserData->bind_param("i", $userID);
+                                $stmtFetchUserData->execute();
+                                $stmtFetchUserData->bind_result($username, $profile_image);
+                                $stmtFetchUserData->fetch();
+                                $stmtFetchUserData->close();
+
+                                // Display the user's profile image and username
+                                echo '<img src="' . $profile_image . '" alt="user-img" width="36" class="img-circle">';
+                                echo '<span class="text-white font-medium">' . $username . '</span>';
+                                ?>
                             </a>
                             <div class="dropdown-content">
                                 <a href="dashboard.php">Dashboard</a>
@@ -360,20 +376,6 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Author Name</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="author_name" placeholder="Enter Author Name" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="col-md-12 p-0">Author Image</label>
-                                    <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="author_image" accept="image/*" required
-                                            class="form-control p-0 border-0">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Publish Date</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <input type="date" name="publish_date" required
@@ -437,45 +439,46 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
                                             <th class="border-top-0 txt-oflo">Blog Description</th>
                                             <th class="border-top-0 txt-oflo">Author Name</th>
                                             <th class="border-top-0 txt-oflo">Publish Date</th>
-                                            <th class="border-top-0">Author Image</th>
-                                            <th class="border-top-0">Cover Image</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
-                                    <?php
-                                    // Include the database configuration
-                                    // require_once('includes/database.php');
-                                    
-                                    // Fetch blogs from the database
-                                    $sql = "SELECT * FROM blog";
-                                    $result = $connect->query($sql);
+                                    <tbody>
+                                        <?php
+                                        // Include the database configuration
+                                        // require_once('includes/database.php');
+                                        
+                                        // Fetch blogs from the database
+                                        $sql = "SELECT * FROM blog";
+                                        $result = $connect->query($sql);
 
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<tr>";
-                                        echo "<td>" . $row["blog_id"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["title"] . "</td>";
-                                        // Display only the first 50 characters of the description
-                                        $shortDescription = substr($row["content"], 0, 50);
-                                        echo "<td class='txt-oflo'>" . $shortDescription;
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . $row["blog_id"] . "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["title"] . "</td>";
+                                            // Display only the first 50 characters of the description
+                                            $shortDescription = substr($row["content"], 0, 50);
+                                            echo "<td class='txt-oflo'>" . $shortDescription;
 
-                                        // Check if the description length is greater than 50 characters
-                                        if (strlen($row["content"]) > 50) {
-                                            echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["content"]) . "'>Read More</a>";
+                                            // Check if the description length is greater than 50 characters
+                                            if (strlen($row["content"]) > 50) {
+                                                echo " <a href='javascript:void(0);' class='read-more-link' data-description='" . htmlspecialchars($row["content"]) . "'>Read More</a>";
+                                            }
+                                            echo "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["author_name"] . "</td>";
+                                            echo "<td class='txt-oflo'>" . $row["publish_date"] . "</td>";
+                                     
+                                            echo "<td><a href='operations/edit_blog.php?blog_id=" . $row["blog_id"] . "'>Edit</a>";
+                                            echo "&nbsp;/&nbsp;";
+                                            echo "<form action='operations/delete_blog.php' method='post' style='display:inline;'>";
+                                            echo "<input type='hidden' name='blog_id' value='" . $row["blog_id"] . "'>";
+                                            echo "<button style='background: none; border: none; padding: 0; color: #2cabe3; cursor: pointer;'type='submit' name='delete_blog'>Delete</button>";
+                                            echo "</form>";
+                                            echo "</td>";
+                                            echo "</tr>";
                                         }
-                                        echo "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["author_name"] . "</td>";
-                                        echo "<td class='txt-oflo'>" . $row["publish_date"] . "</td>";
-                                        echo "<td>" . $row["author_image"] . "</td>";
-                                        echo "<td>" . $row["cover_image"] . "</td>";
-                                        echo "<td><a href='operations/edit_blog.php?blog_id=" . $row["blog_id"] . "'>Edit</a>";
-                                        echo "&nbsp;/";
-                                        echo " <a href='operations/delete_blog.php?blog_id=" . $row["blog_id"] . "'>Delete</a>";
-                                        echo "</td>";
-                                        echo "</tr>";
-                                    }
 
-                                    $connect->close();
-                                    ?>
+                                        $connect->close();
+                                        ?>
 
 
                                     </tbody>
@@ -507,10 +510,8 @@ $_SESSION['token'] = md5(uniqid(rand(), true));
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer text-center"> 2020 © Qplus Technical Service LLC - <a
-                href="https://www.qplus-ts.com">www.qplus-ts.com</a>
-        </footer>
+        <!-- <!-- ==============================================================> -->
+       
 
         <!-- ============================================================== -->
         <!-- End footer -->
