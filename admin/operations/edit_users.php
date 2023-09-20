@@ -45,7 +45,7 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Manage Projects</h4>
+                    <h4 class="page-title">Manage Profiles</h4>
                 </div>
             </div>
         </div>
@@ -61,157 +61,114 @@
         <!-- <a href='../add_projects.php'><i class='fa fa-arrow-left' aria-hidden='true'></i>&nbsp;go back</a></div>
             -->
 
-
-
-
         <?php
         require_once('../includes/database.php');
-        session_start();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Handle the form submission for updating the user's profile
-            $username = $_POST["username"];
+            // Handle the form submission for editing the project
+            $userName = $_POST["username"];
             $email = $_POST["email"];
-            $password = $_POST["password"];
-            $hashedPassword = sha1($password); // Hash the password
+            $password = sha1($_POST["password"]);
             $phone = $_POST["phone"];
-            $country = $_POST["country"];
             $role = $_POST["role"];
             $status = $_POST["status"];
-            $userID = $_SESSION['id']; // Assuming you store the user ID in the session
+            $userId = $_POST["user_id"];
+
+            $sql = "UPDATE users SET username = ?, email = ?, password = ?, phone = ?, role = ?,  status= ?  WHERE id = ? ";
+            $stmt = $connect->prepare($sql);
+            $stmt->bind_param("ssssssi", $userName, $email, $password, $phone, $role, $status, $userId);
+            $stmt->execute();
+            $stmt->close();
+
+            header("Location: ../profile.php"); // Terminate the script// Redirect to the edit page
         
-            // Handle profile image upload if provided
-            $profileImage = $_FILES["profile_image"]["name"];
-            $profileImagePath = ''; // Initialize the path as empty
+        } else {
+            // Display the profile details for editing
+            $userId = $_GET["id"];
+            $sql = "SELECT * FROM users WHERE id = ?";
+            $stmt = $connect->prepare($sql);
+            $stmt->bind_param("i", $userId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                // ...
+// Display the user profile details in a form for editing
         
-            if (!empty($profileImage)) {
-                $profileImageDir = "../../assets/img/users"; // Directory to store profile images
-                $profileImagePath = $profileImageDir . basename($profileImage);
+                echo "<div class='container-fluid'>";
+                echo "<div class='row'>";
+                echo "<div class=''>";
+                echo "<div class='card'>";
+                echo "<div class='card-body'>";
+                echo "<form method='POST' action='edit_users.php'>";
+                echo "<div class='form-group mb-4'>";
+                echo "<label for='username'>User Name</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='text' name='username' id='username' placeholder='Enter User Name' value='" . $row["username"] . "' required class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
 
-                if (move_uploaded_file($_FILES["profile_image"]["tmp_name"], $profileImagePath)) {
-                    // Image uploaded successfully
-                } else {
-                    echo "";
-                    // Handle the error as needed
-                }
-            }
+                echo "<div class='form-group'>";
+                echo "<label for='email'>Email</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='email' name='email' id='email' placeholder='Enter Email' value='" . $row["email"] . "' required class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
 
-            // Update user profile in the database
-            $sqlUpdateProfile = "UPDATE users SET username = ?, email = ?, password = ?, phone = ?, country = ?, role = ?, status = ?, profile_image = ? WHERE id = ?";
-            $stmtUpdateProfile = $connect->prepare($sqlUpdateProfile);
-            $stmtUpdateProfile->bind_param("ssssssssi", $username, $email, $hashedPassword, $phone, $country, $role, $status, $profileImagePath, $userID);
+                echo "<div class='form-group'>";
+                echo "<label for='password'>Password</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='password' name='password' id='password' placeholder='Enter New Password' value='" . $row["password"] . "' required class='form-control p-0 border-0'>";
+                echo "<small class='text-muted'>**Don't touch this field if you don't want to change password</small>";
+                echo "</div>";
+                echo "</div>";
 
-            if ($stmtUpdateProfile->execute()) {
-                // Profile updated successfully
-                echo '<script>alert("Profile updated successfully!");</script>';
+                echo "<div class='form-group'>";
+                echo "<label for='phone'>Phone</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<input type='text' name='phone' id='phone' placeholder='Enter Phone Number' value='" . $row["phone"] . "' required class='form-control p-0 border-0'>";
+                echo "</div>";
+                echo "</div>";
+
+                // Role as a dropdown
+                echo "<div class='form-group'>";
+                echo "<label for='role'>Role</label>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<select name='role' id='role' class='form-control p-0 border-0' required>";
+                echo "<option value='admin' " . ($row["role"] === "Admin" ? "selected" : "") . ">Admin</option>";
+                echo "<option value='blogger' " . ($row["role"] === "Blogger" ? "selected" : "") . ">Blogger</option>";
+                echo "</select>";
+                echo "</div>";
+                echo "</div>";
+
+                // Status as radio buttons
+                echo "<div class='form-group'>";
+                echo "<label>Status</label><br>";
+                echo "<div class='col-md-12 border-bottom p-0'>";
+                echo "<label class='radio-inline'><input type='radio' name='status' value='1' " . ($row["status"] === "1" ? "checked" : "") . " required> Active</label> &nbsp;&nbsp;";
+                echo "<label class='radio-inline'><input type='radio' name='status' value='0' " . ($row["status"] === "0" ? "checked" : "") . " required> Inactive</label>";
+                echo "</div>";
+                echo "</div>";
+
+                echo "<input type='hidden' name='user_id' value='" . $row["id"] . "'>";
+                echo "<button type='submit' class='btn btn-success'>Save Changes</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+
             } else {
-                // Error updating profile
-                echo '<script>alert("Error updating profile: ' . $stmtUpdateProfile->error . '");</script>';
+                echo '<script>alert("User not found!")</script>';
             }
-            $stmtUpdateProfile->close();
+
+            $stmt->close();
         }
 
-        // Fetch user data from the users table
-        $userID = $_SESSION['id']; // Assuming you store the user ID in the session
-        $sqlFetchUserData = "SELECT username, email, phone, country, role, status, profile_image FROM users WHERE id = ?";
-        $stmtFetchUserData = $connect->prepare($sqlFetchUserData);
-        $stmtFetchUserData->bind_param("i", $userID);
-        $stmtFetchUserData->execute();
-        $stmtFetchUserData->bind_result($username, $email, $phone, $country, $role, $status, $profileImage);
-        $stmtFetchUserData->fetch();
-        $stmtFetchUserData->close();
+        $connect->close();
         ?>
-
-        <!-- HTML Form to Update User Profile -->
-        <div class="">
-            <div class="card">
-                <div class="card-body">
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"
-                        class="form-horizontal form-material">
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">User Name</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="text" name="username" placeholder="Enter Your name" required
-                                    class="form-control p-0 border-0" value="<?php echo $username; ?>">
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="example-email" class="col-md-12 p-0">Email</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="email" name="email" placeholder="Enter Your Email" required
-                                    class="form-control p-0 border-0" name="example-email" id="example-email"
-                                    value="<?php echo $email; ?>">
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Profile Image</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="file" name="profile_image" class="form-control p-0 border-0">
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Password</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="password" name="password" value="" class="form-control p-0 border-0"
-                                    placeholder="Enter your password" required>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-sm-12">Select role</label>
-                            <div class="col-sm-12 border-bottom">
-                                <select name="role" class="form-select shadow-none p-0 border-0 form-control-line">
-                                    <option <?php if ($role === 'Admin')
-                                        echo 'selected'; ?>>Admin</option>
-                                    <option <?php if ($role === 'Blogger')
-                                        echo 'selected'; ?>>Blogger</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Phone No</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="number" name="phone" required placeholder="Phone Number"
-                                    class="form-control p-0 border-0" value="<?php echo $phone; ?>">
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Status</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <label><input type="radio" name="status" value="1" <?php if ($status === '1')
-                                    echo 'checked'; ?>> Active</label>&nbsp;&nbsp;
-                                <label><input type="radio" name="status" value="0" <?php if ($status === '0')
-                                    echo 'checked'; ?>> Inactive</label>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label class="col-sm-12">Select Country</label>
-                            <div class="col-sm-12 border-bottom">
-                                <select name="country" class="form-select shadow-none p-0 border-0 form-control-line">
-                                    <option <?php if ($country === 'United Arab Emirates')
-                                        echo 'selected'; ?>>United Arab
-                                        Emirates</option>
-                                    <option <?php if ($country === 'India')
-                                        echo 'selected'; ?>>India</option>
-                                    <option <?php if ($country === 'London')
-                                        echo 'selected'; ?>>London</option>
-                                    <option <?php if ($country === 'United States of America')
-                                        echo 'selected'; ?>>United
-                                        States of America</option>
-                                    <option <?php if ($country === 'Others')
-                                        echo 'selected'; ?>>Others</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <div class="col-sm-12">
-                                <button class="btn btn-success">Update Profile</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
         <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap tether Core JavaScript -->
         <script src="../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
