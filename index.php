@@ -11,10 +11,6 @@
 
   <meta property="og:image" content="assets/img/qplus_logo.png">
 
-
-  <!-- Recaptcha -->
-  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
   <!-- Favicons -->
   <link href="assets/img/qplus_logo.png" rel="icon">
   <link href="assets/img/qplus_logo.png" rel="apple-touch-icon">
@@ -47,8 +43,7 @@
       <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/logo.png" alt="QPLUS" Class="">
-        <!-- <h1>Q PLUS</h1> -->
-        <!-- <span>.</span> -->
+    
       </a>
 
       <!-- Nav Menu -->
@@ -67,12 +62,6 @@
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav><!-- End Nav Menu -->
-      <!-- <a href="index.php" class="logo-2 me-xl-0">
-        <p> WE ARE ISO 9001 2015 Certified</p>
-        
-        <img src="assets/img/clients/ISO-1.jpg" alt="QPLUS" class="iso-1">
-        <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
-      </a> -->
 
       <a class="btn-getstarted" href="index.php#contact">Contact us</a>
     </div>
@@ -93,10 +82,7 @@
 
           <!-- </div> -->
           <div class="col-lg-5">
-            <!-- <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
-              <input type="text" class="form-control" placeholder="Enter email address">
-              <input type="submit" class="btn btn-primary" value="Sign up">
-            </form> -->
+          
           </div>
         </div>
       </div>
@@ -107,9 +93,7 @@
 
 
     <section id="clients" class="slide-show">
-      <!-- <div class = sli-head> -->
-      <!-- <h4>Our Clients</h4>
-    </div> -->
+      
 
       <div class=" sec-tit" data-aos="fade-up">
         <h2> Our Clients</h2><br>
@@ -221,139 +205,6 @@
     </section>
 
 
-    <!-- <section id="clients" class="clients">
-  <div class="container-fluid" data-aos="fade-up">
-    <div class="swiper">
-      <!-- Swiper Configuration Template --
-      <template class="swiper-config">
-        {
-          "loop": true,
-          "speed": 3000,
-          "autoplay": {
-            "delay": 1000
-          },
-          "slidesPerView": "auto",
-          "pagination": {
-            "el": ".swiper-pagination",
-            "type": "bullets",
-            "clickable": true
-          }
-        }
-      </template>
-      <!-- Swiper Wrapper (Container for client logos) --
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <!-- Container for client images --
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/Brands/" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-9.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients  /client-17.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            
-    
-          </div><!-- End Client Images Container --
-        </div><!-- End Swiper Slide --
-
-
-        <div class="swiper-slide">
-          <!-- Container for client images --
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-10.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --       
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --   
-
-    
-          </div><!-- End Client Images Container --               
-        </div><!-- End Swiper Slide --        
-
-        <div class="swiper-slide">
-          <!-- Container for client images --     
-          <div class="row gy-4 client-images">
-         
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-13.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-14.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-15.jpeg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo"> 
-              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
-             </div><!-- End Client Item --  
-            
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item -- 
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
-            </div><!-- End Client Item --
-    
-          </div><!-- End Client Images Container --
-        </div><!-- End Swiper Slide -->
-
-
-    <!-- Add more swiper-slide elements for more sets of images --
-
-
-
-
-      </div><!-- End Swiper Wrapper --
-    </div><!-- End Swiper Container --
-  </div><!-- End Container Fluid --
-</section>End Clients Section -->
-
-
     <!-- About Section - Home Page -->
     <section id="about" class="about">
 
@@ -385,10 +236,6 @@
               <img src="assets/img/clients/ISO-2.png" alt="QPLUS" class="iso-2">
             </a>
 
-            <!-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
-            <!-- <div class = "car-buts">
-              <a href="" ><button type="submit" class="all-port btn-more"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp;Read More</button></a>
-            </div> -->
           </div>
 
           <div class="col-xl-7 abt">
@@ -474,14 +321,6 @@
               <p>Brands we Handle</p>
             </div>
           </div><!-- End Stats Item -->
-
-          <!-- <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Workers</p>
-            </div>
-          </div> --> <!-- End Stats Item -->
-
         </div>
 
       </div>
@@ -624,12 +463,12 @@
                 <img src="assets/img/elv services.jpg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <a href="service-details.php#ELV-services">
+                <a href="service-details.php?tab=tab-1">
                   <div class="icon">
                     <i class="bi bi-lightning-charge"></i>
                   </div>
                 </a>
-                <a href="service-details.php#ELV-services" class="stretched-link">
+                <a href="service-details.php?tab=tab-1" class="stretched-link">
                   <h3>ELV Services</h3>
                 </a>
                 <p class="remove-space">Elevate your projects with our ELV Systems expertise. From cutting-edge security
@@ -647,12 +486,12 @@
                 <img src="assets/img/IT Services.png" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <a href="service-details.php#ELV-services">
+              <a href="service-details.php?tab=tab-2">
                   <div class="icon">
                     <i class="bi bi-router"></i>
                   </div>
                 </a>
-                <a href="service-details.php#IT-services" class="stretched-link">
+                <a href="service-details.php?tab=tab-2" class="stretched-link">
                   <h3>IT and Networking Services </h3>
                 </a>
                 <p>Empower your business with tailored IT and Networking solutions, meticulously designed to match your
@@ -669,12 +508,12 @@
                 <img src="assets/img/Mep.jpg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <a href="service-details.php#MEP-services">
+              <a href="service-details.php?tab=tab-3">
                   <div class="icon">
                     <i class="bi bi-tools"></i>
                   </div>
                 </a>
-                <a href="service-details.php#MEP-services" class="stretched-link">
+                <a href="service-details.php?tab=tab-3" class="stretched-link">
                   <h3>MEP Services</h3>
                 </a>
                 <p> Our MEP services provide a foundation of excellence for your projects.
@@ -686,119 +525,12 @@
             </div>
           </div><!-- End Service Item -->
 
-          <!-- <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-bounding-box-circles"></i>
-                </div>
-                <a href="service-details.php" class="stretched-link">
-                  <h3>Asperiores Commodit</h3>
-                </a>
-                <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-                <a href="service-details.php" class="stretched-link"></a>
-              </div>
-            </div>
-          </div><!-- End Service Item --
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/services-5.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-calendar4-week"></i>
-                </div>
-                <a href="#" class="stretched-link">
-                  <h3>Velit Doloremque</h3>
-                </a>
-                <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-                <a href="#" class="stretched-link"></a>
-              </div>
-            </div>
-          </div><!-- End Service Item --
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/services-6.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-chat-square-text"></i>
-                </div>
-                <a href="#" class="stretched-link">
-                  <h3>Dolori Architecto</h3>
-                </a>
-                <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-                <a href="#" class="stretched-link"></a>
-              </div>
-            </div>
-          </div>End Service Item -->
-
         </div>
 
       </div>
     </section>
 
     <!-- End Services Section -->
-
-
-
-    <!-- Features Section - Home Page -->
-    <!-- <section id="features" class="features">
-
-      <!--  Section Title --
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title --
-
-      <div class="container">
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Corporis temporibus maiores provident</h3>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-            </p>
-            <a href="#" class="btn btn-get-started">Get Started</a>
-          </div>
-          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <div class="image-stack">
-              <img src="assets/img/features-light-1.jpg" alt="" class="stack-front">
-              <img src="assets/img/features-light-2.jpg" alt="" class="stack-back">
-            </div>
-          </div>
-        </div><!-- Features Item --
-
-        <div class="row gy-4 align-items-stretch justify-content-between features-item ">
-          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
-            <img src="assets/img/features-light-3.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
-            <h3>Sunt consequatur ad ut est nulla</h3>
-            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
-            </ul>
-            <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
-          </div>
-        </div><!-- Features Item --
-
-      </div>
-
-    </section><!--End Features Section -->
-
-
-
 
 
     <!-- Portfolio Section - Home Page -->
@@ -869,89 +601,6 @@
 
     </section><!-- End Portfolio Section -->
 
-
-    <!-- Pricing Section - Home Page -->
-    <!--   <section id="pricing" class="pricing">
-
-      <!--  Section Title 
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -
-
-      <div class="container" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="row g-4">
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <div class="icon">
-                <i class="bi bi-box"></i>
-              </div>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item --
-
-          <div class="col-lg-4">
-            <div class="pricing-item featured">
-              <h3>Business Plan</h3>
-              <div class="icon">
-                <i class="bi bi-rocket"></i>
-              </div>
-
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item --
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <div class="icon">
-                <i class="bi bi-send"></i>
-              </div>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item --
-
-        </div>
-
-      </div>
-
-    </section> -->
-    <!-- End Pricing Section -->
-
-
-    <!-- ************************************************************** -->
-
-
-
-
-
     <!-- Careers Page -->
     <section id="careers" class="careers">
 
@@ -1017,216 +666,6 @@
 
     </section> <!-- End of Career Section -->
 
-
-
-
-    <!-- Faq Section - Home Page -->
-    <!-- <section id="faq" class="faq">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="content px-xl-5">
-              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="faq-container">
-              <div class="faq-item faq-active">
-                <h3><span class="num">1.</span> <span>Non consectetur a erat nam at lectus urna duis?</span></h3>
-                <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item--
-
-              <div class="faq-item">
-                <h3><span class="num">2.</span> <span>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item--
-
-              <div class="faq-item">
-                <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item--
-
-              <div class="faq-item">
-                <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item--
-
-              <div class="faq-item">
-                <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span></h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item--
-
-            </div>
-
-          </div>
-        </div>
-
-      </div> 
-
-    </section><!-- End Faq Section -->
-
-    <!-- Team Section - Home Page --
-    <section id="team" class="team">
-
-      <!--  Section Title --
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title --
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
-              <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
-            </div>
-          </div><!-- End Team Member --
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Sarah Jhonson</h4>
-              <span>Product Manager</span>
-              <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
-            </div>
-          </div><!-- End Team Member --
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-            <div class="member-img">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
-            </div>
-          </div><!-- End Team Member --
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-            <div class="member-img">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
-            </div>
-          </div><!-- End Team Member --
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Brian Doe</h4>
-              <span>Marketing</span>
-              <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit laborum velit</p>
-            </div>
-          </div><!-- End Team Member --
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-            <div class="member-img">
-              <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Josepha Palas</h4>
-              <span>Operation</span>
-              <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
-            </div>
-          </div><!-- End Team Member --
-
-        </div>
-
-      </div>
-
-    </section><!-- End Team Section -->
-
-    <!-- Call-to-action Section - Home Page --
-    <section id="call-to-action" class="call-to-action">
-
-      <img src="assets/img/cta-bg.jpg" alt="">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h3>Get started with us! We focus on the entire process,<br> concept through completion</h3>
-             
-              <a class="cta-btn" href="#">Get a Quote</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- End Call-to-action Section -->
     <!-- Testimonials Section - Home Page -->
     <section id="testimonials" class="testimonials">
 
@@ -1318,7 +757,7 @@
     </section><!-- End Testimonials Section -->
 
 
-    <!-- **********************************************************BLOG********************************************************************************************** -->
+   
     <!-- Recent-posts Section - Home Page -->
     <section id="recent-posts" class="recent-posts">
 
@@ -1392,8 +831,7 @@
 
     <!-- End Recent-posts Section -->
 
-    <!-- ************************************************************************************************************************************************************** -->
-
+   
 
     <!-- Contact Section - Home Page -->
     <section id="contact" class="contact">
@@ -1507,67 +945,6 @@
     </section><!-- End Contact Section -->
 
   </main>
-
-  <!-- ======= Edited Footer ======= --
-  <footer id="footer" class="footer" >
-    <div class="container footer-top" >
-        <div class="row gy-4">
-            <!-- Swap the following two divs --
-            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                <h4>Contact Us</h4>
-                <p>Q Plus Technical Service LLC</p>
-                <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-                <p>Al Qusais, Dubai United Arab Emirates</p>
-                <p class="mt-4"><strong>Phone:</strong> <span><p>Mob: +971 581174967</p><p>Tel:&nbsp;&nbsp;&nbsp; 04 - 393 1110</p></span></p>
-                <p><strong>Email:</strong> <span>info@qplus-ts.com</span></p>
-            </div>
-
-            
-
-            <div class="col-lg-2 col-6 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                    <li><a href="index.php#home">Home</a></li>
-                    <li><a href="index.php#about">About us</a></li>
-                    <li><a href="index.php#services">Services</a></li>
-                    <li><a href="index.php#portfolio">Portfolio</a></li>
-                    <li><a href="index.php#careers">Join us</a></li>
-                    <li><a href="index.php#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 col-6 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="service-details.php">ELV services</a></li>
-                    <li><a href="service-details.php">IT and Networking Services</a></li>
-                    <li><a href="service-details.php">MEP Services</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-5 col-md-12 footer-about" >
-              <a href="index.php" class="logo d-flex align-items-center">
-              </a>
-              <h4 style="margin-left: 4em;" >&nbsp;&nbsp;Our Social Network</p>
-              <div class="social-links d-flex mt-4">
-                  <a href="https://twitter.com/qplus_q"><i class="bi bi-twitter"></i></a>
-                  <a href="https://www.facebook.com/Qplusts"><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/qplustechnicalservice/"><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/company/qplus-technical-service-llc/"><i class="bi bi-linkedin"></i></a>
-                  <a href="https://wa.me/+971581174967"><i class="bi bi-whatsapp"></i></a>
-                  <a href="https://www.youtube.com/@Qplus201"><i class="bi bi-youtube"></i></a>
-              </div>
-          </div>
-          
-        </div>
-      </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>&copy; <span>Copyright</span> <strong class="px-1">DaCentric Technologies</strong> <span>All Rights Reserved</span></p>
-      </div> 
-    </div>
-
-  </footer><!-- End Footer -->
-
 
   <!-- =======Default  Footer ======= -->
   <footer id="footer" class="footer">

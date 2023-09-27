@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Scroll up sticky header to headers with .scroll-up-sticky class
    */
   let lastScrollTop = 0;
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (!selectHeader.classList.contains('scroll-up-sticky')) return;
 
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .has-dropdown i').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       if (document.querySelector('.mobile-nav-active')) {
         e.preventDefault();
         this.parentNode.classList.toggle('active');
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Init isotope layout and filters
    */
   function initIsotopeLayout() {
-    document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
       let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
       let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
       let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sortBy: sort
       });
 
-      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-        filters.addEventListener('click', function() {
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+        filters.addEventListener('click', function () {
           isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
           this.classList.add('filter-active');
           initIsotope.arrange({
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll('.swiper').forEach(function(swiper) {
+    document.querySelectorAll('.swiper').forEach(function (swiper) {
       let config = JSON.parse(swiper.querySelector('.swiper-config').innerHTML.trim());
       new Swiper(swiper, config);
     });
@@ -217,25 +217,25 @@ function initShareButton() {
   const shareButton = document.getElementById("shareButton");
 
   if (shareButton) {
-      shareButton.addEventListener("click", function () {
-          if (navigator.share) {
-              // Use the Web Share API if available
-              navigator.share({
-                  title: document.title,
-                  text: "Check out this job opportunity!",
-                  url: window.location.href,
-              })
-              .then(() => {
-                  console.log("Shared successfully");
-              })
-              .catch((error) => {
-                  console.error("Error sharing:", error);
-              });
-          } else {
-              // Fallback for browsers that don't support Web Share API
-              alert("Web Share API is not supported in your browser. You can manually copy the link.");
-          }
-      });
+    shareButton.addEventListener("click", function () {
+      if (navigator.share) {
+        // Use the Web Share API if available
+        navigator.share({
+          title: document.title,
+          text: "Check out this job opportunity!",
+          url: window.location.href,
+        })
+          .then(() => {
+            console.log("Shared successfully");
+          })
+          .catch((error) => {
+            console.error("Error sharing:", error);
+          });
+      } else {
+        // Fallback for browsers that don't support Web Share API
+        alert("Web Share API is not supported in your browser. You can manually copy the link.");
+      }
+    });
   }
 }
 
@@ -244,78 +244,34 @@ document.addEventListener("DOMContentLoaded", function () {
   initShareButton();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to get the value of a query parameter from the URL
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
 
+  // Function to open the correct tab based on the query parameter
+  function openTabFromQueryParam() {
+    const tabParam = getQueryParam('tab');
+    if (tabParam) {
+      // Remove 'active' class from all tab links and content
+      const tabLinks = document.querySelectorAll('.nav-link');
+      const tabContents = document.querySelectorAll('.tab-pane');
+      tabLinks.forEach(link => link.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active', 'show'));
 
-// // <!-- Add this script at the end of your HTML body -->
+      // Add 'active' class to the specified tab link and content
+      const tabLink = document.querySelector(`[data-bs-toggle="tab"][href="#${tabParam}"]`);
+      const tabContent = document.querySelector(`#${tabParam}`);
+      if (tabLink && tabContent) {
+        tabLink.classList.add('active');
+        tabContent.classList.add('active', 'show');
+      }
+    }
+  }
 
-// function recaptchaCallback() {
-//   // Hide the reCAPTCHA error message when reCAPTCHA is successfully completed
-//   document.querySelector('.g-recaptcha-error').style.display = 'none';
-// }
-
-// // Form submission handling
-// document.querySelector('.contact_form').addEventListener('submit', function(event) {
-//   var response = grecaptcha.getResponse();
-//   if (response.length === 0) {
-//     // Show the reCAPTCHA error message and prevent form submission
-//     document.querySelector('.g-recaptcha-error').style.display = 'block';
-//     event.preventDefault();
-//   }
-// });
-
-
-
-//   // <!-- Captcha Validation script -->
-  
-//     const form = document.querySelector('.contact_form');
-//     const submitButton = form.querySelector('button[type="submit"]');
-//     const successMessage = form.querySelector('.sent-message');
-//     const recaptchaContainer = form.querySelector('.g-recaptcha');
-  
-//     form.addEventListener('submit', async (event) => {
-//       event.preventDefault();
-  
-//       submitButton.disabled = true; // Disable the submit button
-//       submitButton.innerText = 'Sending...'; // Change button text
-  
-//       const recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response
-  
-//       if (!recaptchaResponse) {
-//         recaptchaContainer.classList.add('invalid-captcha'); // Add the CSS class
-//         submitButton.disabled = false; // Enable the submit button
-//         submitButton.innerText = 'Send Message'; // Restore button text
-//         return;
-//       }
-  
-//       // Remove the CSS class if reCAPTCHA is completed
-//       recaptchaContainer.classList.remove('invalid-captcha');
-  
-//       const formData = new FormData(form);
-//       formData.append('recaptcha_response', recaptchaResponse); // Append to form data
-  
-//       try {
-//         const response = await fetch('contact.php', {
-//           method: 'POST',
-//           body: formData,
-//         });
-  
-//         if (response.ok) {
-//          // successMessage.style.display = 'block';
-//           alert('Message sent successfully!');
-//           form.reset();
-//           grecaptcha.reset(); // Reset reCAPTCHA
-//           submitButton.innerText = 'Send Message'; // Restore button text
-//           submitButton.disabled = false; // Enable the submit button
-//         } else {
-//           console.error('Error submitting form');
-//           submitButton.innerText = 'Send Message'; // Restore button text
-//           submitButton.disabled = false; // Enable the submit button
-//         }
-//       } catch (error) {
-//         console.error('Error:', error);
-//         submitButton.innerText = 'Send Message'; // Restore button text
-//         submitButton.disabled = false; // Enable the submit button
-//       }
-//     });
-    
+  // Call the function when the page loads
+  openTabFromQueryParam();
+});
 
