@@ -74,7 +74,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul> -->
             </li>
-            <li><a href="index.php#contact">Contact</a></li>
+
           </ul>
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -128,209 +128,7 @@
 
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/al ain.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Jumeirah Hotel, Abu Dhabi</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/projects/fairmont.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>FAIRMONT Marina HOTEL, ABU DHABI</h4>
-
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/royal m hotel, fujairah.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>ROYAL M HOTEL, FUJAIRAH</h4>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/nalanda restaurant.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>NALANDA RESTAURANT, AL QUOZ</h4>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/projects/lahbaab supermarket.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>LAHBAAB SUPERMARKET ABU SHAGARAH, SHARJAH</h4>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/Hamriya port phase 1, sharjah.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>HAMRIYA PORT PHASE 1 OFFICE, SHARJAH</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/projects/rotana hotel.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>ROTANA HOTEL, ABU DHABI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/style gym, abu dhabi.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>STYLE GYM, ABU DHABI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/g+1 commercial building.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>G+1 COMMERCIAL BUILDING, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/jewel of creek.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>JEWEL OF CREEK, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/projects/mafraq hospital abudhabi.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>MAFRAQ HOSPITAL, ABU DHABI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/troy gym, abu dhabi.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>TROY GYM, ABU DHABI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/thomson reuters,dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>THOMSON REUTERS OFFICE, TECOM, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/projects/pi institute abu dhabi.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>PI INSTITUTE, ABU DHABI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/alaska restaurant.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>ALASKA RESTAURANT, PALM JUMERIAH, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/leto cafe city.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>LETO CAFE CITY WALK MALL, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/ramez hotel,dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>RAMEZ HOTEL, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/alaryam medical clinic.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>ALARYAM MEDICAL CLINIC, AL AIN</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/sharjah waterfront villas.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>SHARJAH WATERFRONT VILLAS, SHARJAH</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/iris lounge dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>IRIS LOUNGE, MEYDAN, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/museum of the future,dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>MUSUEM OF THE FUTURE, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/barrari natural resources.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>BARRARI NATURAL RESOURCES,AL AIN</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/projects/magribi clinic, dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>MAGRIBI CLINIC, DUBAI</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/Amphitheatre.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Al majaz Amphitheatre,sharjah</h4>
-
-                </div>
-              </div><!-- End Portfolio Item -->
-
-
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/projects/kaikroo office, Dubai.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>KAYKROO OFFICE, AL QUOZ, DUBAI</h4>
-                </div>
-              </div><!-- End Portfolio Item -->
+ 
 
               <?php
               // Establish a database connection (you may need to adjust the database credentials)
@@ -346,11 +144,13 @@
               if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                   echo '<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">';
-                  echo '<a href="project-details.php?id=' . $row["id"] . '"><img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
+                  echo '<img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
                   echo '<div class="portfolio-info">';
-                  echo '<h4>' . $row["project_name"] . '</h4><br><br>';
-                  echo '<p>Learn More <i class="bi bi-plus-circle"></i></a></p>';
+                  echo '<a href="project-details.php?id=' . $row["id"] . '">';
+                  echo '<h4>' . $row["project_name"] . '</h4></a><br><br>';
+                  echo '<p><a href="project-details.php?id=' . $row["id"] . '">Learn More <i class="bi bi-plus-circle"></i></a></p>';
                   echo '</div></div>';
+                 
                   echo '<!-- End Portfolio Item -->';
                 }
               } else {

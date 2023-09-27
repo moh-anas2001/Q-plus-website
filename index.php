@@ -59,7 +59,7 @@
           <li><a href="index.php#services">Services</a></li>
           <li><a href="index.php#portfolio">Portfolio</a></li>
           <li><a href="index.php#careers">Join us</a></li>
-          <li><a href="index.php#recent-posts">Blog</a></li>
+           <li><a href="index.php#recent-posts">Blog</a></li> 
 
           </li>
           <!-- <li><a href="index.php#contact">Contact</a></li> -->
@@ -135,7 +135,8 @@
           <div class="cli-log">
             <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
           </div><!-- End Client Item -->
-          <div class="cli-log">
+          
+              <div class="cli-log">
             <?php
             // Include the database configuration
             require_once('admin/includes/database.php');
@@ -145,10 +146,10 @@
             $resultClientLogos = $connect->query($sqlClientLogos);
 
             while ($rowClientLogo = $resultClientLogos->fetch_assoc()) {
-              echo '<img src="' . $rowClientLogo["client_path"] . '" style="max-height: 40%;" class="img-fluid" alt="Brand Logo">';
+              echo '<img src="' . $rowClientLogo["client_path"] . '" class="img-fluid" alt="Brand Logo">';
             }
 
-
+            
             ?>
           </div><!-- End Client Item -->
 
@@ -219,6 +220,138 @@
       </div>
     </section>
 
+
+    <!-- <section id="clients" class="clients">
+  <div class="container-fluid" data-aos="fade-up">
+    <div class="swiper">
+      <!-- Swiper Configuration Template --
+      <template class="swiper-config">
+        {
+          "loop": true,
+          "speed": 3000,
+          "autoplay": {
+            "delay": 1000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          }
+        }
+      </template>
+      <!-- Swiper Wrapper (Container for client logos) --
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!-- Container for client images --
+          <div class="row gy-4 client-images">
+         
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/Brands/" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-9.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients  /client-17.svg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-16.svg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            
+    
+          </div><!-- End Client Images Container --
+        </div><!-- End Swiper Slide --
+
+
+        <div class="swiper-slide">
+          <!-- Container for client images --
+          <div class="row gy-4 client-images">
+         
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-10.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-11.jpeg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --       
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-18.png" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --   
+
+    
+          </div><!-- End Client Images Container --               
+        </div><!-- End Swiper Slide --        
+
+        <div class="swiper-slide">
+          <!-- Container for client images --     
+          <div class="row gy-4 client-images">
+         
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-13.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-14.jpeg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-15.jpeg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo"> 
+              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="New Client">
+             </div><!-- End Client Item --  
+            
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item -- 
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+
+            <div class="col-xl-2 col-md-3 col-6 client-logo">
+              <img src="assets/img/clients/client-19.png" class="img-fluid" alt="New Client">
+            </div><!-- End Client Item --
+    
+          </div><!-- End Client Images Container --
+        </div><!-- End Swiper Slide -->
+
+
+    <!-- Add more swiper-slide elements for more sets of images --
+
+
+
+
+      </div><!-- End Swiper Wrapper --
+    </div><!-- End Swiper Container --
+  </div><!-- End Container Fluid --
+</section>End Clients Section -->
 
 
     <!-- About Section - Home Page -->
@@ -370,8 +503,6 @@
 
           <!--  slide images -->
 
-
-
           <div class=" brand-log">
             <img src="assets/img/Brands/Brand-1.png" style="max-height: 40%;" class="img-fluid" alt="New Client">
           </div><!-- End Client Item -->
@@ -387,7 +518,8 @@
           <div class="brand-log">
             <img src="assets/img/Brands/Brand-4.png" style="max-height: 30%;" class="img-fluid" alt="New Client">
           </div><!-- End Client Item -->
-
+          
+          
           <div class="brand-log">
             <?php
             // Include the database configuration
@@ -398,7 +530,7 @@
             $resultBrandLogos = $connect->query($sqlBrandLogos);
 
             while ($rowBrandLogo = $resultBrandLogos->fetch_assoc()) {
-              echo '<img src="' . $rowBrandLogo["brand_path"] . '" class="img-fluid" alt="Brand Logo">';
+              echo '<img src="' . $rowBrandLogo["brand_path"] . '" style="max-height: 40%;" class="img-fluid" alt="Brand Logo">';
             }
 
             $connect->close();
@@ -554,6 +686,59 @@
             </div>
           </div><!-- End Service Item -->
 
+          <!-- <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-bounding-box-circles"></i>
+                </div>
+                <a href="service-details.php" class="stretched-link">
+                  <h3>Asperiores Commodit</h3>
+                </a>
+                <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+                <a href="service-details.php" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item --
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-5.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-calendar4-week"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Velit Doloremque</h3>
+                </a>
+                <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item --
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-6.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-chat-square-text"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Dolori Architecto</h3>
+                </a>
+                <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>End Service Item -->
 
         </div>
 
@@ -561,6 +746,57 @@
     </section>
 
     <!-- End Services Section -->
+
+
+
+    <!-- Features Section - Home Page -->
+    <!-- <section id="features" class="features">
+
+      <!--  Section Title --
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title --
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Corporis temporibus maiores provident</h3>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+            <a href="#" class="btn btn-get-started">Get Started</a>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="image-stack">
+              <img src="assets/img/features-light-1.jpg" alt="" class="stack-front">
+              <img src="assets/img/features-light-2.jpg" alt="" class="stack-back">
+            </div>
+          </div>
+        </div><!-- Features Item --
+
+        <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+            <img src="assets/img/features-light-3.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+            <h3>Sunt consequatur ad ut est nulla</h3>
+            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+              <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+              <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
+            </ul>
+            <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
+          </div>
+        </div><!-- Features Item --
+
+      </div>
+
+    </section><!--End Features Section -->
+
 
 
 
@@ -577,12 +813,8 @@
       <div class="container">
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-
+            
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <?php
             // Establish a database connection (you may need to adjust the database credentials)
             $conn = new mysqli("localhost", "cms", "secret", "cms");
@@ -592,13 +824,13 @@
             }
 
             // Define an array of project IDs that you want to retrieve
-            $projectIdsToRetrieve = [1, 3, 5]; // Replace with the desired project IDs
+           $projectIdsToRetrieve = [2, 3, 4, 1, 5, 6, 7, 8, 9]; // Replace with the desired project IDs
             
             // Create a comma-separated string of project IDs
             $projectIdsString = implode(",", $projectIdsToRetrieve);
 
             // Query to fetch specific projects based on project IDs
-            $sql = "SELECT id, image_path, project_name FROM projects WHERE id IN ($projectIdsString)";
+            $sql = "SELECT id, image_path, project_name FROM projects WHERE id IN ($projectIdsString) ORDER BY FIELD(id, $projectIdsString)";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -606,21 +838,23 @@
                 echo '<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">';
                 echo '<img src="' . $row["image_path"] . '" class="img-fluid" alt="">';
                 echo '<div class="portfolio-info">';
+                echo '<a href="project-details.php?id=' . $row["id"] . '">';
                 echo '<h4>' . $row["project_name"] . '</h4><br><br>';
-                echo '<p><a href="project-details.php?id=' . $row["id"] . '">Learn More <i class="bi bi-plus-circle"></i></a></p>';
+                echo '<p>Learn More <i class="bi bi-plus-circle"></i></a></p>';
                 echo '</div></div>';
+              
                 echo '<!-- End Portfolio Item -->';
               }
             } else {
-              echo "No projects found.";
+              echo "";
             }
 
             $conn->close();
             ?>
 
+            </div>
 
-
-          </div><!-- End Portfolio Container -->
+         
 
           <div class="port-buts">
             <a href="portfolio-details.php">
@@ -635,6 +869,81 @@
 
     </section><!-- End Portfolio Section -->
 
+
+    <!-- Pricing Section - Home Page -->
+    <!--   <section id="pricing" class="pricing">
+
+      <!--  Section Title 
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -
+
+      <div class="container" data-aos="zoom-in" data-aos-delay="100">
+
+        <div class="row g-4">
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Free Plan</h3>
+              <div class="icon">
+                <i class="bi bi-box"></i>
+              </div>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
+                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
+                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            </div>
+          </div><!-- End Pricing Item --
+
+          <div class="col-lg-4">
+            <div class="pricing-item featured">
+              <h3>Business Plan</h3>
+              <div class="icon">
+                <i class="bi bi-rocket"></i>
+              </div>
+
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
+                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
+                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
+                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            </div>
+          </div><!-- End Pricing Item --
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Developer Plan</h3>
+              <div class="icon">
+                <i class="bi bi-send"></i>
+              </div>
+              <h4><sup>$</sup>49<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
+                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
+                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
+                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            </div>
+          </div><!-- End Pricing Item --
+
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- End Pricing Section -->
 
 
     <!-- ************************************************************** -->
@@ -1010,7 +1319,6 @@
 
 
     <!-- **********************************************************BLOG********************************************************************************************** -->
-
     <!-- Recent-posts Section - Home Page -->
     <section id="recent-posts" class="recent-posts">
 
@@ -1038,6 +1346,7 @@
               <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <article>
                   <div class="post-img">
+                      <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
                     <img src="<?php echo $row['cover_image']; ?>" alt="" class="img-fluid">
                   </div>
 
@@ -1119,7 +1428,7 @@
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
                   <p><strong>Mob:</strong><a href="tel:+971581174967"> +971 581174967</a></p>
-                  <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+                  <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
                   <p><strong>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
                 </div><br>
               </div><!-- End Info Item -->
@@ -1309,9 +1618,9 @@
             <p>Al Qusais, Dubai United Arab Emirates</p>
           </a>
           <p class="mt-4"><strong>Phone:</strong> <span>
-              <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-              <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-              <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
+             <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
+             <p ><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
+             <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
             </span></p>
           <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
         </div>

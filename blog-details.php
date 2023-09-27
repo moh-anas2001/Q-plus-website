@@ -83,6 +83,8 @@ if (isset($_GET['blog_id'])) {
 
   <!-- Font Awesome CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -174,11 +176,15 @@ if (isset($_GET['blog_id'])) {
                         datetime="<?php echo $row['publish_date']; ?>">
                         <?php echo date('M d, Y', strtotime($row['publish_date'])); ?>
                       </time></li>
+                     <li class="d-flex align-items-center"><i class="fas fa-comments"></i>
+                        <a href="https://www.qplus-ts.com/blog-details.php?blog_id=<?php echo $blogId; ?>#disqus_thread">
+                                    Read More
+                        </a>
+                    </li>
                     <li class="d-flex align-items-center"><button class="btn btn-share" id="shareBlogs"><i
                           class="bi bi-share"></i>&nbsp;Share</button>
-                          
-
                     </li>
+                   
 
                   </ul>
                 </div><!-- End meta top -->
@@ -358,8 +364,7 @@ if (isset($_GET['blog_id'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 
-    <!-- Place the following code before your site's closing </body> tag -->
-    <script id="dsq-count-scr" src="//qplus-ts-blog.disqus.com/count.js" async></script>
+    
 
 
     <!-- Template Main JS File -->
@@ -415,36 +420,10 @@ if (isset($_GET['blog_id'])) {
         initShareBlogs();
       });
     </script>
+<!-- Include Disqus Comment Count Script -->
+<script id="dsq-count-scr" src="//qplus-ts-blog.disqus.com/count.js" async></script>
 
-<script>
-    // Function to update the comment count
-    function updateCommentCount(count) {
-        const commentCountElement = document.getElementById("disqus-comment-count");
-        if (commentCountElement) {
-            commentCountElement.innerText = "Comments: " + count;
-        }
-    }
 
-    // Callback function to update the comment count
-    var disqus_config = function () {
-        this.page.url = window.location.href; // Set the page URL
-        this.callbacks.onNewComment = [function(comment) {
-            updateCommentCount(comment.count);
-        }];
-    };
-
-    // Load the Disqus comment count script
-    (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://qplus-ts-blog.disqus.com/count.js';
-        s.async = true;
-        s.onload = function() {
-            // Disqus comment count script has loaded
-            DISQUSWIDGETS.getCount({ reset: true });
-        };
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
 
 
 

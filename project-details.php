@@ -110,60 +110,6 @@
                 </nav>
             </div><!-- End Page Title -->
 
-
-            <!-- Portfolio Section - Home Page -->
-            <!-- <section id="portfolio" class="portfolio"> -->
-
-            <!--  Section Title -->
-            <!-- <div class="container section-title" data-aos="fade-up">
-                    <h2>Portfolio</h2>
-                    <p></p>
-                </div>End Section Title -->
-            <!-- 
-                <div class="container mt-5">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3"> -->
-            <?php
-            // // Establish a database connection (you may need to adjust the database credentials)
-            // $conn = new mysqli("localhost", "cms", "secret", "cms");
-            
-            // if ($conn->connect_error) {
-            //     die("Connection failed: " . $conn->connect_error);
-            // }
-            
-            // // Get the project ID from the URL parameter
-            // if (isset($_GET['id'])) {
-            //     $project_id = $_GET['id'];
-            
-            //     // Query to fetch project details based on project ID
-            //     $sql = "SELECT project_name, image_path, description FROM projects WHERE id = $project_id";
-            //     $result = $conn->query($sql);
-            
-            //     if ($result->num_rows > 0) {
-            //         $row = $result->fetch_assoc();
-            //         // Display project details within the card structure
-            //         echo '<div class="card">';
-            //         echo '<img src="' . $row['image_path'] . '" class="card-img-top" alt="Project Image">';
-            //         echo '<div class="card-body">';
-            //         echo '<h5 class="card-title">' . $row['project_name'] . '</h5>';
-            //         echo '<p class="card-text">' . $row['description'] . '</p>';
-            //         echo '</div></div>';
-            //     } else {
-            //         echo "Project not found.";
-            //     }
-            // } else {
-            //     echo "Invalid project ID.";
-            // }
-            
-            // // Close the database connection
-            // $conn->close();
-            ?>
-            <!-- </div>
-                    </div>
-                </div>
-            </section>End Portfolio Section -->
-
-
             <!-- ======= Portfolio Details Section ======= -->
             <section id="portfolio-details" class="portfolio-details">
                 <div class="container">
