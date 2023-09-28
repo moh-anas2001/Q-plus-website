@@ -290,6 +290,18 @@
     </section><!-- End About Section -->
 
     <!-- Stats Section - Home Page -->
+
+    <?php
+    // Read the JSON file
+    $jsonData = file_get_contents('admin/stats.json');
+    $stats = json_decode($jsonData, true);
+
+    // Access individual statistics
+    $clients = $stats['clients'];
+    $projects = $stats['projects'];
+    $brands = $stats['brands'];
+    ?>
+
     <section id="stats" class="stats">
 
       <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
@@ -300,7 +312,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="<?php echo $clients ?>" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Projects Done</p>
             </div>
@@ -308,7 +320,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="<?php echo $projects ?>" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Happy Clients</p>
             </div>
@@ -316,7 +328,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="<?php echo $brands ?>" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Brands we Handle</p>
             </div>
