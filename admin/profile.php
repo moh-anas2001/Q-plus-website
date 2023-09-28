@@ -243,13 +243,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="hide-menu">New Jobs</span>
                             </a>
                         </li>
-                        <!-- <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.php"
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stats.php"
                                 aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Basic Table</span>
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                <span class="hide-menu">Update Statistics</span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin_testimonial.php"
                                 aria-expanded="false">
