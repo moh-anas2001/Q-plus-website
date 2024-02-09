@@ -49,12 +49,12 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.php#home" class="active">Home</a></li>
+        <li><a href="index.php#home" class="active">Home</a></li>
           <li><a href="index.php#about">About</a></li>
-          <li><a href="index.php#services">Services</a></li>
-          <li><a href="index.php#portfolio">Portfolio</a></li>
-          <li><a href="index.php#careers">Join us</a></li>
-           <li><a href="index.php#recent-posts">Blog</a></li> 
+          <li><a href="service-details.php">Services</a></li>
+          <li><a href="portfolio-details.php">Portfolio</a></li>
+          <li><a href="careers.php">Join us</a></li>
+          <li><a href="blog.php">Blog</a></li>
 
           </li>
           <!-- <li><a href="index.php#contact">Contact</a></li> -->
