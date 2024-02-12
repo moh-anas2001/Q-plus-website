@@ -54,7 +54,7 @@
           <li><a href="service-details.php">Services</a></li>
           <li><a href="portfolio-details.php">Portfolio</a></li>
           <li><a href="careers.php">Join us</a></li>
-          <li><a href="blog.php">Blog</a></li>
+          <!--<li><a href="blog.php">Blog</a></li>-->
 
           </li>
           <!-- <li><a href="index.php#contact">Contact</a></li> -->
@@ -561,7 +561,7 @@
         <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <?php
             // Establish a database connection (you may need to adjust the database credentials)
-            $conn = new mysqli("localhost", "cms", "secret", "cms");
+            $conn = mysqli_connect('localhost', 'dacenj4b_qplus', 'Dacentric@db', 'dacenj4b_qplus');
 
             if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
@@ -626,7 +626,7 @@
         <div class="row">
           <?php
           // Establish a database connection (you may need to adjust the database credentials)
-          $conn = new mysqli("localhost", "cms", "secret", "cms");
+          $conn = mysqli_connect('localhost', 'dacenj4b_qplus', 'Dacentric@db', 'dacenj4b_qplus');
 
           if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -722,7 +722,7 @@
 
 
                 // Establish a database connection (you may need to adjust the database credentials)
-                $conn = new mysqli("localhost", "cms", "secret", "cms");
+                $conn = mysqli_connect('localhost', 'dacenj4b_qplus', 'Dacentric@db', 'dacenj4b_qplus');
 
                 if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
@@ -771,75 +771,75 @@
 
    
     <!-- Recent-posts Section - Home Page -->
-    <section id="recent-posts" class="recent-posts">
+    <!--<section id="recent-posts" class="recent-posts">-->
 
       <!--  Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Recent Posts</h2>
-        <p> Check out our recent blogs</p>
-      </div><!-- End Section Title -->
+    <!--  <div class="container section-title" data-aos="fade-up">-->
+    <!--    <h2>Recent Posts</h2>-->
+    <!--    <p> Check out our recent blogs</p>-->
+    <!--  </div><!-- End Section Title -->
 
-      <div class="container">
+      <!--<div class="container">-->
 
-        <div class="row gy-4">
+        <!--<div class="row gy-4">-->
 
-          <?php
-          // Include the database configuration and establish a database connection
-          include('admin/includes/database.php');
+        <!--  <?php
+        //   // Include the database configuration and establish a database connection
+        //   include('admin/includes/database.php');
 
-          // Fetch up to three most recent blog posts
-          $sql = "SELECT * FROM blog ORDER BY created_at DESC LIMIT 3";
-          $result = $connect->query($sql);
-          ?>
+        //   // Fetch up to three most recent blog posts
+        //   $sql = "SELECT * FROM blog ORDER BY created_at DESC LIMIT 3";
+        //   $result = $connect->query($sql);
+        ?>
 
-          <div class="row gy-4 posts-list">
-            <?php while ($row = $result->fetch_assoc()): ?>
-              <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <article>
-                  <div class="post-img">
-                      <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
-                    <img src="<?php echo $row['cover_image']; ?>" alt="" class="img-fluid">
-                  </div>
+        <!--  <div class="row gy-4 posts-list">-->
+        <!--    <?php while ($row = $result->fetch_assoc()): ?>-->
+        <!--      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">-->
+        <!--        <article>-->
+        <!--          <div class="post-img">-->
+        <!--              <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">-->
+        <!--            <img src="<?php echo $row['cover_image']; ?>" alt="" class="img-fluid">-->
+        <!--          </div>-->
 
-                  <h2 class="title">
-                    <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">
-                      <?php echo $row['title']; ?>
-                    </a>
-                  </h2>
+        <!--          <h2 class="title">-->
+        <!--            <a href="blog-details.php?blog_id=<?php echo $row['blog_id']; ?>">-->
+        <!--              <?php echo $row['title']; ?>-->
+        <!--            </a>-->
+        <!--          </h2>-->
 
-                  <div class="d-flex align-items-center">
-                    <img src="<?php echo $row['author_image']; ?>" alt="" class="img-fluid post-author-img flex-shrink-0">
-                    <div class="post-meta">
-                      <p class="post-author">
-                        <?php echo $row['author_name']; ?>
-                      </p>
-                      <p class="post-date">
-                        <time datetime="<?php echo $row['publish_date']; ?>">
-                          <?php echo date('M d, Y', strtotime($row['publish_date'])); ?>
-                        </time>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              </div><!-- End post list item -->
-            <?php endwhile; ?>
-          </div>
-
-
-          <div class="car-buts">
-            <a href="blog.php">
-              <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp; See all
-                recent posts</button>
-            </a>
-          </div>
-
-        </div><!--End recent posts list -->
+        <!--          <div class="d-flex align-items-center">-->
+        <!--            <img src="<?php echo $row['author_image']; ?>" alt="" class="img-fluid post-author-img flex-shrink-0">-->
+        <!--            <div class="post-meta">-->
+        <!--              <p class="post-author">-->
+        <!--                <?php echo $row['author_name']; ?>
+        <!--              </p>-->
+        <!--              <p class="post-date">-->
+        <!--                <time datetime="<?php echo $row['publish_date']; ?>">-->
+        <!--                  <?php echo date('M d, Y', strtotime($row['publish_date'])); ?>
+        <!--                </time>-->
+        <!--              </p>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </article>-->
+        <!--      </div><!-- End post list item -->
+            <!--<?php endwhile; ?>-->
+        <!--  </div>-->
 
 
-      </div>
+    <!--      <div class="car-buts">-->
+    <!--        <a href="blog.php">-->
+    <!--          <button type="submit" class="all-job"><i class="bi bi-arrow-right-circle-fill"></i>&nbsp;&nbsp; See all-->
+    <!--            recent posts</button>-->
+    <!--        </a>-->
+    <!--      </div>-->
+
+    <!--    </div><!--End recent posts list -->
 
 
-    </section>
+    <!--  </div>-->
+
+
+    <!--</section>-->
 
     <!-- End Recent-posts Section -->
 
@@ -911,7 +911,7 @@
           <!-- Contact Section -->
 
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/97912b3e6b2cb7f4275ebe40a96035a8 " method="post" class="contact_form"
+            <form action="https://formsubmit.co/97912b3e6b2cb7f4275ebe40a96035a8 " method="POST" class="contact_form"
               data-aos="fade-up*" data-aos-delay="200">
               <div class="row gy-4">
 

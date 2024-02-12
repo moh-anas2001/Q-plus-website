@@ -217,12 +217,7 @@ if (isset($_GET['blog_id'])) {
                 })();
               </script>
               <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments poweredby Disqus.</a></noscript> -->
-
-
-
             </div>
-
-
 
 
             <div class="col-lg-4">
@@ -261,78 +256,142 @@ if (isset($_GET['blog_id'])) {
 
 
 
-    <!-- =======Default  Footer ======= -->
-    <footer id="footer" class="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
 
-      <div class="container footer-top">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-about">
-            <a class="logo d-flex align-items-center">
-              <span style="color: white;font-size: large;margin-top: 10px">Our Social Networks<span>
-            </a>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-info">
+                        <h3>DaCentric Technologies</h3>
+                        <p class="pb-3"><em>We are specialized in providing solution for IT & ELV Systems.</em></p>
+                        <!-- <div class="row">
 
-            <div class="social-links d-flex mt-4">
-              <a href="https://twitter.com/qplus_q"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.facebook.com/Qplusts"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/qplustechnicalservice/"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/qplus-technical-service-llc/"><i class="bi bi-linkedin"></i></a>
-              <a href="https://wa.me/+971581174967"><i class="bi bi-whatsapp"></i></a>
-              <a href="https://www.youtube.com/@Qplus201"><i class="bi bi-youtube"></i></a>
+                            <div class="col-md-6" style="padding-left: 50px;">
+                                <address style="padding-top: 20px;">India</address>
+                            </div>
+                            <div class="col-md-6" style="padding-right: 50px;">
+                                <address>Mas Tower, <br>Attakulangara, Thiruvananthapuram</address>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-md-6" style="padding-left: 50px;">
+                                <address style="padding-top: 20px;">UAE</address>
+                            </div>
+                            <div class="col-md-6" style="padding-right: 50px;">
+                                <address>Office:702-20, Mai Tower, Al Nahda-1,
+
+                                    Al Qusais, Dubai, UAE</address>
+                            </div>
+                        </div> -->
+
+
+                        <div class="row">
+                            <!-- India Address -->
+                            <div class="col-md-6 col-sm-12" style="padding-left: 20px; padding-right: 20px;">
+                              <address style="padding-top: 20px;">India</address>
+                            </div>
+                            <!-- Mas Tower Address -->
+                            <div class="col-md-6 col-sm-12" style="padding-left: 20px; padding-right: 20px;">
+                              <address style="text-align: left;">Mas Tower, <br>Attakulangara, Thiruvananthapuram</address>
+                            </div>
+                          </div>
+                          
+                          <div class="row">
+                            <!-- UAE Address -->
+                            <div class="col-md-6 col-sm-12" style="padding-left: 20px; padding-right: 20px;">
+                              <address style="padding-top: 20px;">UAE</address>
+                            </div>
+                            <!-- Dubai Address -->
+                            <div class="col-md-6 col-sm-12" style="padding-left: 20px; padding-right: 20px;">
+                              <address style="text-align: left;">Office:702-20, Mai Tower, Al Nahda-1, Al Qusais, Dubai, UAE</address>
+                            </div>
+                          </div>
+
+                        <p>
+                            <strong>Email:</strong> tse@dacentrictechnologies.com<br>
+                        </p>
+                        <div class="social-links mt-3">
+                            <a href="https://x.com/dacentric?s=20" class="twitter"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.facebook.com/DaCentric" class="facebook"><i
+                                    class="bx bxl-facebook"></i></a>
+                            <a href="https://instagram.com/dacentrictechnologies?igshid=MTlnbmdhanJhMzhoYQ=="
+                                class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
+                            <a href="https://www.linkedin.com/company/dacentric-technologies/" class="linkedin"><i
+                                    class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="services.html">IT Solutions & Support</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="services.html">Software Services</a></li>                     
+                        <li><i class="bx bx-chevron-right"></i> <a href="services.html">ELV Systems</a></li>
+                        <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+
+
+                    
+        
+                </div> -->
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <div class="row">
+                        
+                        <div class="col-lg-12">
+                            <p style="text-align: center; font-size: 20px;">India</p>
+                            <!-- Content for the first row goes here -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.8682601120336!2d76.94564645004365!3d8.478687293855524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbab3adce1c3%3A0xdc1b33b9ab0e92fd!2sDaCentric%20Technologies!5e0!3m2!1sen!2sae!4v1700048587682!5m2!1sen!2sae"  width="100%" height="175" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p style="text-align: center; font-size: 20px;">UAE</p>
+                            <!-- Content for the second row goes here -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28859.983693419534!2d55.3572806!3d25.2874685!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dc8bf44b213%3A0x2b359e754483f519!2sQplus%20Technical%20Service%20LLC!5e0!3m2!1sen!2sin!4v1700029795698!5m2!1sen!2sin" width="100%" height="175" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+
             </div>
-          </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="index.php#home">Home</a></li>
-              <li><a href="index.php#about">About us</a></li>
-              <li><a href="index.php#services">Services</a></li>
-              <li><a href="index.php#portfolio">Portfolio</a></li>
-              <li><a href="index.php#careers">Join us</a></li>
-              <li><a href="index.php#contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="service-details.php">ELV services</a></li>
-              <li><a href="service-details.php">IT and Networking Services</a></li>
-              <li><a href="service-details.php">MEP Services</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <a href="https://goo.gl/maps/baR7adV2LxGMmDGF8">
-              <p>Q Plus Technical Service LLC</p>
-              <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-              <p>Al Qusais, Dubai United Arab Emirates</p>
-            </a>
-            <p class="mt-4"><strong>Phone:</strong> <span>
-                <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
-                <p><a href="tel:+971585388100" style="margin-left: 39px;">+971 585388100</a></p>
-                <p>Tel:</strong>&nbsp;&nbsp;&nbsp;<a href="tel:043931110"> +971 4 393 1110</a>
-              </span></p>
-            <p><strong><br>Email:</strong> <span><a href="mailto:info@qplus-ts.com">info@qplus-ts.com</span></a></p>
-          </div>
-
         </div>
-      </div>
+    </div>
 
-      <div class="container copyright text-center mt-4">
-        <p>&copy; <span>Copyright</span><strong class="px-1">DaCentric Technologies</b></strong><span>All Rights
-            Reserved</span></p>
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>DaCentric Technologies</span></strong>. All Rights Reserved
+        </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          <a href=""></a>
+            <!-- Designed by <a href="https://dacentrictechnologies.com">DaCentric Technologies</a> -->
         </div>
-      </div>
-
-    </footer><!-- End Footer -->
+    </div>
+</footer><!-- End Footer -->
 
     <!-- Scroll Top Button -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

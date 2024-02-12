@@ -54,7 +54,7 @@
                         <li><a href="index.php#about">About</a></li>
                         <li><a href="index.php#services">Services</a></li>
                         <li><a href="portfolio-details.php" class="active">Portfolio</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <!--<li><a href="blog.php">Blog</a></li>-->
                         <li><a href="careers.php">Join us</a></li>
 
                         <!-- <li class="dropdown has-dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
@@ -119,7 +119,7 @@
                                 <div class="align-items-center">
                                     <?php
                                     // Establish a database connection (you may need to adjust the database credentials)
-                                    $conn = new mysqli("localhost", "cms", "secret", "cms");
+              $conn = new mysqli("localhost", "dacenj4b_qplus", "Dacentric@db", "dacenj4b_qplus");
 
                                     if ($conn->connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
@@ -273,10 +273,7 @@
                 <p>&copy; <span>Copyright</span><strong class="px-1">DaCentric Technologies</b></strong><span>All Rights
                         Reserved</span></p>
                 <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you've purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                  
                     <a href=""></a>
                 </div>
             </div>

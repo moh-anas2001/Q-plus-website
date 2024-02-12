@@ -106,7 +106,7 @@ if (isset($_GET['id'])) {
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Manage Projects</h4>
+                    <h4 class="page-title">Manage Jobs</h4>
                 </div>
             </div>
         </div>
@@ -166,14 +166,13 @@ if (isset($_GET['id'])) {
                                         value="<?php echo $job['job_code']; ?>">
                                 </div>
                             </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Job Description</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <textarea rows="5" class="form-control p-0 border-0" name="job_description"
-                                        placeholder="Enter the Job Description"
-                                        required><?php echo $job['job_description']; ?></textarea>
-                                </div>
+                                                    <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Job Description</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <textarea id="desc" class="form-control p-0 border-0" name="job_description" placeholder="Enter the Job Description"><?php echo $job['job_description']; ?></textarea>
                             </div>
+                        </div>
+
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Status</label>
                                 <div class="col-md-12 p-0">
@@ -207,7 +206,14 @@ if (isset($_GET['id'])) {
     <script src="../js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../js/custom.js"></script>
+    <script src="../js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'#desc'
+        })
+    </script>
 
 </body>
+
 
 </html>

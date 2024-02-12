@@ -59,7 +59,7 @@
             <li><a href="service-details.php" class="active">Services</a></li>
             <li><a href="index.php#portfolio">Portfolio</a></li>
             <li><a href="index.php#careers">Join us</a></li>
-            <li><a href="index.php#contact">Contact</a></li>
+            <!--<li><a href="index.php#contact">Contact</a></li>-->
           </ul>
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -486,6 +486,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
 
   </body>
 

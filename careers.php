@@ -58,7 +58,7 @@
             <li><a href="index.php#services">Services</a></li>
             <li><a href="index.php#portfolio">Portfolio</a></li>
             <li><a href="careers.php" class="active">Join us</a></li>
-            <li><a href="index.php#contact">Contact</a></li>
+            <!--<li><a href="index.php#contact">Contact</a></li>-->
             <!-- <li><a href="index.php#recent-posts">Blog</a></li> -->
 
           </ul>

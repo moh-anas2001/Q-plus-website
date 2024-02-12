@@ -1,18 +1,7 @@
 <?php
 session_start();
 
-// Database connection
-$servername = "localhost";
-$username = "cms";
-$password = "secret";
-$dbname = "cms";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+require_once('includes/database.php');
 // Check if the user is authenticated (logged in)
 if (!isset($_SESSION['id'])) {
     header('Location: index.php');
@@ -28,7 +17,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] !== 'Admin') {
 
 // Retrieve the lastJobCode value from the database and store it in the session
 $sql = "SELECT last_code FROM last_job_code WHERE id = 1";
-$result = $conn->query($sql);
+$result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -64,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Update the value in the database
     $sql = "UPDATE last_job_code SET last_code = $lastJobCode WHERE id = 1";
-    $conn->query($sql);
+    $connect->query($sql);
 
     // Prepare and execute the SQL query to insert data, including the deletion date
     $sql = "INSERT INTO jobs (job_title, job_code, job_description, experience, posted, stat, delete_date)
@@ -385,7 +374,7 @@ if ($result->num_rows > 0) {
                                 <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Job Description</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <textarea id = "job_description" class="form-control p-0 border-0" name="job_description"
+                                        <textarea id = "desc" class="form-control p-0 border-0" name="job_description"
                                             placeholder="Enter the Job Description" ></textarea>
                                     </div>
                                 </div>
@@ -453,17 +442,18 @@ if ($result->num_rows > 0) {
                                                 <td>
                                                     <?php echo $job['job_code']; ?>
                                                 </td>
-                                                <td>
-                                                    <?php // echo $job['job_description']; ?>
-                                                    <span class="job-description-short">
-                                                        <?php echo substr($job['job_description'], 0, 10); ?>...<!-- Display the first 50 characters -->
-                                                    </span>
-                                                    <span class="job-description-full" style="display: none;">
-                                                        <?php echo $job['job_description']; ?> <!-- Hidden by default -->
-                                                    </span>
-                                                    <span class="expand-description-button"
-                                                        style="cursor: pointer; font-size: small;color: blue; text-decoration: underline;">Expand</span>
-                                                </td>
+                                               <td>
+    <div class="job-description-container">
+        <span class="job-description-short">
+            <?php echo substr($job['job_description'], 0, 50); ?>... <!-- Display the first 50 characters -->
+        </span>
+        <span class="job-description-full" style="display: none;">
+            <?php echo $job['job_description']; ?> <!-- Hidden by default -->
+        </span>
+        <span class="expand-description-button" style="cursor: pointer; font-size: small; color: blue; text-decoration: underline;">Expand</span>
+    </div>
+</td>
+
                                                 <td>
                                                     <?php
                                                     $postedDate = date('d M Y', strtotime($job['posted']));
@@ -530,28 +520,29 @@ if ($result->num_rows > 0) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-
     <script>
-        // Add an event listener for the expand button
-        document.querySelectorAll(".expand-description-button").forEach(function (button) {
-            button.addEventListener("click", function () {
-                // Find the related short and full description spans
-                const shortDescription = this.parentNode.querySelector(".job-description-short");
-                const fullDescription = this.parentNode.querySelector(".job-description-full");
+// Add an event listener for the expand button
+document.querySelectorAll(".expand-description-button").forEach(function (button) {
+    button.addEventListener("click", function () {
+        // Find the related short and full description spans
+        const container = this.closest(".job-description-container");
+        const shortDescription = container.querySelector(".job-description-short");
+        const fullDescription = container.querySelector(".job-description-full");
 
-                // Toggle their visibility
-                if (shortDescription.style.display === "inline-block") {
-                    shortDescription.style.display = "none";
-                    fullDescription.style.display = "inline-block";
-                    this.innerText = "Collapse";
-                } else {
-                    shortDescription.style.display = "inline-block";
-                    fullDescription.style.display = "none";
-                    this.innerText = "Expand";
-                }
-            });
-        });
-    </script>
+        // Toggle their visibility
+        if (shortDescription.style.display === "inline-block") {
+            shortDescription.style.display = "none";
+            fullDescription.style.display = "inline-block";
+            this.innerText = "Collapse";
+        } else {
+            shortDescription.style.display = "inline-block";
+            fullDescription.style.display = "none";
+            this.innerText = "Expand";
+        }
+    });
+});
+</script>
+
 
 
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
@@ -565,10 +556,12 @@ if ($result->num_rows > 0) {
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
     <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
-            selector:'#job_description'
+            selector:'#desc'
         })
+    </script>
     </script>
 </body>
 

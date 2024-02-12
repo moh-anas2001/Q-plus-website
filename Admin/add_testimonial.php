@@ -39,19 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Qplus Admin</title>
+    <meta name="keywords">
+    <title>Customer Testimonial</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
    <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+   
 </head>
 
 <body>
@@ -164,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add_testimonial.php"
                                 aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <i class="fa fa-comment" aria-hidden="true"></i>
                                 <span class="hide-menu">Testimonial</span>
                             </a>
                         </li>
@@ -240,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <label class="col-md-12 p-0">Testimonial</label>
                                     <div class="col-md-12 border-bottom p-0">
                                         <textarea rows="5" class="form-control p-0 border-0" name= "testimonial"
-                                            placeholder="Enter the Tesstimonial" required></textarea>
+                                            placeholder="Enter the Testimonial" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
@@ -277,7 +272,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- footer -->
             <!-- ============================================================== -->
              <footer class="footer text-center"> 2020 © Qplus Technical Service LLC -  <a
-                    href="https://www.qplus-ts.com">www.qplus-ts.com</a>
+                    href="www.qplus-ts.com">www.qplus-ts.com</a>
             </footer>
             </footer>
             <!-- ============================================================== -->

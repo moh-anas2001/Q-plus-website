@@ -59,7 +59,7 @@
                         <li><a href="index.php#services">Services</a></li>
                         <li><a href="index.php#portfolio">Portfolio</a></li>
                         <li><a href="careers.php" class="active">Join us</a></li>
-                        <li><a href="index.php#contact">Contact</a></li>
+                        <!--<li><a href="index.php#contact">Contact</a></li>-->
                         <!-- <li><a href="index.php#recent-posts">Blog</a></li> -->
 
                     </ul>
@@ -111,7 +111,7 @@
                                 <?php
                                 if (isset($_GET['job_id'])) {
                                     // Establish a database connection (adjust the credentials as needed)
-                                    $conn = new mysqli("localhost", "cms", "secret", "cms");
+                                    $conn = new mysqli("localhost", "dacenj4b_qplus", "Dacentric@db", "dacenj4b_qplus");
 
                                     if ($conn->connect_error) {
                                         die("Connection failed: " . $conn->connect_error);

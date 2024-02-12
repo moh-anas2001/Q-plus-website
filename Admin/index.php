@@ -5,34 +5,18 @@ include('includes/database.php');
 include('includes/functions.php');
 
 // Check if the user is already logged in and has a role
-if (isset($_SESSION['id']) && isset($_SESSION['user_role'])) {
-    $userRole = $_SESSION['user_role'];
+if (isset($_SESSION['id']) && isset($_SESSION['role'])) {
+    $userRole = $_SESSION['role'];
 
     // Redirect to the appropriate dashboard based on the user's role
     if ($userRole === 'Admin') {
         header('Location: dashboard.php');
     } elseif ($userRole === 'Blogger') {
-        header('Location: add_blog.php');
+        header('Location: add_blogs.php');
     }
     exit();
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-
-    <!-- Vendor CSS file -->
-    <link rel="stylesheet"
-        href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css>
-    <!-- Custom CSS files -->
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
 <?php
 if (isset($_POST['email'])) {
     if ($stm = $connect->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND status = 1')) {
@@ -52,13 +36,14 @@ if (isset($_POST['email'])) {
 
             set_message("You have successfully logged in " . $_SESSION['username']);
 
-            // Redirect based on the user's role
-            if ($_SESSION['role'] === 'Admin') {
-                header('Location: dashboard.php');
-            } elseif ($_SESSION['role'] === 'Blogger') {
-                header('Location: add_blogs.php');
-            }
-            die();
+              if ($_SESSION['role'] === 'Admin') {
+        header('Location: dashboard.php');
+        exit(); // It's a good practice to include exit after a header redirect
+    } elseif ($_SESSION['role'] === 'Blogger') {
+        header('Location: add_blogs.php'); // Corrected filename here
+        exit(); // It's a good practice to include exit after a header redirect
+    }
+            
         }
 
         $stm->close();
@@ -70,6 +55,23 @@ if (isset($_POST['email'])) {
 
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <!-- Vendor CSS file -->
+    <link rel="stylesheet"
+        href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css>
+    <!-- Custom CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
 
 <body class="colored">
 
@@ -103,10 +105,11 @@ if (isset($_POST['email'])) {
                             
                         </div>
                         <div class="text-center">
-                        <a href="register.php" class="btn btn-link">New user Here</a> 
+                        <a href="register.php" class="btn btn-link">New user? Register Here</a> 
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
