@@ -184,7 +184,7 @@
                                 ?>
 
                                 <div class="text-center mt-4 car-buts">
-                                    <?php echo '<a href="mailto:info@qplus-ts.com?subject=[' . $row["job_code"] . ']">';
+                                    <?php echo '<a href="mailto:careers@qplusts.com?subject=[' . $row["job_code"] . ']">';
                                     echo '<button class="small-button" type="submit">Apply Now</button></a>'; ?>&nbsp;&nbsp;
                                     <button class="btn btn-link" id="shareButton"><i class="bi bi-share">&nbsp;</i>Share</button>
 
