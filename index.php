@@ -867,8 +867,8 @@
                   <h3>Address</h3>
                   <p><strong>Q Plus Technical Service LLC</strong></p>
                   <a href="https://goo.gl/maps/baR7adV2LxGMmDGF8">
-                    <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-                    <p>Al Qusais, Dubai UAE</p>
+                    <p>Office:M20, Al Fahad Building, Abu Hail Road,</p>
+                    <p>Hor Al Anz, Dubai, UAE</p>
                   </a>
                 </div>
               </div><!-- End Info Item -->

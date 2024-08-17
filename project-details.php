@@ -254,8 +254,8 @@
                         <h4>Contact Us</h4>
                         <a href="https://goo.gl/maps/baR7adV2LxGMmDGF8">
                             <p>Q Plus Technical Service LLC</p>
-                            <p>Office:702-20, Mai Tower, Al Nahda-1,</p>
-                            <p>Al Qusais, Dubai United Arab Emirates</p>
+                            <p>Office:M20, Al Fahad Building, Abu Hail Road,</p>
+                    <p>Hor Al Anz, Dubai, UAE</p>
                         </a>
                         <p class="mt-4"><strong>Phone:</strong> <span>
                                 <p>Mob:<a href="tel:+971581174967"> +971 581174967</a></p>
