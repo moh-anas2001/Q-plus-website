@@ -1,0 +1,15 @@
+[12-Sep-2023 19:07:18 UTC] PHP Warning:  Undefined array key "delete_date" in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php on line 157
+[12-Sep-2023 19:07:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'delete_date' in 'field list' in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php:26
+Stack trace:
+#0 /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php(26): mysqli->prepare()
+#1 {main}
+  thrown in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php on line 26
+[12-Sep-2023 19:07:51 UTC] PHP Warning:  Undefined array key "delete_date" in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php on line 157
+[12-Sep-2023 19:08:17 UTC] PHP Warning:  Undefined array key "delete_date" in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php on line 157
+[12-Sep-2023 19:08:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'delete_date' in 'field list' in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php:26
+Stack trace:
+#0 /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php(26): mysqli->prepare()
+#1 {main}
+  thrown in /home/lj2k0lg1i5sx/public_html/admin/operations/update_jobs.php on line 26
+[22-Jan-2024 05:45:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/dacenj4b/www.qplus-ts.com/admin/operations/delete_users.php:1) in /home4/dacenj4b/www.qplus-ts.com/admin/operations/delete_users.php on line 16
+[22-Jan-2024 05:45:48 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/dacenj4b/www.qplus-ts.com/admin/operations/delete_users.php:1) in /home4/dacenj4b/www.qplus-ts.com/admin/operations/delete_users.php on line 16
